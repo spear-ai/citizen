@@ -78,7 +78,7 @@ Do show examples when possible.
 // (“Zumwalt-class destroyer”, 3) → “Unit:ZumwaltClassDestroyer:3”
 // (“Leopard 2A7”, 5) → “Unit:Leopard2a7:5”
 const getUnitId(name: string, index: number) => (
-  `Unit:${pascalCase(name)}:${index} 
+  `Unit:${pascalCase(name)}:${index}`
 );
 ```
 
