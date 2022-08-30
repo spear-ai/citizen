@@ -59,6 +59,126 @@ Developers use VSCode:
 
 **TODO:** Fill me out
 
+## Comments
+
+### 2.a. DO communicate intent
+
+Comments should explain intent rather than what the code is doing.
+If it's unclear what the code is doing then it should be refactored.
+
+### 2.b. DO show examples
+
+Do show examples when possible.
+
+**js:**
+
+```ts
+// Get a unit's globally unique identifier.
+//
+// (“Zumwalt-class destroyer”, 3) → “Unit:ZumwaltClassDestroyer:3”
+// (“Leopard 2A7”, 5) → “Unit:Leopard2a7:5”
+const getUnitId(name: string, index: number) => (
+  `Unit:${pascalCase(name)}:${index} 
+);
+```
+
+### 2.c. DO use sentence case
+
+Do use [sentence case](https://apastyle.apa.org/style-grammar-guidelines/capitalization/sentence-case) in comments.
+
+**py:**
+
+```py
+#  ✓ Good
+#  Use Manhattan distance because it performs better on high dimensional data
+distance = scipy.spatial.distance.cdist(tensor_a, tensor_b, metric='cityblock')
+
+#  ✗ Bad
+#  use manhattan distance because it performs better on high dimensional data
+distance = scipy.spatial.distance.cdist(tensor_a, tensor_b, metric='cityblock')
+```
+
+**js:**
+
+```ts
+// ✓ Good
+// Choose a background color that matches the sky
+const backgroundColor = '#2ebde5'; // Azure
+
+// ✗ Bad
+// choose a background color that matches the sky
+const backgroundColor = '#2ebde5'; // azure
+```
+
+### 2.d. DO punctuate multi-line comments
+
+Do use punctuation on multi-line comments.
+
+**py:**
+
+```py
+#  ✓ Good
+#  Lorem ipsum dolor sit amet. Consectetur adipiscing elit.
+placeholder_text = …
+
+#  ✗ Bad
+#  Lorem ipsum dolor sit amet. Consectetur adipiscing elit
+placeholder_text = …
+
+#  ✗ Bad
+#  Lorem ipsum dolor sit amet
+#  Consectetur adipiscing elit
+placeholder_text = …
+```
+
+#
+
+### 2.d. DO punctuate documentation-as-code
+
+Do punctuate comments that serve as documentation.
+These comments often generate Website docs, CLI arguments, etc.
+
+```py
+@dataclass
+class FetchBananasResponse
+    """The API response for fetching bananas."""
+    
+    banana_list: List[Banana]
+    """A list of varying length bananas."""
+
+@dataclass
+class Banana:
+    """An irresistible fruit loved by all the great apes."""
+
+    is_ripe: bool
+    """Whether it is ready for eating."""
+
+    length: float
+    """The length in meters."""
+```
+
+### 2.f. DO inline short comments
+
+```py
+# ✓ Good
+speed = … #  Meters per hour
+time = … #  Minutes
+distance = speed / (time / 60) # Meters 
+```
+
+```py
+# ✗ Bad
+
+#  Meters per hour
+speed = … 
+
+#  Minutes
+time = … 
+
+# Hours
+distance = speed / (time / 60) 
+```
+
 ## Variables
 
 ### 3.a. DO follow casing conventions
