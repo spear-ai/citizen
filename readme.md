@@ -131,8 +131,6 @@ placeholder_text = …
 placeholder_text = …
 ```
 
-#
-
 ### 2.d. DO punctuate documentation-as-code
 
 Do punctuate comments that serve as documentation.
@@ -487,7 +485,7 @@ if was_suspended and not is_suspended:
     print("Welcome back!")
 ```
 
-### 3.n. DON’T pluralize collections [[!]](#Legend)
+### 3.n. DON’T pluralize collections [[!]](#legend)
 
 Don’t pluralize collections. Instead, specify the collection type.
 
@@ -547,4 +545,71 @@ SELECT * FROM PersonAddress
 -- ✗ Bad
 SELECT * FROM People
 SELECT * FROM PeopleAddresses
+```
+
+## Data formats
+
+### Color
+
+#### 4.a. DO prefer hex color codes
+
+```ts
+// ✓ Good
+const successHexColorCode = '#297c3b';
+const failureHexColorCode = '#ca3214';
+
+// ✗ Bad
+const successRgbColorCode = 'rgb(41, 124, 59)';
+const failureRgbColorCode = 'rgb(202, 50, 20)';
+```
+
+*Exception: A library requires another format.*  
+*Exception: Manipulation is easier in another format. (e.g. HSL)*
+
+#### 4.b. DO use longhand hex color codes
+
+```ts
+// ✓ Good
+const color = '#ff0000';
+const colorAlpha = '#ff0000ff';
+
+// ✗ Bad
+const color = '#f00';
+const colorAlpha = '#f00f';
+```
+
+#### 4.c. DO use lowercase hex color codes
+
+```ts
+// ✓ Good
+const backgroundColor = '#edf6ff';
+const foregroundColor = '#006adc';
+
+// ✗ Bad
+const backgroundColor = '#EDF6FF';
+const foregroundColor = '#006ADC';
+```
+
+#### 4.d. DO make color format explict in non-HTML contexts
+
+```graphql
+# ✓ Good
+type ClassLabel {
+  id: ID!
+  hexColorCode: HexColorCode
+}
+
+# ✗ Bad
+type ClassLabel {
+  id: ID!
+  color: HexColorCode
+}
+```
+
+```sql
+# ✓ Good
+SELECT id, hexColorCode FROM ClassLabel
+
+# ✗ Bad
+SELECT id, color FROM ClassLabel
 ```
