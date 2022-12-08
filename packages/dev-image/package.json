@@ -1,0 +1,41 @@
+{
+  "name": "@spear-ai/dev-image",
+  "version": "1.0.0",
+  "description": "Spear AI Docker dev image",
+  "license": "MIT",
+  "author": {
+    "name": "Spear AI",
+    "email": "org@spear.ai",
+    "url": "https://spear.ai"
+  },
+  "repository": {
+    "directory": "packages/dev-image",
+    "type": "git",
+    "url": "https://github.com/spear-ai/citizen.git"
+  },
+  "devDependencies": {
+    "shx": "0.3.4"
+  },
+  "scripts": {
+    "build": "yarn run build:docker:build && yarn run build:docker:save",
+    "build:docker:build": "docker buildx build --tag spear-ai/dev-image .",
+    "build:docker:save": "shx mkdir -p dist && shx rm -f dist/docker-image.tar.gz && docker save spear-ai/dev-image --output dist/docker-image.tar.gz",
+    "check": "yarn run lint && yarn run test",
+    "lint": "yarn run lint:docker",
+    "lint:docker": "docker run --rm -i hadolint/hadolint < Dockerfile",
+    "start": "docker run -it spear-ai/dev-image",
+    "test": "yarn run test:direnv && yarn run test:docker && yarn run test:docker-compose && yarn run test:git && yarn run test:fnm && yarn run test:node && yarn run test:yarn && yarn run test:pyenv && yarn run test:python && yarn run test:poetry && yarn run test:pulumi && yarn run test:vim",
+    "test:direnv": "docker run -it spear-ai/dev-image direnv --version | grep 2.32.1",
+    "test:docker": "docker run -it spear-ai/dev-image docker --version | grep 20.10.21",
+    "test:docker-compose": "docker run -it spear-ai/dev-image docker-compose --version | grep 2.14.0",
+    "test:fnm": "docker run -it spear-ai/dev-image fnm --version | grep 1.33.1",
+    "test:git": "docker run -it spear-ai/dev-image git --version | grep 2.37.2",
+    "test:node": "docker run -it spear-ai/dev-image fnm list | grep 18.12.1",
+    "test:poetry": "docker run -it spear-ai/dev-image poetry --version | grep 1.2.2",
+    "test:pulumi": "docker run -it spear-ai/dev-image pulumi version | grep 3.48.0",
+    "test:pyenv": "docker run -it spear-ai/dev-image pyenv --version | grep 2.3.7",
+    "test:python": "docker run -it spear-ai/dev-image python --version | grep 3.10.8",
+    "test:vim": "docker run -it spear-ai/dev-image vim --version | grep 9.0",
+    "test:yarn": "echo 'TODO: Figure out how to run `fnm` deterministically in order to test Yarn. See: https://github.com/Schniz/fnm/issues/838'"
+  }
+}

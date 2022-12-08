@@ -1,0 +1,34 @@
+{
+  "extensions": {
+    "recommendations": [
+      "ms-azuretools.vscode-docker",
+      "sleistner.vscode-fileutils",
+      "tyriar.sort-lines",
+      "yzhang.markdown-all-in-one"
+    ],
+    "unwantedRecommendations": []
+  },
+  "folders": [
+    {
+      "name": "spear-ai/citizen",
+      "path": "."
+    },
+    {
+      "name": "spear-ai/dev-image",
+      "path": "packages/dev-image"
+    }
+  ],
+  "settings": {
+    "[json]": {
+      "editor.tabSize": 2
+    },
+    "editor.autoClosingQuotes": "always",
+    "editor.formatOnSave": true,
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true
+  }
+}

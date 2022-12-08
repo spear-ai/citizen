@@ -1,0 +1,30 @@
+version: 2
+updates:
+  - directory: /
+    labels:
+      - 🌋 technical debt
+      - 🚀 update
+    package-ecosystem: github-actions
+    schedule:
+      interval: monthly
+  - directory: /
+    labels:
+      - 🌋 technical debt
+      - 🚀 update
+    package-ecosystem: npm
+    schedule:
+      interval: monthly
+  - directory: /packages/dev-image
+    labels:
+      - 🌋 technical debt
+      - 🚀 update
+    package-ecosystem: docker
+    schedule:
+      interval: monthly
+  - directory: /packages/dev-image
+    labels:
+      - 🌋 technical debt
+      - 🚀 update
+    package-ecosystem: npm
+    schedule:
+      interval: monthly
