@@ -1,6 +1,6 @@
 <div align="center">
   <p>
-    <img alt="Logo" src="badge.svg" width="192">
+    <img alt="Logo" src="citizen-logo.svg" width="192">
   </p>
   <p>
     <b>Spear AI Code Citizen</b>
@@ -140,7 +140,7 @@ These comments often generate Website docs, CLI arguments, etc.
 @dataclass
 class FetchBananasResponse
     """The API response for fetching bananas."""
-    
+
     banana_list: List[Banana]
     """A list of varying length bananas."""
 
@@ -161,20 +161,20 @@ class Banana:
 # ✓ Good
 speed = … #  Meters per hour
 time = … #  Minutes
-distance = speed / (time / 60) # Meters 
+distance = speed / (time / 60) # Meters
 ```
 
 ```py
 # ✗ Bad
 
 #  Meters per hour
-speed = … 
+speed = …
 
 #  Minutes
-time = … 
+time = …
 
 # Hours
-distance = speed / (time / 60) 
+distance = speed / (time / 60)
 ```
 
 ## Variables
@@ -489,7 +489,7 @@ if was_suspended and not is_suspended:
 
 Don’t pluralize collections. Instead, specify the collection type.
 
-Some object names are already plural. Therefore, it’s impossible to name a collection of those objects.  
+Some object names are already plural. Therefore, it’s impossible to name a collection of those objects.
 Moreover, [Uncountable nouns](https://en.wikipedia.org/wiki/Mass_noun) can’t be pluralized.
 
 Specifying the collection type also clarifies which operations are allowed.
@@ -563,7 +563,7 @@ const successRgbColorCode = 'rgb(41, 124, 59)';
 const failureRgbColorCode = 'rgb(202, 50, 20)';
 ```
 
-*Exception: A library requires another format.*  
+*Exception: A library requires another format.*
 *Exception: Manipulation is easier in another format. (e.g. HSL)*
 
 #### 4.b. DO use longhand hex color codes
