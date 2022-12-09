@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/devcontainers/base:1.0.2-jammy
 
-# # Ensure an exit code is returned when part of a piped command fails
+# Ensure an exit code is returned when part of a piped command fails
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Set home and current working directory
