@@ -1,35 +1,30 @@
-FROM ubuntu:22.10
+FROM mcr.microsoft.com/devcontainers/base:1.0.2-jammy
 
-# Ensure an exit code is returned when part of a piped command fails
+# # Ensure an exit code is returned when part of a piped command fails
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Set home and current working directory
-ENV HOME /home
+ENV HOME /root
 WORKDIR $HOME
 
 # Update and install the latest APT developer packages
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install --no-install-recommends -y \
   build-essential=12.9ubuntu3 \
-  ca-certificates=20211016ubuntu0.22.10.1 \
-  curl=7.85.0-1ubuntu0.1 \
-  direnv=2.32.1-1 \
-  git=1:2.37.2-1ubuntu1.1 \
+  direnv=2.25.2-2 \
   libbz2-dev=1.0.8-5build1 \
   libffi-dev=3.4.2-4 \
-  liblzma-dev=5.2.5-2.1 \
-  libncurses5-dev=6.3+20220423-2 \
-  libncursesw5-dev=6.3+20220423-2 \
-  libreadline-dev=8.2-1 \
-  libsqlite3-dev=3.39.3-1 \
-  libssl-dev=3.0.5-2ubuntu2 \
+  liblzma-dev=5.2.5-2ubuntu1 \
+  libncurses5-dev=6.3-2 \
+  libncursesw5-dev=6.3-2 \
+  libreadline-dev=8.1.2-1 \
+  libsqlite3-dev=3.37.2-2ubuntu0.1 \
+  libssl-dev=3.0.2-0ubuntu1.7 \
   make=4.3-4.1build1 \
   tk-dev=8.6.11+1build2 \
-  unzip=6.0-27ubuntu1 \
-  vim=2:9.0.0242-1ubuntu1 \
-  wget=1.21.3-1ubuntu1 \
-  xz-utils=5.2.5-2.1 \
-  zlib1g-dev=1:1.2.11.dfsg-4.1ubuntu1 \
+  vim=2:8.2.3995-1ubuntu2.1 \
+  xz-utils=5.2.5-2ubuntu1 \
+  zlib1g-dev=1:1.2.11.dfsg-2ubuntu9.2 \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
@@ -73,8 +68,8 @@ RUN curl -LSfs https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bi
 RUN echo 'eval "$(pyenv init -)"' >> .bashrc
 
 # Preinstall Python’s oldest “Bugfix” release
-RUN pyenv install 3.10.8 \
-  && pyenv global 3.10.8
+RUN pyenv install 3.9.10 \
+  && pyenv global 3.9.10
 
 # Install Poetry
 ENV POETRY_HOME "$HOME/.poetry"
