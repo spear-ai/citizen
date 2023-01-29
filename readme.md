@@ -59,6 +59,80 @@ Developers use VSCode:
 
 **TODO:** Fill me out
 
+## Copy
+
+### 1.a. DO begin type descriptions with an indefinite article
+
+Do begin type descriptions with an *indefinite* article (“a/an”).
+
+**SQL:**
+
+```sql
+-- ✓ Good
+COMMENT ON TABLE unit IS 'A unit.';
+
+-- ✗ Bad
+COMMENT ON TABLE unit IS 'The unit.';
+```
+
+**GraphQL:**
+
+```graphql
+#  ✓ Good
+type Unit {
+  """A unit."""
+}
+
+#  ✗ Bad
+type Unit {
+  """The unit."""
+}
+```
+
+### 1.b. DO begin type property descriptions with a definite article
+
+Do begin type property descriptions with a *definite* article (“the”) when applicable.
+
+**SQL:**
+
+```sql
+-- ✓ Good
+COMMENT ON COLUMN unit.name IS 'The name of a unit.';
+
+-- ✗ Bad
+COMMENT ON COLUMN unit.name IS 'A name of a unit.';
+```
+
+**GraphQL:**
+
+```graphql
+#  ✓ Good
+type Unit {
+  name: String
+  """The name of a unit."""
+}
+
+#  ✗ Bad
+type Unit {
+  name: String
+  """A name of a unit."""
+}
+```
+
+**python:**
+
+```py
+# ✓ Good
+class Unit:
+    name: str  # The name of a unit.
+
+# ✗ Bad
+class Unit:
+    name: str  # A name of a unit.
+```
+
+### 2.a. DO communicate intent
+
 ## Comments
 
 ### 2.a. DO communicate intent
