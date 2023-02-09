@@ -25,6 +25,13 @@ updates:
     labels:
       - 🌋 technical debt
       - 🚀 update
+    package-ecosystem: docker
+    schedule:
+      interval: monthly
+  - directory: /packages/npm-package-json-lint-config
+    labels:
+      - 🌋 technical debt
+      - 🚀 update
     package-ecosystem: npm
     schedule:
       interval: monthly

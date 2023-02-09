@@ -39,5 +39,6 @@
     "test:ubuntu": "docker run -it spear-ai/dev-image lsb_release -a | grep 22.04.1",
     "test:vim": "docker run -it spear-ai/dev-image vim --version | grep 8.2.3995",
     "test:yarn": "echo 'TODO: Figure out how to run `fnm` deterministically in order to test Yarn. See: https://github.com/Schniz/fnm/issues/838'"
-  }
+  },
+  "private": true
 }

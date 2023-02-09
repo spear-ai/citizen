@@ -16,6 +16,10 @@
     {
       "name": "spear-ai/dev-image",
       "path": "packages/dev-image"
+    },
+    {
+      "name": "spear-ai/npm-package-json-lint-config",
+      "path": "packages/npm-package-json-lint-config"
     }
   ],
   "settings": {
