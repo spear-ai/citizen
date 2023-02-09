@@ -18,6 +18,7 @@ jobs:
         with:
           cache: yarn
           node-version-file: .node-version
+          registry-url: https://npm.pkg.github.com
       - name: Install Node.js dependencies
         run: yarn install --immutable --immutable-cache
       - name: Run Changesets — Create pull request or publish package
