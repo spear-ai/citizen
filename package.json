@@ -13,15 +13,19 @@
     "url": "https://github.com/spear-ai/citizen.git"
   },
   "private": true,
+  "scripts": {
+    "update": "yarn upgrade-interactive"
+  },
   "dependencies": {
-    "@changesets/changelog-github": "0.4.7",
-    "@changesets/cli": "2.25.2",
-    "@commitlint/cli": "17.3.0",
-    "@commitlint/config-conventional": "17.3.0",
-    "commitlint": "17.3.0",
-    "husky": "8.0.2"
+    "@changesets/changelog-github": "0.4.8",
+    "@changesets/cli": "2.26.0",
+    "@commitlint/cli": "17.4.2",
+    "@commitlint/config-conventional": "17.4.2",
+    "commitlint": "17.4.2",
+    "husky": "8.0.3"
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "packageManager": "yarn@3.4.1"
 }
