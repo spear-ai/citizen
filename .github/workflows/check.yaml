@@ -1,0 +1,32 @@
+name: Checks
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+  push:
+    branches:
+      - main
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3.1.0
+        with:
+          token: ${{ secrets.GH_PAT }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          cache: yarn
+          node-version-file: .node-version
+      - name: Install Node.js dependencies
+        run: yarn install --check-cache --immutable --immutable-cache
+      - name: Build `npm-package-json-lint-config` package
+        run: yarn workspace @spear-ai/npm-package-json-lint-config build
+      - name: Check `npm-package-json-lint-config` package
+        run: yarn workspace @spear-ai/npm-package-json-lint-config check
