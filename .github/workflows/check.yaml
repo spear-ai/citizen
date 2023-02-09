@@ -30,5 +30,3 @@ jobs:
         run: yarn workspace @spear-ai/npm-package-json-lint-config build
       - name: Check `npm-package-json-lint-config` package
         run: yarn workspace @spear-ai/npm-package-json-lint-config check
-      - name: Publish Node.js packages
-        run: yarn changeset publish
