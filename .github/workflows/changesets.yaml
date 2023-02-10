@@ -20,6 +20,8 @@ jobs:
           node-version-file: .node-version
       - name: Install Node.js dependencies
         run: yarn install
+      - name: Build `npm-package-json-lint-config` package
+        run: yarn workspace @spear-ai/npm-package-json-lint-config build
       - name: Authenticate with NPM
         run: npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
         env:
