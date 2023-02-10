@@ -15,8 +15,6 @@ jobs:
           token: ${{ secrets.GH_PAT }}
       - name: Setup Node.js
         uses: actions/setup-node@v3
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           cache: yarn
           node-version-file: .node-version
@@ -26,6 +24,7 @@ jobs:
         uses: changesets/action@v1.4.1
         id: changesets
         env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           YARN_NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           commit: "ci: bump versions"
