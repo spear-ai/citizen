@@ -20,15 +20,13 @@ jobs:
         with:
           cache: yarn
           node-version-file: .node-version
-          registry-url: https://npm.pkg.github.com
-          scope: "@spear-ai"
       - name: Install Node.js dependencies
         run: yarn install --check-cache --immutable --immutable-cache && ls && cat .npmrc
       - name: Run Changesets — Create pull request or publish package
         uses: changesets/action@v1.4.1
         id: changesets
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           commit: "ci: bump versions"
           publish: yarn changeset publish

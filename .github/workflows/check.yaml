@@ -19,8 +19,6 @@ jobs:
           token: ${{ secrets.GH_PAT }}
       - name: Setup Node.js
         uses: actions/setup-node@v3
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           cache: yarn
           node-version-file: .node-version
