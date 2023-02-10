@@ -1,5 +1,11 @@
 # @spear-ai/npm-package-json-lint-config
 
+## 1.0.2
+
+### Patch Changes
+
+- [#24](https://github.com/spear-ai/citizen/pull/24) [`b797678`](https://github.com/spear-ai/citizen/commit/b7976784e254be9d839207b77fd0470a022335ea) Thanks [@psirenny](https://github.com/psirenny)! - Publish to NPM and GitHub Packages registries. 🐛
+
 ## 1.0.1
 
 ### Patch Changes
