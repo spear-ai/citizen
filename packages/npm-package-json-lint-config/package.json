@@ -37,5 +37,8 @@
   },
   "peerDependencies": {
     "npm-package-json-lint": "^6.4.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
