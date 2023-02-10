@@ -1,5 +1,11 @@
 # @spear-ai/npm-package-json-lint-config
 
+## 1.0.3
+
+### Patch Changes
+
+- [#26](https://github.com/spear-ai/citizen/pull/26) [`7fb3dd4`](https://github.com/spear-ai/citizen/commit/7fb3dd4dfc7f2535edaa4a8351e3daa72e113d1b) Thanks [@psirenny](https://github.com/psirenny)! - Combine changeset publish into a single release script.
+
 ## 1.0.2
 
 ### Patch Changes
