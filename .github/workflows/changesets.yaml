@@ -35,6 +35,6 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           commit: "ci: bump versions"
-          publish: yarn changeset publish && npm_config_registry=https://npm.pkg.github.com yarn changeset publish
+          publish: yarn release
           title: "ci: bump versions"
           version: yarn changeset version

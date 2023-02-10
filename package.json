@@ -16,6 +16,7 @@
   "scripts": {
     "github-actions:push": "act push -s GH_PAT=$GH_PAT -s GITHUB_TOKEN=$GH_PAT -s NPM_TOKEN=$NPM_TOKEN",
     "github-actions:push:release-tag": "act push -e .github/test-events/push-release-tag.json -s GH_PAT=$GH_PAT -s GITHUB_TOKEN=$GH_PAT",
+    "release": "changeset publish && npm_config_registry=https://npm.pkg.github.com changeset publish",
     "update": "yarn upgrade-interactive"
   },
   "dependencies": {
