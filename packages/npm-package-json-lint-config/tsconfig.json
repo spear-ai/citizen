@@ -18,5 +18,10 @@
     "target": "ESNext"
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.cjs", "**/*.js", "**/*.ts", "types"]
+  "include": [
+    "**/*.cjs",
+    "**/*.js",
+    "**/*.ts",
+    "types"
+  ]
 }

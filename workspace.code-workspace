@@ -1,9 +1,12 @@
 {
   "extensions": {
     "recommendations": [
+      "bungcip.better-toml",
+      "dbaeumer.vscode-eslint",
       "ms-azuretools.vscode-docker",
       "sleistner.vscode-fileutils",
       "tyriar.sort-lines",
+      "wix.vscode-import-cost",
       "yzhang.markdown-all-in-one"
     ],
     "unwantedRecommendations": []
@@ -12,6 +15,10 @@
     {
       "name": "spear-ai/citizen",
       "path": "."
+    },
+    {
+      "name": "spear-ai/eslint-config",
+      "path": "packages/eslint-config"
     },
     {
       "name": "spear-ai/dev-image",
@@ -26,11 +33,31 @@
     "[json]": {
       "editor.tabSize": 2
     },
+    "[toml]": {
+      "editor.tabSize": 2
+    },
+    "[yaml]": {
+      "editor.tabSize": 2
+    },
     "editor.autoClosingQuotes": "always",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    },
     "editor.formatOnSave": true,
     "editor.quickSuggestions": {
       "strings": true
     },
+    "eslint.experimental.useFlatConfig": true,
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "json",
+      "jsonc",
+      "toml",
+      "typescript",
+      "typescriptreact",
+      "yaml"
+    ],
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true

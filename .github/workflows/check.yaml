@@ -1,8 +1,6 @@
 name: Checks
 on:
   pull_request:
-    branches:
-      - main
     types:
       - opened
       - synchronize
@@ -11,20 +9,30 @@ on:
       - main
 jobs:
   checks:
+    name: Build and Check
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.3.0
         with:
+          fetch-depth: 2
           token: ${{ secrets.GH_PAT }}
+      - name: Cache Turborepo tasks
+        uses: actions/cache@v3.2.5
+        with:
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          path: .turbo
+          restore-keys: |
+            ${{ runner.os }}-turbo-
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v3.6.0
         with:
           cache: yarn
           node-version-file: .node-version
       - name: Install Node.js dependencies
-        run: yarn install --check-cache --immutable --immutable-cache
-      - name: Build `npm-package-json-lint-config` package
-        run: yarn workspace @spear-ai/npm-package-json-lint-config build
-      - name: Check `npm-package-json-lint-config` package
-        run: yarn workspace @spear-ai/npm-package-json-lint-config check
+        run: yarn install
+      - name: Build
+        run: yarn build
+      - name: Check
+        run: yarn check

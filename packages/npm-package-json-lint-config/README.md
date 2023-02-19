@@ -10,10 +10,12 @@ yarn add -D npm-package-json-lint @spear-ai/npm-package-json-lint-config
 
 ## Usage
 
-Add the following to your .npmpackagejsonlintrc.json file:
+Add the following to your `npmpackagejsonlint.config.cjs` file:
 
-```json
-{
-  "extends": "@spear-ai/npm-package-json-lint-config/base"
+```js
+const npmPackageJsonLintConfig = {
+  extends: ['@spear-ai/npm-package-json-lint-config/spear-library'],
 }
+
+module.exports = npmPackageJsonLintConfig;
 ```
