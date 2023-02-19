@@ -2,43 +2,43 @@
   "name": "@spear-ai/dev-image",
   "version": "1.1.0",
   "description": "Spear AI Docker dev image",
-  "license": "MIT",
   "author": {
     "name": "Spear AI",
     "email": "org@spear.ai",
     "url": "https://spear.ai"
   },
+  "devDependencies": {
+    "shx": "0.3.4"
+  },
+  "license": "MIT",
+  "private": true,
   "repository": {
     "directory": "packages/dev-image",
     "type": "git",
     "url": "https://github.com/spear-ai/citizen.git"
   },
-  "devDependencies": {
-    "shx": "0.3.4"
-  },
   "scripts": {
-    "build": "yarn run build:docker:build && yarn run build:docker:save",
-    "build:docker:build": "docker buildx build --tag spear-ai/dev-image:latest .",
-    "build:docker:save": "shx mkdir -p dist && shx rm -f dist/docker-image.tar.gz && docker save spear-ai/dev-image --output dist/docker-image.tar.gz",
-    "check": "yarn run lint && yarn run test",
-    "dev": "yarn run build && yarn run start",
-    "lint": "yarn run lint:docker",
-    "lint:docker": "docker run --rm -i hadolint/hadolint < Dockerfile",
-    "start": "docker run -it spear-ai/dev-image",
+    "dev": "yarn run unstable:build && yarn run start",
+    "start": "docker run spear-ai/dev-image",
     "test": "yarn run test:direnv && yarn run test:docker && yarn run test:docker-compose && yarn run test:git && yarn run test:fnm && yarn run test:node && yarn run test:ubuntu && yarn run test:yarn && yarn run test:pyenv && yarn run test:python && yarn run test:poetry && yarn run test:pulumi && yarn run test:vim",
-    "test:direnv": "docker run -it spear-ai/dev-image direnv --version | grep 2.25.2",
-    "test:docker": "docker run -it spear-ai/dev-image docker --version | grep 20.10.21",
-    "test:docker-compose": "docker run -it spear-ai/dev-image docker-compose --version | grep 2.14.0",
-    "test:fnm": "docker run -it spear-ai/dev-image fnm --version | grep 1.33.1",
-    "test:git": "docker run -it spear-ai/dev-image git --version | grep 2.34.1",
-    "test:node": "docker run -it spear-ai/dev-image fnm list | grep 18.12.1",
-    "test:poetry": "docker run -it spear-ai/dev-image poetry --version | grep 1.2.2",
-    "test:pulumi": "docker run -it spear-ai/dev-image pulumi version | grep 3.48.0",
-    "test:pyenv": "docker run -it spear-ai/dev-image pyenv --version | grep 2.3.7",
-    "test:python": "docker run -it spear-ai/dev-image python --version | grep 3.9.10",
-    "test:ubuntu": "docker run -it spear-ai/dev-image lsb_release -a | grep 22.04.1",
-    "test:vim": "docker run -it spear-ai/dev-image vim --version | grep 8.2.3995",
-    "test:yarn": "echo 'TODO: Figure out how to run `fnm` deterministically in order to test Yarn. See: https://github.com/Schniz/fnm/issues/838'"
-  },
-  "private": true
+    "test:direnv": "docker run spear-ai/dev-image direnv --version | grep 2.25.2",
+    "test:docker": "docker run spear-ai/dev-image docker --version | grep 20.10.21",
+    "test:docker-compose": "docker run spear-ai/dev-image docker-compose --version | grep 2.14.0",
+    "test:fnm": "docker run spear-ai/dev-image fnm --version | grep 1.33.1",
+    "test:git": "docker run spear-ai/dev-image git --version | grep 2.34.1",
+    "test:node": "docker run spear-ai/dev-image fnm list | grep 18.12.1",
+    "test:poetry": "docker run spear-ai/dev-image poetry --version | grep 1.2.2",
+    "test:pulumi": "docker run spear-ai/dev-image pulumi version | grep 3.48.0",
+    "test:pyenv": "docker run spear-ai/dev-image pyenv --version | grep 2.3.7",
+    "test:python": "docker run spear-ai/dev-image python --version | grep 3.9.10",
+    "test:ubuntu": "docker run spear-ai/dev-image lsb_release -a | grep 22.04.1",
+    "test:vim": "docker run spear-ai/dev-image vim --version | grep 8.2.3995",
+    "test:yarn": "echo 'TODO: Figure out how to run `fnm` deterministically in order to test Yarn. See: https://github.com/Schniz/fnm/issues/838'",
+    "unstable:build": "yarn run unstable:build:docker:unstable:build && yarn run unstable:build:docker:save",
+    "unstable:build:docker:save": "shx mkdir -p dist && shx rm -f dist/docker-image.tar.gz && docker save spear-ai/dev-image --output dist/docker-image.tar.gz",
+    "unstable:build:docker:unstable:build": "docker unstable:buildx unstable:build --tag spear-ai/dev-image:latest .",
+    "unstable:check": "yarn run unstable:lint && yarn run test",
+    "unstable:lint": "yarn run unstable:lint:docker",
+    "unstable:lint:docker": "docker run --rm hadounstable:lint/hadounstable:lint < Dockerfile"
+  }
 }

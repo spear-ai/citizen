@@ -1,0 +1,82 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "//#root:check": {},
+    "//#root:check-yarn-cache": {
+      "inputs": [
+        ".yarn/cache",
+        "yarn.lock"
+      ]
+    },
+    "//#root:fix": {
+      "dependsOn": ["^build"]
+    },
+    "//#root:lint:eslint": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        "**/*.code-workspace",
+        "**/*.cjs",
+        "**/*.js",
+        "**/*.json",
+        "**/*.json5",
+        "**/*.jsonc",
+        "**/*.mjs",
+        "**/*.toml",
+        "**/*.ts",
+        "**/*.yaml",
+        "**/*.yml",
+        "eslint.config.js",
+        "tsconfig.json"
+      ]
+    },
+    "//#root:lint:npm": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        ".npmpackagejsonlintignore",
+        "npmpackagejsonlint.config.cjs",
+        "package.json"
+      ]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["build", "dist"]
+    },
+    "check": {
+      "dependsOn": ["^build"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "fix": {
+      "cache": false,
+      "dependsOn": ["^build"]
+    },
+    "lint:eslint": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        "**/*.code-workspace",
+        "**/*.cjs",
+        "**/*.js",
+        "**/*.json",
+        "**/*.json5",
+        "**/*.jsonc",
+        "**/*.mjs",
+        "**/*.toml",
+        "**/*.ts",
+        "**/*.yaml",
+        "**/*.yml",
+        "eslint.config.js",
+        "tsconfig.json"
+      ]
+    },
+    "lint:npm": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        ".npmpackagejsonlintignore",
+        "npmpackagejsonlint.config.cjs",
+        "package.json"
+      ]
+    }
+  }
+}

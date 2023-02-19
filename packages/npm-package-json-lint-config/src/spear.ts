@@ -1,11 +1,11 @@
-import baseNpmPackageJsonLintConfig from './base';
+import baseNpmPackageJsonLintConfig from "./base";
 
 const npmPackageJsonLintConfig = {
   ...baseNpmPackageJsonLintConfig,
   rules: {
-    'valid-values-author': ['error', ['Spear AI']],
-    'valid-values-name-scope': ['error', ['@spear-ai']],
+    "valid-values-author": ["error", ["Spear AI"]],
+    "valid-values-name-scope": ["error", ["@spear-ai"]],
   },
-}
+};
 
 export default npmPackageJsonLintConfig;
