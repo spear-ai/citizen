@@ -18,12 +18,6 @@ updates:
     package-ecosystem: docker
     schedule:
       interval: monthly
-  - directory: /packages/dev-image
-    labels:
-      - 🌋 technical debt
-    package-ecosystem: docker
-    schedule:
-      interval: monthly
   - directory: /packages/eslint-config
     labels:
       - 🌋 technical debt
