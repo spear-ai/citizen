@@ -36,7 +36,7 @@
     "publish-packages": "yarn publish-packages:npm && yarn publish-packages:github",
     "publish-packages:github": "npm_config_registry=https://npm.pkg.github.com changeset publish",
     "publish-packages:npm": "changeset publish",
-    "release": "turbo run build check && turbo run publish-packages",
+    "release": "turbo run build check && yarn publish-packages",
     "root:check-yarn-cache": "yarn install --check-cache --immutable --immutable-cache",
     "root:fix": "yarn root:lint:eslint --fix",
     "root:lint:eslint": "eslint --max-warnings 0 .",
