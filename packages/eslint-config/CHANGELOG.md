@@ -1,5 +1,11 @@
 # @spear-ai/eslint-config
 
+## 1.0.2
+
+### Patch Changes
+
+- [#34](https://github.com/spear-ai/citizen/pull/34) [`e28bd25`](https://github.com/spear-ai/citizen/commit/e28bd2576be0e59a3db65c712b1e2da3d5a85211) Thanks [@psirenny](https://github.com/psirenny)! - Fix publish packages script. 🐛
+
 ## 1.0.1
 
 ### Patch Changes
