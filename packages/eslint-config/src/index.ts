@@ -44,6 +44,13 @@ export const defaultKeyOrder = [
   },
 ];
 
+export const defaultIgnoreFileList = [
+  "**/.yarn/**",
+  "**/build",
+  "**/dist",
+  "**/node_modules",
+];
+
 export const githubWorkflowKeyOrder = [
   "if",
   ...baseKeyOrder,
@@ -99,6 +106,7 @@ export const allowedAbbreviations = {
 export const eslintConfig: Linter.FlatConfig[] = [
   {
     files: jsonFileList,
+    ignores: [...defaultIgnoreFileList, "package-lock.json"],
     languageOptions: {
       // @ts-ignore
       parser: jsoncParser,
@@ -114,6 +122,7 @@ export const eslintConfig: Linter.FlatConfig[] = [
   },
   {
     files: json5FileList,
+    ignores: defaultIgnoreFileList,
     languageOptions: {
       // @ts-ignore
       parser: jsoncParser,
@@ -129,6 +138,7 @@ export const eslintConfig: Linter.FlatConfig[] = [
   },
   {
     files: jsoncFileList,
+    ignores: defaultIgnoreFileList,
     languageOptions: {
       // @ts-ignore
       parser: jsoncParser,
@@ -144,6 +154,7 @@ export const eslintConfig: Linter.FlatConfig[] = [
   },
   {
     files: ["**/*.toml"],
+    ignores: defaultIgnoreFileList,
     languageOptions: {
       // @ts-ignore
       parser: tomlParser,
@@ -161,6 +172,7 @@ export const eslintConfig: Linter.FlatConfig[] = [
   },
   {
     files: ["**/*.yaml", "**/*.yml"],
+    ignores: defaultIgnoreFileList,
     languageOptions: {
       // @ts-ignore
       parser: yamlParser,
@@ -188,7 +200,7 @@ export const eslintConfig: Linter.FlatConfig[] = [
       "**/.github/workflows/*.yaml",
       "**/.github/workflows/*.yml",
     ],
-    ignores: ["**/*.yarnrc.yml"],
+    ignores: [...defaultIgnoreFileList, "**/*.yarnrc.yml"],
     rules: {
       "yml/sort-keys": ["error", {
         order: githubWorkflowKeyOrder,
@@ -198,7 +210,7 @@ export const eslintConfig: Linter.FlatConfig[] = [
   },
   {
     files: ["**/*.yaml", "**/*.yml"],
-    ignores: ["**/*.yarnrc.yml"],
+    ignores: [...defaultIgnoreFileList, "**/*.yarnrc.yml"],
     rules: {
       "yml/file-extension": ["error"],
     },
@@ -214,6 +226,7 @@ export const eslintConfig: Linter.FlatConfig[] = [
       "**/*.ts",
       "**/*.tsx",
     ],
+    ignores: defaultIgnoreFileList,
     languageOptions: {
       // @ts-ignore
       parser: typescriptParser,

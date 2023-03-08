@@ -27,6 +27,10 @@
     {
       "name": "spear-ai/npm-package-json-lint-config",
       "path": "packages/npm-package-json-lint-config"
+    },
+    {
+      "name": "spear-ai/pulumi-policy-pack",
+      "path": "packages/pulumi-policy-pack"
     }
   ],
   "settings": {
