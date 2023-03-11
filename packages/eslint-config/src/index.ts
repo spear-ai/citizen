@@ -12,6 +12,7 @@ import airbnbBaseConfigStyle from "eslint-config-airbnb-base/rules/style";
 import airbnbBaseConfigVariables from "eslint-config-airbnb-base/rules/variables";
 import airbnbBaseTypescriptConfig from "eslint-config-airbnb-typescript/lib/shared";
 import arrayFuncPlugin from "eslint-plugin-array-func";
+import formatJsPlugin from "eslint-plugin-formatjs";
 import importPlugin from "eslint-plugin-import";
 import jsoncPlugin from "eslint-plugin-jsonc";
 import promisePlugin from "eslint-plugin-promise";
@@ -231,13 +232,14 @@ export const eslintConfig: Linter.FlatConfig[] = [
       // @ts-ignore
       parser: typescriptParser,
       parserOptions: {
-        project: "./tsconfig.json",
+        project: "tsconfig.json",
       },
     },
     plugins: {
       "@eslint-community/eslint-comments": eslintCommentsPlugin,
       "@typescript-eslint": typescriptPlugin,
       "array-func": arrayFuncPlugin,
+      "formatjs": formatJsPlugin,
       "import": importPlugin,
       "promise": promisePlugin,
       "regexp": regexpPlugin,
@@ -274,6 +276,13 @@ export const eslintConfig: Linter.FlatConfig[] = [
       }],
       "@typescript-eslint/quotes": ["error", "double", { avoidEscape: true }],
       "array-func/prefer-array-from": ["off"],
+      "formatjs/enforce-default-message": ["error"],
+      "formatjs/enforce-id": ["error", {
+        idInterpolationPattern: "[sha512:contenthash:base64:6]",
+      }],
+      "formatjs/enforce-placeholders": ["error"],
+      "formatjs/no-literal-string-in-jsx": ["error"],
+      "formatjs/no-multiple-whitespaces": ["error"],
       "function-paren-newline": ["off", "consistent"],
       "import/no-anonymous-default-export": ["error"],
       "import/no-default-export": ["error"],
