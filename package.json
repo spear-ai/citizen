@@ -18,7 +18,7 @@
     "eslint": "8.34.0",
     "husky": "8.0.3",
     "npm-package-json-lint": "6.4.0",
-    "turbo": "1.8.1"
+    "turbo": "1.8.3"
   },
   "license": "",
   "packageManager": "yarn@3.4.1",
