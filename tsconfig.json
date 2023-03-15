@@ -19,8 +19,14 @@
   "exclude": ["node_modules"],
   "include": [
     "**/*.cjs",
+    "**/*.cts",
     "**/*.js",
+    "**/*.jsx",
+    "**/*.jsx",
+    "**/*.mjs",
+    "**/*.mts",
     "**/*.ts",
+    "**/*.tsx",
     "types"
   ]
 }
