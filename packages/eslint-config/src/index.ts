@@ -114,6 +114,22 @@ export const allowedAbbreviations = {
   "next-env.override.d": true,
 };
 
+export const javascriptFileExtensionList = [
+  ".d.ts",
+  ".cjs",
+  ".cts",
+  ".js",
+  ".jsx",
+  ".mjs",
+  ".mts",
+  ".ts",
+  ".tsx",
+];
+
+export const javascriptFileList = javascriptFileExtensionList.map(
+  (fileExtension) => `**/*${fileExtension}`,
+);
+
 export const eslintConfig: Linter.FlatConfig[] = [
   {
     files: jsonFileList,
@@ -227,17 +243,7 @@ export const eslintConfig: Linter.FlatConfig[] = [
     },
   },
   {
-    files: [
-      "**/*.cjs",
-      "**/*.cts",
-      "**/*.d.ts",
-      "**/*.js",
-      "**/*.jsx",
-      "**/*.mjs",
-      "**/*.mts",
-      "**/*.ts",
-      "**/*.tsx",
-    ],
+    files: javascriptFileList,
     ignores: defaultIgnoreFileList,
     languageOptions: {
       // @ts-ignore
@@ -278,8 +284,6 @@ export const eslintConfig: Linter.FlatConfig[] = [
       ...airbnbConfigReact.rules,
       ...airbnbConfigReactA11y.rules,
       ...airbnbConfigReactHooks.rules,
-      ...nextPlugin.configs!.recommended.rules,
-      ...nextPlugin.configs!["core-web-vitals"].rules,
       ...typescriptPlugin.configs!.base.rules,
       ...typescriptPlugin.configs!["eslint-recommended"]!.overrides![0].rules,
       ...typescriptPlugin.configs!["recommended-requiring-type-checking"].rules,
@@ -411,9 +415,25 @@ export const eslintConfig: Linter.FlatConfig[] = [
       ...airbnbBaseConfigImports.settings,
       ...airbnbBaseTypescriptConfig.settings,
       ...airbnbConfigReact.settings,
-      ...typescriptPlugin.configs!["recommended-requiring-type-checking"].settings,
+      "import/resolver": {
+        node: {
+          extensions: [
+            ...javascriptFileExtensionList,
+            ".json",
+          ],
+        },
+      },
     },
   },
 ];
+
+export const nextEslintConfig = [{
+  files: javascriptFileList,
+  ignores: defaultIgnoreFileList,
+  rules: {
+    ...nextPlugin.configs!.recommended.rules,
+    ...nextPlugin.configs!["core-web-vitals"].rules,
+  },
+}];
 
 export default eslintConfig;
