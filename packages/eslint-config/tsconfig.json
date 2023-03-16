@@ -23,6 +23,7 @@
     "**/*.js",
     "**/*.jsx",
     "**/*.jsx",
+    "<tsconfigRootDir>//README.md/1_1.js",
     "**/*.mjs",
     "**/*.mts",
     "**/*.ts",

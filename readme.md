@@ -70,7 +70,9 @@ Do begin type descriptions with an *indefinite* article (“a/an”).
 ```sql
 -- ✓ Good
 COMMENT ON TABLE unit IS 'A unit.';
+```
 
+```sql
 -- ✗ Bad
 COMMENT ON TABLE unit IS 'The unit.';
 ```
@@ -78,12 +80,14 @@ COMMENT ON TABLE unit IS 'The unit.';
 **GraphQL:**
 
 ```graphql
-#  ✓ Good
+# ✓ Good
 type Unit {
   """A unit."""
 }
+```
 
-#  ✗ Bad
+```graphql
+# ✗ Bad
 type Unit {
   """The unit."""
 }
@@ -98,7 +102,9 @@ Do begin type property descriptions with a *definite* article (“the”) when a
 ```sql
 -- ✓ Good
 COMMENT ON COLUMN unit.name IS 'The name of a unit.';
+```
 
+```sql
 -- ✗ Bad
 COMMENT ON COLUMN unit.name IS 'A name of a unit.';
 ```
@@ -111,7 +117,9 @@ type Unit {
   name: String
   """The name of a unit."""
 }
+```
 
+```graphql
 #  ✗ Bad
 type Unit {
   name: String
@@ -125,7 +133,9 @@ type Unit {
 # ✓ Good
 class Unit:
     name: str  # The name of a unit.
+```
 
+```py
 # ✗ Bad
 class Unit:
     name: str  # A name of a unit.
@@ -151,7 +161,7 @@ Do show examples when possible.
 //
 // (“Zumwalt-class destroyer”, 3) → “Unit:ZumwaltClassDestroyer:3”
 // (“Leopard 2A7”, 5) → “Unit:Leopard2a7:5”
-const getUnitId(name: string, index: number) => (
+const getUnitId = (name: string, index: number) => (
   `Unit:${pascalCase(name)}:${index}`
 );
 ```
@@ -166,7 +176,9 @@ Do use [sentence case](https://apastyle.apa.org/style-grammar-guidelines/capital
 #  ✓ Good
 #  Use Manhattan distance because it performs better on high dimensional data
 distance = scipy.spatial.distance.cdist(tensor_a, tensor_b, metric='cityblock')
+```
 
+```py
 #  ✗ Bad
 #  use manhattan distance because it performs better on high dimensional data
 distance = scipy.spatial.distance.cdist(tensor_a, tensor_b, metric='cityblock')
@@ -177,11 +189,13 @@ distance = scipy.spatial.distance.cdist(tensor_a, tensor_b, metric='cityblock')
 ```ts
 // ✓ Good
 // Choose a background color that matches the sky
-const backgroundColor = '#2ebde5'; // Azure
+const backgroundColor = "#2ebde5"; // Azure
+```
 
+```ts
 // ✗ Bad
 // choose a background color that matches the sky
-const backgroundColor = '#2ebde5'; // azure
+const backgroundColor = "#2ebde5"; // azure
 ```
 
 ### 2.d. DO punctuate multi-line comments
@@ -194,7 +208,9 @@ Do use punctuation on multi-line comments.
 #  ✓ Good
 #  Lorem ipsum dolor sit amet. Consectetur adipiscing elit.
 placeholder_text = …
+```
 
+```py
 #  ✗ Bad
 #  Lorem ipsum dolor sit amet. Consectetur adipiscing elit
 placeholder_text = …
@@ -235,20 +251,7 @@ class Banana:
 # ✓ Good
 speed = … #  Meters per hour
 time = … #  Minutes
-distance = speed / (time / 60) # Meters
-```
-
-```py
-# ✗ Bad
-
-#  Meters per hour
-speed = …
-
-#  Minutes
-time = …
-
-# Hours
-distance = speed / (time / 60)
+distance = speed / (time / 60) #  Meters
 ```
 
 ## Variables
@@ -288,11 +291,13 @@ const boundingBox = [0, 0, 10, 10];
 Do favor readability to brevity.
 
 ```py
-# ✓ Good
+#  ✓ Good
 docker_image = "huggingface/transformers-pytorch-gpu"
 ec2_instance_type = "p3.8xlarge"
+```
 
-# ✗ Bad
+```py
+#  ✗ Bad
 image = "huggingface/transformers-pytorch-gpu"
 type = "p3.8xlarge"
 ```
@@ -302,11 +307,13 @@ type = "p3.8xlarge"
 Do group related variables with a prefix.
 
 ```py
-# ✓ Good
+#  ✓ Good
 cnn_kernel = (3, 3)
 cnn_stride = (1, 1)
 learning_rate = 1e-05
+```
 
+```py
 # ✗ Bad
 kernel = (3, 3)
 stride = (1, 1)
@@ -321,7 +328,9 @@ Do insert a space before postfixes and after prefixes.
 # ✓ Good
 hidden_layer_0 = "…"
 hidden_layer_1 = "…"
+```
 
+```py
 # ✗ Bad
 hidden_layer0 = "…"
 hidden_layer1 = "…"
@@ -329,12 +338,14 @@ hidden_layer1 = "…"
 
 ```ts
 // ✓ Good
-const userName = '…';
-const userPassword = '…';
+const userName = "…";
+const userPassword = "…";
+```
 
+```ts
 // ✗ Bad
-const username = '…';
-const userPassword = '…';
+const username = "…";
+const userPassword = "…";
 ```
 
 ### 3.e. DON’T use abbreviations
@@ -346,7 +357,9 @@ They must also be be learned and memorized.
 # ✓ Good
 directory = "data/units"
 unit_direction = "NORTH"
+```
 
+```py
 # ✗ Bad
 dir = "data/units"
 unit_dir = "NORTH"
@@ -356,7 +369,9 @@ unit_dir = "NORTH"
 # ✓ Good
 result, error = action()
 response = request()
+```
 
+```py
 # ✗ Bad
 res, err = action()
 res = req()
@@ -366,7 +381,9 @@ res = req()
 # ✓ Good
 sagemaker = SageMaker()
 hyperparameters = {…}
+```
 
+```py
 # ✗ Bad
 sm = SageMaker()
 hparams = {…}
@@ -381,7 +398,9 @@ Moreover, the words they represent are often unknown; so must be learned and mem
 # ✓ Good
 nato_classification = "cosmic"
 radar_range = 1_700_150  # meters
+```
 
+```py
 # ✗ Bad
 north_atlantic_treaty_organization_classification = "cosmic"
 radio_detection_and_ranging_range = 1_700_150  # meters
@@ -391,7 +410,9 @@ radio_detection_and_ranging_range = 1_700_150  # meters
 # ✓ Good
 s3_bucket = "secret-stuff"
 website_url = "https://spear.ai"
+```
 
+```py
 # ✗ Bad
 simple_storage_service_bucket = "secret-stuff"
 website_uniform_resource_locator = "https://spear.ai"
@@ -406,7 +427,9 @@ They’re *not* well known; so must be learned and memorized.
 # ✓ Good
 aerial_unit_direction = (0.8, 0.45)
 aerial_unit_speed = 329
+```
 
+```py
 # ✗ Bad
 au_direction = (0.8, 0.45)
 au_speed = 329
@@ -416,7 +439,9 @@ au_speed = 329
 # ✓ Good
 rcn_has_attention = True
 rcn_hidden_layer_size = 40
+```
 
+```py
 # ✗ Bad
 really_cool_network_has_attention = True
 really_cool_network_hidden_layer_size = 40
@@ -432,7 +457,9 @@ Do add type hints. Many names are ambiguous and can be confused for booleans, da
 # ✓ Good
 created_date = "1776-07-04T04:56:02.000Z"
 was_published = True
+```
 
+```py
 # ✗ Bad
 created = "1776-07-04T04:56:02.000Z"
 published = True
@@ -442,11 +469,13 @@ published = True
 
 ```ts
 // ✓ Good
-fileBuffer = await fs.readFile(…);
+fileBuffer = await fs.readFile("…");
 isLoaded = false;
+```
 
+```ts
 // ✗ Bad
-file = await fs.readFile(…);
+file = await fs.readFile("…");
 loaded = false;
 ```
 
@@ -459,15 +488,15 @@ Do differentiate types. It’s hard to switch between contexts when variable nam
 url = "https://spear.ai"
 parsed_url = urlparse("https://spear.ai")
 
-# ✗ Bad
-url = "https://spear.ai"
-url = urlparse("https://spear.ai")
-```
-
-```py
 # ✓ Good
 agent_id = "10"
 agent = Agent(id="10", type=Tiger)
+```
+
+```py
+# ✗ Bad
+url = "https://spear.ai"
+url = urlparse("https://spear.ai")
 
 # ✗ Bad
 agent = "10"
@@ -488,7 +517,9 @@ Reasons:
 # ✓ Good
 age = 21
 confidence = 0.9
+```
 
+```py
 # ✗ Bad
 age_int = 21
 confidence_float = 0.9
@@ -497,11 +528,13 @@ confidence_float = 0.9
 ```ts
 // ✓ Good
 const balance = BigInt(7_301_985);
-const mask = Uint8Array();
+const mask = new Uint8Array();
+```
 
+```ts
 // ✗ Bad
 const bigIntBalance = BigInt(7_301_985);
-const maskUint8Array = Uint8Array();
+const maskUint8Array = new Uint8Array();
 ```
 
 ### 3.k. DO use boolean verbs
@@ -513,7 +546,9 @@ Do use appropriate boolean verbs.
 can_delete = True
 has_feature = True
 should_reset = True
+```
 
+```py
 # ✗ Bad
 is_deletable = True
 features = True
@@ -530,7 +565,9 @@ Do be positive with boolean variables.
 # ✓ Good
 is_enabled = True
 is_visible = False
+```
 
+```py
 # ✗ Bad
 is_disabled = False
 is_not_visible = True
@@ -542,12 +579,14 @@ is_not_visible = True
 // ✓ Good
 <Tab isActive>
   Click me
-</Tab>
+</Tab>;
+```
 
+```tsx
 // ✗ Bad
 <Tab isInactive={false}>
   Click me
-</Tab>
+</Tab>;
 ```
 
 ### 3.m. DO use correct tense
@@ -574,26 +613,24 @@ For example, a `List` can be appended or prepended to. Whereas, a `Set` can be a
 equipment_list = [{…}, {…}, …, {…}]
 equipment = equipment_list[0]
 
-# ✗ Bad
-equipment = [{…}, {…}, …, {…}]
-equipment = equipment[0]
-```
-
-```py
 # ✓ Good
 settings_map = {"0": {…}, "1": {…}, …, "n": {…}]
 settings = settings_map["0"]
 
-# ✗ Bad
-settings = {"0": {…}, "1": {…}, …, "n": {…}]
-settings = settings["0"]
-```
-
-```py
 # ✓ Good
 id_list = ["0", "1", "2", "0"]
 id_list.append("2")
 id_set = set(id_list)
+```
+
+```py
+# ✗ Bad
+equipment = [{…}, {…}, …, {…}]
+equipment = equipment[0]
+
+# ✗ Bad
+settings = {"0": {…}, "1": {…}, …, "n": {…}]
+settings = settings["0"]
 
 # ✗ Bad
 ids = ["0", "1", "2", "0"]
@@ -605,7 +642,9 @@ distinct_ids = set(ids)
 # ✓ Good
 curl https://api.spear.ai/user
 curl https://api.spear.ai/user/5
+```
 
+```console
 # ✗ Bad
 curl https://api.spear.ai/users
 curl https://api.spear.ai/users/5
@@ -613,12 +652,14 @@ curl https://api.spear.ai/users/5
 
 ```sql
 -- ✓ Good
-SELECT * FROM Person
-SELECT * FROM PersonAddress
+SELECT * FROM person
+SELECT * FROM person_address
+```
 
+```sql
 -- ✗ Bad
-SELECT * FROM People
-SELECT * FROM PeopleAddresses
+SELECT * FROM people
+SELECT * FROM people_addresses
 ```
 
 ## Data formats
@@ -629,12 +670,14 @@ SELECT * FROM PeopleAddresses
 
 ```ts
 // ✓ Good
-const successHexColorCode = '#297c3b';
-const failureHexColorCode = '#ca3214';
+const successHexColorCode = "#297c3b";
+const failureHexColorCode = "#ca3214";
+```
 
+```ts
 // ✗ Bad
-const successRgbColorCode = 'rgb(41, 124, 59)';
-const failureRgbColorCode = 'rgb(202, 50, 20)';
+const successRgbColorCode = "rgb(41, 124, 59)";
+const failureRgbColorCode = "rgb(202, 50, 20)";
 ```
 
 *Exception: A library requires another format.*
@@ -644,24 +687,28 @@ const failureRgbColorCode = 'rgb(202, 50, 20)';
 
 ```ts
 // ✓ Good
-const color = '#ff0000';
-const colorAlpha = '#ff0000ff';
+const color = "#ff0000";
+const colorAlpha = "#ff0000ff";
+```
 
+```ts
 // ✗ Bad
-const color = '#f00';
-const colorAlpha = '#f00f';
+const color = "#f00";
+const colorAlpha = "#f00f";
 ```
 
 #### 4.c. DO use lowercase hex color codes
 
 ```ts
 // ✓ Good
-const backgroundColor = '#edf6ff';
-const foregroundColor = '#006adc';
+const backgroundColor = "#edf6ff";
+const foregroundColor = "#006adc";
+```
 
+```ts
 // ✗ Bad
-const backgroundColor = '#EDF6FF';
-const foregroundColor = '#006ADC';
+const backgroundColor = "#EDF6FF";
+const foregroundColor = "#006ADC";
 ```
 
 #### 4.d. DO make color format explict in non-HTML contexts
@@ -672,7 +719,9 @@ type ClassLabel {
   id: ID!
   hexColorCode: HexColorCode
 }
+```
 
+```graphql
 # ✗ Bad
 type ClassLabel {
   id: ID!
@@ -681,9 +730,11 @@ type ClassLabel {
 ```
 
 ```sql
-# ✓ Good
-SELECT id, hexColorCode FROM ClassLabel
+-- ✓ Good
+SELECT id, hex_color_code FROM class_label
+```
 
-# ✗ Bad
-SELECT id, color FROM ClassLabel
+```sql
+-- ✗ Bad
+SELECT id, color FROM class_label
 ```
