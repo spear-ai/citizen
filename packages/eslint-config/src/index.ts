@@ -141,7 +141,7 @@ export const typescriptFileList = typescriptFileExtensionList.map(
   (fileExtension) => `**/*${fileExtension}`,
 );
 
-export const eslintConfig: Linter.FlatConfig[] = [
+export const baseEslintConfig: Linter.FlatConfig[] = [
   {
     files: jsonFileList,
     ignores: [...defaultIgnoreFileList, "package-lock.json"],
