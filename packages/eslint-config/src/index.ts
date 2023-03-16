@@ -11,7 +11,8 @@ import airbnbBaseConfigNode from "eslint-config-airbnb-base/rules/node";
 import airbnbBaseConfigStrict from "eslint-config-airbnb-base/rules/strict";
 import airbnbBaseConfigStyle from "eslint-config-airbnb-base/rules/style";
 import airbnbBaseConfigVariables from "eslint-config-airbnb-base/rules/variables";
-import airbnbBaseTypescriptConfig from "eslint-config-airbnb-typescript/lib/shared";
+import airbnbTypescriptConfigShared from "eslint-config-airbnb-typescript/lib/shared";
+import airbnbTypescriptConfig from "eslint-config-airbnb-typescript";
 import airbnbConfigReact from "eslint-config-airbnb/rules/react";
 import airbnbConfigReactA11y from "eslint-config-airbnb/rules/react-a11y";
 import airbnbConfigReactHooks from "eslint-config-airbnb/rules/react-hooks";
@@ -448,7 +449,8 @@ export const eslintConfig: Linter.FlatConfig[] = [
     },
     settings: {
       ...airbnbBaseConfigImports.settings,
-      ...airbnbBaseTypescriptConfig.settings,
+      ...airbnbTypescriptConfigShared.settings,
+      ...airbnbTypescriptConfig.settings,
       ...airbnbConfigReact.settings,
       "import/resolver": {
         node: {
@@ -481,7 +483,8 @@ export const eslintConfig: Linter.FlatConfig[] = [
       "typescript-sort-keys": typescriptSortKeysPlugin,
     },
     rules: {
-      ...airbnbBaseTypescriptConfig.rules,
+      ...airbnbTypescriptConfigShared.rules,
+      ...airbnbTypescriptConfig.rules,
       ...typescriptPlugin.configs!.base.rules,
       ...typescriptPlugin.configs!["eslint-recommended"]!.overrides![0].rules,
       ...typescriptPlugin.configs!["recommended-requiring-type-checking"].rules,
@@ -510,7 +513,12 @@ export const eslintConfig: Linter.FlatConfig[] = [
       "formatjs/no-literal-string-in-jsx": ["off"],
       "import/no-default-export": ["off"],
       "import/no-extraneous-dependencies": ["off"],
-      "react/jsx-filename-extension": ["off"],
+      "react/jsx-filename-extension": ["error", {
+        extensions: [
+          ".jsx",
+          ".tsx",
+        ],
+      }],
       "react/jsx-no-undef": ["off"],
       "react/react-in-jsx-scope": ["off"],
     },
@@ -518,10 +526,47 @@ export const eslintConfig: Linter.FlatConfig[] = [
 ];
 
 export const nextEslintConfig = [{
-  files: javascriptFileList,
+  files: [
+    ...javascriptFileList,
+    ...typescriptFileList,
+  ],
   ignores: defaultIgnoreFileList,
+  plugins: {
+    "@next/next": nextPlugin,
+  },
   rules: {
     ...nextPlugin.configs!.recommended.rules,
     ...nextPlugin.configs!["core-web-vitals"].rules,
+    "import/no-anonymous-default-export": "warn",
+    "jsx-a11y/alt-text": ["warn", {
+      elements: ["img"],
+      img: ["Image"],
+    }],
+    "jsx-a11y/aria-props": "warn",
+    "jsx-a11y/aria-proptypes": "warn",
+    "jsx-a11y/aria-unsupported-elements": "warn",
+    "jsx-a11y/role-has-required-aria-props": "warn",
+    "jsx-a11y/role-supports-aria-props": "warn",
+    "react/jsx-no-target-blank": "off",
+    "react/no-unknown-property": "off",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+  },
+  settings: {
+    "env": {
+      browser: true,
+      node: true,
+    },
+    "import/resolver": {
+      typescript: {
+        alwaysTryTypes: true,
+      },
+    },
+    "react": {
+      version: "detect",
+    },
+    "tailwindcss": {
+      config: "tailwind.config.cjs",
+    },
   },
 }];
