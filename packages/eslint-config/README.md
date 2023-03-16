@@ -13,10 +13,10 @@ yarn add -D eslint @spear-ai/eslint-config
 Add the following to your `eslint.config.js` file:
 
 ```ts
-import spearConfig from "@spear-ai/eslint-config";
+import { eslintConfig as baseEslintConfig } from "@spear-ai/eslint-config";
 
 const eslintConfig = [
-  ...spearConfig,
+  ...baseConfig,
 ];
 
 export default eslintConfig;
