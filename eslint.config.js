@@ -1,4 +1,4 @@
-import spearEslintConfig from "@spear-ai/eslint-config";
+import { eslintConfig as spearEslintConfig } from "@spear-ai/eslint-config";
 
 /** @type {import("eslint").Linter.FlatConfig} */
 const eslintConfig = [

@@ -20,6 +20,8 @@ import formatJsPlugin from "eslint-plugin-formatjs";
 import importPlugin from "eslint-plugin-import";
 import jsoncPlugin from "eslint-plugin-jsonc";
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
+import markdownPlugin from "eslint-plugin-markdown";
+import markdownProcessor from "eslint-plugin-markdown/lib/processor";
 import promisePlugin from "eslint-plugin-promise";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
@@ -115,18 +117,25 @@ export const allowedAbbreviations = {
 };
 
 export const javascriptFileExtensionList = [
-  ".d.ts",
   ".cjs",
-  ".cts",
   ".js",
   ".jsx",
   ".mjs",
+];
+
+export const javascriptFileList = javascriptFileExtensionList.map(
+  (fileExtension) => `**/*${fileExtension}`,
+);
+
+export const typescriptFileExtensionList = [
+  ".d.ts",
+  ".cts",
   ".mts",
   ".ts",
   ".tsx",
 ];
 
-export const javascriptFileList = javascriptFileExtensionList.map(
+export const typescriptFileList = typescriptFileExtensionList.map(
   (fileExtension) => `**/*${fileExtension}`,
 );
 
@@ -243,23 +252,30 @@ export const eslintConfig: Linter.FlatConfig[] = [
     },
   },
   {
-    files: javascriptFileList,
+    files: ["**/*.md"],
+    processor: markdownProcessor,
+  },
+  {
+    files: [
+      ...javascriptFileList,
+      ...typescriptFileList,
+    ],
     ignores: defaultIgnoreFileList,
     languageOptions: {
       // @ts-ignore
       parser: typescriptParser,
       parserOptions: {
-        project: "tsconfig.json",
+        ...typescriptPlugin.configs!.base.parserOptions,
       },
     },
     plugins: {
       "@eslint-community/eslint-comments": eslintCommentsPlugin,
-      "@next/next": nextPlugin,
       "@typescript-eslint": typescriptPlugin,
       "array-func": arrayFuncPlugin,
       "formatjs": formatJsPlugin,
       "import": importPlugin,
       "jsx-a11y": jsxA11yPlugin,
+      "markdown": markdownPlugin,
       "promise": promisePlugin,
       "react": reactPlugin,
       "react-hooks": reactHooksPlugin,
@@ -268,11 +284,10 @@ export const eslintConfig: Linter.FlatConfig[] = [
       "sonarjs": sonarjsPlugin as ESLint.Plugin,
       "sort-destructure-keys": sortDestructureKeysPlugin,
       "tailwindcss": tailwindCssPlugin,
-      "typescript-sort-keys": typescriptSortKeysPlugin,
       "unicorn": unicornPlugin,
     },
     rules: {
-      ...airbnbBaseConfigBestPractices.rules,
+      ...airbnbBaseConfigBestPractices.rules as Linter.RulesRecord,
       ...airbnbBaseConfigErrors.rules,
       ...airbnbBaseConfigNode.rules,
       ...airbnbBaseConfigStyle.rules,
@@ -280,30 +295,24 @@ export const eslintConfig: Linter.FlatConfig[] = [
       ...airbnbBaseConfigEs6.rules,
       ...airbnbBaseConfigImports.rules,
       ...airbnbBaseConfigStrict.rules,
-      ...airbnbBaseTypescriptConfig.rules,
       ...airbnbConfigReact.rules,
       ...airbnbConfigReactA11y.rules,
       ...airbnbConfigReactHooks.rules,
-      ...typescriptPlugin.configs!.base.rules,
-      ...typescriptPlugin.configs!["eslint-recommended"]!.overrides![0].rules,
-      ...typescriptPlugin.configs!["recommended-requiring-type-checking"].rules,
       ...arrayFuncPlugin.configs!.recommended.rules,
       ...arrayFuncPlugin.configs!.all.rules,
       ...eslintCommentsPlugin.configs!.recommended.rules,
       ...importPlugin.configs!.recommended.rules,
-      ...importPlugin.configs!.typescript.rules,
       ...regexpPlugin.configs!.all.rules,
       ...promisePlugin.configs!.recommended.rules,
       ...sonarjsPlugin.configs.recommended.rules,
       ...tailwindCssPlugin.configs!.recommended.rules,
-      ...typescriptSortKeysPlugin.configs!.recommended.rules,
       ...unicornPlugin.configs!.recommended.rules,
       "@eslint-community/eslint-comments/disable-enable-pair": ["error", {
         allowWholeFile: true,
       }],
       "@next/next/google-font-display": ["off"],
-      "@typescript-eslint/quotes": ["error", "double", { avoidEscape: true }],
       "array-func/prefer-array-from": ["off"],
+      "dot-notation": ["off"],
       "formatjs/enforce-default-message": ["error"],
       "formatjs/enforce-id": ["error", {
         idInterpolationPattern: "[sha512:contenthash:base64:6]",
@@ -362,6 +371,7 @@ export const eslintConfig: Linter.FlatConfig[] = [
         },
       }],
       "quote-props": ["error", "consistent-as-needed"],
+      "quotes": ["error", "double", { avoidEscape: true }],
       "react/forbid-component-props": ["error", {
         forbid: [{
           allowedFor: ["FormattedList", "FormattedNumber"],
@@ -419,10 +429,61 @@ export const eslintConfig: Linter.FlatConfig[] = [
         node: {
           extensions: [
             ...javascriptFileExtensionList,
+            ...typescriptFileExtensionList,
             ".json",
           ],
         },
       },
+    },
+  },
+  {
+    files: typescriptFileList,
+    ignores: [
+      ...defaultIgnoreFileList,
+      "**/*.md/**",
+    ],
+    languageOptions: {
+      // @ts-ignore
+      parser: typescriptParser,
+      parserOptions: {
+        ...typescriptPlugin.configs!.base.parserOptions,
+        project: "tsconfig.json",
+      },
+    },
+    plugins: {
+      "@typescript-eslint": typescriptPlugin,
+      "import": importPlugin,
+      "typescript-sort-keys": typescriptSortKeysPlugin,
+    },
+    rules: {
+      ...airbnbBaseTypescriptConfig.rules,
+      ...typescriptPlugin.configs!.base.rules,
+      ...typescriptPlugin.configs!["eslint-recommended"]!.overrides![0].rules,
+      ...typescriptPlugin.configs!["recommended-requiring-type-checking"].rules,
+      ...importPlugin.configs!.typescript.rules,
+      ...typescriptSortKeysPlugin.configs!.recommended.rules,
+      "@typescript-eslint/quotes": ["error", "double", { avoidEscape: true }],
+    },
+  },
+  {
+    files: ["**/*.d.ts"],
+    rules: {
+      "import/no-default-export": ["off"],
+    },
+  },
+  {
+    files: ["**/*.md/**"],
+    languageOptions: {
+      parserOptions: {
+        ecmaFeatures: {
+          impliedStrict: true,
+        },
+      },
+    },
+    rules: {
+      ...markdownPlugin.configs!.recommended!.overrides![1].rules as Linter.RulesRecord,
+      "import/no-default-export": ["off"],
+      "import/no-extraneous-dependencies": ["off"],
     },
   },
 ];
@@ -435,5 +496,3 @@ export const nextEslintConfig = [{
     ...nextPlugin.configs!["core-web-vitals"].rules,
   },
 }];
-
-export default eslintConfig;
