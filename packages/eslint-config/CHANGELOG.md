@@ -1,5 +1,17 @@
 # @spear-ai/eslint-config
 
+## 3.0.0
+
+### Major Changes
+
+- [#60](https://github.com/spear-ai/citizen/pull/60) [`6caed20`](https://github.com/spear-ai/citizen/commit/6caed2031d99f4e3fe68533d11f2df94c44122e6) Thanks [@psirenny](https://github.com/psirenny)! - Rename base ESLint Config export.
+
+### Patch Changes
+
+- [#58](https://github.com/spear-ai/citizen/pull/58) [`84abe2e`](https://github.com/spear-ai/citizen/commit/84abe2e5501d2581c2ea2d062796ce50d86a489e) Thanks [@psirenny](https://github.com/psirenny)! - Add Tailwind CSS config file path (Assumes ES Module package). 🐛
+
+- [#58](https://github.com/spear-ai/citizen/pull/58) [`84abe2e`](https://github.com/spear-ai/citizen/commit/84abe2e5501d2581c2ea2d062796ce50d86a489e) Thanks [@psirenny](https://github.com/psirenny)! - Add missing React rules to Next.js ESLint Config. 🐛
+
 ## 2.0.0
 
 ### Major Changes
