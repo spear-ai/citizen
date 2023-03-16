@@ -427,6 +427,13 @@ export const eslintConfig: Linter.FlatConfig[] = [
       "tailwindcss/no-arbitrary-value": ["error"],
       "tailwindcss/no-custom-classname": ["error"],
       "unicorn/custom-error-definition": ["error"],
+      "unicorn/filename-case": ["error", {
+        case: "kebabCase",
+        ignore: [
+          "CHANGELOG.md",
+          "README.md",
+        ],
+      }],
       "unicorn/no-null": ["off"],
       "unicorn/prefer-at": ["error"],
       "unicorn/prefer-event-target": ["error"],
