@@ -22,6 +22,8 @@ import jsoncPlugin from "eslint-plugin-jsonc";
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
 import markdownPlugin from "eslint-plugin-markdown";
 import markdownProcessor from "eslint-plugin-markdown/lib/processor";
+// import markdownlintPlugin from "eslint-plugin-markdownlint";
+// import markdownlintParser from "eslint-plugin-markdownlint/parser";
 import promisePlugin from "eslint-plugin-promise";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
@@ -255,6 +257,19 @@ export const eslintConfig: Linter.FlatConfig[] = [
     files: ["**/*.md"],
     processor: markdownProcessor,
   },
+  // {
+  //   files: ["**/*.md"],
+  //   languageOptions: {
+  //     // @ts-ignore
+  //     parser: markdownlintParser,
+  //   },
+  //   plugins: {
+  //     markdownlint: markdownlintPlugin,
+  //   },
+  //   rules: {
+  //     ...markdownlintPlugin.configs!.recommended.rules as Linter.RulesRecord,
+  //   },
+  // },
   {
     files: [
       ...javascriptFileList,
@@ -346,6 +361,9 @@ export const eslintConfig: Linter.FlatConfig[] = [
       "no-continue": ["off"],
       "no-multiple-empty-lines": ["error", {
         max: 1,
+      }],
+      "no-restricted-exports": ["error", {
+        restrictedNamedExports: ["then"],
       }],
       "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
       "object-curly-newline": ["error", {
@@ -482,8 +500,12 @@ export const eslintConfig: Linter.FlatConfig[] = [
     },
     rules: {
       ...markdownPlugin.configs!.recommended!.overrides![1].rules as Linter.RulesRecord,
+      "formatjs/no-literal-string-in-jsx": ["off"],
       "import/no-default-export": ["off"],
       "import/no-extraneous-dependencies": ["off"],
+      "react/jsx-filename-extension": ["off"],
+      "react/jsx-no-undef": ["off"],
+      "react/react-in-jsx-scope": ["off"],
     },
   },
 ];

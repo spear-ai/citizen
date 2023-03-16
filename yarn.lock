@@ -1314,6 +1314,7 @@ __metadata:
     eslint-plugin-jsonc: ^2.6.0
     eslint-plugin-jsx-a11y: ^6.7.1
     eslint-plugin-markdown: ^3.0.0
+    eslint-plugin-markdownlint: ^0.4.1
     eslint-plugin-promise: ^6.1.1
     eslint-plugin-react: ^7.32.2
     eslint-plugin-react-hooks: ^4.6.0
@@ -3043,6 +3044,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"entities@npm:~3.0.1":
+  version: 3.0.1
+  resolution: "entities@npm:3.0.1"
+  checksum: aaf7f12033f0939be91f5161593f853f2da55866db55ccbf72f45430b8977e2b79dbd58c53d0fdd2d00bd7d313b75b0968d09f038df88e308aa97e39f9456572
+  languageName: node
+  linkType: hard
+
 "env-paths@npm:^2.2.0":
   version: 2.2.1
   resolution: "env-paths@npm:2.2.1"
@@ -3472,6 +3480,17 @@ __metadata:
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
   checksum: ea9e8613cffcf7decbc2de0c900a83553ccdccfb6d90187e5d461a457a403d2634585a8c165cc4adf52c86f3b910161f33b1f24a46f296c4a577d2547780c997
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-markdownlint@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "eslint-plugin-markdownlint@npm:0.4.1"
+  dependencies:
+    markdownlint: 0.27.0
+  peerDependencies:
+    eslint: ">=7.5.0"
+  checksum: e361bdeebfe1122b513b7bc0ea7f348d85fa3e0179f2fcb25675eba352257dcae390c058d7ce0550440ff8970d6a198ff0ec923ed17a0303fd1015d3852e7b31
   languageName: node
   linkType: hard
 
@@ -5245,6 +5264,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"linkify-it@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "linkify-it@npm:4.0.1"
+  dependencies:
+    uc.micro: ^1.0.1
+  checksum: 3e0a29921269c14eb7ac6f5db2da68d4854ea9acca6e9014a323f75f2dd39b197ffab57c1fbd6a906ceb021aad3ee6d7ba7d0181236dd9630ffc452b392f7f71
+  languageName: node
+  linkType: hard
+
 "load-tsconfig@npm:^0.2.3":
   version: 0.2.3
   resolution: "load-tsconfig@npm:0.2.3"
@@ -5481,6 +5509,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"markdown-it@npm:13.0.1":
+  version: 13.0.1
+  resolution: "markdown-it@npm:13.0.1"
+  dependencies:
+    argparse: ^2.0.1
+    entities: ~3.0.1
+    linkify-it: ^4.0.1
+    mdurl: ^1.0.1
+    uc.micro: ^1.0.5
+  bin:
+    markdown-it: bin/markdown-it.js
+  checksum: faf5891d389dc433bcf21d3fbff2009beb044b42b117c92f4848899780ca1a2282a209e3ff4672db4afed726a7248304ec473e6e242a7d6498af7113d31974e7
+  languageName: node
+  linkType: hard
+
+"markdownlint@npm:0.27.0":
+  version: 0.27.0
+  resolution: "markdownlint@npm:0.27.0"
+  dependencies:
+    markdown-it: 13.0.1
+  checksum: aecc5849e611f66f4c666c9fe47f798fc7cb044ee0bf7884d666152961f1bf585f0e16cafe575386d40d5d19b82e6071aeecee14f1a7006495fe46fcf93c7aa7
+  languageName: node
+  linkType: hard
+
 "mdast-util-from-markdown@npm:^0.8.5":
   version: 0.8.5
   resolution: "mdast-util-from-markdown@npm:0.8.5"
@@ -5498,6 +5550,13 @@ __metadata:
   version: 2.0.0
   resolution: "mdast-util-to-string@npm:2.0.0"
   checksum: 0b2113ada10e002fbccb014170506dabe2f2ddacaacbe4bc1045c33f986652c5a162732a2c057c5335cdb58419e2ad23e368e5be226855d4d4e280b81c4e9ec2
+  languageName: node
+  linkType: hard
+
+"mdurl@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "mdurl@npm:1.0.1"
+  checksum: 71731ecba943926bfbf9f9b51e28b5945f9411c4eda80894221b47cc105afa43ba2da820732b436f0798fd3edbbffcd1fc1415843c41a87fea08a41cc1e3d02b
   languageName: node
   linkType: hard
 
@@ -7926,6 +7985,13 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: fba33b9756bbffcbdc87254af0f491852bac475c1302b570b9c656c10fad9dbe7113975a64beb6035979db555b0fc87fa168734f10bf556f173213c13d371e4e
+  languageName: node
+  linkType: hard
+
+"uc.micro@npm:^1.0.1, uc.micro@npm:^1.0.5":
+  version: 1.0.6
+  resolution: "uc.micro@npm:1.0.6"
+  checksum: 6898bb556319a38e9cf175e3628689347bd26fec15fc6b29fa38e0045af63075ff3fea4cf1fdba9db46c9f0cbf07f2348cd8844889dd31ebd288c29fe0d27e7a
   languageName: node
   linkType: hard
 
