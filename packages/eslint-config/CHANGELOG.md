@@ -1,5 +1,27 @@
 # @spear-ai/eslint-config
 
+## 2.0.0
+
+### Major Changes
+
+- [#56](https://github.com/spear-ai/citizen/pull/56) [`1af292b`](https://github.com/spear-ai/citizen/commit/1af292bc44a309cbb4a7c51dcb3dfb12d3695e06) Thanks [@psirenny](https://github.com/psirenny)! - Remove default export from the ESLint Config. Use a named import instead:
+
+  ```js
+  export { eslintConfig as default } from "@spear-ai/eslint-config";
+  ```
+
+### Minor Changes
+
+- [#52](https://github.com/spear-ai/citizen/pull/52) [`a4bd8aa`](https://github.com/spear-ai/citizen/commit/a4bd8aaf50863420f37e563dd5a0191a210baf15) Thanks [@psirenny](https://github.com/psirenny)! - Add React rules to ESLint Config 🎉
+
+- [#56](https://github.com/spear-ai/citizen/pull/56) [`1af292b`](https://github.com/spear-ai/citizen/commit/1af292bc44a309cbb4a7c51dcb3dfb12d3695e06) Thanks [@psirenny](https://github.com/psirenny)! - Add markdown files to ESLint Config 🎉
+
+- [#45](https://github.com/spear-ai/citizen/pull/45) [`cb012f9`](https://github.com/spear-ai/citizen/commit/cb012f9b441297d3ee956846ed15ba26635ac9dd) Thanks [@psirenny](https://github.com/psirenny)! - Add FormatJS rules to ESLint Config 🎉
+
+### Patch Changes
+
+- [#57](https://github.com/spear-ai/citizen/pull/57) [`91e4566`](https://github.com/spear-ai/citizen/commit/91e4566cd0dc468c435904a0ac4e5f916a2344d7) Thanks [@psirenny](https://github.com/psirenny)! - Ignore special markdown files (CHANGELOG.md, README.md) when linting file names. 🐛
+
 ## 1.0.2
 
 ### Patch Changes
