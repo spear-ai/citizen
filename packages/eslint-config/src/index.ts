@@ -508,6 +508,9 @@ export const eslintConfig: Linter.FlatConfig[] = [
         },
       },
     },
+    plugins: {
+      react: reactPlugin,
+    },
     rules: {
       ...markdownPlugin.configs!.recommended!.overrides![1].rules as Linter.RulesRecord,
       "formatjs/no-literal-string-in-jsx": ["off"],
