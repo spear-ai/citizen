@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 2
           token: ${{ secrets.GH_PAT }}
       - name: Cache Turborepo tasks
-        uses: actions/cache@v3.2.5
+        uses: actions/cache@v3.3.1
         with:
           key: ${{ runner.os }}-turbo-${{ github.sha }}
           path: .turbo
