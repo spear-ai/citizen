@@ -37,6 +37,7 @@ import tomlPlugin from "eslint-plugin-toml";
 import yamlPlugin from "eslint-plugin-yml";
 import typescriptSortKeysPlugin from "eslint-plugin-typescript-sort-keys";
 import unicornPlugin from "eslint-plugin-unicorn";
+import globals from "globals";
 import jsoncParser from "jsonc-eslint-parser";
 import tomlParser from "toml-eslint-parser";
 import yamlParser from "yaml-eslint-parser";
@@ -534,6 +535,12 @@ export const nextEslintConfig = [{
     ...typescriptFileList,
   ],
   ignores: defaultIgnoreFileList,
+  languageOptions: {
+    globals: {
+      ...globals.browser,
+      ...globals.node,
+    },
+  },
   plugins: {
     "@next/next": nextPlugin,
   },
@@ -556,10 +563,6 @@ export const nextEslintConfig = [{
     "react/react-in-jsx-scope": "off",
   },
   settings: {
-    "env": {
-      browser: true,
-      node: true,
-    },
     "import/resolver": {
       typescript: {
         alwaysTryTypes: true,
