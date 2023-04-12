@@ -1,5 +1,13 @@
 # @spear-ai/eslint-config
 
+## 3.0.1
+
+### Patch Changes
+
+- [#77](https://github.com/spear-ai/citizen/pull/77) [`b1b0462`](https://github.com/spear-ai/citizen/commit/b1b04626932172cfbd616103055c05e1b23b0f75) Thanks [@psirenny](https://github.com/psirenny)! - Declare globals in ESLint flat config’s `languageOptions` field instead of the deprecated `settings` field. 🐛
+
+- [#78](https://github.com/spear-ai/citizen/pull/78) [`c92566e`](https://github.com/spear-ai/citizen/commit/c92566e77ea5c3e33cb5eaff3cff78bfc7790281) Thanks [@psirenny](https://github.com/psirenny)! - Remove `.turbo` directory from published NPM package. 🐛
+
 ## 3.0.0
 
 ### Major Changes
