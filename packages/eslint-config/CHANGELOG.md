@@ -1,5 +1,11 @@
 # @spear-ai/eslint-config
 
+## 4.0.0
+
+### Major Changes
+
+- [#87](https://github.com/spear-ai/citizen/pull/87) [`1ff4290`](https://github.com/spear-ai/citizen/commit/1ff429025003be3fe60950a612a0b78416a60f7e) Thanks [@psirenny](https://github.com/psirenny)! - Add GraphQL rules to ESLint Config 🎉
+
 ## 3.0.1
 
 ### Patch Changes
