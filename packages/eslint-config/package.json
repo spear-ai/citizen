@@ -45,7 +45,7 @@
     "yaml-eslint-parser": "^1.2.0"
   },
   "devDependencies": {
-    "@types/eslint": "8.21.2",
+    "@types/eslint": "8.37.0",
     "eslint": "8.36.0",
     "graphql": "15.8.0",
     "npm-package-json-lint": "6.4.0",
