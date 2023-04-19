@@ -146,38 +146,6 @@ export const typescriptFileList = typescriptFileExtensionList.map(
 
 export const baseEslintConfig: Linter.FlatConfig[] = [
   {
-    files: ["**/*.graphql"],
-    languageOptions: {
-      // @ts-ignore
-      parser: graphqlEslint,
-    },
-    plugins: {
-      "@graphql-eslint": graphqlEslint,
-    },
-    rules: {
-      ...graphqlEslint.configs?.["schema-recommended"]?.rules,
-      ...graphqlEslint.configs?.["schema-all"]?.rules,
-      ...graphqlEslint.configs?.relay?.rules,
-      "@graphql-eslint/relay-edge-types": [
-        "error",
-        {
-          listTypeCanWrapOnlyEdgeType: false,
-        },
-      ],
-      "@graphql-eslint/require-description": [
-        "error",
-        {
-          DirectiveDefinition: true,
-          EnumValueDefinition: true,
-          InputValueDefinition: true,
-          rootField: true,
-          types: true,
-        },
-      ],
-      "@graphql-eslint/strict-id-in-types": ["off"],
-    },
-  },
-  {
     files: jsonFileList,
     ignores: [...defaultIgnoreFileList, "package-lock.json"],
     languageOptions: {
@@ -607,5 +575,39 @@ export const nextEslintConfig = [{
     "tailwindcss": {
       config: "tailwind.config.cjs",
     },
+  },
+}];
+
+export const graphqlEslintConfig = [{
+  files: ["**/*.graphql"],
+  ignores: defaultIgnoreFileList,
+  languageOptions: {
+    // @ts-ignore
+    parser: graphqlEslint,
+  },
+  plugins: {
+    "@graphql-eslint": graphqlEslint,
+  },
+  rules: {
+    ...graphqlEslint.configs?.["schema-recommended"]?.rules,
+    ...graphqlEslint.configs?.["schema-all"]?.rules,
+    ...graphqlEslint.configs?.relay?.rules,
+    "@graphql-eslint/relay-edge-types": [
+      "error",
+      {
+        listTypeCanWrapOnlyEdgeType: false,
+      },
+    ],
+    "@graphql-eslint/require-description": [
+      "error",
+      {
+        DirectiveDefinition: true,
+        EnumValueDefinition: true,
+        InputValueDefinition: true,
+        rootField: true,
+        types: true,
+      },
+    ],
+    "@graphql-eslint/strict-id-in-types": ["off"],
   },
 }];
