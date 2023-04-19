@@ -1,5 +1,6 @@
 import eslintCommentsPlugin from "@eslint-community/eslint-plugin-eslint-comments";
 import nextPlugin from "@next/eslint-plugin-next";
+import graphqlEslint from "@graphql-eslint/eslint-plugin";
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
 import type { ESLint, Linter } from "eslint";
@@ -144,6 +145,38 @@ export const typescriptFileList = typescriptFileExtensionList.map(
 );
 
 export const baseEslintConfig: Linter.FlatConfig[] = [
+  {
+    files: ["**/*.graphql"],
+    languageOptions: {
+      // @ts-ignore
+      parser: graphqlEslint,
+    },
+    plugins: {
+      "@graphql-eslint": graphqlEslint,
+    },
+    rules: {
+      ...graphqlEslint.configs?.["schema-recommended"]?.rules,
+      ...graphqlEslint.configs?.["schema-all"]?.rules,
+      ...graphqlEslint.configs?.relay?.rules,
+      "@graphql-eslint/relay-edge-types": [
+        "error",
+        {
+          listTypeCanWrapOnlyEdgeType: false,
+        },
+      ],
+      "@graphql-eslint/require-description": [
+        "error",
+        {
+          DirectiveDefinition: true,
+          EnumValueDefinition: true,
+          InputValueDefinition: true,
+          rootField: true,
+          types: true,
+        },
+      ],
+      "@graphql-eslint/strict-id-in-types": ["off"],
+    },
+  },
   {
     files: jsonFileList,
     ignores: [...defaultIgnoreFileList, "package-lock.json"],
