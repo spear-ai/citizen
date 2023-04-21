@@ -9,16 +9,17 @@
   },
   "dependencies": {
     "@changesets/changelog-github": "0.4.8",
-    "@changesets/cli": "2.26.0",
-    "@commitlint/cli": "17.4.4",
-    "@commitlint/config-conventional": "17.4.4",
+    "@changesets/cli": "2.26.1",
+    "@commitlint/cli": "17.6.1",
+    "@commitlint/config-conventional": "17.6.1",
     "@spear-ai/eslint-config": "*",
     "@spear-ai/npm-package-json-lint-config": "*",
-    "commitlint": "17.4.4",
+    "commitlint": "17.6.1",
     "eslint": "8.36.0",
     "husky": "8.0.3",
     "npm-package-json-lint": "6.4.0",
-    "turbo": "1.8.3"
+    "prettier": "2.8.7",
+    "turbo": "1.9.3"
   },
   "license": "",
   "packageManager": "yarn@3.4.1",
@@ -29,7 +30,7 @@
   },
   "scripts": {
     "build": "yarn dlx turbo build",
-    "check": "yarn dlx turbo root:check-yarn-cache root:lint:eslint root:lint:npm lint:eslint lint:npm",
+    "check": "yarn dlx turbo root:check-yarn-cache root:lint:eslint root:lint:npm lint:eslint lint:prettier lint:npm",
     "fix": "yarn dlx turbo root:fix fix",
     "github-actions:push": "act push -s GH_PAT=$GH_PAT -s GITHUB_TOKEN=$GH_PAT -s NPM_TOKEN=$NPM_TOKEN",
     "github-actions:push:release-tag": "act push -e .github/test-events/push-release-tag.json -s GH_PAT=$GH_PAT -s GITHUB_TOKEN=$GH_PAT",
@@ -41,6 +42,7 @@
     "root:fix": "yarn root:lint:eslint --fix",
     "root:lint:eslint": "eslint --max-warnings 0 .",
     "root:lint:npm": "npmPkgJsonLint .",
+    "root:lint:prettier": "prettier --check .",
     "update": "yarn upgrade-interactive"
   },
   "type": "module",

@@ -3,9 +3,12 @@
 const baseNpmPackageJsonLintConfig = {
   extends: "npm-package-json-lint-config-default",
   rules: {
-    "description-format": ["error", {
-      forbidEndingPeriod: true,
-    }],
+    "description-format": [
+      "error",
+      {
+        forbidEndingPeriod: true,
+      },
+    ],
     "no-duplicate-properties": "error",
     "no-repeated-dependencies": "error",
     "prefer-absolute-version-devDependencies": ["error", {}],
