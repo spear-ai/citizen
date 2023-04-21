@@ -27,6 +27,8 @@ jobs:
           node-version-file: .node-version
       - name: Install Node.js dependencies
         run: yarn install
+      - name: Build packages
+        run: yarn build
       - name: Authenticate with NPM
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -42,5 +44,5 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           commit: "ci: release 🚀"
-          publish: yarn release
+          publish: yarn publish-packages
           title: "ci: release 🚀"
