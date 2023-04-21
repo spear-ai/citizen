@@ -3,10 +3,7 @@
   "pipeline": {
     "//#root:check": {},
     "//#root:check-yarn-cache": {
-      "inputs": [
-        ".yarn/cache",
-        "yarn.lock"
-      ]
+      "inputs": [".yarn/cache", "yarn.lock"]
     },
     "//#root:fix": {
       "dependsOn": ["^build"]
@@ -31,11 +28,7 @@
     },
     "//#root:lint:npm": {
       "dependsOn": ["^build"],
-      "inputs": [
-        ".npmpackagejsonlintignore",
-        "npmpackagejsonlint.config.cjs",
-        "package.json"
-      ]
+      "inputs": [".npmpackagejsonlintignore", "npmpackagejsonlint.config.cjs", "package.json"]
     },
     "build": {
       "dependsOn": ["^build"],
@@ -57,13 +50,17 @@
       "inputs": [
         "**/*.code-workspace",
         "**/*.cjs",
+        "**/*.graphql",
         "**/*.js",
         "**/*.json",
         "**/*.json5",
         "**/*.jsonc",
+        "**/*.jsx",
+        "**/*.md",
         "**/*.mjs",
         "**/*.toml",
         "**/*.ts",
+        "**/*.tsx",
         "**/*.yaml",
         "**/*.yml",
         "eslint.config.js",
@@ -72,10 +69,26 @@
     },
     "lint:npm": {
       "dependsOn": ["^build"],
+      "inputs": [".npmpackagejsonlintignore", "npmpackagejsonlint.config.cjs", "package.json"]
+    },
+    "lint:prettier": {
+      "dependsOn": ["^build"],
       "inputs": [
-        ".npmpackagejsonlintignore",
-        "npmpackagejsonlint.config.cjs",
-        "package.json"
+        "**/*.cjs",
+        "**/*.code-workspace",
+        "**/*.graphql",
+        "**/*.js",
+        "**/*.json",
+        "**/*.json5",
+        "**/*.jsonc",
+        "**/*.jsx",
+        "**/*.md",
+        "**/*.mjs",
+        "**/*.toml",
+        "**/*.ts",
+        "**/*.tsx",
+        ".prettierignore",
+        "prettier.config.cjs"
       ]
     }
   }

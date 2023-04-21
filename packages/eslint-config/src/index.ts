@@ -43,13 +43,9 @@ import jsoncParser from "jsonc-eslint-parser";
 import tomlParser from "toml-eslint-parser";
 import yamlParser from "yaml-eslint-parser";
 
-export const baseKeyOrder = [
-  "id",
-  "name",
-  "version",
-  "description",
-  "author",
-];
+export { default as prettierConfig } from "eslint-config-prettier";
+
+export const baseKeyOrder = ["id", "name", "version", "description", "author"];
 
 export const defaultKeyOrder = [
   ...baseKeyOrder,
@@ -61,12 +57,7 @@ export const defaultKeyOrder = [
   },
 ];
 
-export const defaultIgnoreFileList = [
-  "**/.yarn/**",
-  "**/build",
-  "**/dist",
-  "**/node_modules",
-];
+export const defaultIgnoreFileList = ["**/.yarn/**", "**/build", "**/dist", "**/node_modules"];
 
 export const githubWorkflowKeyOrder = [
   "if",
@@ -106,10 +97,13 @@ export const jsonFamilyRules: Linter.RulesRecord = {
   "jsonc/object-curly-newline": ["error"],
   "jsonc/object-curly-spacing": ["error", "always"],
   "jsonc/object-property-newline": ["error"],
-  "jsonc/sort-keys": ["error", {
-    order: defaultKeyOrder,
-    pathPattern: "^.*$",
-  }],
+  "jsonc/sort-keys": [
+    "error",
+    {
+      order: defaultKeyOrder,
+      pathPattern: "^.*$",
+    },
+  ],
   "no-multiple-empty-lines": ["error", { max: 0 }],
   "no-trailing-spaces": ["error"],
 };
@@ -121,28 +115,13 @@ export const allowedAbbreviations = {
   "next-env.override.d": true,
 };
 
-export const javascriptFileExtensionList = [
-  ".cjs",
-  ".js",
-  ".jsx",
-  ".mjs",
-];
+export const javascriptFileExtensionList = [".cjs", ".js", ".jsx", ".mjs"];
 
-export const javascriptFileList = javascriptFileExtensionList.map(
-  (fileExtension) => `**/*${fileExtension}`,
-);
+export const javascriptFileList = javascriptFileExtensionList.map((fileExtension) => `**/*${fileExtension}`);
 
-export const typescriptFileExtensionList = [
-  ".d.ts",
-  ".cts",
-  ".mts",
-  ".ts",
-  ".tsx",
-];
+export const typescriptFileExtensionList = [".d.ts", ".cts", ".mts", ".ts", ".tsx"];
 
-export const typescriptFileList = typescriptFileExtensionList.map(
-  (fileExtension) => `**/*${fileExtension}`,
-);
+export const typescriptFileList = typescriptFileExtensionList.map((fileExtension) => `**/*${fileExtension}`);
 
 export const baseEslintConfig: Linter.FlatConfig[] = [
   {
@@ -153,11 +132,11 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       parser: jsoncParser,
     },
     plugins: {
-      jsonc: (jsoncPlugin as unknown) as ESLint.Plugin,
+      jsonc: jsoncPlugin as unknown as ESLint.Plugin,
     },
     rules: {
-      ...jsoncPlugin.configs.base.overrides[0].rules as Linter.RulesRecord,
-      ...jsoncPlugin.configs["recommended-with-json"].rules as Linter.RulesRecord,
+      ...(jsoncPlugin.configs.base.overrides[0].rules as Linter.RulesRecord),
+      ...(jsoncPlugin.configs["recommended-with-json"].rules as Linter.RulesRecord),
       ...jsonFamilyRules,
     },
   },
@@ -169,11 +148,11 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       parser: jsoncParser,
     },
     plugins: {
-      jsonc: (jsoncPlugin as unknown) as ESLint.Plugin,
+      jsonc: jsoncPlugin as unknown as ESLint.Plugin,
     },
     rules: {
-      ...jsoncPlugin.configs.base.overrides[0].rules as Linter.RulesRecord,
-      ...jsoncPlugin.configs["recommended-with-json5"].rules as Linter.RulesRecord,
+      ...(jsoncPlugin.configs.base.overrides[0].rules as Linter.RulesRecord),
+      ...(jsoncPlugin.configs["recommended-with-json5"].rules as Linter.RulesRecord),
       ...jsonFamilyRules,
     },
   },
@@ -185,11 +164,11 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       parser: jsoncParser,
     },
     plugins: {
-      jsonc: (jsoncPlugin as unknown) as ESLint.Plugin,
+      jsonc: jsoncPlugin as unknown as ESLint.Plugin,
     },
     rules: {
-      ...jsoncPlugin.configs.base.overrides[0].rules as Linter.RulesRecord,
-      ...jsoncPlugin.configs["recommended-with-jsonc"].rules as Linter.RulesRecord,
+      ...(jsoncPlugin.configs.base.overrides[0].rules as Linter.RulesRecord),
+      ...(jsoncPlugin.configs["recommended-with-jsonc"].rules as Linter.RulesRecord),
       ...jsonFamilyRules,
     },
   },
@@ -204,8 +183,8 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       toml: tomlPlugin,
     },
     rules: {
-      ...tomlPlugin.configs!.base.overrides![0].rules as Linter.RulesRecord,
-      ...tomlPlugin.configs!.standard.rules as Linter.RulesRecord,
+      ...(tomlPlugin.configs!.base.overrides![0].rules as Linter.RulesRecord),
+      ...(tomlPlugin.configs!.standard.rules as Linter.RulesRecord),
       "no-multiple-empty-lines": ["error", { max: 1 }],
       "no-trailing-spaces": ["error"],
       "toml/array-bracket-spacing": ["error", "never"],
@@ -223,30 +202,33 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     },
     rules: {
       // @ts-ignore
-      ...yamlPlugin.configs.base.overrides[0].rules as Linter.RulesRecord,
+      ...(yamlPlugin.configs.base.overrides[0].rules as Linter.RulesRecord),
       // @ts-ignore
-      ...yamlPlugin.configs.standard.rules as Linter.RulesRecord,
+      ...(yamlPlugin.configs.standard.rules as Linter.RulesRecord),
       "no-multiple-empty-lines": ["error", { max: 0 }],
       "no-trailing-spaces": ["error"],
       "yml/block-sequence": ["error", "always"],
       "yml/no-multiple-empty-lines": ["error"],
-      "yml/sort-keys": ["error", {
-        order: defaultKeyOrder,
-        pathPattern: "^.*$",
-      }],
+      "yml/sort-keys": [
+        "error",
+        {
+          order: defaultKeyOrder,
+          pathPattern: "^.*$",
+        },
+      ],
     },
   },
   {
-    files: [
-      "**/.github/workflows/*.yaml",
-      "**/.github/workflows/*.yml",
-    ],
+    files: ["**/.github/workflows/*.yaml", "**/.github/workflows/*.yml"],
     ignores: [...defaultIgnoreFileList, "**/*.yarnrc.yml"],
     rules: {
-      "yml/sort-keys": ["error", {
-        order: githubWorkflowKeyOrder,
-        pathPattern: ".*",
-      }],
+      "yml/sort-keys": [
+        "error",
+        {
+          order: githubWorkflowKeyOrder,
+          pathPattern: ".*",
+        },
+      ],
     },
   },
   {
@@ -274,10 +256,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
   //   },
   // },
   {
-    files: [
-      ...javascriptFileList,
-      ...typescriptFileList,
-    ],
+    files: [...javascriptFileList, ...typescriptFileList],
     ignores: defaultIgnoreFileList,
     languageOptions: {
       // @ts-ignore
@@ -290,22 +269,22 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "@eslint-community/eslint-comments": eslintCommentsPlugin,
       "@typescript-eslint": typescriptPlugin,
       "array-func": arrayFuncPlugin,
-      "formatjs": formatJsPlugin,
-      "import": importPlugin,
+      formatjs: formatJsPlugin,
+      import: importPlugin,
       "jsx-a11y": jsxA11yPlugin,
-      "markdown": markdownPlugin,
-      "promise": promisePlugin,
-      "react": reactPlugin,
+      markdown: markdownPlugin,
+      promise: promisePlugin,
+      react: reactPlugin,
       "react-hooks": reactHooksPlugin,
       "react-use-props": reactUsePropsPlugin,
-      "regexp": regexpPlugin,
-      "sonarjs": sonarjsPlugin as ESLint.Plugin,
+      regexp: regexpPlugin,
+      sonarjs: sonarjsPlugin as ESLint.Plugin,
       "sort-destructure-keys": sortDestructureKeysPlugin,
-      "tailwindcss": tailwindCssPlugin,
-      "unicorn": unicornPlugin,
+      tailwindcss: tailwindCssPlugin,
+      unicorn: unicornPlugin,
     },
     rules: {
-      ...airbnbBaseConfigBestPractices.rules as Linter.RulesRecord,
+      ...(airbnbBaseConfigBestPractices.rules as Linter.RulesRecord),
       ...airbnbBaseConfigErrors.rules,
       ...airbnbBaseConfigNode.rules,
       ...airbnbBaseConfigStyle.rules,
@@ -325,16 +304,22 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       ...sonarjsPlugin.configs.recommended.rules,
       ...tailwindCssPlugin.configs!.recommended.rules,
       ...unicornPlugin.configs!.recommended.rules,
-      "@eslint-community/eslint-comments/disable-enable-pair": ["error", {
-        allowWholeFile: true,
-      }],
+      "@eslint-community/eslint-comments/disable-enable-pair": [
+        "error",
+        {
+          allowWholeFile: true,
+        },
+      ],
       "@next/next/google-font-display": ["off"],
       "array-func/prefer-array-from": ["off"],
       "dot-notation": ["off"],
       "formatjs/enforce-default-message": ["error"],
-      "formatjs/enforce-id": ["error", {
-        idInterpolationPattern: "[sha512:contenthash:base64:6]",
-      }],
+      "formatjs/enforce-id": [
+        "error",
+        {
+          idInterpolationPattern: "[sha512:contenthash:base64:6]",
+        },
+      ],
       "formatjs/enforce-placeholders": ["error"],
       "formatjs/no-literal-string-in-jsx": ["error"],
       "formatjs/no-multiple-whitespaces": ["error"],
@@ -342,86 +327,124 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "import/no-anonymous-default-export": ["error"],
       "import/no-default-export": ["error"],
       "import/prefer-default-export": ["off"],
-      "jsx-a11y/anchor-is-valid": ["error", {
-        aspects: ["invalidHref", "preferButton"],
-        components: ["Link"],
-        specialLink: ["hrefLeft", "hrefRight"],
-      }],
-      "jsx-a11y/label-has-associated-control": ["error", {
-        assert: "either",
-      }],
+      "jsx-a11y/anchor-is-valid": [
+        "error",
+        {
+          aspects: ["invalidHref", "preferButton"],
+          components: ["Link"],
+          specialLink: ["hrefLeft", "hrefRight"],
+        },
+      ],
+      "jsx-a11y/label-has-associated-control": [
+        "error",
+        {
+          assert: "either",
+        },
+      ],
       "jsx-a11y/no-autofocus": ["off"],
-      "max-len": ["error", {
-        code: 120,
-        ignoreComments: false,
-        ignorePattern: "^(ex|im)port (.*)",
-        ignoreRegExpLiterals: true,
-        ignoreStrings: true,
-        ignoreTemplateLiterals: true,
-        ignoreUrls: true,
-        tabWidth: 2,
-      }],
+      "max-len": [
+        "error",
+        {
+          code: 120,
+          ignoreComments: false,
+          ignorePattern: "^(ex|im)port (.*)",
+          ignoreRegExpLiterals: true,
+          ignoreStrings: true,
+          ignoreTemplateLiterals: true,
+          ignoreUrls: true,
+          tabWidth: 2,
+        },
+      ],
       "no-continue": ["off"],
-      "no-multiple-empty-lines": ["error", {
-        max: 1,
-      }],
-      "no-restricted-exports": ["error", {
-        restrictedNamedExports: ["then"],
-      }],
+      "no-multiple-empty-lines": [
+        "error",
+        {
+          max: 1,
+        },
+      ],
+      "no-restricted-exports": [
+        "error",
+        {
+          restrictedNamedExports: ["then"],
+        },
+      ],
       "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
-      "object-curly-newline": ["error", {
-        ExportDeclaration: {
-          consistent: true,
-          minProperties: 6,
-          multiline: true,
+      "object-curly-newline": [
+        "error",
+        {
+          ExportDeclaration: {
+            consistent: true,
+            minProperties: 6,
+            multiline: true,
+          },
+          ImportDeclaration: {
+            consistent: true,
+            minProperties: 6,
+            multiline: true,
+          },
+          ObjectExpression: {
+            consistent: true,
+            minProperties: 6,
+            multiline: true,
+          },
+          ObjectPattern: {
+            consistent: true,
+            minProperties: 6,
+            multiline: true,
+          },
         },
-        ImportDeclaration: {
-          consistent: true,
-          minProperties: 6,
-          multiline: true,
-        },
-        ObjectExpression: {
-          consistent: true,
-          minProperties: 6,
-          multiline: true,
-        },
-        ObjectPattern: {
-          consistent: true,
-          minProperties: 6,
-          multiline: true,
-        },
-      }],
+      ],
       "quote-props": ["error", "consistent-as-needed"],
-      "quotes": ["error", "double", { avoidEscape: true }],
-      "react/forbid-component-props": ["error", {
-        forbid: [{
-          allowedFor: ["FormattedList", "FormattedNumber"],
-          message: "Use the `className` property instead",
-          propName: "style",
-        }],
-      }],
-      "react/forbid-dom-props": ["error", {
-        forbid: [{
-          message: "Use the `className` property instead",
-          propName: "style",
-        }],
-      }],
-      "react/function-component-definition": ["error", {
-        namedComponents: "arrow-function",
-        unnamedComponents: "arrow-function",
-      }],
+      quotes: ["error", "double", { avoidEscape: true }],
+      "react/forbid-component-props": [
+        "error",
+        {
+          forbid: [
+            {
+              allowedFor: ["FormattedList", "FormattedNumber"],
+              message: "Use the `className` property instead",
+              propName: "style",
+            },
+          ],
+        },
+      ],
+      "react/forbid-dom-props": [
+        "error",
+        {
+          forbid: [
+            {
+              message: "Use the `className` property instead",
+              propName: "style",
+            },
+          ],
+        },
+      ],
+      "react/function-component-definition": [
+        "error",
+        {
+          namedComponents: "arrow-function",
+          unnamedComponents: "arrow-function",
+        },
+      ],
       "react/jsx-sort-props": ["error"],
       "react/style-prop-object": ["off"],
       "react-hooks/exhaustive-deps": ["off"],
       "sonarjs/cognitive-complexity": ["off"],
       "sonarjs/no-duplicate-string": ["off"],
       "sort-destructure-keys/sort-destructure-keys": ["error"],
-      "sort-imports": ["error", {
-        ignoreDeclarationSort: true,
-      }],
-      "sort-keys": ["error", "asc", {
-        natural: true,
-      }],
+      "sort-imports": [
+        "error",
+        {
+          ignoreDeclarationSort: true,
+        },
+      ],
+      "sort-keys": [
+        "error",
+        "asc",
+        {
+          natural: true,
+        },
+      ],
       "sort-vars": ["error"],
       "tailwindcss/classnames-order": ["error"],
       "tailwindcss/enforces-negative-arbitrary-values": ["error"],
@@ -430,24 +453,30 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "tailwindcss/no-arbitrary-value": ["error"],
       "tailwindcss/no-custom-classname": ["error"],
       "unicorn/custom-error-definition": ["error"],
-      "unicorn/filename-case": ["error", {
-        case: "kebabCase",
-        ignore: [
-          "CHANGELOG.md",
-          "README.md",
-        ],
-      }],
+      "unicorn/filename-case": [
+        "error",
+        {
+          case: "kebabCase",
+          ignore: ["CHANGELOG.md", "README.md"],
+        },
+      ],
       "unicorn/no-null": ["off"],
       "unicorn/prefer-at": ["error"],
       "unicorn/prefer-event-target": ["error"],
       "unicorn/prefer-string-replace-all": ["error"],
-      "unicorn/prevent-abbreviations": ["error", {
-        allowList: allowedAbbreviations,
-      }],
-      "unicorn/template-indent": ["error", {
-        comments: ["HTML"],
-        selectors: ["TemplateLiteral"],
-      }],
+      "unicorn/prevent-abbreviations": [
+        "error",
+        {
+          allowList: allowedAbbreviations,
+        },
+      ],
+      "unicorn/template-indent": [
+        "error",
+        {
+          comments: ["HTML"],
+          selectors: ["TemplateLiteral"],
+        },
+      ],
     },
     settings: {
       ...airbnbBaseConfigImports.settings,
@@ -456,21 +485,14 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       ...airbnbConfigReact.settings,
       "import/resolver": {
         node: {
-          extensions: [
-            ...javascriptFileExtensionList,
-            ...typescriptFileExtensionList,
-            ".json",
-          ],
+          extensions: [...javascriptFileExtensionList, ...typescriptFileExtensionList, ".json"],
         },
       },
     },
   },
   {
     files: typescriptFileList,
-    ignores: [
-      ...defaultIgnoreFileList,
-      "**/*.md/**",
-    ],
+    ignores: [...defaultIgnoreFileList, "**/*.md/**"],
     languageOptions: {
       // @ts-ignore
       parser: typescriptParser,
@@ -481,7 +503,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     },
     plugins: {
       "@typescript-eslint": typescriptPlugin,
-      "import": importPlugin,
+      import: importPlugin,
       "typescript-sort-keys": typescriptSortKeysPlugin,
     },
     rules: {
@@ -514,100 +536,104 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       react: reactPlugin,
     },
     rules: {
-      ...markdownPlugin.configs!.recommended!.overrides![1].rules as Linter.RulesRecord,
+      ...(markdownPlugin.configs!.recommended!.overrides![1].rules as Linter.RulesRecord),
       "formatjs/no-literal-string-in-jsx": ["off"],
       "import/no-default-export": ["off"],
       "import/no-extraneous-dependencies": ["off"],
-      "react/jsx-filename-extension": ["error", {
-        extensions: [
-          ".jsx",
-          ".tsx",
-        ],
-      }],
+      "react/jsx-filename-extension": [
+        "error",
+        {
+          extensions: [".jsx", ".tsx"],
+        },
+      ],
       "react/jsx-no-undef": ["off"],
       "react/react-in-jsx-scope": ["off"],
     },
   },
 ];
 
-export const nextEslintConfig = [{
-  files: [
-    ...javascriptFileList,
-    ...typescriptFileList,
-  ],
-  ignores: defaultIgnoreFileList,
-  languageOptions: {
-    globals: {
-      ...globals.browser,
-      ...globals.node,
-    },
-  },
-  plugins: {
-    "@next/next": nextPlugin,
-  },
-  rules: {
-    ...nextPlugin.configs!.recommended.rules,
-    ...nextPlugin.configs!["core-web-vitals"].rules,
-    "import/no-anonymous-default-export": "warn",
-    "jsx-a11y/alt-text": ["warn", {
-      elements: ["img"],
-      img: ["Image"],
-    }],
-    "jsx-a11y/aria-props": "warn",
-    "jsx-a11y/aria-proptypes": "warn",
-    "jsx-a11y/aria-unsupported-elements": "warn",
-    "jsx-a11y/role-has-required-aria-props": "warn",
-    "jsx-a11y/role-supports-aria-props": "warn",
-    "react/jsx-no-target-blank": "off",
-    "react/no-unknown-property": "off",
-    "react/prop-types": "off",
-    "react/react-in-jsx-scope": "off",
-  },
-  settings: {
-    "import/resolver": {
-      typescript: {
-        alwaysTryTypes: true,
+export const nextEslintConfig = [
+  {
+    files: [...javascriptFileList, ...typescriptFileList],
+    ignores: defaultIgnoreFileList,
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
       },
     },
-    "react": {
-      version: "detect",
+    plugins: {
+      "@next/next": nextPlugin,
     },
-    "tailwindcss": {
-      config: "tailwind.config.cjs",
+    rules: {
+      ...nextPlugin.configs!.recommended.rules,
+      ...nextPlugin.configs!["core-web-vitals"].rules,
+      "import/no-anonymous-default-export": "warn",
+      "jsx-a11y/alt-text": [
+        "warn",
+        {
+          elements: ["img"],
+          img: ["Image"],
+        },
+      ],
+      "jsx-a11y/aria-props": "warn",
+      "jsx-a11y/aria-proptypes": "warn",
+      "jsx-a11y/aria-unsupported-elements": "warn",
+      "jsx-a11y/role-has-required-aria-props": "warn",
+      "jsx-a11y/role-supports-aria-props": "warn",
+      "react/jsx-no-target-blank": "off",
+      "react/no-unknown-property": "off",
+      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off",
+    },
+    settings: {
+      "import/resolver": {
+        typescript: {
+          alwaysTryTypes: true,
+        },
+      },
+      react: {
+        version: "detect",
+      },
+      tailwindcss: {
+        config: "tailwind.config.cjs",
+      },
     },
   },
-}];
+];
 
-export const graphqlEslintConfig = [{
-  files: ["**/*.graphql"],
-  ignores: defaultIgnoreFileList,
-  languageOptions: {
-    // @ts-ignore
-    parser: graphqlEslint,
+export const graphqlEslintConfig = [
+  {
+    files: ["**/*.graphql"],
+    ignores: defaultIgnoreFileList,
+    languageOptions: {
+      // @ts-ignore
+      parser: graphqlEslint,
+    },
+    plugins: {
+      "@graphql-eslint": graphqlEslint,
+    },
+    rules: {
+      ...graphqlEslint.configs?.["schema-recommended"]?.rules,
+      ...graphqlEslint.configs?.["schema-all"]?.rules,
+      ...graphqlEslint.configs?.relay?.rules,
+      "@graphql-eslint/relay-edge-types": [
+        "error",
+        {
+          listTypeCanWrapOnlyEdgeType: false,
+        },
+      ],
+      "@graphql-eslint/require-description": [
+        "error",
+        {
+          DirectiveDefinition: true,
+          EnumValueDefinition: true,
+          InputValueDefinition: true,
+          rootField: true,
+          types: true,
+        },
+      ],
+      "@graphql-eslint/strict-id-in-types": ["off"],
+    },
   },
-  plugins: {
-    "@graphql-eslint": graphqlEslint,
-  },
-  rules: {
-    ...graphqlEslint.configs?.["schema-recommended"]?.rules,
-    ...graphqlEslint.configs?.["schema-all"]?.rules,
-    ...graphqlEslint.configs?.relay?.rules,
-    "@graphql-eslint/relay-edge-types": [
-      "error",
-      {
-        listTypeCanWrapOnlyEdgeType: false,
-      },
-    ],
-    "@graphql-eslint/require-description": [
-      "error",
-      {
-        DirectiveDefinition: true,
-        EnumValueDefinition: true,
-        InputValueDefinition: true,
-        rootField: true,
-        types: true,
-      },
-    ],
-    "@graphql-eslint/strict-id-in-types": ["off"],
-  },
-}];
+];

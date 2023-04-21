@@ -15,9 +15,7 @@ Add the following to your `eslint.config.js` file:
 ```ts
 import { baseEslintConfig } from "@spear-ai/eslint-config";
 
-const eslintConfig = [
-  ...baseEslintConfig,
-];
+const eslintConfig = [...baseEslintConfig];
 
 export default eslintConfig;
 ```

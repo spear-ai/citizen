@@ -1,0 +1,43 @@
+{
+  "name": "@spear-ai/prettier-config",
+  "version": "1.0.0",
+  "description": "Spear AI Prettier config",
+  "author": {
+    "name": "Spear AI",
+    "email": "org@spear.ai",
+    "url": "https://spear.ai"
+  },
+  "devDependencies": {
+    "@types/prettier": "2.7.2",
+    "eslint": "8.36.0",
+    "npm-package-json-lint": "6.4.0",
+    "prettier": "2.8.7",
+    "tsup": "6.7.0",
+    "typescript": "4.9.5"
+  },
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "peerDependencies": {
+    "prettier": "^2.8.7"
+  },
+  "repository": {
+    "directory": "packages/prettier-config",
+    "type": "git",
+    "url": "https://github.com/spear-ai/citizen.git"
+  },
+  "scripts": {
+    "build": "tsup src --clean --dts --format cjs,esm",
+    "dev": "yarn build --watch",
+    "fix": "yarn fix:eslint && yarn fix:prettier",
+    "fix:eslint": "yarn lint:eslint --fix",
+    "fix:prettier": "prettier --write .",
+    "lint:eslint": "eslint --max-warnings 0 .",
+    "lint:npm": "npmPkgJsonLint .",
+    "lint:prettier": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "update": "yarn upgrade-interactive"
+  },
+  "type": "module",
+  "types": "./dist/index.d.ts"
+}

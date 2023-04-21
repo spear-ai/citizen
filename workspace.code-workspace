@@ -3,6 +3,7 @@
     "recommendations": [
       "bungcip.better-toml",
       "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
       "ms-azuretools.vscode-docker",
       "sleistner.vscode-fileutils",
       "tyriar.sort-lines",
@@ -29,18 +30,47 @@
       "path": "packages/npm-package-json-lint-config"
     },
     {
+      "name": "spear-ai/prettier-config",
+      "path": "packages/prettier-config"
+    },
+    {
       "name": "spear-ai/pulumi-policy-pack",
       "path": "packages/pulumi-policy-pack"
     }
   ],
   "settings": {
+    "[graphql]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "[json]": {
-      "editor.tabSize": 2
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json5]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[toml]": {
       "editor.tabSize": 2
     },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "[yaml]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.tabSize": 2
     },
     "editor.autoClosingQuotes": "always",
@@ -53,9 +83,11 @@
     },
     "eslint.experimental.useFlatConfig": true,
     "eslint.validate": [
+      "graphql",
       "javascript",
       "javascriptreact",
       "json",
+      "json5",
       "jsonc",
       "markdown",
       "toml",

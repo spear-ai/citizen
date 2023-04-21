@@ -24,26 +24,26 @@ The rules in this guide are intended to work well with the following assumptions
 
 Developers read code more than they write code, and internal developers write code more than outside collaborators:
 
-* Readability > Writeability
-* Writeability for *internal* developers > Writeability for outside collaborators
+- Readability > Writeability
+- Writeability for _internal_ developers > Writeability for outside collaborators
 
 ## Screen size
 
 Developers have medium–large displays:
 
-* Long lines are less likely to wrap
+- Long lines are less likely to wrap
 
 ## GitHub
 
 Developers use GitHub:
 
-* Side-by-side line diffs are **119** characters long
+- Side-by-side line diffs are **119** characters long
 
 ## VSCode
 
 Developers use VSCode:
 
-* Auto-formatting, auto-linting, and code completion reduces keystrokes
+- Auto-formatting, auto-linting, and code completion reduces keystrokes
 
 # Legend
 
@@ -63,7 +63,7 @@ Developers use VSCode:
 
 ### 1.a. DO begin type descriptions with an indefinite article
 
-Do begin type descriptions with an *indefinite* article (“a/an”).
+Do begin type descriptions with an _indefinite_ article (“a/an”).
 
 **SQL:**
 
@@ -95,7 +95,7 @@ type Unit {
 
 ### 1.b. DO begin type property descriptions with a definite article
 
-Do begin type property descriptions with a *definite* article (“the”) when applicable.
+Do begin type property descriptions with a _definite_ article (“the”) when applicable.
 
 **SQL:**
 
@@ -161,9 +161,7 @@ Do show examples when possible.
 //
 // (“Zumwalt-class destroyer”, 3) → “Unit:ZumwaltClassDestroyer:3”
 // (“Leopard 2A7”, 5) → “Unit:Leopard2a7:5”
-const getUnitId = (name: string, index: number) => (
-  `Unit:${pascalCase(name)}:${index}`
-);
+const getUnitId = (name: string, index: number) => `Unit:${pascalCase(name)}:${index}`;
 ```
 
 ### 2.c. DO use sentence case
@@ -420,8 +418,8 @@ website_uniform_resource_locator = "https://spear.ai"
 
 ### 3.g. DON’T invent acronyms
 
-Don’t invent acronyms or initialisms *unless* external users would find it easier to use.
-They’re *not* well known; so must be learned and memorized.
+Don’t invent acronyms or initialisms _unless_ external users would find it easier to use.
+They’re _not_ well known; so must be learned and memorized.
 
 ```py
 # ✓ Good
@@ -509,9 +507,9 @@ Don’t add type definitions.
 
 Reasons:
 
-* They add superfluous information
-* They increase refactoring costs
-* They decrease portability
+- They add superfluous information
+- They increase refactoring costs
+- They decrease portability
 
 ```py
 # ✓ Good
@@ -577,16 +575,12 @@ is_not_visible = True
 
 ```tsx
 // ✓ Good
-<Tab isActive>
-  Click me
-</Tab>;
+<Tab isActive>Click me</Tab>
 ```
 
 ```tsx
 // ✗ Bad
-<Tab isInactive={false}>
-  Click me
-</Tab>;
+<Tab isInactive={false}>Click me</Tab>
 ```
 
 ### 3.m. DO use correct tense
@@ -680,8 +674,8 @@ const successRgbColorCode = "rgb(41, 124, 59)";
 const failureRgbColorCode = "rgb(202, 50, 20)";
 ```
 
-*Exception: A library requires another format.*
-*Exception: Manipulation is easier in another format. (e.g. HSL)*
+_Exception: A library requires another format._
+_Exception: Manipulation is easier in another format. (e.g. HSL)_
 
 #### 4.b. DO use longhand hex color codes
 
