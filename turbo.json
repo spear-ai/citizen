@@ -32,7 +32,7 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["build", "dist"]
+      "outputs": ["build/**", "dist/**"]
     },
     "check": {
       "dependsOn": ["^build"]
