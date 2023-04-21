@@ -19,7 +19,7 @@
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-next": "^13.2.4",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-array-func": "^3.1.8",
     "eslint-plugin-formatjs": "^4.9.0",
     "eslint-plugin-import": "^2.27.5",
