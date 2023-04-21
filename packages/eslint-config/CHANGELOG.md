@@ -1,5 +1,19 @@
 # @spear-ai/eslint-config
 
+## 4.1.0
+
+### Minor Changes
+
+- [#92](https://github.com/spear-ai/citizen/pull/92) [`fa7eef7`](https://github.com/spear-ai/citizen/commit/fa7eef7a46b5cb5bdf3447fd376b7edfef07e121) Thanks [@psirenny](https://github.com/psirenny)! - Add ESLint Prettier config. 🎉
+
+### Patch Changes
+
+- [#93](https://github.com/spear-ai/citizen/pull/93) [`0183e8c`](https://github.com/spear-ai/citizen/commit/0183e8c98c4b2f502645b4358cdf400716182ad0) Thanks [@psirenny](https://github.com/psirenny)! - Skip `check` step on release.
+
+- [#95](https://github.com/spear-ai/citizen/pull/95) [`074e36c`](https://github.com/spear-ai/citizen/commit/074e36c44d3fe083eed6122dbe60be297feb064a) Thanks [@psirenny](https://github.com/psirenny)! - Always build packages before the Changesets GitHub Action runs.
+
+- [#94](https://github.com/spear-ai/citizen/pull/94) [`0a8078a`](https://github.com/spear-ai/citizen/commit/0a8078aabd069d60ff475debbe8b13677e1c1c25) Thanks [@psirenny](https://github.com/psirenny)! - Prevent Turbo build from ignoring `dist/**` files.
+
 ## 4.0.0
 
 ### Major Changes
