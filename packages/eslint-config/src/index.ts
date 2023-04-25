@@ -628,6 +628,7 @@ export const graphqlEslintConfig = [
         {
           DirectiveDefinition: true,
           EnumValueDefinition: true,
+          FieldDefinition: true,
           InputValueDefinition: true,
           rootField: true,
           types: true,
