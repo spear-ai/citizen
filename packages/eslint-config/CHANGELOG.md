@@ -1,5 +1,11 @@
 # @spear-ai/eslint-config
 
+## 4.1.1
+
+### Patch Changes
+
+- [#97](https://github.com/spear-ai/citizen/pull/97) [`7c74289`](https://github.com/spear-ai/citizen/commit/7c74289a0470c0e3b2bf775a094bccf45b2eb04e) Thanks [@psirenny](https://github.com/psirenny)! - Add missing requirement for GraphQL field descriptions. 🐛
+
 ## 4.1.0
 
 ### Minor Changes
