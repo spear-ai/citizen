@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/base:1.0.7-jammy
+FROM mcr.microsoft.com/devcontainers/base:1.0.12-jammy
 
 # Ensure an exit code is returned when part of a piped command fails
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
