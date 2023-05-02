@@ -1880,7 +1880,7 @@ __metadata:
   resolution: "@spear-ai/pulumi-policy-pack@workspace:packages/pulumi-policy-pack"
   dependencies:
     "@pulumi/awsguard": ^0.4.0
-    "@types/node": 18.15.3
+    "@types/node": 18.16.3
     eslint: 8.36.0
     npm-package-json-lint: 6.4.0
     prettier: 2.8.7
@@ -2018,10 +2018,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.15.3":
-  version: 18.15.3
-  resolution: "@types/node@npm:18.15.3"
-  checksum: 31b1d92475a82c30de29aa6c0771b18a276552d191283b4423ba2d61b3f01159bf0d02576c0b7cc834b043997893800db6bb47f246083ed85aa45e79c80875d7
+"@types/node@npm:18.16.3":
+  version: 18.16.3
+  resolution: "@types/node@npm:18.16.3"
+  checksum: 816b39d45b05ebdc6f362b630970df3f6d82f71d418a2555353522f4eeeb078fa201de5299f02c09a09faa975e43b2745fe19c263d44069f87ddf37d6c37b717
   languageName: node
   linkType: hard
 
