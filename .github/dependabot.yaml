@@ -30,3 +30,15 @@ updates:
     package-ecosystem: npm
     schedule:
       interval: monthly
+  - directory: /packages/prettier-config
+    labels:
+      - 🌋 technical debt
+    package-ecosystem: npm
+    schedule:
+      interval: monthly
+  - directory: /packages/pulumi-policy-pack
+    labels:
+      - 🌋 technical debt
+    package-ecosystem: npm
+    schedule:
+      interval: monthly

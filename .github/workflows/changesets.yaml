@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3.5.2
         with:
           token: ${{ secrets.GH_PAT }}
       - name: Cache Turborepo tasks
@@ -38,7 +38,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm config set //npm.pkg.github.com/:_authToken=$GITHUB_TOKEN
       - name: Run Changesets — Create a Release Pull Request or merge a Release Pull Request
-        uses: changesets/action@v1.4.1
+        uses: changesets/action@v1.4.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
