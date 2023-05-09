@@ -1,5 +1,11 @@
 # @spear-ai/eslint-config
 
+## 5.0.1
+
+### Patch Changes
+
+- [#111](https://github.com/spear-ai/citizen/pull/111) [`d63be3a`](https://github.com/spear-ai/citizen/commit/d63be3a5ebbffcf61332546560370a6199444439) Thanks [@psirenny](https://github.com/psirenny)! - Removed `tailwindcss` from dependencies because it’s already a dev dependency.
+
 ## 5.0.0
 
 ### Major Changes
