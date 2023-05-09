@@ -1,5 +1,11 @@
 # @spear-ai/eslint-config
 
+## 5.0.0
+
+### Major Changes
+
+- [#126](https://github.com/spear-ai/citizen/pull/126) [`3649055`](https://github.com/spear-ai/citizen/commit/3649055e97e0dfef30036e14f93f1d9868b5a1f2) Thanks [@psirenny](https://github.com/psirenny)! - Update dependencies.
+
 ## 4.1.1
 
 ### Patch Changes
