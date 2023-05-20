@@ -19,6 +19,10 @@ updates:
     schedule:
       interval: monthly
   - directory: /packages/eslint-config
+    ignore:
+      - dependency-name: graphql
+        update-types:
+          - version-update:semver-major
     labels:
       - 🌋 technical debt
     package-ecosystem: npm
