@@ -7,6 +7,7 @@
     "email": "org@spear.ai",
     "url": "https://spear.ai"
   },
+  "type": "module",
   "dependencies": {
     "npm-package-json-lint-config-default": "^5.0.0"
   },
@@ -25,8 +26,8 @@
     "npm-package-json-lint": "^6.4.0"
   },
   "repository": {
-    "directory": "packages/npm-package-json-lint-config",
     "type": "git",
+    "directory": "packages/npm-package-json-lint-config",
     "url": "https://github.com/spear-ai/citizen.git"
   },
   "scripts": {
@@ -40,6 +41,5 @@
     "lint:prettier": "prettier --check .",
     "typecheck": "tsc --noEmit",
     "update": "yarn upgrade-interactive"
-  },
-  "type": "module"
+  }
 }

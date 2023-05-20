@@ -7,6 +7,7 @@
     "email": "org@spear.ai",
     "url": "https://spear.ai"
   },
+  "type": "module",
   "dependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "^3.2.1",
     "@graphql-eslint/eslint-plugin": "^3.18.0",
@@ -23,6 +24,7 @@
     "eslint-plugin-array-func": "^3.1.8",
     "eslint-plugin-formatjs": "^4.10.1",
     "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-json-schema-validator": "^4.5.0",
     "eslint-plugin-jsonc": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-markdown": "^3.0.0",
@@ -67,8 +69,8 @@
     "typescript": "^5.0.4"
   },
   "repository": {
-    "directory": "packages/eslint-config",
     "type": "git",
+    "directory": "packages/eslint-config",
     "url": "https://github.com/spear-ai/citizen.git"
   },
   "scripts": {
@@ -84,6 +86,5 @@
     "typecheck": "tsc --noEmit",
     "update": "yarn upgrade-interactive"
   },
-  "type": "module",
   "types": "./dist/index.d.ts"
 }

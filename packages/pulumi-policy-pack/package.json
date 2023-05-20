@@ -7,6 +7,7 @@
     "email": "org@spear.ai",
     "url": "https://spear.ai"
   },
+  "type": "module",
   "dependencies": {
     "@pulumi/awsguard": "^0.4.0"
   },
@@ -23,8 +24,8 @@
   },
   "license": "MIT",
   "repository": {
-    "directory": "packages/pulumi-policy-pack",
     "type": "git",
+    "directory": "packages/pulumi-policy-pack",
     "url": "https://github.com/spear-ai/citizen.git"
   },
   "scripts": {
@@ -38,6 +39,5 @@
     "lint:prettier": "prettier --check .",
     "typecheck": "tsc --noEmit",
     "update": "yarn upgrade-interactive"
-  },
-  "type": "module"
+  }
 }

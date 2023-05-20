@@ -7,6 +7,7 @@
     "email": "org@spear.ai",
     "url": "https://spear.ai"
   },
+  "type": "module",
   "devDependencies": {
     "@types/prettier": "2.7.2",
     "eslint": "8.40.0",
@@ -22,8 +23,8 @@
     "prettier": "^2.8.7"
   },
   "repository": {
-    "directory": "packages/prettier-config",
     "type": "git",
+    "directory": "packages/prettier-config",
     "url": "https://github.com/spear-ai/citizen.git"
   },
   "scripts": {
@@ -38,6 +39,5 @@
     "typecheck": "tsc --noEmit",
     "update": "yarn upgrade-interactive"
   },
-  "type": "module",
   "types": "./dist/index.d.ts"
 }
