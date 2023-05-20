@@ -16,11 +16,11 @@
     "@spear-ai/eslint-config": "*",
     "@spear-ai/npm-package-json-lint-config": "*",
     "commitlint": "17.6.3",
-    "eslint": "8.40.0",
+    "eslint": "8.41.0",
     "husky": "8.0.3",
     "npm-package-json-lint": "6.4.0",
     "prettier": "2.8.8",
-    "turbo": "1.9.3"
+    "turbo": "1.9.8"
   },
   "license": "",
   "packageManager": "yarn@3.5.1",
