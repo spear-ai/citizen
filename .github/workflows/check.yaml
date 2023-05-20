@@ -11,20 +11,16 @@ jobs:
   checks:
     name: Build and Check
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
+    env:
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
     steps:
-      - name: Checkout repository
+      - name: Checkout Git repository
         uses: actions/checkout@v3.5.2
         with:
           fetch-depth: 2
           token: ${{ secrets.GH_PAT }}
-      - name: Cache Turborepo tasks
-        uses: actions/cache@v3.2.5
-        with:
-          key: ${{ runner.os }}-turbo-${{ github.sha }}
-          path: .turbo
-          restore-keys: |
-            ${{ runner.os }}-turbo-
       - name: Setup Node.js
         uses: actions/setup-node@v3.6.0
         with:
@@ -33,6 +29,6 @@ jobs:
       - name: Install Node.js dependencies
         run: yarn install
       - name: Build
-        run: yarn build
+        run: yarn run build
       - name: Check
-        run: yarn check
+        run: yarn run check
