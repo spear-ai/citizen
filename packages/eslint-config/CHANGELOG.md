@@ -1,5 +1,13 @@
 # @spear-ai/eslint-config
 
+## 6.0.0
+
+### Major Changes
+
+- [#129](https://github.com/spear-ai/citizen/pull/129) [`4b78a81`](https://github.com/spear-ai/citizen/commit/4b78a81e2c8814cedd990685568b0a1531e846f1) Thanks [@psirenny](https://github.com/psirenny)! - Added JSON Schema validation. 🎉
+
+- [#129](https://github.com/spear-ai/citizen/pull/129) [`4b78a81`](https://github.com/spear-ai/citizen/commit/4b78a81e2c8814cedd990685568b0a1531e846f1) Thanks [@psirenny](https://github.com/psirenny)! - Added JSON Schema sorted properties. 🎉
+
 ## 5.0.1
 
 ### Patch Changes
