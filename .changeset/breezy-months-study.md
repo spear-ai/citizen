@@ -2,4 +2,4 @@
 "@spear-ai/eslint-config": major
 ---
 
-Validate JSON against its JSON Schema. 🎉
+Added JSON Schema validation. 🎉

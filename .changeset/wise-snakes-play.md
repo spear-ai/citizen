@@ -2,4 +2,4 @@
 "@spear-ai/eslint-config": major
 ---
 
-Sort JSON Schema properties. 🎉
+Added JSON Schema sorted properties. 🎉
