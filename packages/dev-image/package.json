@@ -13,8 +13,8 @@
   "license": "MIT",
   "private": true,
   "repository": {
-    "directory": "packages/dev-image",
     "type": "git",
+    "directory": "packages/dev-image",
     "url": "https://github.com/spear-ai/citizen.git"
   },
   "scripts": {

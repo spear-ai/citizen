@@ -7,6 +7,7 @@
     "email": "org@spear.ai",
     "url": "https://spear.ai"
   },
+  "type": "module",
   "dependencies": {
     "@changesets/changelog-github": "0.4.8",
     "@changesets/cli": "2.26.1",
@@ -44,7 +45,6 @@
     "root:lint:prettier": "prettier --check .",
     "update": "yarn upgrade-interactive"
   },
-  "type": "module",
   "workspaces": [
     "packages/*"
   ]

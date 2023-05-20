@@ -22,6 +22,7 @@ import formatJsPlugin from "eslint-plugin-formatjs";
 import importPlugin from "eslint-plugin-import";
 import jsoncPlugin from "eslint-plugin-jsonc";
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
+import jsonSchemaValidatorPlugin from "eslint-plugin-json-schema-validator";
 import markdownPlugin from "eslint-plugin-markdown";
 import markdownProcessor from "eslint-plugin-markdown/lib/processor";
 // import markdownlintPlugin from "eslint-plugin-markdownlint";
@@ -45,7 +46,17 @@ import yamlParser from "yaml-eslint-parser";
 
 export { default as prettierConfig } from "eslint-config-prettier";
 
-export const baseKeyOrder = ["id", "name", "version", "description", "author"];
+export const baseKeyOrder = [
+  "$schema",
+  "$id",
+  "id",
+  "title",
+  "name",
+  "version",
+  "description",
+  "author",
+  "type",
+];
 
 export const defaultKeyOrder = [
   ...baseKeyOrder,
@@ -88,6 +99,8 @@ export const jsoncFileList = [
   "**/turbo.json",
 ];
 
+export const jsonFamilyFileList = [...jsonFileList, ...json5FileList, ...jsoncFileList];
+
 export const jsonFamilyRules: Linter.RulesRecord = {
   "jsonc/array-bracket-newline": ["error", "consistent"],
   "jsonc/array-bracket-spacing": ["error"],
@@ -108,6 +121,10 @@ export const jsonFamilyRules: Linter.RulesRecord = {
   "no-trailing-spaces": ["error"],
 };
 
+export const tomlFileList = ["**/*.toml"];
+
+export const yamlFileList = ["**/*.yaml", "**/*.yml"];
+
 export const allowedAbbreviations = {
   "eslint-plugin-array-func.d": true,
   "eslint-plugin-react-use-props.d": true,
@@ -122,6 +139,8 @@ export const javascriptFileList = javascriptFileExtensionList.map((fileExtension
 export const typescriptFileExtensionList = [".d.ts", ".cts", ".mts", ".ts", ".tsx"];
 
 export const typescriptFileList = typescriptFileExtensionList.map((fileExtension) => `**/*${fileExtension}`);
+
+export const javascriptFamilyFileList = [...javascriptFileList, ...typescriptFileList];
 
 export const baseEslintConfig: Linter.FlatConfig[] = [
   {
@@ -173,7 +192,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     },
   },
   {
-    files: ["**/*.toml"],
+    files: tomlFileList,
     ignores: defaultIgnoreFileList,
     languageOptions: {
       // @ts-ignore
@@ -191,7 +210,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     },
   },
   {
-    files: ["**/*.yaml", "**/*.yml"],
+    files: yamlFileList,
     ignores: defaultIgnoreFileList,
     languageOptions: {
       // @ts-ignore
@@ -232,7 +251,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     },
   },
   {
-    files: ["**/*.yaml", "**/*.yml"],
+    files: yamlFileList,
     ignores: [...defaultIgnoreFileList, "**/*.yarnrc.yml"],
     rules: {
       "yml/file-extension": ["error"],
@@ -515,6 +534,16 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       ...importPlugin.configs!.typescript.rules,
       ...typescriptSortKeysPlugin.configs!.recommended.rules,
       "@typescript-eslint/quotes": ["error", "double", { avoidEscape: true }],
+    },
+  },
+  {
+    files: [...javascriptFamilyFileList, ...jsonFamilyFileList, ...tomlFileList, ...yamlFileList],
+    plugins: {
+      "json-schema-validator": jsonSchemaValidatorPlugin,
+    },
+    rules: {
+      ...jsonSchemaValidatorPlugin?.configs?.recommended?.rules,
+      "json-schema-validator/no-invalid": ["error"],
     },
   },
   {
