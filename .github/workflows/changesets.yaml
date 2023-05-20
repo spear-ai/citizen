@@ -38,7 +38,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm config set //npm.pkg.github.com/:_authToken=$GITHUB_TOKEN
       - name: Run Changesets — Create a Release Pull Request or merge a Release Pull Request
-        uses: changesets/action@v1.4.3
+        uses: changesets/action@v1.4.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
