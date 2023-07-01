@@ -10,7 +10,7 @@
   "type": "module",
   "dependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "^3.2.1",
-    "@graphql-eslint/eslint-plugin": "^3.18.0",
+    "@graphql-eslint/eslint-plugin": "^3.19.2",
     "@next/eslint-plugin-next": "^13.4.3",
     "@types/react": "^18.2.6",
     "@typescript-eslint/eslint-plugin": "^5.59.6",
