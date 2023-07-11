@@ -624,9 +624,6 @@ export const nextEslintConfig = [
       react: {
         version: "detect",
       },
-      tailwindcss: {
-        config: "tailwind.config.cjs",
-      },
     },
   },
 ];
