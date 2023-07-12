@@ -553,6 +553,13 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     },
   },
   {
+    files: ["**/*.config.*", "**/*.test.*", "**/__test__/**"],
+    rules: {
+      "import/no-default-export": ["off"],
+      "import/no-extraneous-dependencies": ["off"],
+    },
+  },
+  {
     files: ["**/*.d.ts"],
     rules: {
       "import/no-default-export": ["off"],
