@@ -1,5 +1,15 @@
 # @spear-ai/eslint-config
 
+## 7.0.0
+
+### Major Changes
+
+- [#181](https://github.com/spear-ai/citizen/pull/181) [`504fa30`](https://github.com/spear-ai/citizen/commit/504fa3045a4d78322b5b97a69a4a18bf4cc2928b) Thanks [@psirenny](https://github.com/psirenny)! - Allowed Tailwind CSS config file to be auto-detected.
+
+### Patch Changes
+
+- [#186](https://github.com/spear-ai/citizen/pull/186) [`fab7b89`](https://github.com/spear-ai/citizen/commit/fab7b895fe2ee781fb62c80f168be5fca17e7ec0) Thanks [@psirenny](https://github.com/psirenny)! - Updated dependencies.
+
 ## 6.0.0
 
 ### Major Changes
