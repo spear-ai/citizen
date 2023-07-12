@@ -1,5 +1,15 @@
 # @spear-ai/eslint-config
 
+## 8.0.0
+
+### Major Changes
+
+- [#194](https://github.com/spear-ai/citizen/pull/194) [`e504bbf`](https://github.com/spear-ai/citizen/commit/e504bbfdac089e746667b546adb7b6ef379d48e9) Thanks [@psirenny](https://github.com/psirenny)! - Disabled ESLint `import/no-default-export` rule in config files.
+
+- [#194](https://github.com/spear-ai/citizen/pull/194) [`e504bbf`](https://github.com/spear-ai/citizen/commit/e504bbfdac089e746667b546adb7b6ef379d48e9) Thanks [@psirenny](https://github.com/psirenny)! - Disabled ESLint `import/no-extraneous-dependencies` rule in dev files.
+
+- [#193](https://github.com/spear-ai/citizen/pull/193) [`b938e52`](https://github.com/spear-ai/citizen/commit/b938e52e718bfaa7b852bd3838b3f5bdc27865d4) Thanks [@psirenny](https://github.com/psirenny)! - Ignored common Node.js and Python cache directories in ESLint config.
+
 ## 7.0.2
 
 ### Patch Changes
