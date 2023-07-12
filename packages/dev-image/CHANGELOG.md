@@ -1,5 +1,11 @@
 # @spear-ai/dev-image
 
+## 1.1.1
+
+### Patch Changes
+
+- [#189](https://github.com/spear-ai/citizen/pull/189) [`897e8eb`](https://github.com/spear-ai/citizen/commit/897e8ebb48b9651457aee5606bffbf8799397d24) Thanks [@psirenny](https://github.com/psirenny)! - Cut a new release.
+
 ## 1.1.0
 
 ### Minor Changes
