@@ -1,6 +1,6 @@
 {
   "name": "@spear-ai/npm-package-json-lint-config",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Spear AI `npm-package-json-lint` config files",
   "author": {
     "name": "Spear AI",
