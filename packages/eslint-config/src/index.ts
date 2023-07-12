@@ -68,7 +68,15 @@ export const defaultKeyOrder = [
   },
 ];
 
-export const defaultIgnoreFileList = ["**/.yarn/**", "**/build", "**/dist", "**/node_modules"];
+export const defaultIgnoreFileList = [
+  ".turbo",
+  ".turbo/**",
+  "**/.turbo/**",
+  "**/.yarn/**",
+  "**/build",
+  "**/dist",
+  "**/node_modules",
+];
 
 export const githubWorkflowKeyOrder = [
   "if",
@@ -199,11 +207,11 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       parser: tomlParser,
     },
     plugins: {
-      toml: tomlPlugin,
+      toml: tomlPlugin as ESLint.Plugin,
     },
     rules: {
-      ...(tomlPlugin.configs!.base.overrides![0].rules as Linter.RulesRecord),
-      ...(tomlPlugin.configs!.standard.rules as Linter.RulesRecord),
+      ...(tomlPlugin.configs.base.overrides[0].rules as Linter.RulesRecord),
+      ...(tomlPlugin.configs.standard.rules as Linter.RulesRecord),
       "no-multiple-empty-lines": ["error", { max: 1 }],
       "no-trailing-spaces": ["error"],
       "toml/array-bracket-spacing": ["error", "never"],
@@ -217,12 +225,10 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       parser: yamlParser,
     },
     plugins: {
-      yml: yamlPlugin,
+      yml: yamlPlugin as ESLint.Plugin,
     },
     rules: {
-      // @ts-ignore
       ...(yamlPlugin.configs.base.overrides[0].rules as Linter.RulesRecord),
-      // @ts-ignore
       ...(yamlPlugin.configs.standard.rules as Linter.RulesRecord),
       "no-multiple-empty-lines": ["error", { max: 0 }],
       "no-trailing-spaces": ["error"],
@@ -281,12 +287,12 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       // @ts-ignore
       parser: typescriptParser,
       parserOptions: {
-        ...typescriptPlugin.configs!.base.parserOptions,
+        ...(typescriptPlugin.configs!.base as ESLint.ConfigData).parserOptions,
       },
     },
     plugins: {
       "@eslint-community/eslint-comments": eslintCommentsPlugin,
-      "@typescript-eslint": typescriptPlugin,
+      "@typescript-eslint": typescriptPlugin as unknown as ESLint.Plugin,
       "array-func": arrayFuncPlugin,
       formatjs: formatJsPlugin,
       import: importPlugin,
@@ -303,7 +309,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       unicorn: unicornPlugin,
     },
     rules: {
-      ...(airbnbBaseConfigBestPractices.rules as Linter.RulesRecord),
+      ...airbnbBaseConfigBestPractices.rules,
       ...airbnbBaseConfigErrors.rules,
       ...airbnbBaseConfigNode.rules,
       ...airbnbBaseConfigStyle.rules,
@@ -314,15 +320,15 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       ...airbnbConfigReact.rules,
       ...airbnbConfigReactA11y.rules,
       ...airbnbConfigReactHooks.rules,
-      ...arrayFuncPlugin.configs!.recommended.rules,
-      ...arrayFuncPlugin.configs!.all.rules,
-      ...eslintCommentsPlugin.configs!.recommended.rules,
-      ...importPlugin.configs!.recommended.rules,
-      ...regexpPlugin.configs!.all.rules,
-      ...promisePlugin.configs!.recommended.rules,
+      ...(arrayFuncPlugin.configs!.recommended as ESLint.ConfigData).rules,
+      ...(arrayFuncPlugin.configs!.all as ESLint.ConfigData).rules,
+      ...(eslintCommentsPlugin.configs!.recommended as ESLint.ConfigData).rules,
+      ...(importPlugin.configs!.recommended as ESLint.ConfigData).rules,
+      ...(regexpPlugin.configs!.all as ESLint.ConfigData).rules,
+      ...(promisePlugin.configs!.recommended as ESLint.ConfigData).rules,
       ...sonarjsPlugin.configs.recommended.rules,
-      ...tailwindCssPlugin.configs!.recommended.rules,
-      ...unicornPlugin.configs!.recommended.rules,
+      ...(tailwindCssPlugin.configs!.recommended as ESLint.ConfigData).rules,
+      ...(unicornPlugin.configs!.recommended as ESLint.ConfigData).rules,
       "@eslint-community/eslint-comments/disable-enable-pair": [
         "error",
         {
@@ -516,23 +522,23 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       // @ts-ignore
       parser: typescriptParser,
       parserOptions: {
-        ...typescriptPlugin.configs!.base.parserOptions,
+        ...(typescriptPlugin.configs!.base as ESLint.ConfigData).parserOptions,
         project: "tsconfig.json",
       },
     },
     plugins: {
-      "@typescript-eslint": typescriptPlugin,
-      import: importPlugin,
+      "@typescript-eslint": typescriptPlugin as unknown as ESLint.Plugin,
+      import: importPlugin as unknown as ESLint.Plugin,
       "typescript-sort-keys": typescriptSortKeysPlugin,
     },
     rules: {
       ...airbnbTypescriptConfigShared.rules,
       ...airbnbTypescriptConfig.rules,
-      ...typescriptPlugin.configs!.base.rules,
-      ...typescriptPlugin.configs!["eslint-recommended"]!.overrides![0].rules,
-      ...typescriptPlugin.configs!["recommended-requiring-type-checking"].rules,
-      ...importPlugin.configs!.typescript.rules,
-      ...typescriptSortKeysPlugin.configs!.recommended.rules,
+      ...(typescriptPlugin.configs!.base as ESLint.ConfigData).rules,
+      ...(typescriptPlugin.configs!["eslint-recommended"] as ESLint.ConfigData)!.overrides![0].rules,
+      ...(typescriptPlugin.configs!["recommended-requiring-type-checking"] as ESLint.ConfigData).rules,
+      ...(importPlugin.configs!.typescript! as ESLint.ConfigData).rules,
+      ...(typescriptSortKeysPlugin.configs!.recommended as ESLint.ConfigData).rules,
       "@typescript-eslint/quotes": ["error", "double", { avoidEscape: true }],
     },
   },
@@ -542,7 +548,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "json-schema-validator": jsonSchemaValidatorPlugin,
     },
     rules: {
-      ...jsonSchemaValidatorPlugin?.configs?.recommended?.rules,
+      ...(jsonSchemaValidatorPlugin?.configs?.recommended as ESLint.ConfigData).rules,
       "json-schema-validator/no-invalid": ["error"],
     },
   },
@@ -565,7 +571,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       react: reactPlugin,
     },
     rules: {
-      ...(markdownPlugin.configs!.recommended!.overrides![1].rules as Linter.RulesRecord),
+      ...(markdownPlugin.configs!.recommended! as ESLint.ConfigData).overrides![1].rules,
       "formatjs/no-literal-string-in-jsx": ["off"],
       "import/no-default-export": ["off"],
       "import/no-extraneous-dependencies": ["off"],
@@ -595,8 +601,8 @@ export const nextEslintConfig = [
       "@next/next": nextPlugin,
     },
     rules: {
-      ...nextPlugin.configs!.recommended.rules,
-      ...nextPlugin.configs!["core-web-vitals"].rules,
+      ...(nextPlugin.configs!.recommended as ESLint.ConfigData).rules,
+      ...(nextPlugin.configs!["core-web-vitals"] as ESLint.ConfigData).rules,
       "import/no-anonymous-default-export": "warn",
       "jsx-a11y/alt-text": [
         "warn",
@@ -640,9 +646,9 @@ export const graphqlEslintConfig = [
       "@graphql-eslint": graphqlEslint,
     },
     rules: {
-      ...graphqlEslint.configs?.["schema-recommended"]?.rules,
-      ...graphqlEslint.configs?.["schema-all"]?.rules,
-      ...graphqlEslint.configs?.relay?.rules,
+      ...(graphqlEslint.configs?.["schema-recommended"] as ESLint.ConfigData).rules,
+      ...(graphqlEslint.configs?.["schema-all"] as ESLint.ConfigData).rules,
+      ...(graphqlEslint.configs?.relay as ESLint.ConfigData).rules,
       "@graphql-eslint/relay-edge-types": [
         "error",
         {
