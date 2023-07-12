@@ -632,6 +632,12 @@ export const nextEslintConfig = [
       },
     },
   },
+  {
+    files: ["src/app/**", "src/page/**"],
+    rules: {
+      "import/no-default-export": ["off"],
+    },
+  },
 ];
 
 export const graphqlEslintConfig = [
