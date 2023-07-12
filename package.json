@@ -20,7 +20,8 @@
     "husky": "8.0.3",
     "npm-package-json-lint": "7.0.0",
     "prettier": "3.0.0",
-    "turbo": "1.10.7"
+    "turbo": "1.10.7",
+    "typescript": "5.0.4"
   },
   "license": "",
   "packageManager": "yarn@3.5.1",
@@ -31,18 +32,17 @@
   },
   "scripts": {
     "build": "yarn dlx turbo build",
-    "check": "yarn dlx turbo root:check-yarn-cache root:lint:eslint root:lint:npm lint:eslint lint:prettier lint:npm",
-    "fix": "yarn dlx turbo root:fix fix",
+    "eslint:check": "eslint --max-warnings 0 .",
+    "eslint:fix": "yarn eslint:check --fix",
     "github-actions:push": "act push -s GH_PAT=$GH_PAT -s GITHUB_TOKEN=$GH_PAT -s NPM_TOKEN=$NPM_TOKEN",
     "github-actions:push:release-tag": "act push -e .github/test-events/push-release-tag.json -s GH_PAT=$GH_PAT -s GITHUB_TOKEN=$GH_PAT",
+    "npmpkgjsonlint:check": "npmPkgJsonLint .",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --write .",
     "publish-packages": "yarn publish-packages:npm && yarn publish-packages:github",
     "publish-packages:github": "npm_config_registry=https://npm.pkg.github.com changeset publish",
     "publish-packages:npm": "changeset publish",
-    "root:check-yarn-cache": "yarn install --check-cache --immutable --immutable-cache",
-    "root:fix": "yarn root:lint:eslint --fix",
-    "root:lint:eslint": "eslint --max-warnings 0 .",
-    "root:lint:npm": "npmPkgJsonLint .",
-    "root:lint:prettier": "prettier --check .",
+    "typescript:check": "tsc --noEmit",
     "update": "yarn upgrade-interactive"
   },
   "workspaces": [

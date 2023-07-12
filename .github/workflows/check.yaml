@@ -3,10 +3,14 @@ on:
   pull_request:
     types:
       - opened
+      - reopened
       - synchronize
   push:
     branches:
       - main
+env:
+  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 jobs:
   checks:
     name: Build and Check
@@ -17,18 +21,15 @@ jobs:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
     steps:
       - name: Checkout Git repository
-        uses: actions/checkout@v3.5.2
+        uses: actions/checkout@v3.5.3
         with:
           fetch-depth: 2
-          token: ${{ secrets.GH_PAT }}
       - name: Setup Node.js
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v3.7.0
         with:
           cache: yarn
           node-version-file: .node-version
       - name: Install Node.js dependencies
-        run: yarn install
-      - name: Build
-        run: yarn run build
+        run: yarn install --check-cache --immutable --immutable-cache
       - name: Check
-        run: yarn run check
+        run: yarn turbo run check

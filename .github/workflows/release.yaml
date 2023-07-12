@@ -1,48 +1,46 @@
-name: Changesets
+name: Release
 on:
   push:
     branches:
       - main
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+env:
+  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 jobs:
-  release:
-    name: Release
+  changesets:
+    name: Changesets
     runs-on: ubuntu-latest
+    outputs:
+      should-deploy: ${{ steps.changesets.outputs.hasChangesets == 'false' }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3.5.2
-        with:
-          token: ${{ secrets.GH_PAT }}
-      - name: Cache Turborepo tasks
-        uses: actions/cache@v3.2.5
-        with:
-          key: ${{ runner.os }}-turbo-${{ github.sha }}
-          path: .turbo
-          restore-keys: |
-            ${{ runner.os }}-turbo-
+        uses: actions/checkout@v3.5.3
       - name: Setup Node.js
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v3.7.0
         with:
           cache: yarn
           node-version-file: .node-version
       - name: Install Node.js dependencies
         run: yarn install
       - name: Build packages
-        run: yarn build
+        run: yarn turbo run build
       - name: Authenticate with NPM
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
       - name: Authenticate with GitHub Packages
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npm config set //npm.pkg.github.com/:_authToken=$GITHUB_TOKEN
-      - name: Run Changesets — Create a Release Pull Request or merge a Release Pull Request
-        uses: changesets/action@v1.4.4
+      - id: changesets
+        name: Run Changesets — Create a Release Pull Request or merge a Release Pull Request
+        uses: changesets/action@v1.4.5
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           title: "ci: release 🚀"
           commit: "ci: release 🚀"
-          publish: yarn publish-packages
+          publish: yarn run publish-packages
