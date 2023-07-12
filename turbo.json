@@ -1,55 +1,40 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
-    "//#root:check": {},
-    "//#root:check-yarn-cache": {
-      "inputs": [".yarn/cache", "yarn.lock"]
-    },
+    "//#eslint:check": {},
+    "//#eslint:fix": {},
+    "//#npmpkgjsonlint:check": {},
+    "//#prettier:check": {},
+    "//#prettier:fix": {},
     "//#root:fix": {
       "dependsOn": ["^build"]
     },
-    "//#root:lint:eslint": {
-      "dependsOn": ["^build"],
-      "inputs": [
-        "**/*.code-workspace",
-        "**/*.cjs",
-        "**/*.js",
-        "**/*.json",
-        "**/*.json5",
-        "**/*.jsonc",
-        "**/*.mjs",
-        "**/*.toml",
-        "**/*.ts",
-        "**/*.yaml",
-        "**/*.yml",
-        "eslint.config.js",
-        "tsconfig.json"
-      ]
-    },
-    "//#root:lint:npm": {
-      "dependsOn": ["^build"],
-      "inputs": [".npmpackagejsonlintignore", "npmpackagejsonlint.config.cjs", "package.json"]
-    },
+    "//#typescript:check": {},
     "build": {
       "dependsOn": ["^build"],
+      "dotEnv": [".env", ".env.local", ".env.production", ".env.production.local"],
       "outputs": ["build/**", "dist/**"]
     },
     "check": {
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "//#eslint:check",
+        "//#npmpkgjsonlint:check",
+        "//#prettier:check",
+        "eslint:check",
+        "npmpkgjsonlint:check",
+        "prettier:check",
+        "typescript:check"
+      ]
     },
     "dev": {
       "cache": false,
       "persistent": true
     },
-    "fix": {
-      "cache": false,
-      "dependsOn": ["^build"]
-    },
-    "lint:eslint": {
+    "eslint:check": {
       "dependsOn": ["^build"],
       "inputs": [
-        "**/*.code-workspace",
         "**/*.cjs",
+        "**/*.code-workspace",
         "**/*.graphql",
         "**/*.js",
         "**/*.json",
@@ -67,11 +52,19 @@
         "tsconfig.json"
       ]
     },
-    "lint:npm": {
+    "eslint:fix": {
+      "cache": false,
+      "dependsOn": ["^build"]
+    },
+    "fix": {
+      "cache": false,
+      "dependsOn": ["//#eslint:fix", "eslint:fix", "//#prettier:fix", "prettier:fix"]
+    },
+    "npmpkgjsonlint:check": {
       "dependsOn": ["^build"],
       "inputs": [".npmpackagejsonlintignore", "npmpackagejsonlint.config.cjs", "package.json"]
     },
-    "lint:prettier": {
+    "prettier:check": {
       "dependsOn": ["^build"],
       "inputs": [
         "**/*.cjs",
@@ -87,9 +80,19 @@
         "**/*.toml",
         "**/*.ts",
         "**/*.tsx",
+        "**/*.yaml",
+        "**/*.yml",
         ".prettierignore",
-        "prettier.config.cjs"
+        "prettier.config.*"
       ]
+    },
+    "prettier:fix": {
+      "cache": false,
+      "dependsOn": ["^build"]
+    },
+    "typescript:check": {
+      "dependsOn": ["^build"],
+      "inputs": ["**/*.cjs", "**/*.js", "**/*.json", "**/*.mjs", "**/*.ts", "**/*.tsx", "tsconfig.json"]
     }
   }
 }

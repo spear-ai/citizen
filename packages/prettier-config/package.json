@@ -30,14 +30,12 @@
   "scripts": {
     "build": "tsup src --clean --dts --format cjs,esm",
     "dev": "yarn build --watch",
-    "fix": "yarn fix:eslint && yarn fix:prettier",
-    "fix:eslint": "yarn lint:eslint --fix",
-    "fix:prettier": "prettier --write .",
-    "lint:eslint": "eslint --max-warnings 0 .",
-    "lint:npm": "npmPkgJsonLint .",
-    "lint:prettier": "prettier --check .",
-    "typecheck": "tsc --noEmit",
-    "update": "yarn upgrade-interactive"
+    "eslint:check": "eslint --max-warnings 0 .",
+    "eslint:fix": "yarn eslint:check --fix",
+    "npmpkgjsonlint:check": "npmPkgJsonLint .",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "typescript:check": "tsc --noEmit"
   },
   "types": "./dist/index.d.ts"
 }
