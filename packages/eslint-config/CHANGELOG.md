@@ -1,5 +1,11 @@
 # @spear-ai/eslint-config
 
+## 9.0.0
+
+### Major Changes
+
+- [#195](https://github.com/spear-ai/citizen/pull/195) [`4d61c06`](https://github.com/spear-ai/citizen/commit/4d61c06bc6a9a82e5165647f2a590eac072a615c) Thanks [@psirenny](https://github.com/psirenny)! - Disabled ESLint `import/no-default-export` rule in a Next.js project’s router directory.
+
 ## 8.0.0
 
 ### Major Changes
