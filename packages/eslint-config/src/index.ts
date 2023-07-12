@@ -69,13 +69,19 @@ export const defaultKeyOrder = [
 ];
 
 export const defaultIgnoreFileList = [
-  ".turbo",
-  ".turbo/**",
+  "**/.coverage_reports",
+  "**/.mypy_cache",
+  "**/.next",
+  "**/.pytest_cache",
+  "**/.ruff_cache",
   "**/.turbo/**",
+  "**/.venv",
   "**/.yarn/**",
   "**/build",
   "**/dist",
   "**/node_modules",
+  ".turbo",
+  ".turbo/**",
 ];
 
 export const githubWorkflowKeyOrder = [
