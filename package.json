@@ -39,9 +39,9 @@
     "npmpkgjsonlint:check": "npmPkgJsonLint .",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "publish-packages": "yarn publish-packages:npm && yarn publish-packages:github",
-    "publish-packages:github": "npm_config_registry=https://npm.pkg.github.com changeset publish",
-    "publish-packages:npm": "changeset publish",
+    "publish-packages": "yarn publish-packages:npm && yarn publish-packages:github && yarn changeset tag",
+    "publish-packages:github": "npm_config_registry=https://npm.pkg.github.com changeset publish --no-git-tag",
+    "publish-packages:npm": "changeset publish --no-git-tag",
     "typescript:check": "tsc --noEmit",
     "update": "yarn upgrade-interactive"
   },
