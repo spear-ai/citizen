@@ -18,7 +18,7 @@
     "commitlint": "17.6.6",
     "eslint": "8.44.0",
     "husky": "8.0.3",
-    "npm-package-json-lint": "6.4.0",
+    "npm-package-json-lint": "7.0.0",
     "prettier": "3.0.0",
     "turbo": "1.10.7"
   },

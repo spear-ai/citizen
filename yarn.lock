@@ -1794,7 +1794,7 @@ __metadata:
     commitlint: 17.6.6
     eslint: 8.44.0
     husky: 8.0.3
-    npm-package-json-lint: 6.4.0
+    npm-package-json-lint: 7.0.0
     prettier: 3.0.0
     turbo: 1.10.7
   languageName: unknown
@@ -1849,7 +1849,7 @@ __metadata:
     globals: ^13.20.0
     graphql: 15.8.0
     jsonc-eslint-parser: ^2.3.0
-    npm-package-json-lint: 6.4.0
+    npm-package-json-lint: 7.0.0
     prettier: 3.0.0
     react: 18.2.0
     tailwindcss: 3.3.2
@@ -1871,8 +1871,8 @@ __metadata:
   resolution: "@spear-ai/npm-package-json-lint-config@workspace:packages/npm-package-json-lint-config"
   dependencies:
     eslint: 8.44.0
-    npm-package-json-lint: 6.4.0
-    npm-package-json-lint-config-default: ^5.0.0
+    npm-package-json-lint: 7.0.0
+    npm-package-json-lint-config-default: ^6.0.0
     prettier: 3.0.0
     tsup: 7.1.0
     typescript: 5.1.6
@@ -1887,7 +1887,7 @@ __metadata:
   dependencies:
     "@types/prettier": 2.7.3
     eslint: 8.44.0
-    npm-package-json-lint: 6.4.0
+    npm-package-json-lint: 7.0.0
     prettier: 3.0.0
     tsup: 7.1.0
     typescript: 5.1.6
@@ -1903,7 +1903,7 @@ __metadata:
     "@pulumi/awsguard": ^0.4.0
     "@types/node": 18.16.19
     eslint: 8.44.0
-    npm-package-json-lint: 6.4.0
+    npm-package-json-lint: 7.0.0
     prettier: 3.0.0
     tsup: 7.1.0
     typescript: 5.1.6
@@ -3306,6 +3306,18 @@ __metadata:
     parse-json: ^5.0.0
     path-type: ^4.0.0
   checksum: b3d277bc3a8a9e649bf4c3fc9740f4c52bf07387481302aa79839f595045368903bf26ea24a8f7f7b8b180bf46037b027c5cb63b1391ab099f3f78814a147b2b
+  languageName: node
+  linkType: hard
+
+"cosmiconfig@npm:^8.2.0":
+  version: 8.2.0
+  resolution: "cosmiconfig@npm:8.2.0"
+  dependencies:
+    import-fresh: ^3.2.1
+    js-yaml: ^4.1.0
+    parse-json: ^5.0.0
+    path-type: ^4.0.0
+  checksum: 836d5d8efa750f3fb17b03d6ca74cd3154ed025dffd045304b3ef59637f662bde1e5dc88f8830080d180ec60841719cf4ea2ce73fb21ec694b16865c478ff297
   languageName: node
   linkType: hard
 
@@ -6859,39 +6871,39 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-package-json-lint-config-default@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "npm-package-json-lint-config-default@npm:5.0.0"
+"npm-package-json-lint-config-default@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "npm-package-json-lint-config-default@npm:6.0.0"
   peerDependencies:
-    npm-package-json-lint: ^6.0.0
-  checksum: 175ffd7fda85faa2cc616fc27d2fa21e0c4c6ddea7cd6257a27fba5091928f184586716b16e699f9e3d3dd99f3add526786785c815947a6192d8fba508b91492
+    npm-package-json-lint: ^7.0.0
+  checksum: 828ae9e50c4b51d406a64dde39a2b80c8683bd0164e8ccf553098e8af9cf2dc64678b2c068e7693c94652320e2f86738269f56897df1c7e36c50a2c244f7b58f
   languageName: node
   linkType: hard
 
-"npm-package-json-lint@npm:6.4.0":
-  version: 6.4.0
-  resolution: "npm-package-json-lint@npm:6.4.0"
+"npm-package-json-lint@npm:7.0.0":
+  version: 7.0.0
+  resolution: "npm-package-json-lint@npm:7.0.0"
   dependencies:
     ajv: ^6.12.6
     ajv-errors: ^1.0.1
     chalk: ^4.1.2
-    cosmiconfig: ^8.0.0
+    cosmiconfig: ^8.2.0
     debug: ^4.3.4
     globby: ^11.1.0
-    ignore: ^5.2.0
+    ignore: ^5.2.4
     is-plain-obj: ^3.0.0
     jsonc-parser: ^3.2.0
     log-symbols: ^4.1.0
     meow: ^9.0.0
     plur: ^4.0.0
-    semver: ^7.3.8
+    semver: ^7.5.3
     slash: ^3.0.0
     strip-json-comments: ^3.1.1
-    type-fest: ^3.2.0
+    type-fest: ^3.12.0
     validate-npm-package-name: ^5.0.0
   bin:
     npmPkgJsonLint: dist/cli.js
-  checksum: 75cca8bfffd40cd848778f27cd2800515137a8747098d86c3cfc0f5c43073daeb4baf9be4771f06ef47659ec7b77ec5afab6024530329a9eafea2b0f3e102f55
+  checksum: 81074023ad52aa1c7102d9608484427fb83d4b3492736ec11488885c114d0e450ac4c4c290bc28795c04d1b785cfff9b34ce25d16a6491144205750e0cf3129f
   languageName: node
   linkType: hard
 
@@ -8958,12 +8970,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^3.2.0":
-  version: 3.10.0
-  resolution: "type-fest@npm:3.10.0"
-  peerDependencies:
-    typescript: ">=4.7.0"
-  checksum: df3bd25809ea79ac7712da7c11648251118c23f65b226eba263797e42be60ba34085874ec492202b8ecf2e5a2273b27ddcbfe3be2c275dfcef3f0e2ee90ea179
+"type-fest@npm:^3.12.0":
+  version: 3.13.0
+  resolution: "type-fest@npm:3.13.0"
+  checksum: f7be142ae1ad0582eafd52d085350799c8cd918c15455896a06c82c147b61f8cea58892bedf1348943478e37740562219375b3b59fd855db99cd2b2766510f98
   languageName: node
   linkType: hard
 
