@@ -1361,12 +1361,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:13.4.9, @next/eslint-plugin-next@npm:^13.4.9":
+"@next/eslint-plugin-next@npm:13.4.9":
   version: 13.4.9
   resolution: "@next/eslint-plugin-next@npm:13.4.9"
   dependencies:
     glob: 7.1.7
   checksum: d57f1246fac54173c47a065404ba7237cfd6618648db4effbcdb30b5578b99edb3a2593df13ca617aa63c40e5e1336551089c506b2168a69a6cf8d5d7d045c0b
+  languageName: node
+  linkType: hard
+
+"@next/eslint-plugin-next@npm:^13.4.12":
+  version: 13.4.12
+  resolution: "@next/eslint-plugin-next@npm:13.4.12"
+  dependencies:
+    glob: 7.1.7
+  checksum: a20cf430efe7602b819e69d826c33659a9c2cfa7c6162f63d91b607ff6ac9da0e79ff27f38cebd79117500640329bd107521b4874e6a2d009ddafab762885c82
   languageName: node
   linkType: hard
 
@@ -1815,7 +1824,7 @@ __metadata:
   dependencies:
     "@eslint-community/eslint-plugin-eslint-comments": ^3.2.1
     "@graphql-eslint/eslint-plugin": ^3.20.0
-    "@next/eslint-plugin-next": ^13.4.9
+    "@next/eslint-plugin-next": ^13.4.12
     "@types/eslint": 8.44.0
     "@types/react": ^18.2.14
     "@typescript-eslint/eslint-plugin": ^5.62.0
