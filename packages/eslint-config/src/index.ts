@@ -559,6 +559,12 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     },
   },
   {
+    files: [".github/**/*.yaml"],
+    rules: {
+      "json-schema-validator/no-invalid": ["off"],
+    },
+  },
+  {
     files: ["**/*.config.*", "**/*.test.*", "**/__test__/**"],
     rules: {
       "import/no-extraneous-dependencies": ["off"],
