@@ -9,11 +9,11 @@
   },
   "type": "module",
   "devDependencies": {
-    "@types/prettier": "2.7.3",
-    "eslint": "8.44.0",
+    "@types/prettier": "3.0.0",
+    "eslint": "8.47.0",
     "npm-package-json-lint": "7.0.0",
-    "prettier": "3.0.0",
-    "tsup": "7.1.0",
+    "prettier": "3.0.2",
+    "tsup": "7.2.0",
     "typescript": "5.1.6"
   },
   "license": "MIT",
@@ -28,7 +28,7 @@
     "url": "https://github.com/spear-ai/citizen.git"
   },
   "scripts": {
-    "build": "tsup src --clean --dts --format cjs,esm",
+    "build": "tsup src --cjsInterop --clean --dts --format cjs,esm",
     "dev": "yarn build --watch",
     "eslint:check": "eslint --max-warnings 0 .",
     "eslint:fix": "yarn eslint:check --fix",

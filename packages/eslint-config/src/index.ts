@@ -2,7 +2,7 @@ import eslintCommentsPlugin from "@eslint-community/eslint-plugin-eslint-comment
 import nextPlugin from "@next/eslint-plugin-next";
 import graphqlEslint from "@graphql-eslint/eslint-plugin";
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
-import typescriptParser from "@typescript-eslint/parser";
+import typescriptParser from "@typescript-eslint/parser"; // eslint-disable-line import/no-unresolved
 import type { ESLint, Linter } from "eslint";
 import airbnbBaseConfigBestPractices from "eslint-config-airbnb-base/rules/best-practices";
 import airbnbBaseConfigErrors from "eslint-config-airbnb-base/rules/errors";
@@ -161,7 +161,6 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     files: jsonFileList,
     ignores: [...defaultIgnoreFileList, "package-lock.json"],
     languageOptions: {
-      // @ts-ignore
       parser: jsoncParser,
     },
     plugins: {
@@ -177,7 +176,6 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     files: json5FileList,
     ignores: defaultIgnoreFileList,
     languageOptions: {
-      // @ts-ignore
       parser: jsoncParser,
     },
     plugins: {
@@ -193,7 +191,6 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     files: jsoncFileList,
     ignores: defaultIgnoreFileList,
     languageOptions: {
-      // @ts-ignore
       parser: jsoncParser,
     },
     plugins: {
@@ -209,7 +206,6 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     files: tomlFileList,
     ignores: defaultIgnoreFileList,
     languageOptions: {
-      // @ts-ignore
       parser: tomlParser,
     },
     plugins: {
@@ -227,7 +223,6 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     files: yamlFileList,
     ignores: defaultIgnoreFileList,
     languageOptions: {
-      // @ts-ignore
       parser: yamlParser,
     },
     plugins: {
@@ -290,11 +285,8 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     files: [...javascriptFileList, ...typescriptFileList],
     ignores: defaultIgnoreFileList,
     languageOptions: {
-      // @ts-ignore
       parser: typescriptParser,
-      parserOptions: {
-        ...(typescriptPlugin.configs!.base as ESLint.ConfigData).parserOptions,
-      },
+      parserOptions: { sourceType: "module" },
     },
     plugins: {
       "@eslint-community/eslint-comments": eslintCommentsPlugin,
@@ -326,15 +318,15 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       ...airbnbConfigReact.rules,
       ...airbnbConfigReactA11y.rules,
       ...airbnbConfigReactHooks.rules,
-      ...(arrayFuncPlugin.configs!.recommended as ESLint.ConfigData).rules,
-      ...(arrayFuncPlugin.configs!.all as ESLint.ConfigData).rules,
-      ...(eslintCommentsPlugin.configs!.recommended as ESLint.ConfigData).rules,
-      ...(importPlugin.configs!.recommended as ESLint.ConfigData).rules,
-      ...(regexpPlugin.configs!.all as ESLint.ConfigData).rules,
-      ...(promisePlugin.configs!.recommended as ESLint.ConfigData).rules,
+      ...(arrayFuncPlugin.configs?.recommended as ESLint.ConfigData).rules,
+      ...(arrayFuncPlugin.configs?.all as ESLint.ConfigData).rules,
+      ...(eslintCommentsPlugin.configs?.recommended as ESLint.ConfigData).rules,
+      ...(importPlugin.configs?.recommended as ESLint.ConfigData).rules,
+      ...(regexpPlugin.configs?.all as ESLint.ConfigData).rules,
+      ...(promisePlugin.configs?.recommended as ESLint.ConfigData).rules,
       ...sonarjsPlugin.configs.recommended.rules,
-      ...(tailwindCssPlugin.configs!.recommended as ESLint.ConfigData).rules,
-      ...(unicornPlugin.configs!.recommended as ESLint.ConfigData).rules,
+      ...(tailwindCssPlugin.configs?.recommended as ESLint.ConfigData).rules,
+      ...(unicornPlugin.configs?.recommended as ESLint.ConfigData).rules,
       "@eslint-community/eslint-comments/disable-enable-pair": [
         "error",
         {
@@ -373,6 +365,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
         },
       ],
       "jsx-a11y/no-autofocus": ["off"],
+      "lines-between-class-members": ["error", "always", { exceptAfterSingleLine: false }],
       "max-len": [
         "error",
         {
@@ -525,10 +518,9 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     files: typescriptFileList,
     ignores: [...defaultIgnoreFileList, "**/*.md/**"],
     languageOptions: {
-      // @ts-ignore
       parser: typescriptParser,
       parserOptions: {
-        ...(typescriptPlugin.configs!.base as ESLint.ConfigData).parserOptions,
+        parserOptions: { sourceType: "module" },
         project: "tsconfig.json",
       },
     },
@@ -540,12 +532,14 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     rules: {
       ...airbnbTypescriptConfigShared.rules,
       ...airbnbTypescriptConfig.rules,
-      ...(typescriptPlugin.configs!.base as ESLint.ConfigData).rules,
-      ...(typescriptPlugin.configs!["eslint-recommended"] as ESLint.ConfigData)!.overrides![0].rules,
-      ...(typescriptPlugin.configs!["recommended-requiring-type-checking"] as ESLint.ConfigData).rules,
-      ...(importPlugin.configs!.typescript! as ESLint.ConfigData).rules,
-      ...(typescriptSortKeysPlugin.configs!.recommended as ESLint.ConfigData).rules,
+      ...(typescriptPlugin.configs?.base as ESLint.ConfigData).rules,
+      ...(typescriptPlugin.configs?.["eslint-recommended"] as ESLint.ConfigData).overrides?.[0].rules,
+      ...(typescriptPlugin.configs?.["stylistic-type-checked"] as ESLint.ConfigData).rules,
+      ...(typescriptPlugin.configs?.["strict-type-checked"] as ESLint.ConfigData).rules,
+      ...(importPlugin.configs?.typescript as ESLint.ConfigData).rules,
+      ...(typescriptSortKeysPlugin.configs?.recommended as ESLint.ConfigData).rules,
       "@typescript-eslint/quotes": ["error", "double", { avoidEscape: true }],
+      "lines-between-class-members": ["error", "always", { exceptAfterSingleLine: false }],
     },
   },
   {
@@ -554,7 +548,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "json-schema-validator": jsonSchemaValidatorPlugin,
     },
     rules: {
-      ...(jsonSchemaValidatorPlugin?.configs?.recommended as ESLint.ConfigData).rules,
+      ...(jsonSchemaValidatorPlugin.configs?.recommended as ESLint.ConfigData).rules,
       "json-schema-validator/no-invalid": ["error"],
     },
   },
@@ -595,7 +589,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       react: reactPlugin,
     },
     rules: {
-      ...(markdownPlugin.configs!.recommended! as ESLint.ConfigData).overrides![1].rules,
+      ...(markdownPlugin.configs?.recommended as ESLint.ConfigData).overrides?.[1].rules,
       "formatjs/no-literal-string-in-jsx": ["off"],
       "import/no-default-export": ["off"],
       "import/no-extraneous-dependencies": ["off"],
@@ -625,8 +619,8 @@ export const nextEslintConfig = [
       "@next/next": nextPlugin,
     },
     rules: {
-      ...(nextPlugin.configs!.recommended as ESLint.ConfigData).rules,
-      ...(nextPlugin.configs!["core-web-vitals"] as ESLint.ConfigData).rules,
+      ...(nextPlugin.configs?.recommended as ESLint.ConfigData).rules,
+      ...(nextPlugin.configs?.["core-web-vitals"] as ESLint.ConfigData).rules,
       "import/no-anonymous-default-export": "warn",
       "jsx-a11y/alt-text": [
         "warn",
@@ -669,7 +663,6 @@ export const graphqlEslintConfig = [
     files: ["**/*.graphql"],
     ignores: defaultIgnoreFileList,
     languageOptions: {
-      // @ts-ignore
       parser: graphqlEslint,
     },
     plugins: {
