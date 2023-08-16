@@ -1,9 +1,12 @@
 import eslintCommentsPlugin from "@eslint-community/eslint-plugin-eslint-comments";
-import nextPlugin from "@next/eslint-plugin-next";
 import graphqlEslint from "@graphql-eslint/eslint-plugin";
+import nextPlugin from "@next/eslint-plugin-next";
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser"; // eslint-disable-line import/no-unresolved
 import type { ESLint, Linter } from "eslint";
+import airbnbConfigReact from "eslint-config-airbnb/rules/react";
+import airbnbConfigReactA11y from "eslint-config-airbnb/rules/react-a11y";
+import airbnbConfigReactHooks from "eslint-config-airbnb/rules/react-hooks";
 import airbnbBaseConfigBestPractices from "eslint-config-airbnb-base/rules/best-practices";
 import airbnbBaseConfigErrors from "eslint-config-airbnb-base/rules/errors";
 import airbnbBaseConfigEs6 from "eslint-config-airbnb-base/rules/es6";
@@ -12,17 +15,15 @@ import airbnbBaseConfigNode from "eslint-config-airbnb-base/rules/node";
 import airbnbBaseConfigStrict from "eslint-config-airbnb-base/rules/strict";
 import airbnbBaseConfigStyle from "eslint-config-airbnb-base/rules/style";
 import airbnbBaseConfigVariables from "eslint-config-airbnb-base/rules/variables";
-import airbnbTypescriptConfigShared from "eslint-config-airbnb-typescript/lib/shared";
 import airbnbTypescriptConfig from "eslint-config-airbnb-typescript";
-import airbnbConfigReact from "eslint-config-airbnb/rules/react";
-import airbnbConfigReactA11y from "eslint-config-airbnb/rules/react-a11y";
-import airbnbConfigReactHooks from "eslint-config-airbnb/rules/react-hooks";
+import airbnbTypescriptConfigShared from "eslint-config-airbnb-typescript/lib/shared";
 import arrayFuncPlugin from "eslint-plugin-array-func";
+import canonicalPlugin from "eslint-plugin-canonical";
 import formatJsPlugin from "eslint-plugin-formatjs";
 import importPlugin from "eslint-plugin-import";
+import jsonSchemaValidatorPlugin from "eslint-plugin-json-schema-validator";
 import jsoncPlugin from "eslint-plugin-jsonc";
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
-import jsonSchemaValidatorPlugin from "eslint-plugin-json-schema-validator";
 import markdownPlugin from "eslint-plugin-markdown";
 import markdownProcessor from "eslint-plugin-markdown/lib/processor";
 // import markdownlintPlugin from "eslint-plugin-markdownlint";
@@ -32,13 +33,14 @@ import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import reactUsePropsPlugin from "eslint-plugin-react-use-props";
 import regexpPlugin from "eslint-plugin-regexp";
+import simpleImportSortPlugin from "eslint-plugin-simple-import-sort";
 import sonarjsPlugin from "eslint-plugin-sonarjs";
 import sortDestructureKeysPlugin from "eslint-plugin-sort-destructure-keys";
 import tailwindCssPlugin from "eslint-plugin-tailwindcss";
 import tomlPlugin from "eslint-plugin-toml";
-import yamlPlugin from "eslint-plugin-yml";
 import typescriptSortKeysPlugin from "eslint-plugin-typescript-sort-keys";
 import unicornPlugin from "eslint-plugin-unicorn";
+import yamlPlugin from "eslint-plugin-yml";
 import globals from "globals";
 import jsoncParser from "jsonc-eslint-parser";
 import tomlParser from "toml-eslint-parser";
@@ -292,6 +294,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "@eslint-community/eslint-comments": eslintCommentsPlugin,
       "@typescript-eslint": typescriptPlugin as unknown as ESLint.Plugin,
       "array-func": arrayFuncPlugin,
+      canonical: canonicalPlugin,
       formatjs: formatJsPlugin,
       import: importPlugin,
       "jsx-a11y": jsxA11yPlugin,
@@ -301,6 +304,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "react-hooks": reactHooksPlugin,
       "react-use-props": reactUsePropsPlugin,
       regexp: regexpPlugin,
+      "simple-import-sort": simpleImportSortPlugin,
       sonarjs: sonarjsPlugin as ESLint.Plugin,
       "sort-destructure-keys": sortDestructureKeysPlugin,
       tailwindcss: tailwindCssPlugin,
@@ -334,7 +338,16 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
         },
       ],
       "@next/next/google-font-display": ["off"],
+      "@typescript-eslint/sort-type-constituents": ["error"],
       "array-func/prefer-array-from": ["off"],
+      "canonical/sort-keys": [
+        "error",
+        "asc",
+        {
+          caseSensitive: false,
+          natural: true,
+        },
+      ],
       "dot-notation": ["off"],
       "formatjs/enforce-default-message": ["error"],
       "formatjs/enforce-id": [
@@ -453,22 +466,11 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "react/jsx-sort-props": ["error"],
       "react/style-prop-object": ["off"],
       "react-hooks/exhaustive-deps": ["off"],
+      "simple-import-sort/exports": ["error"],
+      "simple-import-sort/imports": ["error"],
       "sonarjs/cognitive-complexity": ["off"],
       "sonarjs/no-duplicate-string": ["off"],
       "sort-destructure-keys/sort-destructure-keys": ["error"],
-      "sort-imports": [
-        "error",
-        {
-          ignoreDeclarationSort: true,
-        },
-      ],
-      "sort-keys": [
-        "error",
-        "asc",
-        {
-          natural: true,
-        },
-      ],
       "sort-vars": ["error"],
       "tailwindcss/classnames-order": ["error"],
       "tailwindcss/enforces-negative-arbitrary-values": ["error"],
