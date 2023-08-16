@@ -1,5 +1,21 @@
 # @spear-ai/eslint-config
 
+## 10.0.0
+
+### Major Changes
+
+- [#224](https://github.com/spear-ai/citizen/pull/224) [`ff88d4b`](https://github.com/spear-ai/citizen/commit/ff88d4b29b1bd3eb7c2f65c24f77f566e8272882) Thanks [@psirenny](https://github.com/psirenny)! - Enforced function expressions in ESLint Config.
+
+- [#221](https://github.com/spear-ai/citizen/pull/221) [`dc71c6e`](https://github.com/spear-ai/citizen/commit/dc71c6ee51ad15b435d0358842cc943d058e3273) Thanks [@psirenny](https://github.com/psirenny)! - Updated ESLint dependencies.
+
+- [#225](https://github.com/spear-ai/citizen/pull/225) [`cecf757`](https://github.com/spear-ai/citizen/commit/cecf757c94795d8715910dd139ccabc92b701064) Thanks [@psirenny](https://github.com/psirenny)! - Re-enabled exhaustive dependency checking in React hooks.
+
+- [#226](https://github.com/spear-ai/citizen/pull/226) [`a4533d6`](https://github.com/spear-ai/citizen/commit/a4533d67ecfa0ac1f3d0ced3b0d2888c525daf50) Thanks [@psirenny](https://github.com/psirenny)! - Improved ESLint sorting (object keys, imports, exports, etc.)
+
+### Patch Changes
+
+- [#218](https://github.com/spear-ai/citizen/pull/218) [`7213dc4`](https://github.com/spear-ai/citizen/commit/7213dc4250f4a2fe72034a46a5354da8053383e9) Thanks [@psirenny](https://github.com/psirenny)! - Disabled JSON Schema validation for GitHub Action workflows.
+
 ## 9.0.0
 
 ### Major Changes
