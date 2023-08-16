@@ -1,5 +1,11 @@
 # @spear-ai/pulumi-policy-pack
 
+## 2.0.5
+
+### Patch Changes
+
+- [#227](https://github.com/spear-ai/citizen/pull/227) [`2c0926c`](https://github.com/spear-ai/citizen/commit/2c0926c6b0e8d217fffb9d25e943437805f9da8d) Thanks [@psirenny](https://github.com/psirenny)! - Removed CJS default export workaround.
+
 ## 2.0.4
 
 ### Patch Changes
