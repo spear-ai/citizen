@@ -38,6 +38,7 @@ import sonarjsPlugin from "eslint-plugin-sonarjs";
 import sortDestructureKeysPlugin from "eslint-plugin-sort-destructure-keys";
 import tailwindCssPlugin from "eslint-plugin-tailwindcss";
 import tomlPlugin from "eslint-plugin-toml";
+import turboPlugin from "eslint-plugin-turbo";
 import typescriptSortKeysPlugin from "eslint-plugin-typescript-sort-keys";
 import unicornPlugin from "eslint-plugin-unicorn";
 import yamlPlugin from "eslint-plugin-yml";
@@ -308,6 +309,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       sonarjs: sonarjsPlugin as ESLint.Plugin,
       "sort-destructure-keys": sortDestructureKeysPlugin,
       tailwindcss: tailwindCssPlugin,
+      turbo: turboPlugin,
       unicorn: unicornPlugin,
     },
     rules: {
@@ -478,6 +480,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "tailwindcss/migration-from-tailwind-2": ["error"],
       "tailwindcss/no-arbitrary-value": ["error"],
       "tailwindcss/no-custom-classname": ["error"],
+      "turbo/no-undeclared-env-vars": ["error"],
       "unicorn/custom-error-definition": ["error"],
       "unicorn/filename-case": [
         "error",

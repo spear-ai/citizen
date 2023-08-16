@@ -1877,6 +1877,7 @@ __metadata:
     eslint-plugin-sort-destructure-keys: ^1.5.0
     eslint-plugin-tailwindcss: ^3.13.0
     eslint-plugin-toml: ^0.5.0
+    eslint-plugin-turbo: ^1.10.12
     eslint-plugin-typescript-sort-keys: ^2.3.0
     eslint-plugin-unicorn: ^48.0.1
     eslint-plugin-yml: ^1.8.0
@@ -3762,6 +3763,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:16.0.3":
+  version: 16.0.3
+  resolution: "dotenv@npm:16.0.3"
+  checksum: afcf03f373d7a6d62c7e9afea6328e62851d627a4e73f2e12d0a8deae1cd375892004f3021883f8aec85932cd2834b091f568ced92b4774625b321db83b827f8
+  languageName: node
+  linkType: hard
+
 "dotenv@npm:^8.1.0":
   version: 8.6.0
   resolution: "dotenv@npm:8.6.0"
@@ -4606,6 +4614,17 @@ __metadata:
   peerDependencies:
     eslint: ">=6.0.0"
   checksum: c9df93f00747adc6ffdac6971a33383b2663b38bfdb8e230a9a50ca1a38703112a9ee0afe11563934cf59bb61b693f5e8b57e9a71efad6709b4707939e26da97
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-turbo@npm:^1.10.12":
+  version: 1.10.12
+  resolution: "eslint-plugin-turbo@npm:1.10.12"
+  dependencies:
+    dotenv: 16.0.3
+  peerDependencies:
+    eslint: ">6.6.0"
+  checksum: 8f13089983979b727e5585d6a407cbc973e526eae56f20acff60a10cb03c81149c4e051958dc2fe5e3ec90563bed747289464ba8895d02af6edaed14d9dcc49a
   languageName: node
   linkType: hard
 
