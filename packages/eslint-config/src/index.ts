@@ -467,7 +467,12 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "react/jsx-sort-props": ["error"],
       "react/style-prop-object": ["off"],
       "simple-import-sort/exports": ["error"],
-      "simple-import-sort/imports": ["error"],
+      "simple-import-sort/imports": [
+        "error",
+        {
+          groups: [["^\\u0000", "^node:", "^@?\\w", "^", "^\\."]],
+        },
+      ],
       "sonarjs/cognitive-complexity": ["off"],
       "sonarjs/no-duplicate-string": ["off"],
       "sort-destructure-keys/sort-destructure-keys": ["error"],
