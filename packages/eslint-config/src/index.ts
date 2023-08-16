@@ -346,6 +346,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "formatjs/enforce-placeholders": ["error"],
       "formatjs/no-literal-string-in-jsx": ["error"],
       "formatjs/no-multiple-whitespaces": ["error"],
+      "func-style": ["error", "expression"],
       "function-paren-newline": ["off", "consistent"],
       "import/no-anonymous-default-export": ["error"],
       "import/no-default-export": ["error"],
