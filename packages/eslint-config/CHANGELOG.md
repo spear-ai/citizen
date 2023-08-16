@@ -1,5 +1,11 @@
 # @spear-ai/eslint-config
 
+## 10.1.0
+
+### Minor Changes
+
+- [#231](https://github.com/spear-ai/citizen/pull/231) [`2d864e5`](https://github.com/spear-ai/citizen/commit/2d864e53a632139dc2c7e71397a34738dfb4fad3) Thanks [@psirenny](https://github.com/psirenny)! - Modified ESLint Config to remove newlines between imports.
+
 ## 10.0.0
 
 ### Major Changes
