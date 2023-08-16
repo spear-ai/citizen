@@ -28,7 +28,7 @@
     "url": "https://github.com/spear-ai/citizen.git"
   },
   "scripts": {
-    "build": "tsup src --cjsInterop --clean --dts --format cjs,esm",
+    "build": "tsup src --cjsInterop --clean --dts --format cjs,esm --splitting",
     "dev": "yarn build --watch",
     "eslint:check": "eslint --max-warnings 0 .",
     "eslint:fix": "yarn eslint:check --fix",
