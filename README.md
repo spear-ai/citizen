@@ -191,6 +191,8 @@ const backgroundColor = "#2ebde5"; // Azure
 ```
 
 ```ts
+/* eslint-disable capitalized-comments */
+
 // ✗ Bad
 // choose a background color that matches the sky
 const backgroundColor = "#2ebde5"; // azure
