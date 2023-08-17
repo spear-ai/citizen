@@ -338,6 +338,8 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
         },
       ],
       "@next/next/google-font-display": ["off"],
+      "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+      "@typescript-eslint/quotes": ["error", "double", { avoidEscape: true }],
       "@typescript-eslint/sort-type-constituents": ["error"],
       "array-func/prefer-array-from": ["off"],
       "canonical/sort-keys": [
@@ -545,7 +547,9 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       ...(typescriptPlugin.configs?.["strict-type-checked"] as ESLint.ConfigData).rules,
       ...(importPlugin.configs?.typescript as ESLint.ConfigData).rules,
       ...(typescriptSortKeysPlugin.configs?.recommended as ESLint.ConfigData).rules,
+      "@typescript-eslint/consistent-type-definitions": ["error", "type"],
       "@typescript-eslint/quotes": ["error", "double", { avoidEscape: true }],
+      "@typescript-eslint/sort-type-constituents": ["error"],
       "lines-between-class-members": ["error", "always", { exceptAfterSingleLine: false }],
     },
   },
