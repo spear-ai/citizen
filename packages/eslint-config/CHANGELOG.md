@@ -1,5 +1,11 @@
 # @spear-ai/eslint-config
 
+## 12.0.0
+
+### Major Changes
+
+- [#234](https://github.com/spear-ai/citizen/pull/234) [`2dff403`](https://github.com/spear-ai/citizen/commit/2dff403483486d7782048b343c0c7c5abd91f635) Thanks [@psirenny](https://github.com/psirenny)! - Enforced warnings on uncapitalized comments in ESLint Config.
+
 ## 11.0.0
 
 ### Major Changes
