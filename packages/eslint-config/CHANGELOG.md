@@ -1,5 +1,11 @@
 # @spear-ai/eslint-config
 
+## 11.0.0
+
+### Major Changes
+
+- [#232](https://github.com/spear-ai/citizen/pull/232) [`aa9c1a1`](https://github.com/spear-ai/citizen/commit/aa9c1a14a6775b7af762a610c5a5c9bc2435abc7) Thanks [@psirenny](https://github.com/psirenny)! - Fixed regression in ESLint Config where interfaces were marked as preferred over types.
+
 ## 10.1.0
 
 ### Minor Changes
