@@ -1,6 +1,6 @@
 {
   "name": "@spear-ai/eslint-config",
-  "version": "12.0.0",
+  "version": "12.0.1",
   "description": "Spear AI ESLint config",
   "author": {
     "name": "Spear AI",
