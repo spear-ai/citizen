@@ -335,7 +335,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
           natural: true,
         },
       ],
-      "capitalized-comments": ["warn", "always"],
+      "capitalized-comments": ["warn", "always", { ignoreConsecutiveComments: true }],
       "dot-notation": ["off"],
       "formatjs/enforce-default-message": ["error"],
       "formatjs/enforce-id": [
