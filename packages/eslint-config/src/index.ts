@@ -26,8 +26,6 @@ import jsoncPlugin from "eslint-plugin-jsonc";
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
 import markdownPlugin from "eslint-plugin-markdown";
 import markdownProcessor from "eslint-plugin-markdown/lib/processor";
-// import markdownlintPlugin from "eslint-plugin-markdownlint";
-// import markdownlintParser from "eslint-plugin-markdownlint/parser";
 import promisePlugin from "eslint-plugin-promise";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
@@ -270,19 +268,6 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     files: ["**/*.md"],
     processor: markdownProcessor,
   },
-  // {
-  //   files: ["**/*.md"],
-  //   languageOptions: {
-  //     // @ts-ignore
-  //     parser: markdownlintParser,
-  //   },
-  //   plugins: {
-  //     markdownlint: markdownlintPlugin,
-  //   },
-  //   rules: {
-  //     ...markdownlintPlugin.configs!.recommended.rules as Linter.RulesRecord,
-  //   },
-  // },
   {
     files: [...javascriptFileList, ...typescriptFileList],
     ignores: defaultIgnoreFileList,
@@ -350,6 +335,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
           natural: true,
         },
       ],
+      "capitalized-comments": ["warn", "always"],
       "dot-notation": ["off"],
       "formatjs/enforce-default-message": ["error"],
       "formatjs/enforce-id": [
