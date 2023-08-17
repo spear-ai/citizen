@@ -1,5 +1,11 @@
 # @spear-ai/eslint-config
 
+## 12.0.1
+
+### Patch Changes
+
+- [#236](https://github.com/spear-ai/citizen/pull/236) [`710a945`](https://github.com/spear-ai/citizen/commit/710a94513802cb9f5adb1b4dec13b6b761b961ef) Thanks [@psirenny](https://github.com/psirenny)! - Fixed ESLint Config’s comment capitalization rule to only apply to the first line.
+
 ## 12.0.0
 
 ### Major Changes
