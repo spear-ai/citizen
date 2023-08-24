@@ -254,7 +254,7 @@ distance = speed / (time / 60) #  Meters
 
 ## Variables
 
-### ¶ 9W.a. DO follow casing conventions
+### ¶ 9W.1Q. DO follow casing conventions
 
 Follow the casing conventions of the current language.
 
