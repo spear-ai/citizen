@@ -382,6 +382,22 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
         },
       ],
       "no-continue": ["off"],
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          format: ["camelCase", "PascalCase", "UPPER_CASE"],
+          selector: "variable",
+          trailingUnderscore: "allow",
+        },
+        {
+          format: ["camelCase", "PascalCase"],
+          selector: "function",
+        },
+        {
+          format: ["PascalCase"],
+          selector: "typeLike",
+        },
+      ],
       "no-multiple-empty-lines": [
         "error",
         {
@@ -395,6 +411,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
         },
       ],
       "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
+      "no-underscore-dangle": ["off"],
       "object-curly-newline": [
         "error",
         {
