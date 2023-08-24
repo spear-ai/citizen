@@ -658,7 +658,9 @@ SELECT * FROM people_addresses
 
 ## Data formats
 
-### ¶ Ts.Ef: DO prefer hex color codes
+### Color
+
+#### ¶ Ts.Ef: DO prefer hex color codes
 
 ```ts
 // ✓ Good
@@ -675,7 +677,7 @@ const failureRgbColorCode = "rgb(202, 50, 20)";
 _Exception: A library requires another format._
 _Exception: Manipulation is easier in another format. (e.g. HSL)_
 
-### ¶ Ts.8M: DO use longhand hex color codes
+#### ¶ Ts.8M: DO use longhand hex color codes
 
 ```ts
 // ✓ Good
@@ -689,7 +691,7 @@ const color = "#f00";
 const colorAlpha = "#f00f";
 ```
 
-### ¶ Ts.G0: DO use lowercase hex color codes
+#### ¶ Ts.G0: DO use lowercase hex color codes
 
 ```ts
 // ✓ Good
@@ -703,7 +705,7 @@ const backgroundColor = "#EDF6FF";
 const foregroundColor = "#006ADC";
 ```
 
-### ¶ Ts.2g: DO make color format explict in non-HTML contexts
+#### ¶ Ts.2g: DO make color format explict in non-HTML contexts
 
 ```graphql
 # ✓ Good
