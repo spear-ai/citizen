@@ -324,6 +324,22 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       ],
       "@next/next/google-font-display": ["off"],
       "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          format: ["camelCase", "PascalCase", "UPPER_CASE"],
+          selector: "variable",
+          trailingUnderscore: "allow",
+        },
+        {
+          format: ["camelCase", "PascalCase"],
+          selector: "function",
+        },
+        {
+          format: ["PascalCase"],
+          selector: "typeLike",
+        },
+      ],
       "@typescript-eslint/quotes": ["error", "double", { avoidEscape: true }],
       "@typescript-eslint/sort-type-constituents": ["error"],
       "array-func/prefer-array-from": ["off"],
@@ -395,6 +411,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
         },
       ],
       "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
+      "no-underscore-dangle": ["off"],
       "object-curly-newline": [
         "error",
         {
