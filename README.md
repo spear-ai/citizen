@@ -61,7 +61,7 @@ Developers use VSCode:
 
 ## Copy
 
-### 1.a. DO begin type descriptions with an indefinite article
+### ¶ cE.K6: DO begin type descriptions with an indefinite article
 
 Do begin type descriptions with an _indefinite_ article (“a/an”).
 
@@ -93,7 +93,7 @@ type Unit {
 }
 ```
 
-### 1.b. DO begin type property descriptions with a definite article
+### ¶ cE.re: DO begin type property descriptions with a definite article
 
 Do begin type property descriptions with a _definite_ article (“the”) when applicable.
 
@@ -141,16 +141,14 @@ class Unit:
     name: str  # A name of a unit.
 ```
 
-### 2.a. DO communicate intent
-
 ## Comments
 
-### 2.a. DO communicate intent
+### ¶ LW.n8: DO communicate intent
 
 Comments should explain intent rather than what the code is doing.
 If it's unclear what the code is doing then it should be refactored.
 
-### 2.b. DO show examples
+### ¶ LW.8j: DO show examples
 
 Do show examples when possible.
 
@@ -164,7 +162,7 @@ Do show examples when possible.
 const getUnitId = (name: string, index: number) => `Unit:${pascalCase(name)}:${index}`;
 ```
 
-### 2.c. DO use sentence case
+### ¶ LW.hb: DO use sentence case
 
 Do use [sentence case](https://apastyle.apa.org/style-grammar-guidelines/capitalization/sentence-case) in comments.
 
@@ -198,7 +196,7 @@ const backgroundColor = "#2ebde5"; // Azure
 const backgroundColor = "#2ebde5"; // azure
 ```
 
-### 2.d. DO punctuate multi-line comments
+### ¶ LW.nA: DO punctuate multi-line comments
 
 Do use punctuation on multi-line comments.
 
@@ -221,7 +219,7 @@ placeholder_text = …
 placeholder_text = …
 ```
 
-### 2.d. DO punctuate documentation-as-code
+### ¶ LW.XU: DO punctuate documentation-as-code
 
 Do punctuate comments that serve as documentation.
 These comments often generate Website docs, CLI arguments, etc.
@@ -245,7 +243,7 @@ class Banana:
     """The length in meters."""
 ```
 
-### 2.f. DO inline short comments
+### ¶ LW.Sf: DO inline short comments
 
 ```py
 # ✓ Good
@@ -256,7 +254,7 @@ distance = speed / (time / 60) #  Meters
 
 ## Variables
 
-### 3.a. DO follow casing conventions
+### ¶ 9W.a. DO follow casing conventions
 
 Follow the casing conventions of the current language.
 
@@ -286,7 +284,7 @@ let bounding_box: [i32; 4] = [0, 0, 10, 10];
 const boundingBox = [0, 0, 10, 10];
 ```
 
-### 3.b. DO favor readability to brevity
+### ¶ 9W.MX: DO favor readability to brevity
 
 Do favor readability to brevity.
 
@@ -302,7 +300,7 @@ image = "huggingface/transformers-pytorch-gpu"
 type = "p3.8xlarge"
 ```
 
-### 3.c. DO group with a prefix
+### ¶ 9W.qP: DO group with a prefix
 
 Do group related variables with a prefix.
 
@@ -320,7 +318,7 @@ stride = (1, 1)
 learning_rate = 1e-05
 ```
 
-### 3.d. DO space out pre/post-fixes
+### ¶ 9W.hn: DO space out pre/post-fixes
 
 Do insert a space before postfixes and after prefixes.
 
@@ -348,7 +346,7 @@ const username = "…";
 const userPassword = "…";
 ```
 
-### 3.e. DON’T use abbreviations
+### ¶ 9W.qV: DON’T use abbreviations
 
 Don’t use abbreviations. They’re more likely to encounter naming conflicts.
 They must also be be learned and memorized.
@@ -389,7 +387,7 @@ sm = SageMaker()
 hparams = {…}
 ```
 
-### 3.f. DO use acronyms
+### ¶ 9W.cv: DO use acronyms
 
 Do use acronyms and initialisms. They’re well known and less verbose.
 Moreover, the words they represent are often unknown; so must be learned and memorized
@@ -418,7 +416,7 @@ simple_storage_service_bucket = "secret-stuff"
 website_uniform_resource_locator = "https://spear.ai"
 ```
 
-### 3.g. DON’T invent acronyms
+### ¶ 9W.MM: DON’T invent acronyms
 
 Don’t invent acronyms or initialisms _unless_ external users would find it easier to use.
 They’re _not_ well known; so must be learned and memorized.
@@ -447,7 +445,7 @@ really_cool_network_has_attention = True
 really_cool_network_hidden_layer_size = 40
 ```
 
-### 3.h. DO add type hints
+### ¶ 9W.Co: DO add type hints
 
 Do add type hints. Many names are ambiguous and can be confused for booleans, dates, functions, etc.
 
@@ -479,7 +477,7 @@ file = await fs.readFile("…");
 loaded = false;
 ```
 
-### 3.i. DO differentiate types
+### ¶ 9W.4R: DO differentiate types
 
 Do differentiate types. It’s hard to switch between contexts when variable names represent different types.
 
@@ -503,7 +501,7 @@ agent = "10"
 agent = Agent(id="10", type=Tiger)
 ```
 
-### 3.j. DON’T add type definitions
+### ¶ 9W.6u: DON’T add type definitions
 
 Don’t add type definitions.
 
@@ -537,7 +535,7 @@ const bigIntBalance = BigInt(7_301_985);
 const maskUint8Array = new Uint8Array();
 ```
 
-### 3.k. DO use boolean verbs
+### ¶ 9W.ZX: DO use boolean verbs
 
 Do use appropriate boolean verbs.
 
@@ -555,7 +553,7 @@ features = True
 reset = True
 ```
 
-### 3.l. DO be positive
+### ¶ 9W.6t: DO be positive
 
 Do be positive with boolean variables.
 
@@ -585,7 +583,7 @@ is_not_visible = True
 <Tab isInactive={false}>Click me</Tab>
 ```
 
-### 3.m. DO use correct tense
+### ¶ 9W.jt: DO use correct tense
 
 Do use the correct tense.
 
@@ -594,7 +592,7 @@ if was_suspended and not is_suspended:
     print("Welcome back!")
 ```
 
-### 3.n. DON’T pluralize collections [[!]](#legend)
+### ¶ 9W.fY: DON’T pluralize collections [[!]](#legend)
 
 Don’t pluralize collections. Instead, specify the collection type.
 
@@ -660,9 +658,7 @@ SELECT * FROM people_addresses
 
 ## Data formats
 
-### Color
-
-#### 4.a. DO prefer hex color codes
+### ¶ Ts.Ef: DO prefer hex color codes
 
 ```ts
 // ✓ Good
@@ -679,7 +675,7 @@ const failureRgbColorCode = "rgb(202, 50, 20)";
 _Exception: A library requires another format._
 _Exception: Manipulation is easier in another format. (e.g. HSL)_
 
-#### 4.b. DO use longhand hex color codes
+### ¶ Ts.8M: DO use longhand hex color codes
 
 ```ts
 // ✓ Good
@@ -693,7 +689,7 @@ const color = "#f00";
 const colorAlpha = "#f00f";
 ```
 
-#### 4.c. DO use lowercase hex color codes
+### ¶ Ts.G0: DO use lowercase hex color codes
 
 ```ts
 // ✓ Good
@@ -707,7 +703,7 @@ const backgroundColor = "#EDF6FF";
 const foregroundColor = "#006ADC";
 ```
 
-#### 4.d. DO make color format explict in non-HTML contexts
+### ¶ Ts.2g: DO make color format explict in non-HTML contexts
 
 ```graphql
 # ✓ Good
