@@ -112,7 +112,7 @@ COMMENT ON COLUMN unit.name IS 'A name of a unit.';
 **GraphQL:**
 
 ```graphql
-#  ✓ Good
+# ✓ Good
 type Unit {
   name: String
   """The name of a unit."""
@@ -120,7 +120,7 @@ type Unit {
 ```
 
 ```graphql
-#  ✗ Bad
+# ✗ Bad
 type Unit {
   name: String
   """A name of a unit."""
@@ -169,14 +169,14 @@ Do use [sentence case](https://apastyle.apa.org/style-grammar-guidelines/capital
 **py:**
 
 ```py
-#  ✓ Good
-#  Use Manhattan distance because it performs better on high dimensional data
+# ✓ Good
+# Use Manhattan distance because it performs better on high dimensional data
 distance = scipy.spatial.distance.cdist(tensor_a, tensor_b, metric='cityblock')
 ```
 
 ```py
-#  ✗ Bad
-#  use manhattan distance because it performs better on high dimensional data
+# ✗ Bad
+# use manhattan distance because it performs better on high dimensional data
 distance = scipy.spatial.distance.cdist(tensor_a, tensor_b, metric='cityblock')
 ```
 
@@ -203,19 +203,19 @@ Do use punctuation on multi-line comments.
 **py:**
 
 ```py
-#  ✓ Good
-#  Lorem ipsum dolor sit amet. Consectetur adipiscing elit.
+# ✓ Good
+# Lorem ipsum dolor sit amet. Consectetur adipiscing elit.
 placeholder_text = …
 ```
 
 ```py
-#  ✗ Bad
-#  Lorem ipsum dolor sit amet. Consectetur adipiscing elit
+# ✗ Bad
+# Lorem ipsum dolor sit amet. Consectetur adipiscing elit
 placeholder_text = …
 
-#  ✗ Bad
-#  Lorem ipsum dolor sit amet
-#  Consectetur adipiscing elit
+# ✗ Bad
+# Lorem ipsum dolor sit amet
+# Consectetur adipiscing elit
 placeholder_text = …
 ```
 
@@ -247,9 +247,9 @@ class Banana:
 
 ```py
 # ✓ Good
-speed = … #  Meters per hour
-time = … #  Minutes
-distance = speed / (time / 60) #  Meters
+speed = …  # Meters per hour
+time = …  # Minutes
+distance = speed / (time / 60)  # Meters
 ```
 
 ## Variables
@@ -289,13 +289,13 @@ const boundingBox = [0, 0, 10, 10];
 Do favor readability to brevity.
 
 ```py
-#  ✓ Good
+# ✓ Good
 docker_image = "huggingface/transformers-pytorch-gpu"
 ec2_instance_type = "p3.8xlarge"
 ```
 
 ```py
-#  ✗ Bad
+# ✗ Bad
 image = "huggingface/transformers-pytorch-gpu"
 type = "p3.8xlarge"
 ```
@@ -305,7 +305,7 @@ type = "p3.8xlarge"
 Do group related variables with a prefix.
 
 ```py
-#  ✓ Good
+# ✓ Good
 cnn_kernel = (3, 3)
 cnn_stride = (1, 1)
 learning_rate = 1e-05
@@ -657,6 +657,40 @@ SELECT * FROM people_addresses
 ```
 
 ## Data formats
+
+### Angle
+
+#### ¶ Eq.nB: DO prefer degrees to radians
+
+Degrees are easier to reason about. Moreover, Radians serialize poorly because they are based on the irrational number `π`.
+
+```ts
+// ✓ Good
+const turnLeft = (angle: number) => (360 + (angle - 90)) % 360;
+turnLeft(0); // ⇒ 270
+```
+
+```ts
+// ✗ Bad
+const turnLeft = (angle: number) => (2 * Math.PI + (angle - 0.5 * Math.PI)) % (2 * Math.PI);
+turnLeft(0); // ⇒ 4.71238898038469
+```
+
+_Exception: A series of Math functions that require radians._
+
+#### ¶ Eq.z5: DO display degrees with symbol (°)
+
+```py
+# ✓ Good
+print(f"heading {heading}°")
+print(f"{latitude}°, {longitude}°")
+```
+
+```py
+# ✗ Bad
+print(f"heading {heading}")
+print(f"{latitude}, {longitude}")
+```
 
 ### Color
 
