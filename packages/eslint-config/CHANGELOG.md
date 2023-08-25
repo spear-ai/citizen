@@ -1,5 +1,11 @@
 # @spear-ai/eslint-config
 
+## 12.0.2
+
+### Patch Changes
+
+- [#241](https://github.com/spear-ai/citizen/pull/241) [`4a4ee3e`](https://github.com/spear-ai/citizen/commit/4a4ee3e46acb4de297fec8c06e2b605c616afd23) Thanks [@psirenny](https://github.com/psirenny)! - Allowed variable names to have trailing underscores to avoid naming conflicts with keywords.
+
 ## 12.0.1
 
 ### Patch Changes
