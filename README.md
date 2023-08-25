@@ -247,9 +247,9 @@ class Banana:
 
 ```py
 # ✓ Good
-speed = … # Meters per hour
-time = … # Minutes
-distance = speed / (time / 60) # Meters
+speed = …  # Meters per hour
+time = …  # Minutes
+distance = speed / (time / 60)  # Meters
 ```
 
 ## Variables
