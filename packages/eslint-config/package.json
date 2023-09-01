@@ -13,7 +13,7 @@
     "@graphql-eslint/eslint-plugin": "^3.20.1",
     "@next/eslint-plugin-next": "^13.4.17",
     "@types/react": "^18.2.20",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
     "@typescript-eslint/parser": "^6.4.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
