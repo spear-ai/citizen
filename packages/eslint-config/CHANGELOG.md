@@ -1,5 +1,11 @@
 # @spear-ai/eslint-config
 
+## 13.0.0
+
+### Major Changes
+
+- [#268](https://github.com/spear-ai/citizen/pull/268) [`3cbcb82`](https://github.com/spear-ai/citizen/commit/3cbcb82b9473bb3028cddc8b08ef194063a1c072) Thanks [@psirenny](https://github.com/psirenny)! - Refactored ESLint Config to consolidate TypeScript and JavaScript rules. Markdown code with Typescript code blocks disable any rules that require parser services.
+
 ## 12.0.2
 
 ### Patch Changes
