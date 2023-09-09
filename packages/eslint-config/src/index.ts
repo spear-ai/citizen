@@ -158,6 +158,11 @@ export const javascriptFamilyFileList = [...javascriptFileList, ...typescriptFil
 
 export const baseEslintConfig: Linter.FlatConfig[] = [
   {
+    linterOptions: {
+      reportUnusedDisableDirectives: true,
+    },
+  },
+  {
     files: jsonFileList,
     ignores: [...defaultIgnoreFileList, "package-lock.json"],
     languageOptions: {

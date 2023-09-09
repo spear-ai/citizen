@@ -1,5 +1,3 @@
-/* eslint-disable import/no-default-export */
-
 import { baseEslintConfig, prettierConfig } from "@spear-ai/eslint-config";
 
 /** @type {import("eslint").Linter.FlatConfig} */
