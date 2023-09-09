@@ -1,5 +1,11 @@
 # @spear-ai/eslint-config
 
+## 13.1.1
+
+### Patch Changes
+
+- [#276](https://github.com/spear-ai/citizen/pull/276) [`ab9f8e3`](https://github.com/spear-ai/citizen/commit/ab9f8e363a85c75931b4e8365d5b0613d417e345) Thanks [@psirenny](https://github.com/psirenny)! - Added ignore list when reporting unused directives.
+
 ## 13.1.0
 
 ### Minor Changes
