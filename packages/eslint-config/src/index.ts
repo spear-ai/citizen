@@ -82,6 +82,7 @@ export const defaultIgnoreFileList = [
   "**/node_modules",
   ".turbo",
   ".turbo/**",
+  "package-lock.json",
 ];
 
 export const githubWorkflowKeyOrder = [
@@ -158,13 +159,14 @@ export const javascriptFamilyFileList = [...javascriptFileList, ...typescriptFil
 
 export const baseEslintConfig: Linter.FlatConfig[] = [
   {
+    ignores: defaultIgnoreFileList,
     linterOptions: {
       reportUnusedDisableDirectives: true,
     },
   },
   {
     files: jsonFileList,
-    ignores: [...defaultIgnoreFileList, "package-lock.json"],
+    ignores: defaultIgnoreFileList,
     languageOptions: {
       parser: jsoncParser,
     },
