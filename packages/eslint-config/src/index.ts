@@ -352,6 +352,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
           selector: "typeLike",
         },
       ],
+      "@typescript-eslint/no-empty-function": ["error", { allow: ["arrowFunctions"] }],
       "@typescript-eslint/quotes": ["error", "double", { avoidEscape: true }],
       "@typescript-eslint/sort-type-constituents": ["error"],
       "array-func/prefer-array-from": ["off"],
