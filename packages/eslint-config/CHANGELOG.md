@@ -1,5 +1,15 @@
 # @spear-ai/eslint-config
 
+## 13.1.0
+
+### Minor Changes
+
+- [#271](https://github.com/spear-ai/citizen/pull/271) [`4641b36`](https://github.com/spear-ai/citizen/commit/4641b36a7026bcd3607fb10d72bc521f2a1bf540) Thanks [@psirenny](https://github.com/psirenny)! - Allowed empty anonymous functions.
+
+### Patch Changes
+
+- [#272](https://github.com/spear-ai/citizen/pull/272) [`01e2a29`](https://github.com/spear-ai/citizen/commit/01e2a291dd4d22a13857810f65cd52e7f3201b97) Thanks [@psirenny](https://github.com/psirenny)! - Replaced the broken `eslint-comments/no-unused-disable` rule with an ESLint setting that warns on unused disable comments. ESLint will continue to throw an error on unused disable comments when warnings are restricted.
+
 ## 13.0.0
 
 ### Major Changes
