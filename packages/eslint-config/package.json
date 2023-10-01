@@ -12,7 +12,7 @@
     "@eslint-community/eslint-plugin-eslint-comments": "^4.1.0",
     "@graphql-eslint/eslint-plugin": "^3.20.1",
     "@next/eslint-plugin-next": "^13.4.19",
-    "@types/react": "^18.2.21",
+    "@types/react": "^18.2.24",
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
     "eslint-config-airbnb": "^19.0.4",
