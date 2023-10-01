@@ -887,51 +887,51 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formatjs/ecma402-abstract@npm:1.17.1":
-  version: 1.17.1
-  resolution: "@formatjs/ecma402-abstract@npm:1.17.1"
+"@formatjs/ecma402-abstract@npm:1.17.2":
+  version: 1.17.2
+  resolution: "@formatjs/ecma402-abstract@npm:1.17.2"
   dependencies:
-    "@formatjs/intl-localematcher": 0.4.1
+    "@formatjs/intl-localematcher": 0.4.2
     tslib: ^2.4.0
-  checksum: 195235b4634077f7c2ac9f4bb257bd7bce094798ba97cb8b59e8f2acab3b3b898f23ec45ceab7abc6c3fb1ef4235951e96c60b943135e1a9290eba51c144d878
+  checksum: 026382b1fb295cef4387b2f2a34dace107b12fb7607793093b26595b0d639a30e5f4539665730897eb77eefabee2bb35c156896c63925b0ec03b746751e3fb00
   languageName: node
   linkType: hard
 
-"@formatjs/icu-messageformat-parser@npm:2.6.1":
-  version: 2.6.1
-  resolution: "@formatjs/icu-messageformat-parser@npm:2.6.1"
+"@formatjs/icu-messageformat-parser@npm:2.6.2":
+  version: 2.6.2
+  resolution: "@formatjs/icu-messageformat-parser@npm:2.6.2"
   dependencies:
-    "@formatjs/ecma402-abstract": 1.17.1
-    "@formatjs/icu-skeleton-parser": 1.6.1
+    "@formatjs/ecma402-abstract": 1.17.2
+    "@formatjs/icu-skeleton-parser": 1.6.2
     tslib: ^2.4.0
-  checksum: b6fb7e9a9d838098ffe7adda52ba811fd611ad9c7b24c2db491301d7103d678ef87ac474769f8fff65dbe2d143a6ceb70b11ebeaa0376a6266d990460fef21f2
+  checksum: c339a712497deaa14e84610afb6c09377a5641b18fb0ae3d42999354cf2b557c84d7c7fead0d06d38a04f8e63e8002ae51c820a8a3e98b82805e84e7878e9d90
   languageName: node
   linkType: hard
 
-"@formatjs/icu-skeleton-parser@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@formatjs/icu-skeleton-parser@npm:1.6.1"
+"@formatjs/icu-skeleton-parser@npm:1.6.2":
+  version: 1.6.2
+  resolution: "@formatjs/icu-skeleton-parser@npm:1.6.2"
   dependencies:
-    "@formatjs/ecma402-abstract": 1.17.1
+    "@formatjs/ecma402-abstract": 1.17.2
     tslib: ^2.4.0
-  checksum: 0a0e221ad46623f81cefc6be57faeeac6272256bee302d09f75c66b93964833bf5f7d88783e8f1c94fba9f00b64f4f5b78ae1af678a11167e9deb5bd4493f04b
+  checksum: f51658d0b086579a2173b91beb692822f08db1180c81fa41e62bef4236a0de98f9d6e46087d77c5e46fa4286f77b4b52a2467f3d8b81a4cf8dd817edb138d68b
   languageName: node
   linkType: hard
 
-"@formatjs/intl-localematcher@npm:0.4.1":
-  version: 0.4.1
-  resolution: "@formatjs/intl-localematcher@npm:0.4.1"
+"@formatjs/intl-localematcher@npm:0.4.2":
+  version: 0.4.2
+  resolution: "@formatjs/intl-localematcher@npm:0.4.2"
   dependencies:
     tslib: ^2.4.0
-  checksum: bf8bb95d1fd61c660d11e4b5ad00a2f154f3a2551bc5e3e3e3bd1636e7daa1c35519f63bd0e3b309b002cbd0406c6fa515a08fd764eb9a5a1ad0a9a8290ca836
+  checksum: df579d8c453a11eed1ec55604f8dda121d728fc5109ed885892347a126089caef95a0edf71f1f6db3134bb9e73787062995baf7746a2577e8ca2980dcd6590cb
   languageName: node
   linkType: hard
 
-"@formatjs/ts-transformer@npm:3.13.4":
-  version: 3.13.4
-  resolution: "@formatjs/ts-transformer@npm:3.13.4"
+"@formatjs/ts-transformer@npm:3.13.5":
+  version: 3.13.5
+  resolution: "@formatjs/ts-transformer@npm:3.13.5"
   dependencies:
-    "@formatjs/icu-messageformat-parser": 2.6.1
+    "@formatjs/icu-messageformat-parser": 2.6.2
     "@types/json-stable-stringify": ^1.0.32
     "@types/node": 14 || 16 || 17
     chalk: ^4.0.0
@@ -943,7 +943,7 @@ __metadata:
   peerDependenciesMeta:
     ts-jest:
       optional: true
-  checksum: ea45cd80ebcc7a50a9566835bf1ea1d778aadf22418d0117733854c2dd1356755f9d9fddcb0bcda736fbd9490587b10f79a73288a95d3f199a2e6dff2edd5f7a
+  checksum: cc54f738efdccd9f41f998a444cdb2b7528a60488280bb6a8ed6ad229554b342dd6e24cc9d1715fed169d7bf85383eef7cfa5324408c5e9db9140ff81b9c4ca9
   languageName: node
   linkType: hard
 
@@ -1860,7 +1860,7 @@ __metadata:
     eslint-import-resolver-typescript: ^3.6.0
     eslint-plugin-array-func: ^3.1.8
     eslint-plugin-canonical: ^4.9.6
-    eslint-plugin-formatjs: ^4.10.4
+    eslint-plugin-formatjs: ^4.10.5
     eslint-plugin-import: ^2.28.1
     eslint-plugin-json-schema-validator: ^4.6.0
     eslint-plugin-jsonc: ^2.9.0
@@ -4373,12 +4373,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-formatjs@npm:^4.10.4":
-  version: 4.10.4
-  resolution: "eslint-plugin-formatjs@npm:4.10.4"
+"eslint-plugin-formatjs@npm:^4.10.5":
+  version: 4.10.5
+  resolution: "eslint-plugin-formatjs@npm:4.10.5"
   dependencies:
-    "@formatjs/icu-messageformat-parser": 2.6.1
-    "@formatjs/ts-transformer": 3.13.4
+    "@formatjs/icu-messageformat-parser": 2.6.2
+    "@formatjs/ts-transformer": 3.13.5
     "@types/eslint": 7 || 8
     "@types/picomatch": ^2.3.0
     "@typescript-eslint/typescript-estree": 5.62.0
@@ -4390,7 +4390,7 @@ __metadata:
     unicode-emoji-utils: ^1.1.1
   peerDependencies:
     eslint: 7 || 8
-  checksum: 52f94f113f4edffb025256d152d108a1828b6c93110708555b5c142cf89e748fb70b9c41c06dab8ce0a0ef1dace0c4df33395b5dd8d8f6b586e60e7bbe9f0c20
+  checksum: ecba262dfb90a87dc0edf917f30b5c47cc3dbbc3780ba675ba1550e32133f03e56cf20709fbb4df82d4c1862075edbc67ef016de1e71234c8c0388b449e80807
   languageName: node
   linkType: hard
 
