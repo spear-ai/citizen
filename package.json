@@ -20,7 +20,7 @@
     "husky": "8.0.3",
     "npm-package-json-lint": "7.0.0",
     "prettier": "3.0.3",
-    "turbo": "1.10.13",
+    "turbo": "1.10.14",
     "typescript": "5.2.2"
   },
   "license": "",
