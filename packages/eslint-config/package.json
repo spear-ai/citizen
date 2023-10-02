@@ -51,7 +51,7 @@
   "devDependencies": {
     "@types/eslint": "8.44.2",
     "eslint": "8.49.0",
-    "graphql": "16.8.0",
+    "graphql": "16.8.1",
     "npm-package-json-lint": "7.0.0",
     "prettier": "3.0.3",
     "react": "18.2.0",
