@@ -14,11 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       should-deploy: ${{ steps.changesets.outputs.hasChangesets == 'false' }}
+    permissions: write-all
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4.0.0
+        uses: actions/checkout@v4.1.1
       - name: Setup Node.js
-        uses: actions/setup-node@v3.8.1
+        uses: actions/setup-node@v4.0.0
         with:
           cache: yarn
           node-version-file: .node-version
@@ -41,6 +42,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
-          title: "ci: release 🚀"
-          commit: "ci: release 🚀"
+          title: Release 🚀
+          commit: Release 🚀
           publish: yarn run publish-packages
