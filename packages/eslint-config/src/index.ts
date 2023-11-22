@@ -502,7 +502,12 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "sonarjs/no-duplicate-string": ["off"],
       "sort-destructure-keys/sort-destructure-keys": ["error"],
       "sort-vars": ["error"],
-      "tailwindcss/classnames-order": ["error"],
+      "tailwindcss/classnames-order": [
+        "error",
+        {
+          callees: ["cx"],
+        },
+      ],
       "tailwindcss/enforces-negative-arbitrary-values": ["error"],
       "tailwindcss/enforces-shorthand": ["error"],
       "tailwindcss/migration-from-tailwind-2": ["error"],
