@@ -548,6 +548,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
   },
   {
     files: ["**/*.cjs"],
+    ignores: defaultIgnoreFileList,
     rules: {
       "@typescript-eslint/no-var-requires": ["off"],
     },
@@ -560,6 +561,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "**/*.md/**/*.ts",
       "**/*.md/**/*.tsx",
     ],
+    ignores: defaultIgnoreFileList,
     languageOptions: {
       parser: typescriptParser,
       parserOptions: {
@@ -606,6 +608,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
   },
   {
     files: [...javascriptFamilyFileList, ...jsonFamilyFileList, ...tomlFileList, ...yamlFileList],
+    ignores: defaultIgnoreFileList,
     plugins: {
       "json-schema-validator": jsonSchemaValidatorPlugin,
     },
@@ -616,30 +619,35 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
   },
   {
     files: [".github/**/*.yaml"],
+    ignores: defaultIgnoreFileList,
     rules: {
       "json-schema-validator/no-invalid": ["off"],
     },
   },
   {
     files: ["**/*.config.*", "**/*.test.*", "**/__test__/**"],
+    ignores: defaultIgnoreFileList,
     rules: {
       "import/no-extraneous-dependencies": ["off"],
     },
   },
   {
     files: ["**/*.config.*"],
+    ignores: defaultIgnoreFileList,
     rules: {
       "import/no-default-export": ["off"],
     },
   },
   {
     files: ["**/*.d.ts"],
+    ignores: defaultIgnoreFileList,
     rules: {
       "import/no-default-export": ["off"],
     },
   },
   {
     files: ["**/*.md/**"],
+    ignores: defaultIgnoreFileList,
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
@@ -715,6 +723,7 @@ export const nextEslintConfig = [
   },
   {
     files: ["src/app/**", "src/page/**"],
+    ignores: defaultIgnoreFileList,
     rules: {
       "import/no-default-export": ["off"],
     },
