@@ -18,10 +18,12 @@ const baseNpmPackageJsonLintConfig = {
     "prefer-alphabetical-optionalDependencies": "error",
     "prefer-alphabetical-peerDependencies": "error",
     "prefer-alphabetical-scripts": "error",
-    "prefer-property-order": ["error", []],
+    "require-author": "error",
     "require-description": "error",
     "require-license": "error",
+    "require-type": "error",
     "valid-values-license": ["error", ["MIT", "UNLICENSED"]],
+    "valid-values-type": ["error", ["module"]],
     "version-format": "error",
   },
 };

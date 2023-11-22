@@ -23,7 +23,7 @@
     "turbo": "1.10.16",
     "typescript": "5.3.2"
   },
-  "license": "",
+  "license": "MIT",
   "packageManager": "yarn@3.5.1",
   "private": true,
   "repository": {

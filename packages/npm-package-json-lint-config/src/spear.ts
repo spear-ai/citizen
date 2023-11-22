@@ -5,6 +5,7 @@ import baseNpmPackageJsonLintConfig from "./base";
 const npmPackageJsonLintConfig = {
   ...baseNpmPackageJsonLintConfig,
   rules: {
+    ...baseNpmPackageJsonLintConfig.rules,
     "valid-values-author": ["error", ["Spear AI"]],
     "valid-values-name-scope": ["error", ["@spear-ai"]],
   },
