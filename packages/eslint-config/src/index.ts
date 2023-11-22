@@ -276,7 +276,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     processor: markdownProcessor,
   },
   {
-    files: [...javascriptFileList, ...typescriptFileList],
+    files: javascriptFamilyFileList,
     ignores: defaultIgnoreFileList,
     languageOptions: {
       parser: typescriptParser,
@@ -490,6 +490,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
         },
       ],
       "react/jsx-sort-props": ["error"],
+      "react/require-default-props": ["off"],
       "react/style-prop-object": ["off"],
       "simple-import-sort/exports": ["error"],
       "simple-import-sort/imports": [
@@ -678,7 +679,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
 
 export const nextEslintConfig = [
   {
-    files: [...javascriptFileList, ...typescriptFileList],
+    files: javascriptFamilyFileList,
     ignores: defaultIgnoreFileList,
     languageOptions: {
       globals: {
