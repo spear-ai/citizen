@@ -1913,7 +1913,7 @@ __metadata:
     "@graphql-eslint/eslint-plugin": "npm:^3.20.1"
     "@next/eslint-plugin-next": "npm:^14.0.3"
     "@types/eslint": "npm:8.44.7"
-    "@types/react": "npm:^18.2.38"
+    "@types/react": "npm:^18.2.40"
     "@typescript-eslint/eslint-plugin": "npm:^6.12.0"
     "@typescript-eslint/parser": "npm:^6.12.0"
     eslint: "npm:8.54.0"
@@ -2162,14 +2162,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.2.38":
-  version: 18.2.38
-  resolution: "@types/react@npm:18.2.38"
+"@types/react@npm:^18.2.40":
+  version: 18.2.40
+  resolution: "@types/react@npm:18.2.40"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 9f9b9925c979e848d572dce6fff34951708127ba6b1fd4306c93fbcab74f5c6cff2b2e47d4222339eeb6c19d264e93450cb2ad6b255c73c536d0a1e2093cc98a
+  checksum: 323c319461482ad17b4813fec8641a4167361f42164757b64dbe27db379ae8fd98f3811a301f4abce0c17ce53a83c549db3ba3008e54d2a422a0656bddd72440
   languageName: node
   linkType: hard
 
