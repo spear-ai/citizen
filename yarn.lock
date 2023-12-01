@@ -1999,7 +1999,7 @@ __metadata:
   resolution: "@spear-ai/pulumi-policy-pack@workspace:packages/pulumi-policy-pack"
   dependencies:
     "@pulumi/awsguard": "npm:^0.4.0"
-    "@types/node": "npm:18.18.12"
+    "@types/node": "npm:18.19.1"
     eslint: "npm:8.54.0"
     npm-package-json-lint: "npm:7.1.0"
     prettier: "npm:3.1.0"
@@ -2116,12 +2116,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.18.12, @types/node@npm:^18.11.9":
-  version: 18.18.12
-  resolution: "@types/node@npm:18.18.12"
+"@types/node@npm:18.19.1":
+  version: 18.19.1
+  resolution: "@types/node@npm:18.19.1"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: bd32120a52e7bdbf38dafa0f9cdb0c322115fc7fe38890b6c151507199d307652905077b878f0173c375389c87400d78f25a12fc8517b8f829547c95df37ef4e
+  checksum: 825c5bf6f7c8f8bc413b2c45dd49b3b51d4fb18e42ed09711376b1d475d82e8c7160859544f8be04eaa3c6201053217d899573f0bf63a7419e5ea3cd7d161eaf
   languageName: node
   linkType: hard
 
@@ -2129,6 +2129,15 @@ __metadata:
   version: 12.20.55
   resolution: "@types/node@npm:12.20.55"
   checksum: 1f916a06fff02faadb09a16ed6e31820ce170798b202ef0b14fc244bfbd721938c54a3a99836e185e4414ca461fe96c5bb5c67c3d248f153555b7e6347f061dd
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.11.9":
+  version: 18.18.12
+  resolution: "@types/node@npm:18.18.12"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: bd32120a52e7bdbf38dafa0f9cdb0c322115fc7fe38890b6c151507199d307652905077b878f0173c375389c87400d78f25a12fc8517b8f829547c95df37ef4e
   languageName: node
   linkType: hard
 
