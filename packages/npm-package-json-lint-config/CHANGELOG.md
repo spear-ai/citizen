@@ -1,5 +1,17 @@
 # @spear-ai/npm-package-json-lint-config
 
+## 3.0.0
+
+### Major Changes
+
+- [#313](https://github.com/spear-ai/citizen/pull/313) [`e82eaaa`](https://github.com/spear-ai/citizen/commit/e82eaaa39bf5bd06a1cafb1cb91f6084d2a426c3) Thanks [@psirenny](https://github.com/psirenny)! - Added rule to NPM Package JSON Lint configs to require packages be of type `module`.
+
+### Patch Changes
+
+- [#325](https://github.com/spear-ai/citizen/pull/325) [`7c57582`](https://github.com/spear-ai/citizen/commit/7c575826949627c392accbff1e6cacc7b2d5d76a) Thanks [@psirenny](https://github.com/psirenny)! - Upgraded dependencies.
+
+- [#313](https://github.com/spear-ai/citizen/pull/313) [`e82eaaa`](https://github.com/spear-ai/citizen/commit/e82eaaa39bf5bd06a1cafb1cb91f6084d2a426c3) Thanks [@psirenny](https://github.com/psirenny)! - Fixed missing rules in NPM Package JSON Lint configs.
+
 ## 2.0.3
 
 ### Patch Changes

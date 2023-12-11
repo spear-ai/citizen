@@ -1,5 +1,21 @@
 # @spear-ai/eslint-config
 
+## 14.0.0
+
+### Major Changes
+
+- [#310](https://github.com/spear-ai/citizen/pull/310) [`be38d8a`](https://github.com/spear-ai/citizen/commit/be38d8a734e2020db7caa2be5b3a84b3f3dbaee8) Thanks [@psirenny](https://github.com/psirenny)! - Disable `react/require-default-props` in ESLint Config in favor of type checking with TypeScript.
+
+### Minor Changes
+
+- [#311](https://github.com/spear-ai/citizen/pull/311) [`bf6445e`](https://github.com/spear-ai/citizen/commit/bf6445e84286253b7d13a22011218d9bf245b75f) Thanks [@psirenny](https://github.com/psirenny)! - Added support for classix (cx) class names with Tailwind CSS.
+
+### Patch Changes
+
+- [#325](https://github.com/spear-ai/citizen/pull/325) [`7c57582`](https://github.com/spear-ai/citizen/commit/7c575826949627c392accbff1e6cacc7b2d5d76a) Thanks [@psirenny](https://github.com/psirenny)! - Upgraded dependencies.
+
+- [#309](https://github.com/spear-ai/citizen/pull/309) [`f2272b1`](https://github.com/spear-ai/citizen/commit/f2272b16c5a2b380832aa0909634bc0ca4ee3ae1) Thanks [@psirenny](https://github.com/psirenny)! - Ensured all ESLint Config rules ignore the default-ignored file list.
+
 ## 13.1.1
 
 ### Patch Changes

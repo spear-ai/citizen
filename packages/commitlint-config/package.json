@@ -1,6 +1,6 @@
 {
   "name": "@spear-ai/commitlint-config",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Spear AI commitlint config",
   "author": {
     "name": "Spear AI",
