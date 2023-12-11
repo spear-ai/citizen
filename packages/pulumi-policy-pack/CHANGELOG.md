@@ -1,5 +1,11 @@
 # @spear-ai/pulumi-policy-pack
 
+## 2.0.6
+
+### Patch Changes
+
+- [#325](https://github.com/spear-ai/citizen/pull/325) [`7c57582`](https://github.com/spear-ai/citizen/commit/7c575826949627c392accbff1e6cacc7b2d5d76a) Thanks [@psirenny](https://github.com/psirenny)! - Upgraded dependencies.
+
 ## 2.0.5
 
 ### Patch Changes
