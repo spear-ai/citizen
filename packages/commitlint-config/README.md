@@ -5,7 +5,7 @@ A [commitlint](https://commitlint.js.org) config.
 ## Installation
 
 ```shell
-yarn add -D @spear-ai/commitlint-config commitlint
+yarn add -D @spear-ai/commitlint-config @commitlint/types commitlint
 ```
 
 ## Usage
