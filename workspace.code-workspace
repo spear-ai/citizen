@@ -26,6 +26,10 @@
       "path": "."
     },
     {
+      "name": "spear-ai/commitlint-config",
+      "path": "packages/commitlint-config"
+    },
+    {
       "name": "spear-ai/eslint-config",
       "path": "packages/eslint-config"
     },
