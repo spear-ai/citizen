@@ -70,8 +70,8 @@
     },
     "[python]": {
       "editor.codeActionsOnSave": {
-        "source.fixAll": true,
-        "source.organizeImports": true
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit"
       },
       "editor.defaultFormatter": "ms-python.black-formatter",
       "editor.tabSize": 4
@@ -91,7 +91,7 @@
     },
     "editor.autoClosingQuotes": "always",
     "editor.codeActionsOnSave": {
-      "source.fixAll": true
+      "source.fixAll": "explicit"
     },
     "editor.formatOnSave": true,
     "editor.quickSuggestions": {
