@@ -12,6 +12,12 @@ updates:
     package-ecosystem: npm
     schedule:
       interval: monthly
+  - directory: /packages/commitlint-config
+    labels:
+      - 🌋 technical debt
+    package-ecosystem: docker
+    schedule:
+      interval: monthly
   - directory: /packages/dev-image
     labels:
       - 🌋 technical debt

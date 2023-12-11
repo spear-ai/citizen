@@ -487,15 +487,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:18.4.3":
-  version: 18.4.3
-  resolution: "@commitlint/config-conventional@npm:18.4.3"
-  dependencies:
-    conventional-changelog-conventionalcommits: "npm:^7.0.2"
-  checksum: bb6c1559979002e79c5e7c575f57fd713638523cdadfa61754eaabb8aad042d688c859e82ccf58589bb9aa2a4497e820702744095c9b82f6018fbb3b5d75d08d
-  languageName: node
-  linkType: hard
-
 "@commitlint/config-validator@npm:^18.4.3":
   version: 18.4.3
   resolution: "@commitlint/config-validator@npm:18.4.3"
@@ -653,7 +644,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/types@npm:^18.4.3":
+"@commitlint/types@npm:18.4.3, @commitlint/types@npm:^18.4.3":
   version: 18.4.3
   resolution: "@commitlint/types@npm:18.4.3"
   dependencies:
@@ -1883,7 +1874,7 @@ __metadata:
     "@changesets/changelog-github": "npm:0.5.0"
     "@changesets/cli": "npm:2.27.1"
     "@commitlint/cli": "npm:18.4.3"
-    "@commitlint/config-conventional": "npm:18.4.3"
+    "@commitlint/types": "npm:18.4.3"
     "@spear-ai/eslint-config": "npm:*"
     "@spear-ai/npm-package-json-lint-config": "npm:*"
     commitlint: "npm:18.4.3"
@@ -1893,6 +1884,22 @@ __metadata:
     prettier: "npm:3.1.1"
     turbo: "npm:1.11.1"
     typescript: "npm:5.3.3"
+  languageName: unknown
+  linkType: soft
+
+"@spear-ai/commitlint-config@workspace:packages/commitlint-config":
+  version: 0.0.0-use.local
+  resolution: "@spear-ai/commitlint-config@workspace:packages/commitlint-config"
+  dependencies:
+    "@commitlint/types": "npm:18.4.3"
+    commitlint: "npm:18.4.3"
+    eslint: "npm:8.55.0"
+    npm-package-json-lint: "npm:7.1.0"
+    prettier: "npm:3.1.1"
+    tsup: "npm:8.0.1"
+    typescript: "npm:5.3.3"
+  peerDependencies:
+    commitlint: ^18.4.3
   languageName: unknown
   linkType: soft
 
@@ -3599,15 +3606,6 @@ __metadata:
   dependencies:
     compare-func: "npm:^2.0.0"
   checksum: e7966d2fee5475e76263f30f8b714b2b592b5bf556df225b7091e5090831fc9a20b99598a7d2997e19c2ef8118c0a3150b1eba290786367b0f55a5ccfa804ec9
-  languageName: node
-  linkType: hard
-
-"conventional-changelog-conventionalcommits@npm:^7.0.2":
-  version: 7.0.2
-  resolution: "conventional-changelog-conventionalcommits@npm:7.0.2"
-  dependencies:
-    compare-func: "npm:^2.0.0"
-  checksum: 3cc6586ac57cc54c0595b28ae22e8b674c970034bad35e467f71aba395278a6ef43351cfbf782a5fc33eb13ed4ad843a145b89ad1444f5fa571e3bf9c1d5519b
   languageName: node
   linkType: hard
 

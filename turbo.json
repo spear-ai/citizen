@@ -1,6 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
+    "//#commitlint:check": {},
     "//#eslint:check": {},
     "//#eslint:fix": {},
     "//#npmpkgjsonlint:check": {},
@@ -17,6 +18,7 @@
     },
     "check": {
       "dependsOn": [
+        "//#commitlint:check",
         "//#eslint:check",
         "//#npmpkgjsonlint:check",
         "//#prettier:check",
@@ -25,6 +27,9 @@
         "prettier:check",
         "typescript:check"
       ]
+    },
+    "commitlint:check": {
+      "cache": false
     },
     "dev": {
       "cache": false,

@@ -1,0 +1,1 @@
+# @spear-ai/commitlint-config
