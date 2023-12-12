@@ -1,0 +1,49 @@
+{
+  "name": "@spear-ai/ruff-config",
+  "version": "2.0.0",
+  "description": "Spear AI Ruff config",
+  "author": {
+    "name": "Spear AI",
+    "email": "org@spear.ai",
+    "url": "https://spear.ai"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@swc/core": "^1.3.100",
+    "@swc/helpers": "^0.5.3",
+    "@types/eslint": "8.44.8",
+    "@types/regenerator-runtime": "^0",
+    "eslint": "8.55.0",
+    "graphql": "16.8.1",
+    "npm-package-json-lint": "7.1.0",
+    "prettier": "3.1.1",
+    "react": "18.2.0",
+    "regenerator-runtime": "^0.14.0",
+    "replace-in-file": "^7.0.2",
+    "tailwindcss": "3.3.6",
+    "ts-node": "10.9.2",
+    "tsup": "8.0.1",
+    "typescript": "5.3.3"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "directory": "packages/ruff-config",
+    "url": "https://github.com/spear-ai/citizen.git"
+  },
+  "scripts": {
+    "build": "poetry build",
+    "eslint:check": "eslint --max-warnings 0 .",
+    "eslint:fix": "yarn eslint:check --fix",
+    "npmpkgjsonlint:check": "npmPkgJsonLint .",
+    "postinstall": "poetry install",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "publish-package": "poetry publish",
+    "ruff-format:check": "poetry run ruff format --check .",
+    "ruff-format:fix": "poetry run ruff format .",
+    "ruff-lint:check": "poetry run ruff check .",
+    "ruff-lint:fix": "poetry run ruff check --fix .",
+    "sync-version": "ts-node sync-version.ts"
+  }
+}

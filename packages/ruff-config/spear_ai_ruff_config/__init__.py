@@ -1,0 +1,1 @@
+"""Spear AI Ruff config."""

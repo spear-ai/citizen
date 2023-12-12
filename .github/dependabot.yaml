@@ -52,3 +52,9 @@ updates:
     package-ecosystem: npm
     schedule:
       interval: monthly
+  - directory: /packages/ruff-config
+    labels:
+      - 🌋 technical debt
+    package-ecosystem: pip
+    schedule:
+      interval: monthly

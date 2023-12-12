@@ -6,6 +6,7 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 env:
+  POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
   TURBO_TEAM: ${{ vars.TURBO_TEAM }}
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 jobs:
@@ -22,7 +23,13 @@ jobs:
         uses: actions/setup-node@v4.0.0
         with:
           cache: yarn
+          fetch-depth: 0
           node-version-file: .node-version
+      - name: Setup Python
+        uses: actions/setup-python@v5.0.0
+        with:
+          cache: poetry
+          python-version-file: .python-version
       - name: Install Node.js dependencies
         run: yarn install
       - name: Build packages
@@ -43,5 +50,6 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           title: Release 🚀
+          version: yarn run version
           commit: Release 🚀
           publish: yarn run publish-packages

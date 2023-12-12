@@ -20,7 +20,7 @@
     "husky": "8.0.3",
     "npm-package-json-lint": "7.1.0",
     "prettier": "3.1.1",
-    "turbo": "1.11.1",
+    "turbo": "1.11.2",
     "typescript": "5.3.3"
   },
   "license": "MIT",
@@ -31,6 +31,7 @@
     "url": "https://github.com/spear-ai/citizen.git"
   },
   "scripts": {
+    "version": "changeset version && yarn workspaces foreach -A run sync-version",
     "build": "yarn dlx turbo build",
     "commitlint:check": "commitlint --from=HEAD^1",
     "eslint:check": "eslint --max-warnings 0 .",
@@ -40,7 +41,8 @@
     "npmpkgjsonlint:check": "npmPkgJsonLint .",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "publish-packages": "yarn publish-packages:npm && yarn publish-packages:github && yarn changeset tag",
+    "publish-packages": "yarn run publish-packages:npm && yarn run publish-packages:github && yarn run publish-packages:custom && yarn changeset tag",
+    "publish-packages:custom": "yarn workspaces foreach -A run publish-package",
     "publish-packages:github": "npm_config_registry=https://npm.pkg.github.com changeset publish --no-git-tag",
     "publish-packages:npm": "changeset publish --no-git-tag",
     "typescript:check": "tsc --noEmit",

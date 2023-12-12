@@ -25,6 +25,8 @@
         "eslint:check",
         "npmpkgjsonlint:check",
         "prettier:check",
+        "ruff-format:check",
+        "ruff-lint:check",
         "typescript:check"
       ]
     },
@@ -63,7 +65,14 @@
     },
     "fix": {
       "cache": false,
-      "dependsOn": ["//#eslint:fix", "eslint:fix", "//#prettier:fix", "prettier:fix"]
+      "dependsOn": [
+        "//#eslint:fix",
+        "eslint:fix",
+        "//#prettier:fix",
+        "prettier:fix",
+        "ruff-format:fix",
+        "ruff-lint:fix"
+      ]
     },
     "npmpkgjsonlint:check": {
       "dependsOn": ["^build"],
@@ -94,6 +103,18 @@
     "prettier:fix": {
       "cache": false,
       "dependsOn": ["^build"]
+    },
+    "ruff-format:check": {
+      "inputs": ["**/*.py", ".gitignore", "poetry.lock", "pyproject.toml", "ruff.toml"]
+    },
+    "ruff-format:fix": {
+      "cache": false
+    },
+    "ruff-lint:check": {
+      "inputs": ["**/*.py", ".gitignore", "poetry.lock", "pyproject.toml", "ruff.toml"]
+    },
+    "ruff-lint:fix": {
+      "cache": false
     },
     "typescript:check": {
       "dependsOn": ["^build"],

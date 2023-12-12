@@ -29,6 +29,11 @@ jobs:
         with:
           cache: yarn
           node-version-file: .node-version
+      - name: Setup Python
+        uses: actions/setup-python@v5.0.0
+        with:
+          cache: poetry
+          python-version-file: .python-version
       - name: Install Node.js dependencies
         run: yarn install --check-cache --immutable --immutable-cache
       - name: Build
