@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4.1.1
+      - name: Install Poetry
+        run: pipx install poetry
       - name: Setup Node.js
         uses: actions/setup-node@v4.0.0
         with:
