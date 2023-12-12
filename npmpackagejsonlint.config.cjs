@@ -3,5 +3,6 @@ module.exports = {
   rules: {
     "prefer-absolute-version-dependencies": "off",
     "prefer-absolute-version-devDependencies": "off",
+    "prefer-alphabetical-scripts": "off",
   },
 };

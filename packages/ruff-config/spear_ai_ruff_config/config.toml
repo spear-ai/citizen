@@ -1,0 +1,74 @@
+ignore = [
+  "COM812",
+  "ISC001",
+  "S101",
+  "PLR0913"
+]
+line-length = 120
+select = [
+  "A",
+  "ANN",
+  "ARG",
+  "ASYNC",
+  "B",
+  "BLE",
+  "C4",
+  "C90",
+  "COM",
+  "D",
+  "DJ",
+  "DTZ",
+  "E",
+  "EM",
+  "ERA",
+  "EXE",
+  "F",
+  "FA",
+  "FBT",
+  "FIX",
+  "FLY",
+  "G",
+  "I",
+  "ICN",
+  "INP",
+  "INT",
+  "ISC",
+  "N",
+  "NPY",
+  "PD",
+  "PERF",
+  "PGH",
+  "PIE",
+  "PL",
+  "PT",
+  "PTH",
+  "PYI",
+  "Q",
+  "RET",
+  "RSE",
+  "RUF",
+  "S",
+  "SIM",
+  "SLF",
+  "SLOT",
+  "T10",
+  "T20",
+  "TCH",
+  "TD",
+  "TID",
+  "TRY",
+  "UP",
+  "W",
+  "YTT",
+]
+target-version = "py311"
+
+[extend-per-file-ignores]
+"**/test_*.py" = ["D"]
+"**/tests/**/*.py" = ["D"]
+
+[flake8-builtins]
+builtins-ignorelist = ["id"]
+
+[pydocstyle]
+convention = "pep257"

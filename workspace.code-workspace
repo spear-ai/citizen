@@ -48,6 +48,10 @@
     {
       "name": "spear-ai/pulumi-policy-pack",
       "path": "packages/pulumi-policy-pack"
+    },
+    {
+      "name": "spear-ai/ruff-config",
+      "path": "packages/ruff-config"
     }
   ],
   "settings": {
@@ -77,7 +81,7 @@
         "source.fixAll": "explicit",
         "source.organizeImports": "explicit"
       },
-      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.defaultFormatter": "charliermarsh.ruff",
       "editor.tabSize": 4
     },
     "[toml]": {
@@ -118,9 +122,6 @@
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
-    "python.linting.enabled": true,
-    "python.linting.flake8Enabled": false,
-    "python.linting.mypyEnabled": true,
     "python.testing.pytestEnabled": true,
     "scss.validate": false,
     "tailwindCSS.includeLanguages": {
