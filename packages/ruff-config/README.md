@@ -20,5 +20,5 @@ in-project = true
 Add the following to your `ruff.toml` file:
 
 ```toml
-extend = "./.venv/lib/python3.11/site-packages/spear_ai_ruff_config/config.toml"
+extend = "./.venv/lib/python3.11/site-packages/spear-ai-ruff-config/config.toml"
 ```

@@ -20,13 +20,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4.1.1
+        with:
+          fetch-depth: 0
       - name: Install Poetry
         run: pipx install poetry
       - name: Setup Node.js
         uses: actions/setup-node@v4.0.0
         with:
           cache: yarn
-          fetch-depth: 0
           node-version-file: .node-version
       - name: Setup Python
         uses: actions/setup-python@v5.0.0
