@@ -1,5 +1,11 @@
 # @spear-ai/ruff-config
 
+## 2.0.1
+
+### Patch Changes
+
+- [#332](https://github.com/spear-ai/citizen/pull/332) [`5746b47`](https://github.com/spear-ai/citizen/commit/5746b471e70df66ac8841d414e5025af5ccfca1b) Thanks [@psirenny](https://github.com/psirenny)! - Increased PIP timeout.
+
 ## 0.0.1
 
 ### Patch Changes
