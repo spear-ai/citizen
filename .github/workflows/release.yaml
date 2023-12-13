@@ -6,6 +6,7 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 env:
+  PIP_DEFAULT_TIMEOUT: 100
   POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
   TURBO_TEAM: ${{ vars.TURBO_TEAM }}
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}

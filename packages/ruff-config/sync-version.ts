@@ -7,6 +7,6 @@ import package_ from "./package.json" assert { type: "json" };
 
 await replaceInFile({
   files: "pyproject.toml",
-  from: /version = "0\.0\.0"/,
+  from: /version = ".*"/,
   to: `version = "${package_.version}"`,
 });

@@ -1,6 +1,6 @@
 {
   "name": "@spear-ai/ruff-config",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "description": "Spear AI Ruff config",
   "author": {
     "name": "Spear AI",
@@ -24,6 +24,7 @@
     "typescript": "5.3.3"
   },
   "license": "MIT",
+  "private": true,
   "repository": {
     "type": "git",
     "directory": "packages/ruff-config",
