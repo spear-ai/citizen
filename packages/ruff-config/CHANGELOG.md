@@ -1,5 +1,11 @@
 # @spear-ai/ruff-config
 
+## 2.0.2
+
+### Patch Changes
+
+- [#334](https://github.com/spear-ai/citizen/pull/334) [`77f37be`](https://github.com/spear-ai/citizen/commit/77f37beba892648b2e5ba197bc877510f52397af) Thanks [@psirenny](https://github.com/psirenny)! - Fixed checkout fetch depth.
+
 ## 2.0.1
 
 ### Patch Changes
