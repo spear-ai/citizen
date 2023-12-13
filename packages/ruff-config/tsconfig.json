@@ -30,9 +30,5 @@
     "**/*.ts",
     "**/*.tsx",
     "types"
-  ],
-  "ts-node": {
-    "esm": true,
-    "swc": true
-  }
+  ]
 }

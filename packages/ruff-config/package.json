@@ -1,6 +1,6 @@
 {
   "name": "@spear-ai/ruff-config",
-  "version": "2.0.0",
+  "version": "0.0.0",
   "description": "Spear AI Ruff config",
   "author": {
     "name": "Spear AI",
@@ -9,8 +9,6 @@
   },
   "type": "module",
   "devDependencies": {
-    "@swc/core": "^1.3.100",
-    "@swc/helpers": "^0.5.3",
     "@types/eslint": "8.44.8",
     "@types/regenerator-runtime": "^0",
     "eslint": "8.55.0",
@@ -21,8 +19,8 @@
     "regenerator-runtime": "^0.14.0",
     "replace-in-file": "^7.0.2",
     "tailwindcss": "3.3.6",
-    "ts-node": "10.9.2",
     "tsup": "8.0.1",
+    "tsx": "4.6.2",
     "typescript": "5.3.3"
   },
   "license": "MIT",
@@ -44,6 +42,6 @@
     "ruff-format:fix": "poetry run ruff format .",
     "ruff-lint:check": "poetry run ruff check .",
     "ruff-lint:fix": "poetry run ruff check --fix .",
-    "sync-version": "ts-node sync-version.ts"
+    "sync-version": "tsx sync-version"
   }
 }
