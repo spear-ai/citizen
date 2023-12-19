@@ -1,4 +1,10 @@
-ignore = ["COM812", "ISC001", "S101", "PLR0913", "UP007"]
+ignore = [
+  "COM812",
+  "ISC001",
+  "S101",
+  "PLR0913",
+  "UP007"
+]
 line-length = 120
 select = [
   "A",
