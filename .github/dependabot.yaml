@@ -1,30 +1,40 @@
 version: 2
 updates:
-  - directory: /
+  - commit-message:
+      prefix: " "
+    directory: /
     labels:
       - 🌋 technical debt
     package-ecosystem: github-actions
     schedule:
       interval: monthly
-  - directory: /
+  - commit-message:
+      prefix: " "
+    directory: /
     labels:
       - 🌋 technical debt
     package-ecosystem: npm
     schedule:
       interval: monthly
-  - directory: /packages/commitlint-config
+  - commit-message:
+      prefix: " "
+    directory: /packages/commitlint-config
     labels:
       - 🌋 technical debt
     package-ecosystem: docker
     schedule:
       interval: monthly
-  - directory: /packages/dev-image
+  - commit-message:
+      prefix: " "
+    directory: /packages/dev-image
     labels:
       - 🌋 technical debt
     package-ecosystem: docker
     schedule:
       interval: monthly
-  - directory: /packages/eslint-config
+  - commit-message:
+      prefix: " "
+    directory: /packages/eslint-config
     ignore:
       - dependency-name: graphql
         update-types:
@@ -34,25 +44,33 @@ updates:
     package-ecosystem: npm
     schedule:
       interval: monthly
-  - directory: /packages/npm-package-json-lint-config
+  - commit-message:
+      prefix: " "
+    directory: /packages/npm-package-json-lint-config
     labels:
       - 🌋 technical debt
     package-ecosystem: npm
     schedule:
       interval: monthly
-  - directory: /packages/prettier-config
+  - commit-message:
+      prefix: " "
+    directory: /packages/prettier-config
     labels:
       - 🌋 technical debt
     package-ecosystem: npm
     schedule:
       interval: monthly
-  - directory: /packages/pulumi-policy-pack
+  - commit-message:
+      prefix: " "
+    directory: /packages/pulumi-policy-pack
     labels:
       - 🌋 technical debt
     package-ecosystem: npm
     schedule:
       interval: monthly
-  - directory: /packages/ruff-config
+  - commit-message:
+      prefix: " "
+    directory: /packages/ruff-config
     labels:
       - 🌋 technical debt
     package-ecosystem: pip
