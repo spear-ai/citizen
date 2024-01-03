@@ -1,3 +1,7 @@
+allowed-confusables = [
+  "‘",
+  "’"
+]
 ignore = [
   "COM812",
   "ISC001",
