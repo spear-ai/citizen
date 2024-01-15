@@ -3,5 +3,4 @@
  * @param message - The commit message to check.
  * @returns True if the commit message should be ignored, false otherwise.
  */
-export const ignoreDependabot = (message: string): boolean =>
-  message.includes("Signed-off-by: dependabot[bot]");
+export const ignoreDependabot = (message: string): boolean => message.includes("dependabot[bot]");
