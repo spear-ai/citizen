@@ -1,13 +1,7 @@
 /* eslint-disable import/no-default-export */
 
 import type { UserConfig } from "@commitlint/types";
-
-/**
- * Checks if a commit message should be ignored due to being from dependabot.
- * @param message - The commit message to check.
- * @returns True if the commit message should be ignored, false otherwise.
- */
-const ignoreDependabot = (message: string): boolean => message.includes("Signed-off-by: dependabot[bot]");
+import { ignoreDependabot } from "./rules/ignore-rules";
 
 const commitlintConfig: UserConfig = {
   ignores: [ignoreDependabot],
