@@ -1,3 +1,4 @@
+import { describe, expect, test } from "vitest";
 import { ignoreDependabot } from "../src/rules/ignore-rules";
 
 describe("ignoreDependabot", () => {
