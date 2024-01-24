@@ -4,7 +4,7 @@ updates:
       prefix: " "
     directory: /
     labels:
-      - 🌋 technical debt
+      - 🔧 maintenance
     package-ecosystem: github-actions
     schedule:
       interval: monthly
@@ -12,7 +12,7 @@ updates:
       prefix: " "
     directory: /
     labels:
-      - 🌋 technical debt
+      - 🔧 maintenance
     package-ecosystem: npm
     schedule:
       interval: monthly
@@ -20,7 +20,7 @@ updates:
       prefix: " "
     directory: /packages/commitlint-config
     labels:
-      - 🌋 technical debt
+      - 🔧 maintenance
     package-ecosystem: docker
     schedule:
       interval: monthly
@@ -28,7 +28,7 @@ updates:
       prefix: " "
     directory: /packages/dev-image
     labels:
-      - 🌋 technical debt
+      - 🔧 maintenance
     package-ecosystem: docker
     schedule:
       interval: monthly
@@ -40,7 +40,7 @@ updates:
         update-types:
           - version-update:semver-major
     labels:
-      - 🌋 technical debt
+      - 🔧 maintenance
     package-ecosystem: npm
     schedule:
       interval: monthly
@@ -48,7 +48,7 @@ updates:
       prefix: " "
     directory: /packages/npm-package-json-lint-config
     labels:
-      - 🌋 technical debt
+      - 🔧 maintenance
     package-ecosystem: npm
     schedule:
       interval: monthly
@@ -56,7 +56,7 @@ updates:
       prefix: " "
     directory: /packages/prettier-config
     labels:
-      - 🌋 technical debt
+      - 🔧 maintenance
     package-ecosystem: npm
     schedule:
       interval: monthly
@@ -64,7 +64,7 @@ updates:
       prefix: " "
     directory: /packages/pulumi-policy-pack
     labels:
-      - 🌋 technical debt
+      - 🔧 maintenance
     package-ecosystem: npm
     schedule:
       interval: monthly
@@ -72,7 +72,7 @@ updates:
       prefix: " "
     directory: /packages/ruff-config
     labels:
-      - 🌋 technical debt
+      - 🔧 maintenance
     package-ecosystem: pip
     schedule:
       interval: monthly
