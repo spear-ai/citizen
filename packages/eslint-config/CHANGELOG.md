@@ -1,5 +1,11 @@
 # @spear-ai/eslint-config
 
+## 14.0.1
+
+### Patch Changes
+
+- [#369](https://github.com/spear-ai/citizen/pull/369) [`c3eef18`](https://github.com/spear-ai/citizen/commit/c3eef180676c4fc7a32e47fc6ae4aeab9ad750b1) Thanks [@alexjbuck](https://github.com/alexjbuck)! - Increased the peer dependency range to include GraphQL version 16.
+
 ## 14.0.0
 
 ### Major Changes
