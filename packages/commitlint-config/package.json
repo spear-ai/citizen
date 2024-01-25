@@ -15,7 +15,7 @@
     "npm-package-json-lint": "7.1.0",
     "prettier": "3.1.1",
     "tsup": "8.0.1",
-    "typescript": "^5.3.3",
+    "typescript": "5.3.3",
     "vitest": "^1.2.0"
   },
   "license": "MIT",
@@ -31,13 +31,14 @@
   },
   "scripts": {
     "build": "tsup src --cjsInterop --clean --dts --format cjs,esm --splitting",
-    "dev": "yarn build --watch",
+    "dev": "yarn build --watch & yarn test:dev",
     "eslint:check": "eslint --max-warnings 0 .",
     "eslint:fix": "yarn eslint:check --fix",
     "npmpkgjsonlint:check": "npmPkgJsonLint .",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "test": "vitest",
+    "test": "vitest run",
+    "test:dev": "vitest watch",
     "typescript:check": "tsc --noEmit"
   },
   "types": "./dist/index.d.ts"
