@@ -1,8 +1,10 @@
 /* eslint-disable import/no-default-export */
 
 import type { UserConfig } from "@commitlint/types";
+import { ignoreDependabot } from "./rules/ignore-rules";
 
 const commitlintConfig: UserConfig = {
+  ignores: [ignoreDependabot],
   rules: {
     "body-case": [2, "always", ["sentence-case"]],
     "body-leading-blank": [2, "always"],
