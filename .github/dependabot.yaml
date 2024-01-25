@@ -1,40 +1,30 @@
 version: 2
 updates:
-  - commit-message:
-      prefix: " "
-    directory: /
+  - directory: /
     labels:
       - 🔧 maintenance
     package-ecosystem: github-actions
     schedule:
       interval: monthly
-  - commit-message:
-      prefix: " "
-    directory: /
+  - directory: /
     labels:
       - 🔧 maintenance
     package-ecosystem: npm
     schedule:
       interval: monthly
-  - commit-message:
-      prefix: " "
-    directory: /packages/commitlint-config
+  - directory: /packages/commitlint-config
     labels:
       - 🔧 maintenance
     package-ecosystem: docker
     schedule:
       interval: monthly
-  - commit-message:
-      prefix: " "
-    directory: /packages/dev-image
+  - directory: /packages/dev-image
     labels:
       - 🔧 maintenance
     package-ecosystem: docker
     schedule:
       interval: monthly
-  - commit-message:
-      prefix: " "
-    directory: /packages/eslint-config
+  - directory: /packages/eslint-config
     ignore:
       - dependency-name: graphql
         update-types:
@@ -44,33 +34,25 @@ updates:
     package-ecosystem: npm
     schedule:
       interval: monthly
-  - commit-message:
-      prefix: " "
-    directory: /packages/npm-package-json-lint-config
+  - directory: /packages/npm-package-json-lint-config
     labels:
       - 🔧 maintenance
     package-ecosystem: npm
     schedule:
       interval: monthly
-  - commit-message:
-      prefix: " "
-    directory: /packages/prettier-config
+  - directory: /packages/prettier-config
     labels:
       - 🔧 maintenance
     package-ecosystem: npm
     schedule:
       interval: monthly
-  - commit-message:
-      prefix: " "
-    directory: /packages/pulumi-policy-pack
+  - directory: /packages/pulumi-policy-pack
     labels:
       - 🔧 maintenance
     package-ecosystem: npm
     schedule:
       interval: monthly
-  - commit-message:
-      prefix: " "
-    directory: /packages/ruff-config
+  - directory: /packages/ruff-config
     labels:
       - 🔧 maintenance
     package-ecosystem: pip
