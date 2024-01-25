@@ -23,7 +23,7 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "npm-package-json-lint": "^6.4.0"
+    "npm-package-json-lint": ">=6.4.0 <8"
   },
   "repository": {
     "type": "git",

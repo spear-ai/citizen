@@ -20,7 +20,7 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "peerDependencies": {
-    "prettier": "^2.8.7"
+    "prettier": ">=2.8.7 <4"
   },
   "repository": {
     "type": "git",
