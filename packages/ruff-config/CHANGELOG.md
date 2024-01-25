@@ -1,5 +1,11 @@
 # @spear-ai/ruff-config
 
+## 2.0.3
+
+### Patch Changes
+
+- [#349](https://github.com/spear-ai/citizen/pull/349) [`11005b4`](https://github.com/spear-ai/citizen/commit/11005b4d095f33e0b48a9958fd50b5a007190639) Thanks [@psirenny](https://github.com/psirenny)! - Allowed smart quotes in Ruff config.
+
 ## 2.0.2
 
 ### Patch Changes
