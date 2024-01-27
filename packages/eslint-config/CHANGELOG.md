@@ -1,5 +1,15 @@
 # @spear-ai/eslint-config
 
+## 15.0.0
+
+### Major Changes
+
+- [#372](https://github.com/spear-ai/citizen/pull/372) [`5d378e6`](https://github.com/spear-ai/citizen/commit/5d378e610be14a32a9f9cfde8a182e3b24a535d5) Thanks [@psirenny](https://github.com/psirenny)! - Defer ESLint comma handling in JSON files to Prettier.
+
+### Minor Changes
+
+- [#373](https://github.com/spear-ai/citizen/pull/373) [`35e66f4`](https://github.com/spear-ai/citizen/commit/35e66f4ab17a54cdab3490fbf0f675bafae9a893) Thanks [@psirenny](https://github.com/psirenny)! - Allowed dev dependencies in benchmarks.
+
 ## 14.0.1
 
 ### Patch Changes
