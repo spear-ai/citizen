@@ -631,7 +631,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     },
   },
   {
-    files: ["**/*.config.*", "**/*.test.*", "**/__test__/**"],
+    files: ["**/*.benchmark.*", "**/*.config.*", "**/*.test.*", "**/__test__/**"],
     ignores: defaultIgnoreFileList,
     rules: {
       "import/no-extraneous-dependencies": ["off"],
