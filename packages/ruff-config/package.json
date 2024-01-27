@@ -38,7 +38,7 @@
     "postinstall": "poetry install",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "publish-package": "poetry publish",
+    "publish-package": "poetry publish --skip-existing",
     "ruff-format:check": "poetry run ruff format --check .",
     "ruff-format:fix": "poetry run ruff format .",
     "ruff-lint:check": "poetry run ruff check .",
