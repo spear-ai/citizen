@@ -16,94 +16,94 @@
       "webhint.vscode-webhint",
       "wix.vscode-import-cost",
       "yzhang.markdown-all-in-one",
-      "zixuanchen.vitest-explorer"
+      "zixuanchen.vitest-explorer",
     ],
-    "unwantedRecommendations": []
+    "unwantedRecommendations": [],
   },
   "folders": [
     {
       "name": "spear-ai/citizen",
-      "path": "."
+      "path": ".",
     },
     {
       "name": "spear-ai/commitlint-config",
-      "path": "packages/commitlint-config"
+      "path": "packages/commitlint-config",
     },
     {
       "name": "spear-ai/eslint-config",
-      "path": "packages/eslint-config"
+      "path": "packages/eslint-config",
     },
     {
       "name": "spear-ai/dev-image",
-      "path": "packages/dev-image"
+      "path": "packages/dev-image",
     },
     {
       "name": "spear-ai/npm-package-json-lint-config",
-      "path": "packages/npm-package-json-lint-config"
+      "path": "packages/npm-package-json-lint-config",
     },
     {
       "name": "spear-ai/prettier-config",
-      "path": "packages/prettier-config"
+      "path": "packages/prettier-config",
     },
     {
       "name": "spear-ai/pulumi-policy-pack",
-      "path": "packages/pulumi-policy-pack"
+      "path": "packages/pulumi-policy-pack",
     },
     {
       "name": "spear-ai/ruff-config",
-      "path": "packages/ruff-config"
-    }
+      "path": "packages/ruff-config",
+    },
   ],
   "settings": {
     "[graphql]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[javascriptreact]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[json]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[json5]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[jsonc]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[markdown]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[python]": {
       "editor.codeActionsOnSave": {
         "source.fixAll": "explicit",
-        "source.organizeImports": "explicit"
+        "source.organizeImports": "explicit",
       },
       "editor.defaultFormatter": "charliermarsh.ruff",
-      "editor.tabSize": 4
+      "editor.tabSize": 4,
     },
     "[toml]": {
-      "editor.tabSize": 2
+      "editor.tabSize": 2,
     },
     "[typescript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[typescriptreact]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[yaml]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.tabSize": 2
+      "editor.tabSize": 2,
     },
     "editor.autoClosingQuotes": "always",
     "editor.codeActionsOnSave": {
-      "source.fixAll": "explicit"
+      "source.fixAll": "explicit",
     },
     "editor.formatOnSave": true,
     "editor.quickSuggestions": {
-      "strings": true
+      "strings": true,
     },
     "eslint.experimental.useFlatConfig": true,
     "eslint.validate": [
@@ -117,7 +117,7 @@
       "toml",
       "typescript",
       "typescriptreact",
-      "yaml"
+      "yaml",
     ],
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
@@ -126,11 +126,11 @@
     "scss.validate": false,
     "tailwindCSS.includeLanguages": {
       "typescript": "javascript",
-      "typescriptreact": "javascript"
+      "typescriptreact": "javascript",
     },
     "terminal.integrated.env.osx": {
-      "MallocNanoZone": "1"
+      "MallocNanoZone": "1",
     },
-    "testing.automaticallyOpenPeekView": "never"
-  }
+    "testing.automaticallyOpenPeekView": "never",
+  },
 }

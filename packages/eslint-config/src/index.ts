@@ -111,6 +111,7 @@ export const jsoncFileList = [
   "**/*rc.json",
   "**/.vscode/settings.json",
   "**/devcontainer.json",
+  "**/tsconfig.json",
   "**/turbo.json",
 ];
 
@@ -119,6 +120,7 @@ export const jsonFamilyFileList = [...jsonFileList, ...json5FileList, ...jsoncFi
 export const jsonFamilyRules: Linter.RulesRecord = {
   "jsonc/array-bracket-newline": ["error", "consistent"],
   "jsonc/array-bracket-spacing": ["error"],
+  "jsonc/comma-dangle": ["off"],
   "jsonc/comma-style": ["error"],
   "jsonc/indent": ["error", 2],
   "jsonc/key-spacing": ["error"],
