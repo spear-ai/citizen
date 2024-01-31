@@ -24,7 +24,7 @@
     "typescript": "5.3.3"
   },
   "license": "MIT",
-  "packageManager": "yarn@4.0.2",
+  "packageManager": "yarn@4.1.0",
   "private": true,
   "repository": {
     "type": "git",
