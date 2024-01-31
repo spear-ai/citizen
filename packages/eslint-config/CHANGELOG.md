@@ -1,5 +1,17 @@
 # @spear-ai/eslint-config
 
+## 16.0.0
+
+### Major Changes
+
+- [#381](https://github.com/spear-ai/citizen/pull/381) [`2903cdf`](https://github.com/spear-ai/citizen/commit/2903cdf237abb9c592468d1ff4520f6b5a45523b) Thanks [@psirenny](https://github.com/psirenny)! - Updated ESLint config rules.
+
+### Patch Changes
+
+- [#377](https://github.com/spear-ai/citizen/pull/377) [`6454f2a`](https://github.com/spear-ai/citizen/commit/6454f2a1ec982bf89096c4d1ff19e4df4229ab03) Thanks [@psirenny](https://github.com/psirenny)! - Updated to Node.js v20.
+
+- [#379](https://github.com/spear-ai/citizen/pull/379) [`36be2d5`](https://github.com/spear-ai/citizen/commit/36be2d56454eeeba9e0ea085074137d8709561ba) Thanks [@psirenny](https://github.com/psirenny)! - Updated to Yarn v4.1.0.
+
 ## 15.0.0
 
 ### Major Changes
