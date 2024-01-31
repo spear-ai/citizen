@@ -14,6 +14,7 @@ const commitlintConfig: UserConfig = {
     "header-case": [2, "always", ["sentence-case"]],
     "header-full-stop": [2, "never", "."],
     "header-max-length": [2, "always", 120],
+    "header-trim": [2, "always"],
     "scope-empty": [2, "always"],
     "subject-empty": [2, "always"],
     "type-empty": [2, "always"],
