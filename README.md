@@ -151,7 +151,7 @@ let symbols; // <-, ->
 let angle; // 45 degrees
 ```
 
-### ¶ cE.Cc: DO use canonical spelling of proper nouns
+### ¶ cE.BR: DO use canonical spelling of proper nouns
 
 Do use the canonical spelling of proper nouns⁠.
 
