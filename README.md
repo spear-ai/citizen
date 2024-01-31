@@ -59,7 +59,111 @@ Developers use VSCode:
 
 **TODO:** Fill me out
 
-## Copy
+## Writing
+
+### ¶ cE.Cx: DO use informal tone
+
+Do use a friendly and informal tone. Other rules follow from this one, such as using contractions.
+
+### ¶ cE.kI: DO use contractions
+
+Do use contractions.
+
+```py
+# ✓ Good
+def panic():
+    # Panic if we can’t recover from an error.
+```
+
+```py
+# ✗ Bad
+def panic():
+    # Panic if we cannot recover from an error.
+```
+
+### ¶ cE.j5: DO use curly quotes
+
+Do use curly single and double quotes instead of straight quotes.
+
+```ts
+// ✓ Good
+let race; // “Xel’Naga”, “Terran”
+```
+
+```ts
+// ✗ Bad
+let race; // "Xel'Naga", "Terran"
+```
+
+### ¶ cE.4x: DO use ellipsis instead of dots
+
+Do use the ellipses character instead of 3 dots.
+
+```ts
+// ✓ Good
+let series; // 1, 2, 3, …, 10
+```
+
+```ts
+// ✗ Bad
+let series; // 1, 2, 3, ..., 10
+```
+
+### ¶ cE.jF: DO use en dashes instead of hypens
+
+Do use an en dash when appropriate such as for spans and ranges.
+
+```ts
+// ✓ Good
+let duration; // 2–3 weeks
+```
+
+```ts
+// ✗ Bad
+let duration; // 2-3 weeks, 2 to 3 weeks
+```
+
+### ¶ cE.Cc: DO use em dashes instead of hypens
+
+Do use an em dash when appropriate such as replacing commas, parentheses, or colons⁠.
+
+```ts
+// ✓ Good
+let sentence; // Lorem ipsum — foo bar — dolor.
+```
+
+```ts
+// ✗ Bad
+let sentence; // Lorem ipsum -- foo bar -- dolor.
+```
+
+### ¶ cE.eB: DO use glyphs instead of characters or words
+
+```ts
+// ✓ Good
+let symbols; // ←, →
+let angle; // 45°
+```
+
+```ts
+// ✗ Bad
+let symbols; // <-, ->
+let angle; // 45 degrees
+```
+
+### ¶ cE.BR: DO use canonical spelling of proper nouns
+
+Do use the canonical spelling of proper nouns⁠.
+
+```py
+# ✓ Good
+words # Python, Node.js, PostgreSQL
+```
+
+```py
+# ✗ Bad
+words # python, node, postgres
+```
 
 ### ¶ cE.K6: DO begin type descriptions with an indefinite article
 
@@ -146,7 +250,7 @@ class Unit:
 ### ¶ LW.n8: DO communicate intent
 
 Comments should explain intent rather than what the code is doing.
-If it's unclear what the code is doing then it should be refactored.
+If it’s unclear what the code is doing then it should be refactored.
 
 ### ¶ LW.8j: DO show examples
 
@@ -155,11 +259,27 @@ Do show examples when possible.
 **js:**
 
 ```ts
-// Get a unit's globally unique identifier.
+// Get a unit’s globally unique identifier.
 //
 // (“Zumwalt-class destroyer”, 3) → “Unit:ZumwaltClassDestroyer:3”
 // (“Leopard 2A7”, 5) → “Unit:Leopard2a7:5”
 const getUnitId = (name: string, index: number) => `Unit:${pascalCase(name)}:${index}`;
+```
+
+### ¶ LW.pb: DO follow writing styles
+
+Do follow all writing style rules when also writing comments.
+
+```ts
+// ✓ Good
+// e.g. “John Doe” → “john_doe”
+const toKebabCase = () => {};
+```
+
+```ts
+// ✗ Bad
+// e.g. "John Doe" => john_doe
+const toKebabCase = () => {};
 ```
 
 ### ¶ LW.hb: DO use sentence case
@@ -196,21 +316,21 @@ const backgroundColor = "#2ebde5"; // Azure
 const backgroundColor = "#2ebde5"; // azure
 ```
 
-### ¶ LW.nA: DO punctuate multi-line comments
+### ¶ LW.nA: DO punctuate block comments
 
-Do use punctuation on multi-line comments.
+Do use punctuation on block comments.
 
 **py:**
 
 ```py
 # ✓ Good
-# Lorem ipsum dolor sit amet. Consectetur adipiscing elit.
+# Lorem ipsum dolor sit amet.
 placeholder_text = …
 ```
 
 ```py
 # ✗ Bad
-# Lorem ipsum dolor sit amet. Consectetur adipiscing elit
+# Lorem ipsum dolor sit amet
 placeholder_text = …
 
 # ✗ Bad
