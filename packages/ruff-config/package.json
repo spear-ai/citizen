@@ -9,8 +9,8 @@
   },
   "type": "module",
   "devDependencies": {
-    "@types/eslint": "8.44.8",
-    "@types/regenerator-runtime": "^0",
+    "@types/eslint": "8.56.2",
+    "@types/regenerator-runtime": "^0.13.5",
     "eslint": "8.56.0",
     "graphql": "16.8.1",
     "npm-package-json-lint": "7.1.0",
