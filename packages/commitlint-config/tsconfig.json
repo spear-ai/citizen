@@ -15,7 +15,7 @@
     "sourceMap": true,
     "strict": true,
     "stripInternal": true,
-    "target": "ESNext",
+    "target": "ESNext"
   },
   "exclude": ["node_modules"],
   "include": [
@@ -24,11 +24,11 @@
     "**/*.js",
     "**/*.jsx",
     "**/*.jsx",
-    "<tsconfigRootDir>//README.md/1_1.js",
     "**/*.mjs",
     "**/*.mts",
     "**/*.ts",
     "**/*.tsx",
-    "types",
-  ],
+    "<tsconfigRootDir>//README.md/1_1.js",
+    "types"
+  ]
 }
