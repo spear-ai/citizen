@@ -1,5 +1,15 @@
 # @spear-ai/eslint-config
 
+## 17.0.0
+
+### Major Changes
+
+- [#388](https://github.com/spear-ai/citizen/pull/388) [`7089e1e`](https://github.com/spear-ai/citizen/commit/7089e1ebb66d843e307b301aec30995a235fc9f1) Thanks [@psirenny](https://github.com/psirenny)! - Updated dependencies.
+
+### Minor Changes
+
+- [#386](https://github.com/spear-ai/citizen/pull/386) [`fa407cf`](https://github.com/spear-ai/citizen/commit/fa407cf02596371967397d66871be396ad4f6950) Thanks [@psirenny](https://github.com/psirenny)! - Added Storybook rules to ESLint config.
+
 ## 16.0.0
 
 ### Major Changes
