@@ -1,5 +1,11 @@
 # @spear-ai/eslint-config
 
+## 17.1.0
+
+### Minor Changes
+
+- [#390](https://github.com/spear-ai/citizen/pull/390) [`f1689d9`](https://github.com/spear-ai/citizen/commit/f1689d9a819bfffc869cceadf9de16456c830688) Thanks [@psirenny](https://github.com/psirenny)! - Added `.storybook` directory to list of config files.
+
 ## 17.0.0
 
 ### Major Changes
