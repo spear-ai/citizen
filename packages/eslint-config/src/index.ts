@@ -653,14 +653,21 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     },
   },
   {
-    files: ["**/*.benchmark.*", "**/*.stories.*", "**/*.config.*", "**/*.test.*", "**/__test__/**"],
+    files: [
+      "**/*.benchmark.*",
+      "**/*.config.*",
+      "**/.storybook/*",
+      "**/*.stories.*",
+      "**/*.test.*",
+      "**/__test__/**",
+    ],
     ignores: defaultIgnoreFileList,
     rules: {
       "import/no-extraneous-dependencies": ["off"],
     },
   },
   {
-    files: ["**/*.config.*", "**/*.stories.*"],
+    files: ["**/*.config.*", "**/.storybook/*", "**/*.stories.*"],
     ignores: defaultIgnoreFileList,
     rules: {
       "import/no-default-export": ["off"],
