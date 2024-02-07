@@ -34,6 +34,7 @@ import regexpPlugin from "eslint-plugin-regexp";
 import simpleImportSortPlugin from "eslint-plugin-simple-import-sort";
 import sonarjsPlugin from "eslint-plugin-sonarjs";
 import sortDestructureKeysPlugin from "eslint-plugin-sort-destructure-keys";
+import storybookPlugin from "eslint-plugin-storybook";
 import tailwindCssPlugin from "eslint-plugin-tailwindcss";
 import tomlPlugin from "eslint-plugin-toml";
 import typescriptSortKeysPlugin from "eslint-plugin-typescript-sort-keys";
@@ -158,6 +159,10 @@ export const typescriptFileExtensionList = [".d.ts", ".cts", ".mts", ".ts", ".ts
 export const typescriptFileList = typescriptFileExtensionList.map((fileExtension) => `**/*${fileExtension}`);
 
 export const javascriptFamilyFileList = [...javascriptFileList, ...typescriptFileList];
+
+export const storybookFileList = javascriptFamilyFileList.map(
+  (fileExtension) => `.stories.${fileExtension}`,
+);
 
 export const baseEslintConfig: Linter.FlatConfig[] = [
   {
@@ -304,6 +309,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "simple-import-sort": simpleImportSortPlugin,
       sonarjs: sonarjsPlugin as ESLint.Plugin,
       "sort-destructure-keys": sortDestructureKeysPlugin,
+      storybook: storybookPlugin,
       tailwindcss: tailwindCssPlugin,
       "typescript-sort-keys": typescriptSortKeysPlugin,
       unicorn: unicornPlugin,
@@ -618,6 +624,17 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     },
   },
   {
+    files: storybookFileList,
+    ignores: defaultIgnoreFileList,
+    rules: {
+      ...(storybookPlugin.configs?.["addon-interactions"] as ESLint.ConfigData).rules,
+      ...(storybookPlugin.configs?.csf as ESLint.ConfigData).rules,
+      ...(storybookPlugin.configs?.["csf-strict"] as ESLint.ConfigData).rules,
+      ...(storybookPlugin.configs?.recommended as ESLint.ConfigData).rules,
+      ...{}, // eslint-disable-line unicorn/no-useless-spread
+    },
+  },
+  {
     files: [...javascriptFamilyFileList, ...jsonFamilyFileList, ...tomlFileList, ...yamlFileList],
     ignores: defaultIgnoreFileList,
     plugins: {
@@ -636,14 +653,21 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     },
   },
   {
-    files: ["**/*.benchmark.*", "**/*.config.*", "**/*.test.*", "**/__test__/**"],
+    files: ["**/*.benchmark.*", "**/*.stories.*", "**/*.config.*", "**/*.test.*", "**/__test__/**"],
     ignores: defaultIgnoreFileList,
     rules: {
       "import/no-extraneous-dependencies": ["off"],
     },
   },
   {
-    files: ["**/*.config.*"],
+    files: ["**/*.config.*", "**/*.stories.*"],
+    ignores: defaultIgnoreFileList,
+    rules: {
+      "import/no-default-export": ["off"],
+    },
+  },
+  {
+    files: ["**/*.stories.*"],
     ignores: defaultIgnoreFileList,
     rules: {
       "import/no-default-export": ["off"],
