@@ -37,7 +37,7 @@ jobs:
           cache: poetry
           python-version-file: .python-version
       - name: Install Node.js dependencies
-        run: yarn install --check-cache --immutable --immutable-cache
+        run: yarn install --immutable
       - name: Build
         run: yarn turbo run build
       - name: Check

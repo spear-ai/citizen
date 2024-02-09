@@ -1,4 +1,10 @@
 *.log
 .DS_Store
 .turbo
-node_modules
+.yarn/*
+node_modules/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
