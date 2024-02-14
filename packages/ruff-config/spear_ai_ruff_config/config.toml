@@ -1,3 +1,7 @@
+line-length = 120
+target-version = "py311"
+
+[lint]
 allowed-confusables = [
   "‘",
   "’"
@@ -8,7 +12,6 @@ ignore = [
   "S101",
   "PLR0913"
 ]
-line-length = 120
 select = [
   "A",
   "ANN",
@@ -37,6 +40,7 @@ select = [
   "INP",
   "INT",
   "ISC",
+  "LOG",
   "N",
   "NPY",
   "PD",
@@ -60,19 +64,19 @@ select = [
   "TCH",
   "TD",
   "TID",
+  "TRIO",
   "TRY",
   "UP",
   "W",
   "YTT",
 ]
-target-version = "py311"
 
-[extend-per-file-ignores]
+[lint.extend-per-file-ignores]
 "**/test_*.py" = ["D"]
 "**/tests/**/*.py" = ["D"]
 
-[flake8-builtins]
-builtins-ignorelist = ["id"]
-
-[pydocstyle]
+[lint.pydocstyle]
 convention = "pep257"
+
+[lint.flake8-builtins]
+builtins-ignorelist = ["id"]
