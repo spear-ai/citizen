@@ -465,6 +465,9 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
           },
         },
       ],
+      "promise/no-multiple-resolved": ["error"],
+      "promise/prefer-await-to-callbacks": ["error"],
+      "promise/prefer-await-to-then": ["error"],
       "quote-props": ["error", "consistent-as-needed"],
       quotes: ["error", "double", { avoidEscape: true }],
       "react/forbid-component-props": [
