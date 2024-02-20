@@ -1,5 +1,15 @@
 # @spear-ai/eslint-config
 
+## 18.0.0
+
+### Major Changes
+
+- [#396](https://github.com/spear-ai/citizen/pull/396) [`9fb30c1`](https://github.com/spear-ai/citizen/commit/9fb30c1ee81582d6b5ebbbf5d58ac7287cb0565f) Thanks [@psirenny](https://github.com/psirenny)! - Made ESLint rules stricter by disallowing multiple resolved promises and preferring async/await to callbacks or promises.
+
+### Patch Changes
+
+- [#392](https://github.com/spear-ai/citizen/pull/392) [`6894349`](https://github.com/spear-ai/citizen/commit/68943496452873a28c14135f94a959fd4d8c943c) Thanks [@psirenny](https://github.com/psirenny)! - Removed Yarn zero-installs.
+
 ## 17.1.0
 
 ### Minor Changes

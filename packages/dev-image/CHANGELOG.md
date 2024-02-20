@@ -1,5 +1,11 @@
 # @spear-ai/dev-image
 
+## 1.1.4
+
+### Patch Changes
+
+- [#392](https://github.com/spear-ai/citizen/pull/392) [`6894349`](https://github.com/spear-ai/citizen/commit/68943496452873a28c14135f94a959fd4d8c943c) Thanks [@psirenny](https://github.com/psirenny)! - Removed Yarn zero-installs.
+
 ## 1.1.3
 
 ### Patch Changes

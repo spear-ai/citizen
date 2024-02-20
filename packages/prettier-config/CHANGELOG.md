@@ -1,5 +1,11 @@
 # @spear-ai/prettier-config
 
+## 2.1.1
+
+### Patch Changes
+
+- [#392](https://github.com/spear-ai/citizen/pull/392) [`6894349`](https://github.com/spear-ai/citizen/commit/68943496452873a28c14135f94a959fd4d8c943c) Thanks [@psirenny](https://github.com/psirenny)! - Removed Yarn zero-installs.
+
 ## 2.1.0
 
 ### Minor Changes
