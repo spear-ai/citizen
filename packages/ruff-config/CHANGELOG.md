@@ -1,5 +1,15 @@
 # @spear-ai/ruff-config
 
+## 3.0.0
+
+### Major Changes
+
+- [#397](https://github.com/spear-ai/citizen/pull/397) [`2757e32`](https://github.com/spear-ai/citizen/commit/2757e3290bc89da3eee63758889c91edaad402dc) Thanks [@psirenny](https://github.com/psirenny)! - Updated Ruff config.
+
+### Patch Changes
+
+- [#392](https://github.com/spear-ai/citizen/pull/392) [`6894349`](https://github.com/spear-ai/citizen/commit/68943496452873a28c14135f94a959fd4d8c943c) Thanks [@psirenny](https://github.com/psirenny)! - Removed Yarn zero-installs.
+
 ## 2.1.0
 
 ### Minor Changes
