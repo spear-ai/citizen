@@ -15,7 +15,7 @@ repository = "https://github.com/spear-ai/citizen"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.13"
-ruff = "^0.2.0"
+ruff = ">=0.2,<0.4"
 
 [build-system]
 build-backend = "poetry.core.masonry.api"
