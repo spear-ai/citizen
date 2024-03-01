@@ -16,7 +16,7 @@
     "eslint": "8.56.0",
     "npm-package-json-lint": "7.1.0",
     "prettier": "3.2.5",
-    "tsup": "8.0.1",
+    "tsup": "8.0.2",
     "typescript": "5.3.3"
   },
   "exports": {
