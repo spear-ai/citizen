@@ -553,6 +553,11 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       ...airbnbTypescriptConfigShared.settings,
       ...airbnbTypescriptConfig.settings,
       ...airbnbConfigReact.settings,
+      "import/resolver": {
+        node: {
+          extensions: [...javascriptFileExtensionList, ...typescriptFileExtensionList, ".json"],
+        },
+      },
       /**
        * Performance issue with the plugin.
        * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/276
@@ -560,11 +565,6 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
        */
       tailwindcss: {
         cssFiles: ["**/*.css"],
-      },
-      "import/resolver": {
-        node: {
-          extensions: [...javascriptFileExtensionList, ...typescriptFileExtensionList, ".json"],
-        },
       },
     },
   },
