@@ -370,6 +370,13 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "@typescript-eslint/no-empty-function": ["error", { allow: ["arrowFunctions"] }],
       "@typescript-eslint/quotes": ["error", "double", { avoidEscape: true }],
       "@typescript-eslint/sort-type-constituents": ["error"],
+      "@typescript-eslint/strict-boolean-expressions": [
+        "error",
+        {
+          allowNumber: false,
+          allowString: false,
+        },
+      ],
       "array-func/prefer-array-from": ["off"],
       "canonical/sort-keys": [
         "error",
@@ -623,6 +630,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "@typescript-eslint/restrict-plus-operands": ["off"],
       "@typescript-eslint/restrict-template-expressions": ["off"],
       "@typescript-eslint/return-await": ["off"],
+      "@typescript-eslint/strict-boolean-expressions": ["off"],
       "@typescript-eslint/unbound-method": ["off"],
       "import/no-unresolved": ["off"],
     },
