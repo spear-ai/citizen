@@ -151,13 +151,13 @@ export const allowedAbbreviations = {
 };
 
 export const javascriptFileExtensionList = [".cjs", ".js", ".jsx", ".mjs"];
-
 export const javascriptFileList = javascriptFileExtensionList.map((fileExtension) => `**/*${fileExtension}`);
-
 export const typescriptFileExtensionList = [".d.ts", ".cts", ".mts", ".ts", ".tsx"];
-
 export const typescriptFileList = typescriptFileExtensionList.map((fileExtension) => `**/*${fileExtension}`);
-
+export const javascriptFamilyFileExtensionList = [
+  ...javascriptFileExtensionList,
+  ...typescriptFileExtensionList,
+];
 export const javascriptFamilyFileList = [...javascriptFileList, ...typescriptFileList];
 
 export const storybookFileList = javascriptFamilyFileList.map(
@@ -657,12 +657,12 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
   },
   {
     files: [
-      "**/*.benchmark.*",
-      "**/*.config.*",
-      "**/.storybook/*",
-      "**/*.stories.*",
-      "**/*.test.*",
-      "**/__test__/**",
+      ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/*.benchmark${fileExtension}`),
+      ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/*.config${fileExtension}`),
+      ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/*.stories${fileExtension}`),
+      ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/*.test${fileExtension}`),
+      ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/.storybook/*${fileExtension}`),
+      ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/__test__/**/*${fileExtension}`),
     ],
     ignores: defaultIgnoreFileList,
     rules: {
@@ -670,14 +670,11 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     },
   },
   {
-    files: ["**/*.config.*", "**/.storybook/*", "**/*.stories.*"],
-    ignores: defaultIgnoreFileList,
-    rules: {
-      "import/no-default-export": ["off"],
-    },
-  },
-  {
-    files: ["**/*.stories.*"],
+    files: [
+      ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/*.config${fileExtension}`),
+      ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/.storybook/*${fileExtension}`),
+      ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/*.stories${fileExtension}`),
+    ],
     ignores: defaultIgnoreFileList,
     rules: {
       "import/no-default-export": ["off"],
