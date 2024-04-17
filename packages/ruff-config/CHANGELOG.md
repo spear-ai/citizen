@@ -1,5 +1,15 @@
 # @spear-ai/ruff-config
 
+## 4.0.0
+
+### Major Changes
+
+- [#430](https://github.com/spear-ai/citizen/pull/430) [`c2de9fd`](https://github.com/spear-ai/citizen/commit/c2de9fd963f03c9799df7c6f4937f6fe2c7ea7a5) Thanks [@psirenny](https://github.com/psirenny)! - Updated Ruff version.
+
+### Patch Changes
+
+- [#426](https://github.com/spear-ai/citizen/pull/426) [`cdb10a0`](https://github.com/spear-ai/citizen/commit/cdb10a06346b6762522a2dc7537b4cba227efdab) Thanks [@psirenny](https://github.com/psirenny)! - Allowed En Dash in Ruff config.
+
 ## 3.0.0
 
 ### Major Changes

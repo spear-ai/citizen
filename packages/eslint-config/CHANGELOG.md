@@ -1,5 +1,17 @@
 # @spear-ai/eslint-config
 
+## 19.0.0
+
+### Major Changes
+
+- [#433](https://github.com/spear-ai/citizen/pull/433) [`951fd86`](https://github.com/spear-ai/citizen/commit/951fd866f77465ddaa4ecb79bc17870ee86da1cf) Thanks [@psirenny](https://github.com/psirenny)! - Added strict boolean expression checking to ESLint config.y
+
+### Patch Changes
+
+- [#428](https://github.com/spear-ai/citizen/pull/428) [`cc36260`](https://github.com/spear-ai/citizen/commit/cc36260918cba90507fa1221b1e02a9017702e20) Thanks [@psirenny](https://github.com/psirenny)! - Excluded non-javascript like files from ESLint config’s benchmark, storybook, and test rules.
+
+- [#434](https://github.com/spear-ai/citizen/pull/434) [`c3b3a4c`](https://github.com/spear-ai/citizen/commit/c3b3a4c1bd7637fc9b91563d07b1ad372045db16) Thanks [@psirenny](https://github.com/psirenny)! - Ignored unresolved imports from markdown files in ESLint config.
+
 ## 18.0.0
 
 ### Major Changes
