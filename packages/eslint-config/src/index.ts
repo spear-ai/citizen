@@ -624,6 +624,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "@typescript-eslint/restrict-template-expressions": ["off"],
       "@typescript-eslint/return-await": ["off"],
       "@typescript-eslint/unbound-method": ["off"],
+      "import/no-unresolved": ["off"],
     },
   },
   {
