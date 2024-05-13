@@ -1,5 +1,11 @@
 # @spear-ai/prettier-config
 
+## 2.2.0
+
+### Minor Changes
+
+- [#447](https://github.com/spear-ai/citizen/pull/447) [`fbda291`](https://github.com/spear-ai/citizen/commit/fbda2911ff791d37600b4eb23a2a44bb63eba344) Thanks [@psirenny](https://github.com/psirenny)! - Modified Prettier config to remove whitespaces in React element class names.
+
 ## 2.1.1
 
 ### Patch Changes
