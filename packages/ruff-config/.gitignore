@@ -1,3 +1,5 @@
 .ruff_cache
+.turbo
 .venv
 dist
+node_modules

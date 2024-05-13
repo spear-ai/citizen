@@ -181,7 +181,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       jsonc: jsoncPlugin as unknown as ESLint.Plugin,
     },
     rules: {
-      ...(jsoncPlugin.configs.base.overrides[0].rules as Linter.RulesRecord),
+      ...(jsoncPlugin.configs.base.overrides[0]?.rules as Linter.RulesRecord),
       ...(jsoncPlugin.configs["recommended-with-json"].rules as Linter.RulesRecord),
       ...jsonFamilyRules,
     },
@@ -196,7 +196,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       jsonc: jsoncPlugin as unknown as ESLint.Plugin,
     },
     rules: {
-      ...(jsoncPlugin.configs.base.overrides[0].rules as Linter.RulesRecord),
+      ...(jsoncPlugin.configs.base.overrides[0]?.rules as Linter.RulesRecord),
       ...(jsoncPlugin.configs["recommended-with-json5"].rules as Linter.RulesRecord),
       ...jsonFamilyRules,
     },
@@ -211,7 +211,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       jsonc: jsoncPlugin as unknown as ESLint.Plugin,
     },
     rules: {
-      ...(jsoncPlugin.configs.base.overrides[0].rules as Linter.RulesRecord),
+      ...(jsoncPlugin.configs.base.overrides[0]?.rules as Linter.RulesRecord),
       ...(jsoncPlugin.configs["recommended-with-jsonc"].rules as Linter.RulesRecord),
       ...jsonFamilyRules,
     },
@@ -226,7 +226,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       toml: tomlPlugin as ESLint.Plugin,
     },
     rules: {
-      ...(tomlPlugin.configs.base.overrides[0].rules as Linter.RulesRecord),
+      ...(tomlPlugin.configs.base.overrides[0]?.rules as Linter.RulesRecord),
       ...(tomlPlugin.configs.standard.rules as Linter.RulesRecord),
       "no-multiple-empty-lines": ["error", { max: 1 }],
       "no-trailing-spaces": ["error"],
@@ -243,7 +243,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       yml: yamlPlugin as ESLint.Plugin,
     },
     rules: {
-      ...(yamlPlugin.configs.base.overrides[0].rules as Linter.RulesRecord),
+      ...(yamlPlugin.configs.base.overrides[0]?.rules as Linter.RulesRecord),
       ...(yamlPlugin.configs.standard.rules as Linter.RulesRecord),
       "no-multiple-empty-lines": ["error", { max: 0 }],
       "no-trailing-spaces": ["error"],
@@ -329,7 +329,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       ...airbnbTypescriptConfigShared.rules,
       ...airbnbTypescriptConfig.rules,
       ...(typescriptPlugin.configs?.base as ESLint.ConfigData).rules,
-      ...(typescriptPlugin.configs?.["eslint-recommended"] as ESLint.ConfigData).overrides?.[0].rules,
+      ...(typescriptPlugin.configs?.["eslint-recommended"] as ESLint.ConfigData).overrides?.[0]?.rules,
       ...(typescriptPlugin.configs?.["stylistic-type-checked"] as ESLint.ConfigData).rules,
       ...(typescriptPlugin.configs?.["strict-type-checked"] as ESLint.ConfigData).rules,
       ...(arrayFuncPlugin.configs?.recommended as ESLint.ConfigData).rules,
@@ -710,7 +710,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       react: reactPlugin,
     },
     rules: {
-      ...(markdownPlugin.configs?.recommended as ESLint.ConfigData).overrides?.[1].rules,
+      ...(markdownPlugin.configs?.recommended as ESLint.ConfigData).overrides?.[1]?.rules,
       "@typescript-eslint/no-unused-vars": ["off"],
       "formatjs/no-literal-string-in-jsx": ["off"],
       "import/no-default-export": ["off"],
