@@ -53,6 +53,10 @@
       "name": "spear-ai/ruff-config",
       "path": "packages/ruff-config",
     },
+    {
+      "name": "spear-ai/tsconfig",
+      "path": "packages/tsconfig",
+    },
   ],
   "settings": {
     "[graphql]": {

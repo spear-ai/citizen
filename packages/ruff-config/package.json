@@ -43,6 +43,7 @@
     "ruff-format:fix": "poetry run ruff format .",
     "ruff-lint:check": "poetry run ruff check .",
     "ruff-lint:fix": "poetry run ruff check --fix .",
-    "sync-version": "tsx sync-version"
+    "sync-version": "tsx sync-version",
+    "typescript:check": "tsc --noEmit"
   }
 }
