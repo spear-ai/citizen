@@ -1888,6 +1888,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@softonus/prettier-plugin-whitespace-remover@npm:1.0.1":
+  version: 1.0.1
+  resolution: "@softonus/prettier-plugin-whitespace-remover@npm:1.0.1"
+  checksum: 10/5682c6eb492c8b48c5c3cd000e003e93aa8a0e1d04ea8feaa8dd6ae874dbf2b134b3d7ddb127fcc868d6176fab9a0e76244967e50e90ec4992011c52c5feebac
+  languageName: node
+  linkType: hard
+
 "@spear-ai/citizen@workspace:.":
   version: 0.0.0-use.local
   resolution: "@spear-ai/citizen@workspace:."
@@ -2012,6 +2019,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@spear-ai/prettier-config@workspace:packages/prettier-config"
   dependencies:
+    "@softonus/prettier-plugin-whitespace-remover": "npm:1.0.1"
     "@types/prettier": "npm:3.0.0"
     eslint: "npm:8.57.0"
     npm-package-json-lint: "npm:7.1.0"
