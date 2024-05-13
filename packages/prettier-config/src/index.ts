@@ -3,6 +3,7 @@
 import type { Config } from "prettier";
 
 const prettierConfig: Config = {
+  plugins: ["@softonus/prettier-plugin-whitespace-remover"],
   printWidth: 109,
 };
 
