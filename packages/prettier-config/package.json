@@ -8,9 +8,6 @@
     "url": "https://spear.ai"
   },
   "type": "module",
-  "dependencies": {
-    "@softonus/prettier-plugin-whitespace-remover": "1.0.1"
-  },
   "devDependencies": {
     "@types/prettier": "3.0.0",
     "eslint": "8.57.0",
