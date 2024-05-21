@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "spear-ai-sqlfluff-config"
-version = "0.0.0"
+version = "1.0.0"
 description = "Spear AI Ruff config"
 authors = ["Spear AI <org@spear.ai>"]
 keywords = [
