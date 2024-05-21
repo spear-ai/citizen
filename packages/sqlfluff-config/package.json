@@ -1,0 +1,45 @@
+{
+  "name": "@spear-ai/sqlfluff-config",
+  "version": "0.0.0",
+  "description": "Spear AI SQLFluff config",
+  "author": {
+    "name": "Spear AI",
+    "email": "org@spear.ai",
+    "url": "https://spear.ai"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/eslint": "8.56.9",
+    "@types/regenerator-runtime": "^0.13.5",
+    "eslint": "8.57.0",
+    "graphql": "16.8.1",
+    "npm-package-json-lint": "7.1.0",
+    "prettier": "3.2.5",
+    "react": "18.2.0",
+    "regenerator-runtime": "^0.14.1",
+    "replace-in-file": "^7.1.0",
+    "tailwindcss": "3.4.3",
+    "tsup": "8.0.2",
+    "tsx": "4.7.2",
+    "typescript": "5.4.5"
+  },
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "directory": "packages/sqlfluff-config",
+    "url": "https://github.com/spear-ai/citizen.git"
+  },
+  "scripts": {
+    "build": "poetry build",
+    "eslint:check": "eslint --max-warnings 0 .",
+    "eslint:fix": "yarn eslint:check --fix",
+    "npmpkgjsonlint:check": "npmPkgJsonLint .",
+    "postinstall": "poetry install",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "publish-package": "poetry publish --skip-existing",
+    "sync-version": "tsx sync-version",
+    "typescript:check": "tsc --noEmit"
+  }
+}
