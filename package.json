@@ -11,11 +11,11 @@
   "dependencies": {
     "@changesets/changelog-github": "0.5.0",
     "@changesets/cli": "2.27.1",
-    "@commitlint/cli": "18.6.1",
-    "@commitlint/types": "18.6.1",
+    "@commitlint/cli": "19.3.0",
+    "@commitlint/types": "19.0.3",
     "@spear-ai/eslint-config": "*",
     "@spear-ai/npm-package-json-lint-config": "*",
-    "commitlint": "18.6.1",
+    "commitlint": "19.3.0",
     "eslint": "8.57.0",
     "husky": "9.0.11",
     "npm-package-json-lint": "7.1.0",
@@ -33,7 +33,7 @@
   "scripts": {
     "version": "changeset version && yarn workspaces foreach -A run sync-version",
     "build": "yarn dlx turbo build",
-    "commitlint:check": "commitlint --from=HEAD^1",
+    "commitlint:check": "commitlint --last",
     "eslint:check": "eslint --max-warnings 0 .",
     "eslint:fix": "yarn eslint:check --fix",
     "github-actions:push": "act push -s GH_PAT=$GH_PAT -s GITHUB_TOKEN=$GH_PAT -s NPM_TOKEN=$NPM_TOKEN",
