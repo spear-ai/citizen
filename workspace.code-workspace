@@ -54,6 +54,10 @@
       "path": "packages/ruff-config",
     },
     {
+      "name": "spear-ai/sqlfluff-config",
+      "path": "packages/sqlfluff-config",
+    },
+    {
       "name": "spear-ai/tsconfig",
       "path": "packages/tsconfig",
     },

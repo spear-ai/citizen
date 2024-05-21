@@ -1,0 +1,37 @@
+[sqlfluff]
+dialect = postgres
+max_line_length = 120
+templater = placeholder
+
+[sqlfluff:templater:placeholder]
+DATABASE_OWNER=owner_role
+param_style = colon
+
+[sqlfluff:rules:ambiguous.column_references]
+group_by_and_order_by_style = explicit
+
+[sqlfluff:rules:ambiguous.join]
+fully_qualify_join_types = both
+
+[sqlfluff:rules:capitalisation.functions]
+capitalisation_policy = lower
+extended_capitalisation_policy = lower
+
+[sqlfluff:rules:capitalisation.identifiers]
+capitalisation_policy = lower
+extended_capitalisation_policy = lower
+
+[sqlfluff:rules:capitalisation.literals]
+capitalisation_policy = upper
+
+[sqlfluff:rules:capitalisation.keywords]
+capitalisation_policy = upper
+
+[sqlfluff:rules:capitalisation.types]
+extended_capitalisation_policy = lower
+
+[sqlfluff:rules:convention.casting_style]
+preferred_type_casting_style = shorthand
+
+[sqlfluff:rules:references.consistent]
+single_table_references = unqualified

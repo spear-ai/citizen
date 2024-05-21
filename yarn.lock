@@ -2484,6 +2484,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@spear-ai/sqlfluff-config@workspace:packages/sqlfluff-config":
+  version: 0.0.0-use.local
+  resolution: "@spear-ai/sqlfluff-config@workspace:packages/sqlfluff-config"
+  dependencies:
+    "@types/eslint": "npm:8.56.9"
+    "@types/regenerator-runtime": "npm:^0.13.5"
+    eslint: "npm:8.57.0"
+    graphql: "npm:16.8.1"
+    npm-package-json-lint: "npm:7.1.0"
+    prettier: "npm:3.2.5"
+    react: "npm:18.2.0"
+    regenerator-runtime: "npm:^0.14.1"
+    replace-in-file: "npm:^7.1.0"
+    tailwindcss: "npm:3.4.3"
+    tsup: "npm:8.0.2"
+    tsx: "npm:4.7.2"
+    typescript: "npm:5.4.5"
+  languageName: unknown
+  linkType: soft
+
 "@spear-ai/tsconfig@workspace:packages/tsconfig":
   version: 0.0.0-use.local
   resolution: "@spear-ai/tsconfig@workspace:packages/tsconfig"
