@@ -1,5 +1,11 @@
 # @spear-ai/commitlint-config
 
+## 3.2.0
+
+### Minor Changes
+
+- [#456](https://github.com/spear-ai/citizen/pull/456) [`a2db3d1`](https://github.com/spear-ai/citizen/commit/a2db3d12b1c145f0c5e38ba0fbd70bf298be054f) Thanks [@psirenny](https://github.com/psirenny)! - Updated commitlint.
+
 ## 3.1.1
 
 ### Patch Changes
