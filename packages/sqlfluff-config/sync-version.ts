@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import-x/no-extraneous-dependencies */
 /* eslint-disable regexp/require-unicode-regexp */
 /* eslint-disable regexp/require-unicode-sets-regexp */
 

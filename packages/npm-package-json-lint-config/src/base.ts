@@ -1,4 +1,4 @@
-/* eslint-disable import/no-default-export */
+/* eslint-disable import-x/no-default-export */
 
 const baseNpmPackageJsonLintConfig = {
   extends: "npm-package-json-lint-config-default",
