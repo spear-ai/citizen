@@ -16,7 +16,6 @@ import airbnbBaseConfigStyle from "eslint-config-airbnb-base/rules/style";
 import airbnbBaseConfigVariables from "eslint-config-airbnb-base/rules/variables";
 import airbnbTypescriptConfig from "eslint-config-airbnb-typescript";
 import airbnbTypescriptConfigShared from "eslint-config-airbnb-typescript/lib/shared";
-import arrayFuncPlugin from "eslint-plugin-array-func";
 import canonicalPlugin from "eslint-plugin-canonical";
 import formatJsPlugin from "eslint-plugin-formatjs";
 import importPluginX from "eslint-plugin-import-x";
@@ -303,9 +302,10 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     },
     plugins: {
       "@eslint-community/eslint-comments": eslintCommentsPlugin,
+      // @ts-expect-error The Stylistic ESLint plugins don’t strictly match
+      "@stylistic": stylisticPlugin,
       // @ts-expect-error The Typescript ESLint plugins don’t strictly match
       "@typescript-eslint": typescriptEslintPlugin,
-      "array-func": arrayFuncPlugin,
       canonical: canonicalPlugin,
       formatjs: formatJsPlugin,
       "import-x": importPluginX as unknown as ESLint.Plugin,
@@ -320,8 +320,6 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       sonarjs: sonarjsPlugin,
       "sort-destructure-keys": sortDestructureKeysPlugin,
       storybook: storybookPlugin,
-      // @ts-expect-error The Stylistic ESLint plugins don’t strictly match
-      stylistic: stylisticPlugin,
       tailwindcss: tailwindCssPlugin,
       "typescript-sort-keys": typescriptSortKeysPlugin,
       unicorn: unicornPlugin,
@@ -348,8 +346,6 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       ...typescriptEslintConfigs.eslintRecommended.rules,
       ...typescriptEslintConfigs.stylisticTypeChecked[2]!.rules, // eslint-disable-line @typescript-eslint/no-non-null-assertion
       ...typescriptEslintConfigs.strictTypeChecked[2]!.rules, // eslint-disable-line @typescript-eslint/no-non-null-assertion
-      ...(arrayFuncPlugin.configs?.recommended as ESLint.ConfigData).rules,
-      ...(arrayFuncPlugin.configs?.all as ESLint.ConfigData).rules,
       ...(eslintCommentsPlugin.configs?.recommended as ESLint.ConfigData).rules,
       ...importPluginX.configs.recommended.rules,
       ...importPluginX.configs["stage-0"].rules,
@@ -357,6 +353,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       ...(regexpPlugin.configs?.all as ESLint.ConfigData).rules,
       ...(promisePlugin.configs?.recommended as ESLint.ConfigData).rules,
       ...(sonarjsPlugin.configs?.recommended as ESLint.ConfigData).rules,
+      // ...stylisticPlugin.configs["recommended-flat"].rules,
       ...(tailwindCssPlugin.configs?.recommended as ESLint.ConfigData).rules,
       ...(typescriptSortKeysPlugin.configs?.recommended as ESLint.ConfigData).rules,
       ...(unicornPlugin.configs?.recommended as ESLint.ConfigData).rules,
@@ -367,38 +364,35 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
         },
       ],
       "@next/next/google-font-display": ["off"],
-      // "@typescript-eslint/consistent-type-definitions": ["error", "type"],
-      // "@typescript-eslint/lines-between-class-members": [
-      //   "error",
-      //   "always",
-      //   { exceptAfterSingleLine: false },
-      // ],
-      // "@typescript-eslint/naming-convention": [
-      //   "error",
-      //   {
-      //     format: ["camelCase", "PascalCase", "UPPER_CASE"],
-      //     selector: "variable",
-      //     trailingUnderscore: "allow",
-      //   },
-      //   {
-      //     format: ["camelCase", "PascalCase"],
-      //     selector: "function",
-      //   },
-      //   {
-      //     format: ["PascalCase"],
-      //     selector: "typeLike",
-      //   },
-      // ],
-      // "@typescript-eslint/no-empty-function": ["error", { allow: ["arrowFunctions"] }],
-      // "@typescript-eslint/quotes": ["error", "double", { avoidEscape: true }],
-      // "@typescript-eslint/sort-type-constituents": ["error"],
-      // "@typescript-eslint/strict-boolean-expressions": [
-      //   "error",
-      //   {
-      //     allowNumber: false,
-      //     allowString: false,
-      //   },
-      // ],
+      "@stylistic/jsx-newline": ["error", { prevent: true }],
+      "@stylistic/lines-between-class-members": ["error", "always", { exceptAfterSingleLine: false }],
+      "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          format: ["camelCase", "PascalCase", "UPPER_CASE"],
+          selector: "variable",
+          trailingUnderscore: "allow",
+        },
+        {
+          format: ["camelCase", "PascalCase"],
+          selector: "function",
+        },
+        {
+          format: ["PascalCase"],
+          selector: "typeLike",
+        },
+      ],
+      "@typescript-eslint/no-empty-function": ["error", { allow: ["arrowFunctions"] }],
+      "@typescript-eslint/quotes": ["error", "double", { avoidEscape: true }],
+      "@typescript-eslint/sort-type-constituents": ["error"],
+      "@typescript-eslint/strict-boolean-expressions": [
+        "error",
+        {
+          allowNumber: false,
+          allowString: false,
+        },
+      ],
       "array-func/prefer-array-from": ["off"],
       "canonical/sort-keys": [
         "error",
@@ -535,7 +529,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "simple-import-sort/imports": [
         "error",
         {
-          groups: [["^\\u0000", "^node:", "^@?\\w", "^", "^\\."]],
+          groups: [[String.raw`^\u0000`, "^node:", String.raw`^@?\w`, "^", String.raw`^\.`]],
         },
       ],
       "sonarjs/cognitive-complexity": ["off"],
