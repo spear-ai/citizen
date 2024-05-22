@@ -1,5 +1,17 @@
 # @spear-ai/eslint-config
 
+## 20.0.0
+
+### Major Changes
+
+- [#462](https://github.com/spear-ai/citizen/pull/462) [`9b30c89`](https://github.com/spear-ai/citizen/commit/9b30c89036abfc0f436399453936d9f141420ccf) Thanks [@psirenny](https://github.com/psirenny)! - Replaced `eslint-import-plugin` with `eslint-plugin-import-x`.
+
+- [#462](https://github.com/spear-ai/citizen/pull/462) [`9b30c89`](https://github.com/spear-ai/citizen/commit/9b30c89036abfc0f436399453936d9f141420ccf) Thanks [@psirenny](https://github.com/psirenny)! - Added ESlint Stylistic formatting to ESLint config.
+
+- [#462](https://github.com/spear-ai/citizen/pull/462) [`9b30c89`](https://github.com/spear-ai/citizen/commit/9b30c89036abfc0f436399453936d9f141420ccf) Thanks [@psirenny](https://github.com/psirenny)! - Removed `eslint-plugin-array-func` plugin from ESLint config because it doesn’t properly export itself as an ESM module.
+
+- [#462](https://github.com/spear-ai/citizen/pull/462) [`9b30c89`](https://github.com/spear-ai/citizen/commit/9b30c89036abfc0f436399453936d9f141420ccf) Thanks [@psirenny](https://github.com/psirenny)! - Updated ESLint plugins and rules.
+
 ## 19.0.0
 
 ### Major Changes
