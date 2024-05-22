@@ -448,7 +448,19 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "import-x/no-deprecated": ["error"],
       "import-x/no-dynamic-require": ["error"],
       "import-x/no-empty-named-blocks": ["error"],
-      "import-x/no-extraneous-dependencies": ["error"],
+      "import-x/no-extraneous-dependencies": [
+        "error",
+        {
+          devDependencies: [
+            ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/*.benchmark${fileExtension}`),
+            ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/*.config${fileExtension}`),
+            ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/*.stories${fileExtension}`),
+            ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/*.test${fileExtension}`),
+            ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/.storybook/*${fileExtension}`),
+            ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/__test__/**/*${fileExtension}`),
+          ],
+        },
+      ],
       "import-x/no-import-module-exports": ["error"],
       "import-x/no-mutable-exports": ["error"],
       "import-x/no-self-import": ["error"],
@@ -716,20 +728,6 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     ignores: defaultIgnoreFileList,
     rules: {
       "json-schema-validator/no-invalid": ["off"],
-    },
-  },
-  {
-    files: [
-      ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/*.benchmark${fileExtension}`),
-      ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/*.config${fileExtension}`),
-      ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/*.stories${fileExtension}`),
-      ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/*.test${fileExtension}`),
-      ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/.storybook/*${fileExtension}`),
-      ...javascriptFamilyFileExtensionList.map((fileExtension) => `**/__test__/**/*${fileExtension}`),
-    ],
-    ignores: defaultIgnoreFileList,
-    rules: {
-      "import-x/no-extraneous-dependencies": ["off"],
     },
   },
   {
