@@ -1,8 +1,7 @@
 import eslintCommentsPlugin from "@eslint-community/eslint-plugin-eslint-comments";
 import graphqlEslint from "@graphql-eslint/eslint-plugin";
 import nextPlugin from "@next/eslint-plugin-next";
-import typescriptPlugin from "@typescript-eslint/eslint-plugin";
-import typescriptParser from "@typescript-eslint/parser"; // eslint-disable-line import/no-unresolved
+import stylisticPlugin from "@stylistic/eslint-plugin";
 import type { ESLint, Linter } from "eslint";
 import airbnbConfigReact from "eslint-config-airbnb/rules/react";
 import airbnbConfigReactA11y from "eslint-config-airbnb/rules/react-a11y";
@@ -20,7 +19,7 @@ import airbnbTypescriptConfigShared from "eslint-config-airbnb-typescript/lib/sh
 import arrayFuncPlugin from "eslint-plugin-array-func";
 import canonicalPlugin from "eslint-plugin-canonical";
 import formatJsPlugin from "eslint-plugin-formatjs";
-import importPlugin from "eslint-plugin-import";
+import importPluginX from "eslint-plugin-import-x";
 import jsonSchemaValidatorPlugin from "eslint-plugin-json-schema-validator";
 import jsoncPlugin from "eslint-plugin-jsonc";
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
@@ -43,6 +42,11 @@ import yamlPlugin from "eslint-plugin-yml";
 import globals from "globals";
 import jsoncParser from "jsonc-eslint-parser";
 import tomlParser from "toml-eslint-parser";
+import {
+  configs as typescriptEslintConfigs,
+  parser as typescriptEslintParser,
+  plugin as typescriptEslintPlugin,
+} from "typescript-eslint";
 import yamlParser from "yaml-eslint-parser";
 
 export { default as prettierConfig } from "eslint-config-prettier";
@@ -159,6 +163,7 @@ export const javascriptFamilyFileExtensionList = [
   ...typescriptFileExtensionList,
 ];
 export const javascriptFamilyFileList = [...javascriptFileList, ...typescriptFileList];
+export const javascriptFamilyInMarkdownFileList = javascriptFamilyFileList.map((file) => `**/*.md/${file}`);
 
 export const storybookFileList = javascriptFamilyFileList.map(
   (fileExtension) => `.stories.${fileExtension}`,
@@ -286,19 +291,24 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     files: javascriptFamilyFileList,
     ignores: defaultIgnoreFileList,
     languageOptions: {
-      parser: typescriptParser,
+      // @ts-expect-error The Typescript ESLint parser doesn’t strictly match
+      parser: typescriptEslintParser,
       parserOptions: {
-        project: "tsconfig.json",
+        ecmaFeatures: {
+          jsx: true,
+        },
+        project: true,
         sourceType: "module",
       },
     },
     plugins: {
       "@eslint-community/eslint-comments": eslintCommentsPlugin,
-      "@typescript-eslint": typescriptPlugin as unknown as ESLint.Plugin,
+      // @ts-expect-error The Typescript ESLint plugins don’t strictly match
+      "@typescript-eslint": typescriptEslintPlugin,
       "array-func": arrayFuncPlugin,
       canonical: canonicalPlugin,
       formatjs: formatJsPlugin,
-      import: importPlugin,
+      "import-x": importPluginX as unknown as ESLint.Plugin,
       "jsx-a11y": jsxA11yPlugin,
       markdown: markdownPlugin,
       promise: promisePlugin,
@@ -310,33 +320,40 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       sonarjs: sonarjsPlugin,
       "sort-destructure-keys": sortDestructureKeysPlugin,
       storybook: storybookPlugin,
+      // @ts-expect-error The Stylistic ESLint plugins don’t strictly match
+      stylistic: stylisticPlugin,
       tailwindcss: tailwindCssPlugin,
       "typescript-sort-keys": typescriptSortKeysPlugin,
       unicorn: unicornPlugin,
     },
     rules: {
-      ...airbnbBaseConfigBestPractices.rules,
-      ...airbnbBaseConfigErrors.rules,
-      ...airbnbBaseConfigNode.rules,
-      ...airbnbBaseConfigStyle.rules,
-      ...airbnbBaseConfigVariables.rules,
-      ...airbnbBaseConfigEs6.rules,
-      ...airbnbBaseConfigImports.rules,
-      ...airbnbBaseConfigStrict.rules,
-      ...airbnbConfigReact.rules,
-      ...airbnbConfigReactA11y.rules,
-      ...airbnbConfigReactHooks.rules,
-      ...airbnbTypescriptConfigShared.rules,
-      ...airbnbTypescriptConfig.rules,
-      ...(typescriptPlugin.configs?.base as ESLint.ConfigData).rules,
-      ...(typescriptPlugin.configs?.["eslint-recommended"] as ESLint.ConfigData).overrides?.[0]?.rules,
-      ...(typescriptPlugin.configs?.["stylistic-type-checked"] as ESLint.ConfigData).rules,
-      ...(typescriptPlugin.configs?.["strict-type-checked"] as ESLint.ConfigData).rules,
+      ...(Object.fromEntries(
+        Object.entries({
+          ...airbnbBaseConfigBestPractices.rules,
+          ...airbnbBaseConfigErrors.rules,
+          ...airbnbBaseConfigNode.rules,
+          ...airbnbBaseConfigStyle.rules,
+          ...airbnbBaseConfigVariables.rules,
+          ...airbnbBaseConfigEs6.rules,
+          ...airbnbBaseConfigImports.rules,
+          ...airbnbBaseConfigStrict.rules,
+          ...airbnbConfigReact.rules,
+          ...airbnbConfigReactA11y.rules,
+          ...airbnbConfigReactHooks.rules,
+          ...airbnbTypescriptConfigShared.rules,
+          ...airbnbTypescriptConfig.rules,
+        }).filter(([name]) => !name.startsWith("import/") && !name.startsWith("@typescript-eslint/")),
+      ) as Linter.RulesRecord),
+      ...typescriptEslintConfigs.base.rules,
+      ...typescriptEslintConfigs.eslintRecommended.rules,
+      ...typescriptEslintConfigs.stylisticTypeChecked[2]!.rules, // eslint-disable-line @typescript-eslint/no-non-null-assertion
+      ...typescriptEslintConfigs.strictTypeChecked[2]!.rules, // eslint-disable-line @typescript-eslint/no-non-null-assertion
       ...(arrayFuncPlugin.configs?.recommended as ESLint.ConfigData).rules,
       ...(arrayFuncPlugin.configs?.all as ESLint.ConfigData).rules,
       ...(eslintCommentsPlugin.configs?.recommended as ESLint.ConfigData).rules,
-      ...(importPlugin.configs?.recommended as ESLint.ConfigData).rules,
-      ...(importPlugin.configs?.typescript as ESLint.ConfigData).rules,
+      ...importPluginX.configs.recommended.rules,
+      ...importPluginX.configs["stage-0"].rules,
+      ...importPluginX.configs.typescript.rules,
       ...(regexpPlugin.configs?.all as ESLint.ConfigData).rules,
       ...(promisePlugin.configs?.recommended as ESLint.ConfigData).rules,
       ...(sonarjsPlugin.configs?.recommended as ESLint.ConfigData).rules,
@@ -350,33 +367,38 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
         },
       ],
       "@next/next/google-font-display": ["off"],
-      "@typescript-eslint/consistent-type-definitions": ["error", "type"],
-      "@typescript-eslint/naming-convention": [
-        "error",
-        {
-          format: ["camelCase", "PascalCase", "UPPER_CASE"],
-          selector: "variable",
-          trailingUnderscore: "allow",
-        },
-        {
-          format: ["camelCase", "PascalCase"],
-          selector: "function",
-        },
-        {
-          format: ["PascalCase"],
-          selector: "typeLike",
-        },
-      ],
-      "@typescript-eslint/no-empty-function": ["error", { allow: ["arrowFunctions"] }],
-      "@typescript-eslint/quotes": ["error", "double", { avoidEscape: true }],
-      "@typescript-eslint/sort-type-constituents": ["error"],
-      "@typescript-eslint/strict-boolean-expressions": [
-        "error",
-        {
-          allowNumber: false,
-          allowString: false,
-        },
-      ],
+      // "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+      // "@typescript-eslint/lines-between-class-members": [
+      //   "error",
+      //   "always",
+      //   { exceptAfterSingleLine: false },
+      // ],
+      // "@typescript-eslint/naming-convention": [
+      //   "error",
+      //   {
+      //     format: ["camelCase", "PascalCase", "UPPER_CASE"],
+      //     selector: "variable",
+      //     trailingUnderscore: "allow",
+      //   },
+      //   {
+      //     format: ["camelCase", "PascalCase"],
+      //     selector: "function",
+      //   },
+      //   {
+      //     format: ["PascalCase"],
+      //     selector: "typeLike",
+      //   },
+      // ],
+      // "@typescript-eslint/no-empty-function": ["error", { allow: ["arrowFunctions"] }],
+      // "@typescript-eslint/quotes": ["error", "double", { avoidEscape: true }],
+      // "@typescript-eslint/sort-type-constituents": ["error"],
+      // "@typescript-eslint/strict-boolean-expressions": [
+      //   "error",
+      //   {
+      //     allowNumber: false,
+      //     allowString: false,
+      //   },
+      // ],
       "array-func/prefer-array-from": ["off"],
       "canonical/sort-keys": [
         "error",
@@ -400,9 +422,9 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "formatjs/no-multiple-whitespaces": ["error"],
       "func-style": ["error", "expression"],
       "function-paren-newline": ["off", "consistent"],
-      "import/no-anonymous-default-export": ["error"],
-      "import/no-default-export": ["error"],
-      "import/prefer-default-export": ["off"],
+      "import-x/no-anonymous-default-export": ["error"],
+      "import-x/no-default-export": ["error"],
+      "import-x/prefer-default-export": ["off"],
       "jsx-a11y/anchor-is-valid": [
         "error",
         {
@@ -418,7 +440,6 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
         },
       ],
       "jsx-a11y/no-autofocus": ["off"],
-      "lines-between-class-members": ["error", "always", { exceptAfterSingleLine: false }],
       "max-len": [
         "error",
         {
@@ -563,10 +584,16 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       ...airbnbTypescriptConfigShared.settings,
       ...airbnbTypescriptConfig.settings,
       ...airbnbConfigReact.settings,
-      "import/resolver": {
+      "import-x/extensions": [...javascriptFamilyFileExtensionList, ".json"],
+      "import-x/external-module-folders": ["node_modules", "node_modules/@types"],
+      "import-x/parsers": {
+        "@typescript-eslint/parser": [...javascriptFamilyFileExtensionList, ".json"],
+      },
+      "import-x/resolver": {
         node: {
-          extensions: [...javascriptFileExtensionList, ...typescriptFileExtensionList, ".json"],
+          extensions: [...javascriptFamilyFileExtensionList, ".json"],
         },
+        typescript: true,
       },
     },
   },
@@ -578,18 +605,13 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     },
   },
   {
-    files: [
-      "**/*.md/**/*.cjs",
-      "**/*.md/**/*.js",
-      "**/*.md/**/*.jsx",
-      "**/*.md/**/*.ts",
-      "**/*.md/**/*.tsx",
-    ],
+    files: javascriptFamilyInMarkdownFileList,
     ignores: defaultIgnoreFileList,
     languageOptions: {
-      parser: typescriptParser,
+      // @ts-expect-error The Typescript ESLint parser doesn’t strictly match
+      parser: typescriptEslintParser,
       parserOptions: {
-        project: null,
+        project: false,
         sourceType: "module",
       },
     },
@@ -619,6 +641,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "@typescript-eslint/no-unsafe-return": ["off"],
       "@typescript-eslint/no-useless-template-literals": ["off"],
       "@typescript-eslint/non-nullable-type-assertion-style": ["off"],
+      "@typescript-eslint/only-throw-error": ["off"],
       "@typescript-eslint/prefer-includes": ["off"],
       "@typescript-eslint/prefer-nullish-coalescing": ["off"],
       "@typescript-eslint/prefer-optional-chain": ["off"],
@@ -632,7 +655,8 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "@typescript-eslint/return-await": ["off"],
       "@typescript-eslint/strict-boolean-expressions": ["off"],
       "@typescript-eslint/unbound-method": ["off"],
-      "import/no-unresolved": ["off"],
+      "@typescript-eslint/use-unknown-in-catch-callback-variable": ["off"],
+      "import-x/no-unresolved": ["off"],
     },
   },
   {
@@ -675,7 +699,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     ],
     ignores: defaultIgnoreFileList,
     rules: {
-      "import/no-extraneous-dependencies": ["off"],
+      "import-x/no-extraneous-dependencies": ["off"],
     },
   },
   {
@@ -686,14 +710,14 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     ],
     ignores: defaultIgnoreFileList,
     rules: {
-      "import/no-default-export": ["off"],
+      "import-x/no-default-export": ["off"],
     },
   },
   {
     files: ["**/*.d.ts"],
     ignores: defaultIgnoreFileList,
     rules: {
-      "import/no-default-export": ["off"],
+      "import-x/no-default-export": ["off"],
     },
   },
   {
@@ -713,8 +737,8 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       ...(markdownPlugin.configs?.recommended as ESLint.ConfigData).overrides?.[1]?.rules,
       "@typescript-eslint/no-unused-vars": ["off"],
       "formatjs/no-literal-string-in-jsx": ["off"],
-      "import/no-default-export": ["off"],
-      "import/no-extraneous-dependencies": ["off"],
+      "import-x/no-default-export": ["off"],
+      "import-x/no-extraneous-dependencies": ["off"],
       "react/jsx-filename-extension": [
         "error",
         {
@@ -743,7 +767,7 @@ export const nextEslintConfig = [
     rules: {
       ...(nextPlugin.configs?.recommended as ESLint.ConfigData).rules,
       ...(nextPlugin.configs?.["core-web-vitals"] as ESLint.ConfigData).rules,
-      "import/no-anonymous-default-export": "warn",
+      "import-x/no-anonymous-default-export": "warn",
       "jsx-a11y/alt-text": [
         "warn",
         {
@@ -762,7 +786,7 @@ export const nextEslintConfig = [
       "react/react-in-jsx-scope": "off",
     },
     settings: {
-      "import/resolver": {
+      "import-x/resolver": {
         typescript: {
           alwaysTryTypes: true,
         },
@@ -776,7 +800,7 @@ export const nextEslintConfig = [
     files: ["src/app/**", "src/page/**"],
     ignores: defaultIgnoreFileList,
     rules: {
-      "import/no-default-export": ["off"],
+      "import-x/no-default-export": ["off"],
     },
   },
 ];
@@ -792,9 +816,9 @@ export const graphqlEslintConfig = [
       "@graphql-eslint": graphqlEslint,
     },
     rules: {
-      ...(graphqlEslint.configs?.["schema-recommended"] as ESLint.ConfigData).rules,
-      ...(graphqlEslint.configs?.["schema-all"] as ESLint.ConfigData).rules,
-      ...(graphqlEslint.configs?.relay as ESLint.ConfigData).rules,
+      ...graphqlEslint.configs["schema-recommended"].rules, // eslint-disable-line import-x/no-named-as-default-member
+      ...graphqlEslint.configs["schema-all"].rules, // eslint-disable-line import-x/no-named-as-default-member
+      ...graphqlEslint.configs.relay.rules, // eslint-disable-line import-x/no-named-as-default-member
       "@graphql-eslint/relay-edge-types": [
         "error",
         {
