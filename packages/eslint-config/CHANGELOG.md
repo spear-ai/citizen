@@ -1,5 +1,11 @@
 # @spear-ai/eslint-config
 
+## 20.0.1
+
+### Patch Changes
+
+- [#495](https://github.com/spear-ai/citizen/pull/495) [`e29ed41`](https://github.com/spear-ai/citizen/commit/e29ed41afee2bc646d8791d3994d29d11a1af94c) Thanks [@psirenny](https://github.com/psirenny)! - Disabled more unusable ESLint TypeScript rules within markdown files.
+
 ## 20.0.0
 
 ### Major Changes
