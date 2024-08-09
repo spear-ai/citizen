@@ -1,9 +1,7 @@
 <div align="center">
+  <img alt="Logo" src="citizen-logo.png" width="192">
   <p>
-    <img alt="Logo" src="citizen-logo.svg" width="192">
-  </p>
-  <p>
-    <b>Spear AI Code Citizen</b>
+    <b>Citizen</b>
   </p>
   <quote>
     <p>
