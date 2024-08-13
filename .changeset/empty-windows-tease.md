@@ -2,4 +2,4 @@
 "@spear-ai/pulumi-policy-pack": major
 ---
 
-Enforced kebab casing in Pulumi Policy Pack.
+Enforced kebab cased resource names in Pulumi Policy Pack.
