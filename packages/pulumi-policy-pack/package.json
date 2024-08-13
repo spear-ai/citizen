@@ -9,7 +9,8 @@
   },
   "type": "module",
   "dependencies": {
-    "@pulumi/awsguard": "^0.4.0"
+    "@pulumi/compliance-policy-manager": "^0.1.3",
+    "@pulumi/policy": "^1.12.0"
   },
   "devDependencies": {
     "@types/node": "20.12.12",
