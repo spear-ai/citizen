@@ -1,6 +1,6 @@
 {
   "name": "@spear-ai/pulumi-policy-pack",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "description": "Spear AI Pulumi Policy Pack",
   "author": {
     "name": "Spear AI",

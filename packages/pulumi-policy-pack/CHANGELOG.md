@@ -1,5 +1,11 @@
 # @spear-ai/pulumi-policy-pack
 
+## 3.0.0
+
+### Major Changes
+
+- [#523](https://github.com/spear-ai/citizen/pull/523) [`865d5b4`](https://github.com/spear-ai/citizen/commit/865d5b4b8d6f8b2b52089a549891fa2575df2a56) Thanks [@psirenny](https://github.com/psirenny)! - Enforced kebab cased resource names in Pulumi Policy Pack.
+
 ## 2.1.1
 
 ### Patch Changes
