@@ -1,4 +1,9 @@
 {
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
   "exclude": ["node_modules"],
   "extends": "@spear-ai/tsconfig",
   "include": [

@@ -1,3 +1,9 @@
-import { AwsGuard } from "@pulumi/awsguard";
+import { managedPolicyList } from "@/managed-policy-list";
+import { createResourceNameCasingPolicy } from "@/resource-name-casing-policy";
 
-new AwsGuard({ all: "mandatory" });
+export const policyList = [
+  ...managedPolicyList,
+  createResourceNameCasingPolicy({
+    ignoreTypeList: ["aws:secretsmanager:Secret", "aws-native:secretsmanager:Secret"],
+  }),
+];
