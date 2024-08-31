@@ -1,0 +1,8 @@
+if git config --get commit.gpgsign | grep -q "true"; then
+  # It’s still possible signing was disabled for this particular commit with `git commit --no-gpg-sign`.
+  # But we ignore that case because it’s difficult to detect.
+  exit 0;
+fi
+
+echo "Commit signing is required. See: https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits"
+exit 1;

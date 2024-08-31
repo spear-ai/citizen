@@ -39,6 +39,7 @@
     "github-actions:push": "act push -s GH_PAT=$GH_PAT -s GITHUB_TOKEN=$GH_PAT -s NPM_TOKEN=$NPM_TOKEN",
     "github-actions:push:release-tag": "act push -e .github/test-events/push-release-tag.json -s GH_PAT=$GH_PAT -s GITHUB_TOKEN=$GH_PAT",
     "npmpkgjsonlint:check": "npmPkgJsonLint .",
+    "prepare": "husky",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "publish-packages": "yarn run publish-packages:npm && yarn run publish-packages:github && yarn run publish-packages:custom && yarn changeset tag",
