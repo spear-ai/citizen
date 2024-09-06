@@ -1,5 +1,13 @@
 # @spear-ai/ruff-config
 
+## 5.0.0
+
+### Major Changes
+
+- [#528](https://github.com/spear-ai/citizen/pull/528) [`9cd9abc`](https://github.com/spear-ai/citizen/commit/9cd9abc80bf5c03b5a4abb534142229f4205ec23) Thanks [@psirenny](https://github.com/psirenny)! - Updated Ruff config‘s `ruff` dependency.
+
+- [#528](https://github.com/spear-ai/citizen/pull/528) [`9cd9abc`](https://github.com/spear-ai/citizen/commit/9cd9abc80bf5c03b5a4abb534142229f4205ec23) Thanks [@psirenny](https://github.com/psirenny)! - Added `AIR` and `FURB` rulesets to Ruff config.
+
 ## 4.0.0
 
 ### Major Changes
