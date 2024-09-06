@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "spear-ai-ruff-config"
-version = "4.0.0"
+version = "5.0.0"
 description = "Spear AI Ruff config"
 authors = ["Spear AI <org@spear.ai>"]
 keywords = [
