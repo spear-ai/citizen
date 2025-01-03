@@ -1,4 +1,4 @@
-# Tech stack
+# Software stack
 
 Developers do their best work when they have access to the right tools. But lots of different tools adds complexity and hard-to-maintain glue code.
 This list tries to strike a balance between the two. Moreover, none of these tools exist in isolation. Choosing one tool may preclude the use of one tool _or_ enhance the effectiveness of another.
