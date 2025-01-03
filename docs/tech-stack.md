@@ -200,21 +200,21 @@ A management platform that enables teams to plan, track, and collaborate on proj
 
 An open-source data orchestration framework that allows you to define, test, and monitor data pipelines as code using Python, providing features like dependency management, scheduling, and observability through a unified platform.
 
-Streaming data platform: **RedPanda**
+## Streaming data platform: [RedPanda](https://redpanda.com)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A modern streaming data platform that's API-compatible with Apache Kafka but designed to be faster, easier to operate, and more resource-efficient.
 
-Application performance monitoring: **Sentry**
+## Error monitoring: [Sentry](https://sentry.io)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+An error monitoring and performance tracking platform that helps developers identify, track, and fix crashes, errors, and performance issues in real-time across multiple programming languages and frameworks.
 
-Error monitoring: **Sentry**
+## Application performance monitoring: [Sentry](https://sentry.io)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+Sentry also tracks end-to-end application performance through transaction tracing, helping developers identify bottlenecks and optimize code performance.
 
-Session replay: **Sentry**
+## Session replay: [Sentry](https://sentry.io)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+Sentry also captures and reconstructs user interactions, errors, and UI states leading up to crashes, allowing developers to visually debug issues by watching exactly what users experienced.
 
 Frontend/Backend host: **Vercel**
 
@@ -248,7 +248,7 @@ Communication: **Slack**
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
 
----
+<!-- ---
 
 Node.js version manager: **fnm**
 
@@ -415,7 +415,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rh
 
 CSS linting: **Stylelint**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in. -->
 
 ## Languages
 
