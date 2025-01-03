@@ -68,7 +68,7 @@ Alternatives:
 
 ## Container registry: [GitHub Packages](https://docs.github.com/en/packages/quickstart)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
 Container vulnerability scanning: **Grype**
 
@@ -166,9 +166,9 @@ A GraphQL server that automatically generates a highly performant and customizab
 
 Alternatives:
 
-- Hasura
-- Supabase
-- WunderGraph
+- [Hasura](https://hasura.io)
+- [Supabase](https://supabase.com)
+- [WunderGraph](https://wundergraph.com)
 
 ## GraphQL client: [Relay](https://relay.dev)
 
@@ -190,7 +190,7 @@ An open-source identity infrastructure platform that provides authentication, au
 
 ## CMS: [Tina](https://tina.io)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A Git-backed headless content management system that provides a visual editing interface directly within your website, allowing developers and content creators to make real-time changes while maintaining version control through Git.
 
 ## CRM: [monday.com](https://monday.com/)
 
@@ -216,206 +216,206 @@ Sentry also tracks end-to-end application performance through transaction tracin
 
 Sentry also captures and reconstructs user interactions, errors, and UI states leading up to crashes, allowing developers to visually debug issues by watching exactly what users experienced.
 
-Frontend/Backend host: **Vercel**
+## App deployment: [Vercel](https://vercel.com)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A cloud platform that enables developers to deploy, scale, and host web applications and serverless functions with features like automatic deployments, edge functions, and seamless integration with popular frameworks like Next.js.
 
-Web analytics: **Vercel** (Vercel Analytics)
+## App analytics: [Vercel Web Analytics](https://vercel.com/docs/analytics)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+Tracks user interactions, page views, and visitor data through automatic client-side instrumentation, providing real-time insights into user journeys and click patterns without requiring manual event tracking code.
 
-Model experiment tracking: **Wandb**
+## Model experiment tracking: [Wandb](https://wandb.ai)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-Model registry: **Wandb**
+## Model registry: [Wandb](https://wandb.ai)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-Model serving: **BentoML**
+## Model deployment: [BentoML](https://bentoml.com)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+An open-source platform that simplifies ML model deployment by packaging machine learning models with their dependencies into standardized units called "Bentos," which can be easily served as REST APIs or deployed to various cloud platforms.
 
-Task orchestration: **Turborepo**
+## Task orchestration: [Turborepo](https://turbo.build)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A task runner and build system that optimizes monorepo workflows through intelligent caching and parallel execution.
 
-Code quality: **SonarQube**
+## Code quality: [SonarQube](https://sonarcloud.io)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A continuous code quality inspection platform that automatically analyzes source code to detect bugs, code smells, and security vulnerabilities while providing detailed metrics and reports for multiple programming languages.
 
-Communication: **Slack**
+## Communication: [Slack](https://slack.com)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A team communication platform that combines chat rooms, direct messaging, and app integrations to streamline workplace collaboration.
 
-<!-- ---
+---
 
-Node.js version manager: **fnm**
+## Node.js version manager: **fnm**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-JavaScript package manager: **Yarn**
+## JavaScript package manager: **Yarn**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-JavaScript application build system: **Next.js** (Turbopack)
+## JavaScript application build system: **Next.js** (Turbopack)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-JavaScript library build system: **tsup** (ESBuild)
+## JavaScript library build system: **tsup** (ESBuild)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-JavaScript validation: **Zod**
+## JavaScript validation: **Zod**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-JavaScript testing: **Vitest**
+## JavaScript testing: **Vitest**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-JavaScript snapshot testing: **Vitest**
+## JavaScript snapshot testing: **Vitest**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-JavaScript code coverage: **Vitest**
+## JavaScript code coverage: **Vitest**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-JavaScript benchmarking: **Vitest**
+## JavaScript benchmarking: **Vitest**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-JavaScript internationalization: **FormatJS**
+## JavaScript internationalization: **FormatJS**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-JavaScript CLI: **yargs**
+## JavaScript CLI: **yargs**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
 Alternatives:
 
 - Stricli
 - Brocli
 
-JavaScript CLI UI: **Ink**
+## JavaScript CLI UI: **Ink**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-JavaScript linting: **ESLint**
+## JavaScript linting: **ESLint**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-JavaScript formatting: **Prettier**
+## JavaScript formatting: **Prettier**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-JavaScript logging: **Pino**
+## JavaScript logging: **Pino**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
-
----
-
-Python dataframe: **Polars**
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
-
-Python CLI: **jsonargparse**
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
-
-Python logging: **structlog**
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
-
-Python validation: **Pydantic**
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
-
-Python version manager: **uv**
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
-
-Python package manager: **uv**
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
-
-Python linting: **Ruff**
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
-
-Python formatting: **Ruff**
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
-
-Python testing: **pytest**
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
-
-Python property testing: **Hypothesis**
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
-
-Python snapshot testing: **pytest Syrupy**
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
-
-Python code coverage: **pytest** (pytest-cov)
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
-
-Python benchmarking: **pytest** (pytest-benchmark)
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
 ---
 
-Rust version manager: **rustup**
+## Python dataframe: **Polars**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-Rust package manager: **Cargo**
+## Python CLI: **jsonargparse**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-Rust build system: **Cargo**
+## Python logging: **structlog**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-Rust testing: **Cargo**
+## Python validation: **Pydantic**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-Rust snapshot testing: **insta**
+## Python version manager: **uv**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-Rust code coverage: **Cargo (Tarpaulin)**
+## Python package manager: **uv**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-Rust benchmarking: **Cargo**
+## Python linting: **Ruff**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-Rust CLI: **clap**
+## Python formatting: **Ruff**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-Rust linting: **Clippy**
+## Python testing: **pytest**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-Rust formatting: **rustfmt**
+## Python property testing: **Hypothesis**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
+
+## Python snapshot testing: **pytest Syrupy**
+
+TODO: Fill me in
+
+## Python code coverage: **pytest** (pytest-cov)
+
+TODO: Fill me in
+
+## Python benchmarking: **pytest** (pytest-benchmark)
+
+TODO: Fill me in
 
 ---
 
-CSS linting: **Stylelint**
+## Rust version manager: **rustup**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in. -->
+TODO: Fill me in
+
+## Rust package manager: **Cargo**
+
+TODO: Fill me in
+
+## Rust build system: **Cargo**
+
+TODO: Fill me in
+
+## Rust testing: **Cargo**
+
+TODO: Fill me in
+
+## Rust snapshot testing: **insta**
+
+TODO: Fill me in
+
+## Rust code coverage: **Cargo (Tarpaulin)**
+
+TODO: Fill me in
+
+## Rust benchmarking: **Cargo**
+
+TODO: Fill me in
+
+## Rust CLI: **clap**
+
+TODO: Fill me in
+
+## Rust linting: **Clippy**
+
+TODO: Fill me in
+
+## Rust formatting: **rustfmt**
+
+TODO: Fill me in
+
+---
+
+## CSS linting: **Stylelint**
+
+TODO: Fill me in
 
 ## Languages
 
@@ -423,21 +423,21 @@ TypeScript, Python, Rust
 
 ## Recommended software
 
-Code editor: **Cursor / VSCode**
+## Code editor: **Cursor / VSCode**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-Code assistant: **Cursor / Claude**
+## Code assistant: **Cursor / Claude**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-Docker runtime: **OrbStack**
+## Docker runtime: **OrbStack**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
-Git UI: **GitHub Desktop**
+## Git UI: **GitHub Desktop**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+TODO: Fill me in
 
 Alternatives:
 
