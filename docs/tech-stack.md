@@ -1,26 +1,71 @@
 # Tech stack
 
-Version control: **Git**
+Developers do their best work when they have access to the right tools. But lots of different tools adds complexity and hard-to-maintain glue code.
+This list tries to strike a balance between the two. Moreover, none of these tools exist in isolation. Choosing one tool may preclude the use of one tool _or_ enhance the effectiveness of another.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+There are a number of “reasons” in this list. We strive to offer unbiased justifications for each component in the stack, but ultimately, trial-and-error shapes our choices. As such, expect this list to change over time.
 
-Code collaboration: **GitHub**
+## Version control: [Git](https://git-scm.com)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A distributed version control system.
 
-Project management: **GitHub** (GitHub Projects)
+Alternatives:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+- [Fossil](https://fossil-scm.org)
+- [Mercurial](https://www.mercurial-scm.org)
 
-CI/CD: **GitHub** (GitHub Actions)
+## Code collaboration: [GitHub](https://github.com)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A popular code collaboration platform built on top of Git.
 
-Remote development: **GitHub** (GitHub Codespaces)
+- ✅ Popular among developers
+- ✅ Great UI/UX
+- ✅ Great ecosystem (GitHub Actions, etc.)
+- ✅ Easy to self-host
+- ❌ Not open source
+- ❌ Expensive
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+Alternatives:
 
-Container registry: **GitHub** (GitHub Container Registry)
+- [Bitbucket](https://bitbucket.org)
+- [GitLab](https://gitlab.com)
+
+## Project management: [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
+
+An adaptable spreadsheet, task-board, and road map that integrates with your issues and pull requests on GitHub.
+
+- ✅ Simple
+- ✅ Integrates with GitHub issues and pull requests
+- ❌ Lacks dependency tracking
+- ❌ Lacks kanban board
+
+Alternatives:
+
+- [Jira](https://www.atlassian.com/software/jira)
+- [Linear](https://linear.app)
+
+## CI/CD: [GitHub Actions](https://github.com/features/actions)
+
+Continuous integration and continuous delivery in GitHub.
+
+- ✅ Simple (YAML based)
+- ✅ Integrates with GitHub events
+- ❌ Local development experience is poor
+
+Alternatives:
+
+- [Bamboo](https://www.atlassian.com/software/bamboo)
+- [CircleCI](https://circleci.com)
+- [GitLab CI](https://docs.gitlab.com/ee/ci/)
+- [Jenkins](https://www.jenkins.io)
+- [Semaphore](https://semaphoreci.com)
+- [Travis CI](https://www.travis-ci.com)
+
+## Remote development: [GitHub Codespaces](https://github.com/features/codespaces)
+
+- ✅ Integrates with GitHub code
+
+## Container registry: [GitHub Packages](https://docs.github.com/en/packages/quickstart)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
 
@@ -30,10 +75,10 @@ We adopted Grype because it was required for SUNet cross-domain transfers. Howev
 
 Alternatives:
 
-- Docker Scout
-- Grype
-- Snyk
-- Trivy
+- [Docker Scout](https://docs.docker.com/scout)
+- [Grype](https://github.com/anchore/grype)
+- [Snyk](https://snyk.io)
+- [Trivy](https://trivy.dev/latest)
 
 We can use multiple scanners to increase vulnerability coverage, but that comes at the cost of increased maintenance and CI/CD times.
 
@@ -46,11 +91,11 @@ Alternatives:
 - Snyk
 - Trivy
 
-Package updates: **GitHub** (GitHub Dependabot)
+Dependency updates: **GitHub** (GitHub Dependabot)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
 
-Package scanning: **GitHub** (GitHub Dependabot)
+Dependency scanning: **GitHub** (GitHub Dependabot)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
 
@@ -152,7 +197,7 @@ CRM: **Monday.com**
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
 
-Data platform: **Dagster**
+Data orchestration: **Dagster**
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
 
@@ -402,16 +447,18 @@ Alternatives:
 
 ## What we’re missing
 
-- Artifact store(s) (e.g. JFrog Artifactory)
-- Observability platform (e.g. SigNoz)
-- Secrets management (e.g. Infisical)
+- Artifact store(s) (e.g. [JFrog Artifactory](https://jfrog.com/artifactory))
+- Observability platform (e.g. [SigNoz](https://signoz.io))
+- Secrets management (e.g. [Infisical](https://infisical.com))
 
 ## What we might need in the future
 
-- Durable execution (e.g. Temporal)
-- Feature flags (e.g. LaunchDarkly)
-- Mobile framework (e.g. Expo / React Native)
-- Payment processor (e.g. Stripe)
+- Container orchestration (e.g. [Kubernetes](https://kubernetes.io))
+- Container package manager (e.g. [Helm](https://helm.sh))
+- Durable execution (e.g. [Temporal](https://temporal.io))
+- Feature flags (e.g. [LaunchDarkly](https://launchdarkly.com))
+- Mobile framework (e.g. [Expo](https://expo.dev) / [React Native](https://reactnative.dev))
+- Payment processor (e.g. [Stripe](https://stripe.com))
 - Translation management system (e.g. [Lokalise](https://lokalise.com))
 
 ## Requirements
