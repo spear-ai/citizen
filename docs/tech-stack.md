@@ -57,6 +57,7 @@ Alternatives:
 - [Bamboo](https://www.atlassian.com/software/bamboo)
 - [CircleCI](https://circleci.com)
 - [GitLab CI](https://docs.gitlab.com/ee/ci/)
+- [Harness](https://www.harness.io)
 - [Jenkins](https://www.jenkins.io)
 - [Semaphore](https://semaphoreci.com)
 - [Travis CI](https://www.travis-ci.com)
@@ -82,7 +83,7 @@ Alternatives:
 
 We can use multiple scanners to increase vulnerability coverage, but that comes at the cost of increased maintenance and CI/CD times.
 
-Code vulnerability scanning: **Grype**
+## Code scanning: **Grype**
 
 Alternatives:
 
@@ -91,115 +92,113 @@ Alternatives:
 - Snyk
 - Trivy
 
-Dependency updates: **GitHub** (GitHub Dependabot)
+## Dependency monitoring: [GitHub Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+Automatically monitor Git repository's dependencies and creates pull requests to update them when new versions are available, and alerts you about any known security vulnerabilities.
 
-Dependency scanning: **GitHub** (GitHub Dependabot)
+## IaC: [Pulumi](https://www.pulumi.com)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+Pulumi is an open-source Infrastructure as Code platform that allows developers to write, deploy, and manage cloud infrastructure using familiar programming languages like Python, TypeScript, Go, or C# instead of domain-specific languages or YAML.
 
-IaC: **Pulumi**
+## Database: [PostgreSQL](https://www.postgresql.org)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A powerful, open-source object-relational database management system that emphasizes extensibility, standards compliance, and reliability while supporting advanced features
 
-IaC policies: **Pulumi (Pulumi Policies)**
+## Database platform: [Neon Postgres](https://neon.tech)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A serverless PostgreSQL database platform that separates storage and compute, offering automatic scaling, branching of entire databases, and serverless compute with consumption-based pricing.
 
-Database: **PostgreSQL**
+## Timeseries database: [Timescale](https://www.timescale.com) (Postgres extension)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+An open-source time-series database built as a Postgres extension that provides automatic partitioning across time and space, native compression, continuous aggregations, and specialized time-series functions while maintaining full SQL compatibility.
 
-Database platform: **Neon Postgres**
+## Vector database: [pgvector](https://github.com/pgvector/pgvector) (Postgres extension)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A Postgres extension that enables vector similarity search and adds support for vector data types and operations, making it possible to store embeddings and perform efficient nearest neighbor searches directly within PostgreSQL databases.
 
-Timeseries database: **PostgreSQL** (timescaledb)
+## Columnar database: [pg_mooncake](https://github.com/Mooncake-Labs/pg_mooncake) (Postgres extension)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A Postgres extension that embeds DuckDB within PostgreSQL, allowing users to leverage DuckDB's analytical capabilities directly inside PostgreSQL databases.
 
-Vector database: **PostgreSQL** (pgvector)
+## Job queue: [Graphile Worker](https://github.com/graphile/worker)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+Graphile Worker is a job queue system for PostgreSQL and Node.js that enables background task processing with features like job scheduling, retries, priorities, and concurrency control while maintaining strong guarantees through PostgreSQL's transactional system.
 
-Columnar database: **PostgreSQL** (pg_mooncake / DuckDB)
+## Cron scheduler: [Graphile Worker](https://github.com/graphile/worker)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+Graphile Worker can also be used to schedule cron jobs.
 
-Job queue: **PostgreSQL** (Graphile Worker)
+## Authorization: **PostgreSQL** (PostgreSQL RLS)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A security feature in PostgreSQL that allows database administrators to define row-based access control policies that restrict which rows users can view or modify based on their credentials or context.
 
-Cron scheduler: **PostgreSQL** (Graphile Worker)
+## Database schema migration: [graphile-migrate](https://github.com/graphile/migrate)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A PostgreSQL-focused migration tool that enables developers to write SQL migrations in files.
 
-Authorization: **PostgreSQL** (PostgreSQL RLS)
+## Data lake table format: [Apache Iceberg](https://iceberg.apache.org)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+An open table format for analytic datasets that provides snapshots, schema evolution, and ACID guarantees.
 
-Database schema migration: **Graphile Migrate**
+## Data lake file format: [Apache Parquet](https://parquet.apache.org)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A columnar storage file format designed for efficient data compression and encoding for analytics on big data.
 
-Data lake table format: **Iceberg**
+## Object storage: [MinIO](https://min.io)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+An open-source object storage server that provides S3-compatible API access to get and put objects.
 
-Data lake file format: **Parquet**
+## Web framework: [Next.js](https://nextjs.org)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A fullstack (frontend and backend) React framework that simplifies building production-ready web applications with server-side rendering.
 
-Object storage: **MinIO**
+## Component library: [React Aria Components](https://react-spectrum.adobe.com/react-aria/components.html)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A library of accessible, unstyled UI components built on top of React Aria hooks that provides ARIA-compliant behavior and keyboard interactions while letting developers maintain full styling control.
 
-Web framework: **Next.js**
+## CSS framework: [Tailwind CSS](https://tailwindcss.com)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A utility-first CSS framework that enables rapid UI development through composable classes that can be applied directly in HTML markup.
 
-Component library: **React Aria Components**
+## GraphQL API: [PostGraphile](https://postgraphile.org)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A GraphQL server that automatically generates a highly performant and customizable GraphQL API from your PostgreSQL database schema, including tables, views, relationships, and stored procedures.
 
-CSS framework: **Tailwind CSS**
+Alternatives:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+- Hasura
+- Supabase
+- WunderGraph
 
-API: **PostGraphile / GraphQL**
+## GraphQL client: [Relay](https://relay.dev)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A JavaScript framework developed by Meta that provides a comprehensive set of tools and patterns for building data-driven React applications with GraphQL, including features like automatic data consistency, optimistic updates, and pagination.
 
-GraphQL client: **Relay**
+## REST client: [TanStack Query](https://tanstack.com/query/latest)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A powerful data-fetching and state management library that simplifies server state handling in React applications by providing automatic caching, background updates, and optimized data synchronization.
 
-REST client: **TanStack Query**
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
-
-Authentication:
+## Authentication: [Better Auth](https://www.better-auth.com), [Ory](https://www.ory.sh)
 
 **Better Auth**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+An authentication framework for TypeScript that integrates with existing backend frameworks such as Next.js.
 
 **Ory**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+An open-source identity infrastructure platform that provides authentication, authorization, and user management services through a set of cloud-native microservices and APIs.
 
-CMS: **TinaCMS**
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
-
-CRM: **Monday.com**
+## CMS: [Tina](https://tina.io)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
 
-Data orchestration: **Dagster**
+## CRM: [monday.com](https://monday.com/)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod rhoncus justo. Vestibulum lorem mi, vehicula nec tortor sed, consectetur pharetra felis. Cras blandit eros dolor. Vivamus sagittis pellentesque tellus, in consequat enim finibus in.
+A management platform that enables teams to plan, track, and collaborate on projects through customizable workflows, automation, and visual tools.
+
+## Data orchestration: [Dagster](https://dagster.io)
+
+An open-source data orchestration framework that allows you to define, test, and monitor data pipelines as code using Python, providing features like dependency management, scheduling, and observability through a unified platform.
 
 Streaming data platform: **RedPanda**
 
