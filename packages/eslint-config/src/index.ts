@@ -33,7 +33,6 @@ import simpleImportSortPlugin from "eslint-plugin-simple-import-sort";
 import sonarjsPlugin from "eslint-plugin-sonarjs";
 import sortDestructureKeysPlugin from "eslint-plugin-sort-destructure-keys";
 import storybookPlugin from "eslint-plugin-storybook";
-import tailwindCssPlugin from "eslint-plugin-tailwindcss";
 import tomlPlugin from "eslint-plugin-toml";
 import typescriptSortKeysPlugin from "eslint-plugin-typescript-sort-keys";
 import unicornPlugin from "eslint-plugin-unicorn";
@@ -320,7 +319,6 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       sonarjs: sonarjsPlugin,
       "sort-destructure-keys": sortDestructureKeysPlugin,
       storybook: storybookPlugin,
-      tailwindcss: tailwindCssPlugin,
       "typescript-sort-keys": typescriptSortKeysPlugin,
       unicorn: unicornPlugin,
     },
@@ -354,7 +352,6 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       ...(promisePlugin.configs?.recommended as ESLint.ConfigData).rules,
       ...(sonarjsPlugin.configs?.recommended as ESLint.ConfigData).rules,
       // ...stylisticPlugin.configs["recommended-flat"].rules,
-      ...(tailwindCssPlugin.configs?.recommended as ESLint.ConfigData).rules,
       ...(typescriptSortKeysPlugin.configs?.recommended as ESLint.ConfigData).rules,
       ...(unicornPlugin.configs?.recommended as ESLint.ConfigData).rules,
       "@eslint-community/eslint-comments/disable-enable-pair": [
@@ -584,17 +581,6 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "sonarjs/no-duplicate-string": ["off"],
       "sort-destructure-keys/sort-destructure-keys": ["error"],
       "sort-vars": ["error"],
-      "tailwindcss/classnames-order": [
-        "error",
-        {
-          callees: ["cx"],
-        },
-      ],
-      "tailwindcss/enforces-negative-arbitrary-values": ["error"],
-      "tailwindcss/enforces-shorthand": ["error"],
-      "tailwindcss/migration-from-tailwind-2": ["error"],
-      "tailwindcss/no-arbitrary-value": ["error"],
-      "tailwindcss/no-custom-classname": ["error"],
       "unicorn/custom-error-definition": ["error"],
       "unicorn/filename-case": [
         "error",

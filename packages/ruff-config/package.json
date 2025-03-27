@@ -14,7 +14,7 @@
     "eslint": "8.57.0",
     "graphql": "16.8.1",
     "npm-package-json-lint": "7.1.0",
-    "prettier": "3.2.5",
+    "prettier": "3.5.3",
     "react": "18.3.1",
     "regenerator-runtime": "^0.14.1",
     "replace-in-file": "^7.1.0",

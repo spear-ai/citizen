@@ -37,7 +37,6 @@
     "eslint-plugin-sonarjs": "^1.0.3",
     "eslint-plugin-sort-destructure-keys": "^2.0.0",
     "eslint-plugin-storybook": "^0.8.0",
-    "eslint-plugin-tailwindcss": "^3.16.0",
     "eslint-plugin-toml": "^0.11.0",
     "eslint-plugin-typescript-sort-keys": "^3.2.0",
     "eslint-plugin-unicorn": "^53.0.0",
@@ -53,9 +52,8 @@
     "eslint": "8.57.0",
     "graphql": "16.8.1",
     "npm-package-json-lint": "7.1.0",
-    "prettier": "3.2.5",
+    "prettier": "3.5.3",
     "react": "18.3.1",
-    "tailwindcss": "3.4.3",
     "tsup": "8.0.2",
     "typescript": "5.4.5"
   },
@@ -66,7 +64,6 @@
     "eslint": "^8.57.0",
     "graphql": ">=15.8.0 <17",
     "react": "^18.2.0",
-    "tailwindcss": "^3.3.2",
     "typescript": "^5.0.4"
   },
   "repository": {
