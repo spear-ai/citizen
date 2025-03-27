@@ -2310,13 +2310,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@softonus/prettier-plugin-whitespace-remover@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@softonus/prettier-plugin-whitespace-remover@npm:1.0.1"
-  checksum: 10/5682c6eb492c8b48c5c3cd000e003e93aa8a0e1d04ea8feaa8dd6ae874dbf2b134b3d7ddb127fcc868d6176fab9a0e76244967e50e90ec4992011c52c5feebac
-  languageName: node
-  linkType: hard
-
 "@spear-ai/citizen@workspace:.":
   version: 0.0.0-use.local
   resolution: "@spear-ai/citizen@workspace:."
@@ -2331,7 +2324,7 @@ __metadata:
     eslint: "npm:8.57.0"
     husky: "npm:9.0.11"
     npm-package-json-lint: "npm:7.1.0"
-    prettier: "npm:3.2.5"
+    prettier: "npm:3.5.3"
     turbo: "npm:1.13.3"
     typescript: "npm:5.4.5"
   languageName: unknown
@@ -2345,7 +2338,7 @@ __metadata:
     commitlint: "npm:19.3.0"
     eslint: "npm:8.57.0"
     npm-package-json-lint: "npm:7.1.0"
-    prettier: "npm:3.2.5"
+    prettier: "npm:3.5.3"
     tsup: "npm:8.0.2"
     typescript: "npm:5.4.5"
     vitest: "npm:^1.6.0"
@@ -2396,7 +2389,6 @@ __metadata:
     eslint-plugin-sonarjs: "npm:^1.0.3"
     eslint-plugin-sort-destructure-keys: "npm:^2.0.0"
     eslint-plugin-storybook: "npm:^0.8.0"
-    eslint-plugin-tailwindcss: "npm:^3.16.0"
     eslint-plugin-toml: "npm:^0.11.0"
     eslint-plugin-typescript-sort-keys: "npm:^3.2.0"
     eslint-plugin-unicorn: "npm:^53.0.0"
@@ -2405,9 +2397,8 @@ __metadata:
     graphql: "npm:16.8.1"
     jsonc-eslint-parser: "npm:^2.4.0"
     npm-package-json-lint: "npm:7.1.0"
-    prettier: "npm:3.2.5"
+    prettier: "npm:3.5.3"
     react: "npm:18.3.1"
-    tailwindcss: "npm:3.4.3"
     toml-eslint-parser: "npm:^0.9.3"
     tsup: "npm:8.0.2"
     typescript: "npm:5.4.5"
@@ -2417,7 +2408,6 @@ __metadata:
     eslint: ^8.57.0
     graphql: ">=15.8.0 <17"
     react: ^18.2.0
-    tailwindcss: ^3.3.2
     typescript: ^5.0.4
   languageName: unknown
   linkType: soft
@@ -2429,7 +2419,7 @@ __metadata:
     eslint: "npm:8.57.0"
     npm-package-json-lint: "npm:7.1.0"
     npm-package-json-lint-config-default: "npm:^6.0.0"
-    prettier: "npm:3.2.5"
+    prettier: "npm:3.5.3"
     tsup: "npm:8.0.2"
     typescript: "npm:5.4.5"
   peerDependencies:
@@ -2441,15 +2431,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@spear-ai/prettier-config@workspace:packages/prettier-config"
   dependencies:
-    "@softonus/prettier-plugin-whitespace-remover": "npm:^1.0.1"
     "@types/prettier": "npm:3.0.0"
     eslint: "npm:8.57.0"
     npm-package-json-lint: "npm:7.1.0"
-    prettier: "npm:3.2.5"
+    prettier: "npm:3.5.3"
+    prettier-plugin-tailwindcss: "npm:^0.6"
     tsup: "npm:8.0.2"
     typescript: "npm:5.4.5"
   peerDependencies:
-    prettier: ">=2.8.7 <4"
+    prettier: ^3
   languageName: unknown
   linkType: soft
 
@@ -2462,7 +2452,7 @@ __metadata:
     "@types/node": "npm:20.12.12"
     eslint: "npm:8.57.0"
     npm-package-json-lint: "npm:7.1.0"
-    prettier: "npm:3.2.5"
+    prettier: "npm:3.5.3"
     tsup: "npm:8.0.2"
     typescript: "npm:5.4.5"
   languageName: unknown
@@ -2477,7 +2467,7 @@ __metadata:
     eslint: "npm:8.57.0"
     graphql: "npm:16.8.1"
     npm-package-json-lint: "npm:7.1.0"
-    prettier: "npm:3.2.5"
+    prettier: "npm:3.5.3"
     react: "npm:18.3.1"
     regenerator-runtime: "npm:^0.14.1"
     replace-in-file: "npm:^7.1.0"
@@ -2497,7 +2487,7 @@ __metadata:
     eslint: "npm:8.57.0"
     graphql: "npm:16.8.1"
     npm-package-json-lint: "npm:7.1.0"
-    prettier: "npm:3.2.5"
+    prettier: "npm:3.5.3"
     react: "npm:18.3.1"
     regenerator-runtime: "npm:^0.14.1"
     replace-in-file: "npm:^7.1.0"
@@ -2514,7 +2504,7 @@ __metadata:
   dependencies:
     eslint: "npm:8.57.0"
     npm-package-json-lint: "npm:7.1.0"
-    prettier: "npm:3.2.5"
+    prettier: "npm:3.5.3"
     turbo: "npm:1.13.3"
     typescript: "npm:5.4.5"
   languageName: unknown
@@ -5461,18 +5451,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-tailwindcss@npm:^3.16.0":
-  version: 3.16.0
-  resolution: "eslint-plugin-tailwindcss@npm:3.16.0"
-  dependencies:
-    fast-glob: "npm:^3.2.5"
-    postcss: "npm:^8.4.4"
-  peerDependencies:
-    tailwindcss: ^3.4.0
-  checksum: 10/931fbd4c4e7343151302b413bbf12958935579ed96f8b231ee196ef95809d066c16a879c7aa2673e18146f4fd32cb5f3716c54c7522c3834879e413fdc11131c
-  languageName: node
-  linkType: hard
-
 "eslint-plugin-toml@npm:^0.11.0":
   version: 0.11.0
   resolution: "eslint-plugin-toml@npm:0.11.0"
@@ -5794,7 +5772,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.2.12, fast-glob@npm:^3.2.5, fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.0, fast-glob@npm:^3.3.1":
+"fast-glob@npm:^3.2.12, fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.0, fast-glob@npm:^3.3.1":
   version: 3.3.2
   resolution: "fast-glob@npm:3.3.2"
   dependencies:
@@ -9039,7 +9017,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.23, postcss@npm:^8.4.38, postcss@npm:^8.4.4":
+"postcss@npm:^8.4.23, postcss@npm:^8.4.38":
   version: 8.4.38
   resolution: "postcss@npm:8.4.38"
   dependencies:
@@ -9069,12 +9047,79 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:*, prettier@npm:3.2.5":
+"prettier-plugin-tailwindcss@npm:^0.6":
+  version: 0.6.11
+  resolution: "prettier-plugin-tailwindcss@npm:0.6.11"
+  peerDependencies:
+    "@ianvs/prettier-plugin-sort-imports": "*"
+    "@prettier/plugin-pug": "*"
+    "@shopify/prettier-plugin-liquid": "*"
+    "@trivago/prettier-plugin-sort-imports": "*"
+    "@zackad/prettier-plugin-twig": "*"
+    prettier: ^3.0
+    prettier-plugin-astro: "*"
+    prettier-plugin-css-order: "*"
+    prettier-plugin-import-sort: "*"
+    prettier-plugin-jsdoc: "*"
+    prettier-plugin-marko: "*"
+    prettier-plugin-multiline-arrays: "*"
+    prettier-plugin-organize-attributes: "*"
+    prettier-plugin-organize-imports: "*"
+    prettier-plugin-sort-imports: "*"
+    prettier-plugin-style-order: "*"
+    prettier-plugin-svelte: "*"
+  peerDependenciesMeta:
+    "@ianvs/prettier-plugin-sort-imports":
+      optional: true
+    "@prettier/plugin-pug":
+      optional: true
+    "@shopify/prettier-plugin-liquid":
+      optional: true
+    "@trivago/prettier-plugin-sort-imports":
+      optional: true
+    "@zackad/prettier-plugin-twig":
+      optional: true
+    prettier-plugin-astro:
+      optional: true
+    prettier-plugin-css-order:
+      optional: true
+    prettier-plugin-import-sort:
+      optional: true
+    prettier-plugin-jsdoc:
+      optional: true
+    prettier-plugin-marko:
+      optional: true
+    prettier-plugin-multiline-arrays:
+      optional: true
+    prettier-plugin-organize-attributes:
+      optional: true
+    prettier-plugin-organize-imports:
+      optional: true
+    prettier-plugin-sort-imports:
+      optional: true
+    prettier-plugin-style-order:
+      optional: true
+    prettier-plugin-svelte:
+      optional: true
+  checksum: 10/7c87d8b9c7fc6e8bd3722da5c0bd115cfc249baba339b28b56ed270f0bcb99e0196836cd7270c8ab6bc499186f41e2bac4adff7795cd523d8f63f43424a0a36d
+  languageName: node
+  linkType: hard
+
+"prettier@npm:*":
   version: 3.2.5
   resolution: "prettier@npm:3.2.5"
   bin:
     prettier: bin/prettier.cjs
   checksum: 10/d509f9da0b70e8cacc561a1911c0d99ec75117faed27b95cc8534cb2349667dee6351b0ca83fa9d5703f14127faa52b798de40f5705f02d843da133fc3aa416a
+  languageName: node
+  linkType: hard
+
+"prettier@npm:3.5.3":
+  version: 3.5.3
+  resolution: "prettier@npm:3.5.3"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10/7050c08f674d9e49fbd9a4c008291d0715471f64e94cc5e4b01729affce221dfc6875c8de7e66b728c64abc9352eefb7eaae071b5f79d30081be207b53774b78
   languageName: node
   linkType: hard
 

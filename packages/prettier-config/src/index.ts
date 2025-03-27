@@ -3,8 +3,9 @@
 import type { Config } from "prettier";
 
 const prettierConfig: Config = {
-  plugins: ["@softonus/prettier-plugin-whitespace-remover"],
+  plugins: ["prettier-plugin-tailwindcss"],
   printWidth: 109,
+  tailwindFunctions: ["cx"],
 };
 
 export default prettierConfig;
