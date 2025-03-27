@@ -1,5 +1,11 @@
 # @spear-ai/tsconfig
 
+## 4.0.1
+
+### Patch Changes
+
+- [#549](https://github.com/spear-ai/citizen/pull/549) [`d1f4bbc`](https://github.com/spear-ai/citizen/commit/d1f4bbc21289299be485a9b3d5c2af9d239b5e22) Thanks [@psirenny](https://github.com/psirenny)! - Updated dependencies.
+
 ## 4.0.0
 
 ### Major Changes
