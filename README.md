@@ -8,6 +8,12 @@
       “This code is what it is because of its citizens” — Plato
     </p>
   </quote>
+  <a href="packages/code-commitment/gold">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="packages/code-commitment/gold-badge-dark.png">
+      <img alt="Spear Code Commitment — Gold" src="packages/code-commitment/gold-badge-dark.png" height="30" />
+    </picture>
+  </a>
 </div>
 
 # Goal
