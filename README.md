@@ -11,7 +11,7 @@
   <a href="packages/code-commitment/gold">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="packages/code-commitment/gold-badge-dark.png">
-      <img alt="Spear Code Commitment — Gold" src="packages/code-commitment/gold-badge-dark.png" height="30" />
+      <img alt="Spear Code Commitment — Gold" src="packages/code-commitment/gold-badge-light.png" height="30" />
     </picture>
   </a>
 </div>
