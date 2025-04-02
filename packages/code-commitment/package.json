@@ -1,0 +1,34 @@
+{
+  "name": "@spear-ai/code-commitment",
+  "version": "1.0.0",
+  "description": "Spear AI Code Commitment",
+  "author": {
+    "name": "Spear AI",
+    "email": "org@spear.ai",
+    "url": "https://spear.ai"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/prettier": "3.0.0",
+    "eslint": "8.57.0",
+    "npm-package-json-lint": "7.1.0",
+    "prettier": "3.5.3",
+    "tsup": "8.0.2",
+    "typescript": "5.4.5"
+  },
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "directory": "packages/code-commitment",
+    "url": "https://github.com/spear-ai/citizen.git"
+  },
+  "scripts": {
+    "eslint:check": "eslint --max-warnings 0 .",
+    "eslint:fix": "yarn eslint:check --fix",
+    "npmpkgjsonlint:check": "npmPkgJsonLint .",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "typescript:check": "tsc --noEmit"
+  }
+}
