@@ -9,14 +9,14 @@
     </p>
   </quote>
   <div align="center">
-    <a href="https://github.com/spear-ai/citizen/actions/workflows/check.yaml">
-      <img alt="Checks" src="https://github.com/spear-ai/citizen/actions/workflows/check.yaml/badge.svg">
-    </a>
-    <a href="packages/code-commitment/gold">
+    <a href="tree/main/packages/code-commitment">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="packages/code-commitment/gold-badge-dark.png">
-        <img alt="Spear Code Commitment — Gold" src="packages/code-commitment/gold-badge-light.png" height="20" />
+        <img alt="Code Commitment — Gold" src="packages/code-commitment/gold-badge-light.png" height="20" />
       </picture>
+    </a>
+    <a href="https://github.com/spear-ai/citizen/actions/workflows/check.yaml">
+      <img alt="Checks" src="https://github.com/spear-ai/citizen/actions/workflows/check.yaml/badge.svg">
     </a>
   </div>
 </div>
