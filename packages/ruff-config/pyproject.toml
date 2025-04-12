@@ -11,7 +11,9 @@ keywords = [
   "spear"
 ]
 readme = "README.md"
-repository = "https://github.com/spear-ai/citizen"
+
+[project.urls]
+Repository = "https://github.com/spear-ai/citizen"
 
 [tool.poetry]
 packages = [{ include = "spear_ai_ruff_config" }]
