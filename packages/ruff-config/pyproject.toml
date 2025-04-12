@@ -13,7 +13,7 @@ keywords = [
 readme = "README.md"
 
 [project.urls]
-Repository = "https://github.com/spear-ai/citizen"
+repository = "https://github.com/spear-ai/citizen"
 
 [tool.poetry]
 packages = [{ include = "spear_ai_ruff_config" }]
