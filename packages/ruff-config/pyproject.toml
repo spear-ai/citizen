@@ -14,7 +14,7 @@ readme = "README.md"
 dependencies = ["ruff (>=0.6.4,<0.7.0)"]
 
 [project.urls]
-repository = "https://github.com/spear-ai/citizen"
+Repository = "https://github.com/spear-ai/citizen"
 
 [tool.poetry]
 packages = [{ include = "spear_ai_ruff_config" }]
