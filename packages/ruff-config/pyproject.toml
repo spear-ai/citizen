@@ -11,9 +11,7 @@ keywords = [
   "spear"
 ]
 readme = "README.md"
-dependencies = [
-  "ruff (>=0.6.4,<0.7.0)",
-  ]
+dependencies = ["ruff (>=0.6.4,<0.7.0)"]
 
 [project.urls]
 repository = "https://github.com/spear-ai/citizen"
