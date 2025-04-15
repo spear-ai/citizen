@@ -22,7 +22,7 @@
     "prettier": "3.5.3",
     "turbo": "1.13.3",
     "typescript": "5.4.5",
-    "vitest": "*"
+    "vitest": "^1.6.0"
   },
   "license": "MIT",
   "packageManager": "yarn@4.2.2",
