@@ -2354,7 +2354,7 @@ __metadata:
     prettier: "npm:3.5.3"
     tsup: "npm:8.0.2"
     typescript: "npm:5.4.5"
-    vitest: "npm:^1.6.0"
+    vitest: "npm:1.6.0"
   peerDependencies:
     commitlint: ^19.3.0
   languageName: unknown
@@ -2476,14 +2476,14 @@ __metadata:
   resolution: "@spear-ai/ruff-config@workspace:packages/ruff-config"
   dependencies:
     "@types/eslint": "npm:8.56.10"
-    "@types/regenerator-runtime": "npm:^0.13.5"
+    "@types/regenerator-runtime": "npm:0.13.5"
     eslint: "npm:8.57.0"
     graphql: "npm:16.8.1"
     npm-package-json-lint: "npm:7.1.0"
     prettier: "npm:3.5.3"
     react: "npm:18.3.1"
-    regenerator-runtime: "npm:^0.14.1"
-    replace-in-file: "npm:^7.1.0"
+    regenerator-runtime: "npm:0.14.1"
+    replace-in-file: "npm:7.1.0"
     tailwindcss: "npm:3.4.3"
     tsup: "npm:8.0.2"
     tsx: "npm:4.10.5"
@@ -2496,14 +2496,14 @@ __metadata:
   resolution: "@spear-ai/sqlfluff-config@workspace:packages/sqlfluff-config"
   dependencies:
     "@types/eslint": "npm:8.56.10"
-    "@types/regenerator-runtime": "npm:^0.13.5"
+    "@types/regenerator-runtime": "npm:0.13.5"
     eslint: "npm:8.57.0"
     graphql: "npm:16.8.1"
     npm-package-json-lint: "npm:7.1.0"
     prettier: "npm:3.5.3"
     react: "npm:18.3.1"
-    regenerator-runtime: "npm:^0.14.1"
-    replace-in-file: "npm:^7.1.0"
+    regenerator-runtime: "npm:0.14.1"
+    replace-in-file: "npm:7.1.0"
     tailwindcss: "npm:3.4.3"
     tsup: "npm:8.0.2"
     tsx: "npm:4.10.5"
@@ -2787,7 +2787,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/regenerator-runtime@npm:^0.13.5":
+"@types/regenerator-runtime@npm:0.13.5":
   version: 0.13.5
   resolution: "@types/regenerator-runtime@npm:0.13.5"
   checksum: 10/fe49a233185c1bb765dbc61ecfc6411890ba277855a6e0c4bfd4c48dab0141b81b0d5b9bb19fc06a64406990422078361684570ec43ee36a86fe05586ac6e4ee
@@ -9463,7 +9463,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:^0.14.0, regenerator-runtime@npm:^0.14.1":
+"regenerator-runtime@npm:0.14.1, regenerator-runtime@npm:^0.14.0":
   version: 0.14.1
   resolution: "regenerator-runtime@npm:0.14.1"
   checksum: 10/5db3161abb311eef8c45bcf6565f4f378f785900ed3945acf740a9888c792f75b98ecb77f0775f3bf95502ff423529d23e94f41d80c8256e8fa05ed4b07cf471
@@ -9519,7 +9519,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"replace-in-file@npm:^7.1.0":
+"replace-in-file@npm:7.1.0":
   version: 7.1.0
   resolution: "replace-in-file@npm:7.1.0"
   dependencies:
@@ -11208,7 +11208,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitest@npm:^1.6.0":
+"vitest@npm:1.6.0":
   version: 1.6.0
   resolution: "vitest@npm:1.6.0"
   dependencies:
