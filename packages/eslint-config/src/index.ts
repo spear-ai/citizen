@@ -301,7 +301,6 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     },
     plugins: {
       "@eslint-community/eslint-comments": eslintCommentsPlugin,
-      // @ts-expect-error The Stylistic ESLint plugins don’t strictly match
       "@stylistic": stylisticPlugin,
       // @ts-expect-error The Typescript ESLint plugins don’t strictly match
       "@typescript-eslint": typescriptEslintPlugin,
