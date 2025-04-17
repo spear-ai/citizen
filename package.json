@@ -21,8 +21,7 @@
     "npm-package-json-lint": "7.1.0",
     "prettier": "3.5.3",
     "turbo": "1.13.3",
-    "typescript": "5.4.5",
-    "vitest": "^1.6.0"
+    "typescript": "5.4.5"
   },
   "license": "MIT",
   "packageManager": "yarn@4.2.2",
@@ -47,7 +46,6 @@
     "publish-packages:custom": "yarn workspaces foreach -A run publish-package",
     "publish-packages:github": "npm_config_registry=https://npm.pkg.github.com changeset publish --no-git-tag",
     "publish-packages:npm": "changeset publish --no-git-tag",
-    "test": "vitest",
     "typescript:check": "tsc --noEmit",
     "update": "yarn upgrade-interactive"
   },
