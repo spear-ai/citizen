@@ -1,24 +1,24 @@
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+
 [project]
-requires-python = ">=3.10,<3.13"
-name = "spear-ai-ruff-config"
-version = "5.0.1"
-description = "Spear AI Ruff config"
 authors = [{ name = "Spear AI", email = "org@spear.ai" }]
+dependencies = ["ruff==0.11.5"]
+description = "Spear AI Ruff config"
 keywords = [
   "ai",
   "config",
   "ruff",
   "spear"
 ]
+name = "spear-ai-ruff-config"
 readme = "README.md"
-dependencies = ["ruff (>=0.6.4,<0.7.0)"]
+requires-python = ">=3.10,<3.13"
+version = "5.0.1"
 
 [project.urls]
 Repository = "https://github.com/spear-ai/citizen"
 
 [tool.poetry]
 packages = [{ include = "spear_ai_ruff_config" }]
-
-[build-system]
-build-backend = "poetry.core.masonry.api"
-requires = ["poetry-core>=1.0.0"]
