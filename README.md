@@ -8,6 +8,17 @@
       “This code is what it is because of its citizens” — Plato
     </p>
   </quote>
+  <div align="center">
+    <a href="https://github.com/spear-ai/citizen/tree/main/packages/code-commitment">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://github.com/spear-ai/citizen/raw/main/packages/code-commitment/gold-badge-dark.png">
+        <img alt="Code Commitment — Gold" src="https://github.com/spear-ai/citizen/raw/main/packages/code-commitment/gold-badge-light.png" height="20" />
+      </picture>
+    </a>
+    <a href="https://github.com/spear-ai/citizen/actions/workflows/check.yaml">
+      <img alt="Checks" src="https://github.com/spear-ai/citizen/actions/workflows/check.yaml/badge.svg">
+    </a>
+  </div>
 </div>
 
 # Goal

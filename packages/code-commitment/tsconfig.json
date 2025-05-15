@@ -1,0 +1,16 @@
+{
+  "exclude": ["node_modules"],
+  "extends": "@spear-ai/tsconfig",
+  "include": [
+    "**/*.cjs",
+    "**/*.cts",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.jsx",
+    "**/*.mjs",
+    "**/*.mts",
+    "**/*.ts",
+    "**/*.tsx",
+    "types"
+  ]
+}
