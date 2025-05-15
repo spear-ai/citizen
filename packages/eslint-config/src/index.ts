@@ -233,6 +233,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       ...(tomlPlugin.configs.standard.rules as Linter.RulesRecord),
       "no-multiple-empty-lines": ["error", { max: 1 }],
       "no-trailing-spaces": ["error"],
+      "toml/array-bracket-newline": ["error", "consistent"],
       "toml/array-bracket-spacing": ["error", "never"],
     },
   },
