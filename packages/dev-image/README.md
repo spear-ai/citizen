@@ -14,6 +14,5 @@ A Docker image with a common set of tools used by Spear.
 | [Yarn](https://yarnpkg.com) | `3.3.0` | Modern Node.js package manager |
 | [pyenv](https://github.com/pyenv/pyenv) | `2.3.7` | Simple Python version management |
 | [Python](https://www.python.org) | `3.9.10` | High-level, general-purpose programming language |
-| [Poetry](https://python-poetry.org) | `1.2.2` | Python dependency management and packaging made easy |
 | [Pulumi](https://www.pulumi.com) | `3.48.0` | Universal infrastructure as code |
 | [Vim](https://www.vim.org) | `8.2.3995` | Improved version of the good old UNIX editor Vi |

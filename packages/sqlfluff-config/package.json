@@ -31,14 +31,14 @@
     "url": "https://github.com/spear-ai/citizen.git"
   },
   "scripts": {
-    "build": "poetry build",
+    "build": "uv build",
     "eslint:check": "eslint --max-warnings 0 .",
     "eslint:fix": "yarn eslint:check --fix",
     "npmpkgjsonlint:check": "npmPkgJsonLint .",
-    "postinstall": "poetry install",
+    "postinstall": "uv sync",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "publish-package": "poetry publish --skip-existing",
+    "publish-package": "uv publish --skip-existing",
     "sync-version": "tsx sync-version",
     "typescript:check": "tsc --noEmit"
   }
