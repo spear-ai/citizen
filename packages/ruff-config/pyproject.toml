@@ -1,10 +1,7 @@
-[build-system]
-build-backend = "poetry.core.masonry.api"
-requires = ["poetry-core>=1.0.0"]
-
 [project]
+name = "spear-ai-ruff-config"
+version = "5.0.1"
 authors = [{ name = "Spear AI", email = "org@spear.ai" }]
-dependencies = ["ruff==0.11.5"]
 description = "Spear AI Ruff config"
 keywords = [
   "ai",
@@ -12,13 +9,11 @@ keywords = [
   "ruff",
   "spear"
 ]
-name = "spear-ai-ruff-config"
-readme = "README.md"
 requires-python = ">=3.10,<3.13"
-version = "5.0.1"
+dependencies = [
+  "ruff==0.11.5"
+]
 
-[project.urls]
-Repository = "https://github.com/spear-ai/citizen"
-
-[tool.poetry]
-packages = [{ include = "spear_ai_ruff_config" }]
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

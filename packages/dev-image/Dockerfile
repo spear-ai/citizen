@@ -71,12 +71,6 @@ RUN echo 'eval "$(pyenv init -)"' >> .bashrc
 RUN pyenv install 3.9.10 \
   && pyenv global 3.9.10
 
-# Install Poetry
-ENV POETRY_HOME "$HOME/.poetry"
-ENV PATH "$POETRY_HOME/bin:$PATH"
-RUN eval "$(pyenv init -)" && python3 -m venv $POETRY_HOME
-RUN $POETRY_HOME/bin/pip install poetry==1.2.2
-
 # Install Pulumi
 ENV PULUMI_ROOT "$HOME/.pulumi"
 ENV PATH "$PULUMI_ROOT/bin:$PATH"

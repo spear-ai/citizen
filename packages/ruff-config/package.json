@@ -31,18 +31,18 @@
     "url": "https://github.com/spear-ai/citizen.git"
   },
   "scripts": {
-    "build": "poetry build",
+    "build": "uv build",
     "eslint:check": "eslint --max-warnings 0 .",
     "eslint:fix": "yarn eslint:check --fix",
     "npmpkgjsonlint:check": "npmPkgJsonLint .",
-    "postinstall": "poetry install",
+    "postinstall": "uv sync",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "publish-package": "poetry publish --skip-existing",
-    "ruff-format:check": "poetry run ruff format --check .",
-    "ruff-format:fix": "poetry run ruff format .",
-    "ruff-lint:check": "poetry run ruff check .",
-    "ruff-lint:fix": "poetry run ruff check --fix .",
+    "publish-package": "uv publish --skip-existing",
+    "ruff-format:check": "uv run ruff format --check .",
+    "ruff-format:fix": "uv run ruff format .",
+    "ruff-lint:check": "uv run ruff check .",
+    "ruff-lint:fix": "uv run ruff check --fix .",
     "sync-version": "tsx sync-version",
     "typescript:check": "tsc --noEmit"
   }
