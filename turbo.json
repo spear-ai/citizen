@@ -13,12 +13,7 @@
     "//#typescript:check": {},
     "build": {
       "dependsOn": ["^build"],
-      "dotEnv": [
-        ".env",
-        ".env.local",
-        ".env.production",
-        ".env.production.local"
-      ],
+      "dotEnv": [".env", ".env.local", ".env.production", ".env.production.local"],
       "outputs": ["build/**", "dist/**"]
     },
     "check": {
@@ -81,11 +76,7 @@
     },
     "npmpkgjsonlint:check": {
       "dependsOn": ["^build"],
-      "inputs": [
-        ".npmpackagejsonlintignore",
-        "npmpackagejsonlint.config.cjs",
-        "package.json"
-      ]
+      "inputs": [".npmpackagejsonlintignore", "npmpackagejsonlint.config.cjs", "package.json"]
     },
     "prettier:check": {
       "dependsOn": ["^build"],
@@ -114,40 +105,20 @@
       "dependsOn": ["^build"]
     },
     "ruff-format:check": {
-      "inputs": [
-        "**/*.py",
-        ".gitignore",
-        "pyproject.toml",
-        "ruff.toml",
-        "uv.lock"
-      ]
+      "inputs": ["**/*.py", ".gitignore", "pyproject.toml", "ruff.toml", "uv.lock"]
     },
     "ruff-format:fix": {
       "cache": false
     },
     "ruff-lint:check": {
-      "inputs": [
-        "**/*.py",
-        ".gitignore",
-        "pyproject.toml",
-        "ruff.toml",
-        "uv.lock"
-      ]
+      "inputs": ["**/*.py", ".gitignore", "pyproject.toml", "ruff.toml", "uv.lock"]
     },
     "ruff-lint:fix": {
       "cache": false
     },
     "typescript:check": {
       "dependsOn": ["^build"],
-      "inputs": [
-        "**/*.cjs",
-        "**/*.js",
-        "**/*.json",
-        "**/*.mjs",
-        "**/*.ts",
-        "**/*.tsx",
-        "tsconfig.json"
-      ]
+      "inputs": ["**/*.cjs", "**/*.js", "**/*.json", "**/*.mjs", "**/*.ts", "**/*.tsx", "tsconfig.json"]
     }
   }
 }
