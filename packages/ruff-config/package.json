@@ -38,7 +38,7 @@
     "postinstall": "uv sync",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "publish-package": "uv publish --skip-existing",
+    "publish-package": "uv publish",
     "ruff-format:check": "uv run ruff format --check .",
     "ruff-format:fix": "uv run ruff format .",
     "ruff-lint:check": "uv run ruff check .",
