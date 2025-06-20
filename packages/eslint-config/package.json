@@ -28,7 +28,7 @@
     "eslint-plugin-jsonc": "^2.15.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-markdown": "^5.0.0",
-    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-promise": "^7.0.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-use-props": "^1.0.0",
