@@ -3,4 +3,4 @@
 "@spear-ai/ruff-config": patch
 ---
 
-Publish SQLFluff Config to JFRog Artifactory.
+Published SQLFluff Config to JFrog Artifactory.
