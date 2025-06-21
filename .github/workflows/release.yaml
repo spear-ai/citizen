@@ -6,7 +6,11 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 env:
+  JFROG_ACCESS_TOKEN: ${{ secrets.JFROG_ACCESS_TOKEN }}
+  JFROG_URL: ${{ vars.JFROG_URL }}
+  JFROG_USERNAME: ${{ vars.JFROG_USERNAME }}
   PIP_DEFAULT_TIMEOUT: 100
+  PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
   TURBO_TEAM: ${{ vars.TURBO_TEAM }}
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 jobs:
