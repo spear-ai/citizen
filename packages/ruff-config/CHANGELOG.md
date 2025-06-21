@@ -1,5 +1,11 @@
 # @spear-ai/ruff-config
 
+## 6.0.1
+
+### Patch Changes
+
+- [#578](https://github.com/spear-ai/citizen/pull/578) [`a05e979`](https://github.com/spear-ai/citizen/commit/a05e97937afce57e3110249559d063f6526a4157) Thanks [@psirenny](https://github.com/psirenny)! - Stopped checking PyPI for existing files before publishing.
+
 ## 6.0.0
 
 ### Major Changes
