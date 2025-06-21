@@ -1,5 +1,22 @@
 # @spear-ai/ruff-config
 
+## 6.0.0
+
+### Major Changes
+
+- [#572](https://github.com/spear-ai/citizen/pull/572) [`64e9ebc`](https://github.com/spear-ai/citizen/commit/64e9ebcd5da3184501be727a41f83c9418aa4157) Thanks [@DaveB302](https://github.com/DaveB302)! - Updated the Ruff version to allow Python version inference and removed the arbitrary Ruff Python 3.11 version pin.
+  Ruff now uses the Python version specified in the pyproject.toml file.
+
+- [#577](https://github.com/spear-ai/citizen/pull/577) [`9efcbec`](https://github.com/spear-ai/citizen/commit/9efcbec01fa1348b7af09db1f9260387ad6e5032) Thanks [@psirenny](https://github.com/psirenny)! - Updated to Ruff v0.12.
+
+- [#575](https://github.com/spear-ai/citizen/pull/575) [`2c824d3`](https://github.com/spear-ai/citizen/commit/2c824d34cdffec09f5e4e96714d68d9fcfda21c4) Thanks [@dgill-spear](https://github.com/dgill-spear)! - Migrated from Poetry to uv.
+
+### Patch Changes
+
+- [#562](https://github.com/spear-ai/citizen/pull/562) [`474b9ca`](https://github.com/spear-ai/citizen/commit/474b9ca9db1fba1163df348df56c0f0c7f78ba22) Thanks [@DaveB302](https://github.com/DaveB302)! - Moved deprecated pyproject.toml [tool.poetry] fields to the [project] section.
+
+- [#577](https://github.com/spear-ai/citizen/pull/577) [`9efcbec`](https://github.com/spear-ai/citizen/commit/9efcbec01fa1348b7af09db1f9260387ad6e5032) Thanks [@psirenny](https://github.com/psirenny)! - Allowed patch versions of Ruff to be used by Ruff Config.
+
 ## 5.0.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @spear-ai/sqlfluff-config
 
+## 2.0.0
+
+### Major Changes
+
+- [#575](https://github.com/spear-ai/citizen/pull/575) [`2c824d3`](https://github.com/spear-ai/citizen/commit/2c824d34cdffec09f5e4e96714d68d9fcfda21c4) Thanks [@dgill-spear](https://github.com/dgill-spear)! - Migrated from Poetry to uv.
+
 ## 1.0.2
 
 ### Patch Changes

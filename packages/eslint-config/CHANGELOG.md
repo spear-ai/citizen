@@ -1,5 +1,11 @@
 # @spear-ai/eslint-config
 
+## 21.1.0
+
+### Minor Changes
+
+- [#556](https://github.com/spear-ai/citizen/pull/556) [`ce9434c`](https://github.com/spear-ai/citizen/commit/ce9434cbb01511d586c5dd4667c2e8a204f87c19) Thanks [@alexjbuck](https://github.com/alexjbuck)! - Specified ESLint config’s `toml/array-bracket-newline` rule to accept "consistent" bracket position.
+
 ## 21.0.0
 
 ### Major Changes
