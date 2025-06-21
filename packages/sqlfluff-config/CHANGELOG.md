@@ -1,5 +1,11 @@
 # @spear-ai/sqlfluff-config
 
+## 2.0.1
+
+### Patch Changes
+
+- [#580](https://github.com/spear-ai/citizen/pull/580) [`59abc04`](https://github.com/spear-ai/citizen/commit/59abc04e42b10db5eb4a07f942f81c51338b9032) Thanks [@psirenny](https://github.com/psirenny)! - Published SQLFluff Config to JFrog Artifactory.
+
 ## 2.0.0
 
 ### Major Changes
