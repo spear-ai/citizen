@@ -1,18 +1,24 @@
 [project]
 name = "spear-ai-sqlfluff-config"
 version = "2.0.1"
-description = "Spear AI SQLFluff config"
+description = "Spear AI’s SQLFluff config"
 authors = [{ name = "Spear AI", email = "org@spear.ai" }]
 keywords = [
-  "ai",
-  "config",
   "SQLFluff",
-  "spear"
+  "Spear AI",
+  "config",
 ]
+license = { text = "MIT" }
+readme = "README.md"
 requires-python = ">=3.10,<3.13"
 dependencies = [
   "sqlfluff==3.0.6"
 ]
+
+[project.urls]
+Changelog = "https://github.com/spear-ai/citizen/tree/main/packages/sqlfluff-config/CHANGELOG.md"
+Documentation = "https://github.com/spear-ai/citizen/tree/main/packages/sqlfluff-config"
+Repository = "https://github.com/spear-ai/citizen.git"
 
 [build-system]
 requires = ["hatchling"]
