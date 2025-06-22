@@ -1,5 +1,11 @@
 # @spear-ai/ruff-config
 
+## 6.0.3
+
+### Patch Changes
+
+- [#583](https://github.com/spear-ai/citizen/pull/583) [`d267971`](https://github.com/spear-ai/citizen/commit/d267971623448c749e31cae547317253e9074e79) Thanks [@psirenny](https://github.com/psirenny)! - Added missing PyPI package metadata.
+
 ## 6.0.2
 
 ### Patch Changes
