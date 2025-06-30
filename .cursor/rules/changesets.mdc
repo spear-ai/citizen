@@ -1,0 +1,10 @@
+---
+description: Guidelines for writing Changeset descriptions.
+globs: .changeset/*.md
+alwaysApply: false
+---
+Changeset descriptions are used to generate messages in a CHANGELOG. Descriptions should be:
+- Brief and descriptive
+- Useful to end users (not just maintainers)
+- Written in sentence case and include punctuation
+- Written in past tense
