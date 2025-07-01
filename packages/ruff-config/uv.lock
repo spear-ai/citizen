@@ -29,7 +29,7 @@ wheels = [
 
 [[package]]
 name = "spear-ai-ruff-config"
-version = "5.0.1"
+version = "6.0.3"
 source = { editable = "." }
 dependencies = [
     { name = "ruff" },
