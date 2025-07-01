@@ -1,5 +1,11 @@
 # @spear-ai/ruff-config
 
+## 7.0.0
+
+### Major Changes
+
+- [#587](https://github.com/spear-ai/citizen/pull/587) [`5659e97`](https://github.com/spear-ai/citizen/commit/5659e973ea3a70990e8dd02706832e8f0ac5db65) Thanks [@psirenny](https://github.com/psirenny)! - Disabled Ruff rule `SIM118` because it’s incompatible with rule `PLC0206` that requires `.keys()` to be used when iterating over dictionary keys.
+
 ## 6.0.3
 
 ### Patch Changes
