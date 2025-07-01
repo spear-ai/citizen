@@ -272,7 +272,7 @@ wheels = [
 
 [[package]]
 name = "spear-ai-sqlfluff-config"
-version = "2.0.2"
+version = "1.0.2"
 source = { editable = "." }
 dependencies = [
     { name = "sqlfluff" },
