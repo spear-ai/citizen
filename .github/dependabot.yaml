@@ -2,25 +2,25 @@ version: 2
 updates:
   - directory: /
     labels:
-      - 🔧 maintenance
+      - Maintenance
     package-ecosystem: github-actions
     schedule:
       interval: monthly
   - directory: /
     labels:
-      - 🔧 maintenance
+      - Maintenance
     package-ecosystem: npm
     schedule:
       interval: monthly
   - directory: /packages/commitlint-config
     labels:
-      - 🔧 maintenance
+      - Maintenance
     package-ecosystem: docker
     schedule:
       interval: monthly
   - directory: /packages/dev-image
     labels:
-      - 🔧 maintenance
+      - Maintenance
     package-ecosystem: docker
     schedule:
       interval: monthly
@@ -30,31 +30,31 @@ updates:
         update-types:
           - version-update:semver-major
     labels:
-      - 🔧 maintenance
+      - Maintenance
     package-ecosystem: npm
     schedule:
       interval: monthly
   - directory: /packages/npm-package-json-lint-config
     labels:
-      - 🔧 maintenance
+      - Maintenance
     package-ecosystem: npm
     schedule:
       interval: monthly
   - directory: /packages/prettier-config
     labels:
-      - 🔧 maintenance
+      - Maintenance
     package-ecosystem: npm
     schedule:
       interval: monthly
   - directory: /packages/pulumi-policy-pack
     labels:
-      - 🔧 maintenance
+      - Maintenance
     package-ecosystem: npm
     schedule:
       interval: monthly
   - directory: /packages/ruff-config
     labels:
-      - 🔧 maintenance
+      - Maintenance
     package-ecosystem: pip
     schedule:
       interval: monthly
