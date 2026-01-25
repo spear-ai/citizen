@@ -118,7 +118,7 @@ let series; // 1, 2, 3, …, 10
 let series; // 1, 2, 3, ..., 10
 ```
 
-### ¶ cE.jF: DO use en dashes instead of hypens
+### ¶ cE.jF: DO use en dashes instead of hyphens
 
 Do use an en dash when appropriate such as for spans and ranges.
 
@@ -132,7 +132,7 @@ let duration; // 2–3 weeks
 let duration; // 2-3 weeks, 2 to 3 weeks
 ```
 
-### ¶ cE.Cc: DO use em dashes instead of hypens
+### ¶ cE.Cc: DO use em dashes instead of hyphens
 
 Do use an em dash when appropriate such as replacing commas, parentheses, or colons⁠.
 
