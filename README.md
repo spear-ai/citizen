@@ -895,3 +895,5 @@ SELECT id, hex_color_code FROM class_label
 -- ✗ Bad
 SELECT id, color FROM class_label
 ```
+
+<!-- Last reviewed: January 2026 -->
