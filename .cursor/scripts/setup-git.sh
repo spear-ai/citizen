@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Note: This script is designed to be sourced from setup.sh, not run directly.
+# Using `return` instead of `exit` to avoid terminating the parent shell.
+
 set -euo pipefail
 
 # Ensure we only run in Cursor Cloud Agents.
@@ -7,7 +10,7 @@ if [[ "${IS_RUNNING_CURSOR_CLOUD_AGENT:-}" != "true" ]]; then
     echo "ERROR: This script is designed for Cursor Cloud Agents only." >&2
     echo "Skipping Git setup to avoid breaking your local configuration." >&2
     echo "If you are seeing this error message within a Cursor Cloud Agent environment, please set IS_RUNNING_CURSOR_CLOUD_AGENT=true in Cursor Cloud Agents Secrets." >&2
-    exit 1
+    return 1
 fi
 
 # Cursor Cloud Agents Secrets:
@@ -46,7 +49,7 @@ if [[ -z "${GIT_USER_EMAIL}" ]] || [[ -z "${GIT_USER_NAME}" ]]; then
     if [[ -z "${KEY_UID}" ]]; then
         echo "Error: Could not extract UID from GPG key." >&2
         gpg --list-secret-keys >&2
-        exit 1
+        return 1
     fi
 
     if [[ -z "${GIT_USER_NAME}" ]]; then
@@ -71,7 +74,7 @@ if [[ -z "${KEYGRIPS}" ]] || [[ -z "${FINGERPRINT}" ]]; then
     echo "Error: Failed to extract keygrip(s) or fingerprint for ${GIT_USER_EMAIL}." >&2
     echo "Available keys:" >&2
     gpg --list-secret-keys >&2
-    exit 1
+    return 1
 fi
 
 # If a passphrase was provided, cache it in `gpg-agent` so signing doesn't require interaction.
@@ -125,5 +128,5 @@ else
     echo "Attempting test signature with verbose output:" >&2
     echo "test" | gpg --batch --yes \
         --local-user "${FINGERPRINT}" --clearsign 2>&1 || true
-    exit 1
+    return 1
 fi

@@ -8,8 +8,8 @@ set -euo pipefail
 # Resolve the `.cursor` directory.
 CURSOR_DIRECTORY="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-# Setup Git.
-if ! bash "${CURSOR_DIRECTORY}/scripts/setup-git.sh"; then
+# shellcheck disable=SC1091
+if ! source "${CURSOR_DIRECTORY}/scripts/setup-git.sh"; then
     echo "ERROR: Git setup failed." >&2
     return 1
 fi
