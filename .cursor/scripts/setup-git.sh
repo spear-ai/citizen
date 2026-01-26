@@ -74,7 +74,7 @@ if [[ -z "${KEYGRIPS}" ]] || [[ -z "${FINGERPRINT}" ]]; then
     exit 1
 fi
 
-# If a passphrase was provided, cache it in gpg-agent so signing doesn't require interaction.
+# If a passphrase was provided, cache it in `gpg-agent` so signing doesn't require interaction.
 if [[ -n "${GPG_PRIVATE_KEY_PASSPHRASE}" ]]; then
     # Find `gpg-preset-passphrase` (Ubuntu typically has it in /usr/lib/gnupg).
     GPG_PRESET=""
@@ -91,15 +91,13 @@ if [[ -n "${GPG_PRIVATE_KEY_PASSPHRASE}" ]]; then
 
     if [[ -z "${GPG_PRESET}" ]]; then
         echo "Error: gpg-preset-passphrase not found. Installing gnupg2 …" >&2
-        # gpg-preset-passphrase is only supported in GPG 2.0 or later. Ubuntu should have this
-        # by default, but if not, we'll install it.
+        # `gpg-preset-passphrase` is only supported in GPG 2.0 or later.
+        # Ubuntu should have this by default, but if not, we'll install it.
         sudo apt-get update && sudo apt-get install -y gnupg2
         GPG_PRESET="/usr/lib/gnupg/gpg-preset-passphrase"
     fi
 
-    # Load the passphrase into gpg-agent cache for all keygrips (primary + subkeys).
-    # This ensures gpg will never ask for the passphrase, regardless of which key it uses.
-    # Also works with non-default GPG key setups like using a subkey for signing.
+    # Load the passphrase into `gpg-agent` cache for all keygrips.
     for KEYGRIP in ${KEYGRIPS}; do
         printf '%s' "${GPG_PRIVATE_KEY_PASSPHRASE}" | "${GPG_PRESET}" --preset "${KEYGRIP}"
     done
