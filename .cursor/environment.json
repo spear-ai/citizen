@@ -1,0 +1,3 @@
+{
+  "install": "source .cursor/scripts/setup.sh && yarn install"
+}

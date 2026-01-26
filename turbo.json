@@ -10,6 +10,12 @@
     "//#root:fix": {
       "dependsOn": ["^build"]
     },
+    "//#shellcheck:check": {
+      "inputs": [".shellcheckrc", "**/*.sh"]
+    },
+    "//#shellcheck:fix": {
+      "cache": false
+    },
     "//#typescript:check": {},
     "build": {
       "dependsOn": ["^build"],
@@ -22,6 +28,7 @@
         "//#eslint:check",
         "//#npmpkgjsonlint:check",
         "//#prettier:check",
+        "//#shellcheck:check",
         "eslint:check",
         "npmpkgjsonlint:check",
         "prettier:check",
@@ -67,11 +74,13 @@
       "cache": false,
       "dependsOn": [
         "//#eslint:fix",
-        "eslint:fix",
         "//#prettier:fix",
+        "//#shellcheck:fix",
+        "eslint:fix",
         "prettier:fix",
         "ruff-format:fix",
-        "ruff-lint:fix"
+        "ruff-lint:fix",
+        "shellcheck:fix"
       ]
     },
     "npmpkgjsonlint:check": {
@@ -114,6 +123,9 @@
       "inputs": ["**/*.py", ".gitignore", "pyproject.toml", "ruff.toml", "uv.lock"]
     },
     "ruff-lint:fix": {
+      "cache": false
+    },
+    "shellcheck:fix": {
       "cache": false
     },
     "typescript:check": {
