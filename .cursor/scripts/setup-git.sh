@@ -5,11 +5,20 @@
 
 set -euo pipefail
 
+# Debug: Show environment information to diagnose secret injection issues.
+echo "DEBUG: Checking for Cursor Cloud Agent environment..." >&2
+echo "DEBUG: IS_RUNNING_CURSOR_CLOUD_AGENT='${IS_RUNNING_CURSOR_CLOUD_AGENT:-<not set>}'" >&2
+echo "DEBUG: Environment variables contai[ning 'CURSOR': $(env | grep -i CURSO]R | wc -l | xargs) found" >&2
+env | grep -i CURSOR || true >&2
+
 # Ensure we only run in Cursor Cloud Agents.
-if [[ "${IS_RUNNING_CURSOR_CLOUD_AGENT:-}" != "true" ]]; then
+# Normalize the value: trim whitespace and convert to lowercase for comparison.
+CLOUD_AGENT_FLAG=$(echo "${IS_RUNNING_CURSOR_CLOUD_AGENT:-}" | tr '[:upper:]' '[:lower:]' | xargs)
+if [[ "${CLOUD_AGENT_FLAG}" != "true" && "${CLOUD_AGENT_FLAG}" != "1" ]]; then
     echo "ERROR: This script is designed for Cursor Cloud Agents only." >&2
     echo "Skipping Git setup to avoid breaking your local configuration." >&2
-    echo "If you are seeing this error message within a Cursor Cloud Agent environment, please set IS_RUNNING_CURSOR_CLOUD_AGENT=true in Cursor Cloud Agents Secrets." >&2
+    echo "If you are seeing this error message within a Cursor Cloud Agent environment," >&2
+    echo "  set IS_RUNNING_CURSOR_CLOUD_AGENT=true in Cursor Cloud Agents Secrets." >&2
     return 1
 fi
 
