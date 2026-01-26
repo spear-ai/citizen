@@ -27,7 +27,6 @@
         "//#npmpkgjsonlint:check",
         "//#prettier:check",
         "//#shellcheck:check",
-        "//#shellcheck:fix",
         "eslint:check",
         "npmpkgjsonlint:check",
         "prettier:check",
