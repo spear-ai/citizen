@@ -13,6 +13,7 @@
     "//#shellcheck:check": {
       "inputs": [".shellcheckrc", "**/*.sh"]
     },
+    "//#shellcheck:fix": {},
     "//#typescript:check": {},
     "build": {
       "dependsOn": ["^build"],
