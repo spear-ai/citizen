@@ -15,16 +15,24 @@ GIT_USER_NAME="$(git config --global user.name 2>/dev/null || echo "")"
 while [ $# -gt 0 ]; do
     case "$1" in
         --email)
+            if [ $# -lt 2 ] || [ "${2#--}" != "$2" ]; then
+                echo "Error: --email requires a value" >&2
+                exit 1
+            fi
             GIT_USER_EMAIL="$2"
             shift 2
             ;;
         --name)
+            if [ $# -lt 2 ] || [ "${2#--}" != "$2" ]; then
+                echo "Error: --name requires a value" >&2
+                exit 1
+            fi
             GIT_USER_NAME="$2"
             shift 2
             ;;
         *)
             echo "Unknown option: $1" >&2
-            echo "Usage: $0 [--name \"Your Name\"] [--email \"your@email.com\"]" >&2
+            echo "Usage: $0 [--email \"name@example.com\"] [--name \"Your Name\"]" >&2
             exit 1
             ;;
     esac
@@ -57,10 +65,10 @@ Expire-Date: 0
 %commit
 EOF
 
-GPG_PRIVATE_KEY_BASE64=$(gpg --armor --export-secret-keys "${GIT_USER_EMAIL}" | base64)
+GPG_PRIVATE_KEY_BASE64=$(gpg --armor --export-secret-keys "${GIT_USER_EMAIL}" | base64 | tr -d '\n')
 GPG_PUBLIC_KEY=$(gpg --armor --export "${GIT_USER_EMAIL}")
 
-echo "> GitHub: https://github.com/settings/gpg/new"
+echo "> GitHub: https://github.com/settings/keys"
 echo ""
 echo "${GPG_PUBLIC_KEY}"
 
