@@ -66,7 +66,16 @@ Expire-Date: 0
 EOF
 
 GPG_PRIVATE_KEY_BASE64=$(gpg --armor --export-secret-keys "${GIT_USER_EMAIL}" | base64 | tr -d '\n')
+if [ -z "${GPG_PRIVATE_KEY_BASE64}" ]; then
+    echo "Error: Failed to export GPG private key." >&2
+    exit 1
+fi
+
 GPG_PUBLIC_KEY=$(gpg --armor --export "${GIT_USER_EMAIL}")
+if [ -z "${GPG_PUBLIC_KEY}" ]; then
+    echo "Error: Failed to export GPG public key." >&2
+    exit 1
+fi
 
 echo "> GitHub: https://github.com/settings/keys"
 echo ""
