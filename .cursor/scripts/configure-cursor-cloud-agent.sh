@@ -55,7 +55,7 @@ GPG_EMAIL=$(printf '%s' "${GIT_USER_EMAIL}" | sed 's/%/%%/g')
 GPG_NAME=$(printf '%s' "${GIT_USER_NAME}" | sed 's/%/%%/g')
 
 # Generate the GPG key.
-gpg --batch --gen-key 2>/dev/null <<EOF
+gpg --batch --quiet --gen-key <<EOF
 Key-Type: eddsa
 Key-Curve: ed25519
 Key-Usage: sign
