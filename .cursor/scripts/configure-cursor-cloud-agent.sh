@@ -50,6 +50,10 @@ GNUPGHOME=$(mktemp -d)
 export GNUPGHOME
 trap 'rm -rf "$GNUPGHOME"' EXIT
 
+# Escape % characters for GPG batch mode (% is a directive prefix).
+GPG_EMAIL=$(printf '%s' "${GIT_USER_EMAIL}" | sed 's/%/%%/g')
+GPG_NAME=$(printf '%s' "${GIT_USER_NAME}" | sed 's/%/%%/g')
+
 # Generate the GPG key.
 gpg --batch --gen-key 2>/dev/null <<EOF
 Key-Type: eddsa
@@ -58,8 +62,8 @@ Key-Usage: sign
 Subkey-Type: ecdh
 Subkey-Curve: cv25519
 Subkey-Usage: encrypt
-Name-Real: ${GIT_USER_NAME}
-Name-Email: ${GIT_USER_EMAIL}
+Name-Real: ${GPG_NAME}
+Name-Email: ${GPG_EMAIL}
 Expire-Date: 0
 %no-protection
 %commit
