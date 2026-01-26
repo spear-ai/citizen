@@ -13,7 +13,9 @@
     "//#shellcheck:check": {
       "inputs": [".shellcheckrc", "**/*.sh"]
     },
-    "//#shellcheck:fix": {},
+    "//#shellcheck:fix": {
+      "cache": false
+    },
     "//#typescript:check": {},
     "build": {
       "dependsOn": ["^build"],
@@ -121,6 +123,9 @@
       "inputs": ["**/*.py", ".gitignore", "pyproject.toml", "ruff.toml", "uv.lock"]
     },
     "ruff-lint:fix": {
+      "cache": false
+    },
+    "shellcheck:fix": {
       "cache": false
     },
     "typescript:check": {
