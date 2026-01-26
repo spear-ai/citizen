@@ -10,6 +10,9 @@
     "//#root:fix": {
       "dependsOn": ["^build"]
     },
+    "//#shellcheck:check": {
+      "inputs": [".shellcheckrc", "**/*.sh"]
+    },
     "//#typescript:check": {},
     "build": {
       "dependsOn": ["^build"],
@@ -22,6 +25,8 @@
         "//#eslint:check",
         "//#npmpkgjsonlint:check",
         "//#prettier:check",
+        "//#shellcheck:check",
+        "//#shellcheck:fix",
         "eslint:check",
         "npmpkgjsonlint:check",
         "prettier:check",
@@ -67,11 +72,13 @@
       "cache": false,
       "dependsOn": [
         "//#eslint:fix",
-        "eslint:fix",
         "//#prettier:fix",
+        "//#shellcheck:fix",
+        "eslint:fix",
         "prettier:fix",
         "ruff-format:fix",
-        "ruff-lint:fix"
+        "ruff-lint:fix",
+        "shellcheck:fix"
       ]
     },
     "npmpkgjsonlint:check": {
