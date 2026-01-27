@@ -3,6 +3,8 @@
 # This script is designed to be sourced in Cursor Cloud Agents:
 # Usage: `source .cursor/scripts/setup.sh`
 
+env
+
 set -euo pipefail
 
 # Resolve the `.cursor` directory.
