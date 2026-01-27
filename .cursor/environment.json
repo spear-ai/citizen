@@ -1,3 +1,4 @@
 {
-  "install": "source .cursor/scripts/setup.sh && yarn install"
+  "install": "source .cursor/scripts/install.sh",
+  "start": "source .cursor/scripts/start.sh"
 }
