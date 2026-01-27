@@ -14,18 +14,18 @@ fi
 # Resolve the `.cursor` directory.
 CURSOR_DIRECTORY="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-# Add a hook to .bash_profile that will run Git setup on first shell session.
-BASH_PROFILE_MARKER="# Cursor Cloud Agent Git setup"
-if ! grep -qF "${BASH_PROFILE_MARKER}" "${HOME}/.bash_profile" 2>/dev/null; then
-    echo "Installing Git setup hook in .bash_profile…"
-    cat >> "${HOME}/.bash_profile" <<EOF
+# Add a hook to .bashrc that will run Git setup on first shell session.
+BASHRC_MARKER="# Cursor Cloud Agent Git setup"
+if ! grep -qF "${BASHRC_MARKER}" "${HOME}/.bashrc" 2>/dev/null; then
+    echo "Installing Git setup hook in .bashrc…"
+    cat >> "${HOME}/.bashrc" <<EOF
 
-${BASH_PROFILE_MARKER}
+${BASHRC_MARKER}
 if [[ -f "${CURSOR_DIRECTORY}/scripts/setup-git.sh" ]]; then
     source "${CURSOR_DIRECTORY}/scripts/setup-git.sh"
 fi
 EOF
     echo "Git setup will be configured on first shell session."
 else
-    echo "Git setup hook already installed in .bash_profile."
+    echo "Git setup hook already installed in .bashrc."
 fi

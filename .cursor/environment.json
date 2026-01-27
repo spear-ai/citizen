@@ -1,4 +1,3 @@
 {
-  "install": "source .cursor/scripts/install.sh",
-  "start": "source .cursor/scripts/start-git.sh"
+  "install": "source .cursor/scripts/install.sh"
 }

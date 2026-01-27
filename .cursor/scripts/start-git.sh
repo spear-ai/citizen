@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script is designed to be sourced from `.bash_profile`:
+# This script is designed to be sourced from `.bashrc`:
 # Usage: `source .cursor/scripts/setup-git.sh`
 
 set -euo pipefail
