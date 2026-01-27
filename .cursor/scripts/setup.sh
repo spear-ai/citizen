@@ -5,21 +5,27 @@
 
 set -euo pipefail
 
-# Resolve the `.cursor` directory.
-CURSOR_DIRECTORY="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-
-# shellcheck disable=SC1091
-if ! source "${CURSOR_DIRECTORY}/scripts/setup-git.sh"; then
-    echo "ERROR: Git setup failed." >&2
+if [[ "${HOSTNAME:-}" != "cursor" ]]; then
+    echo "ERROR: This script is designed for Cursor Cloud Agents only." >&2
+    echo "Skipping setup to avoid breaking your local configuration." >&2
     return 1
 fi
 
-# Protect against malicious dependencies.
-# Clear secrets from subsequent commands in the Cloud Agent "install" step (e.g., `pnpm install`).
-echo "Clearing sensitive environment variables…"
-unset GIT_USER_EMAIL
-unset GIT_USER_NAME
-unset GPG_PRIVATE_KEY_BASE64
-unset GPG_PRIVATE_KEY_PASSPHRASE
+# Resolve the `.cursor` directory.
+CURSOR_DIRECTORY="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-echo "Git setup completed."
+# Add a hook to .bash_profile that will run Git setup on first shell session.
+BASH_PROFILE_MARKER="# Cursor Cloud Agent Git setup"
+if ! grep -qF "${BASH_PROFILE_MARKER}" "${HOME}/.bash_profile" 2>/dev/null; then
+    echo "Installing Git setup hook in .bash_profile…"
+    cat >> "${HOME}/.bash_profile" <<EOF
+
+${BASH_PROFILE_MARKER}
+if [[ -f "${CURSOR_DIRECTORY}/scripts/setup-git.sh" ]]; then
+    source "${CURSOR_DIRECTORY}/scripts/setup-git.sh"
+fi
+EOF
+    echo "Git setup will be configured on first shell session."
+else
+    echo "Git setup hook already installed in .bash_profile."
+fi
