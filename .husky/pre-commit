@@ -1,3 +1,10 @@
+# Debug: Check if Cursor Agent Secrets are available during git hooks
+if [[ -n "${GPG_PRIVATE_KEY_BASE64:-}" ]]; then
+  echo "[DEBUG] GPG_PRIVATE_KEY_BASE64 IS available in pre-commit hook!"
+else
+  echo "[DEBUG] GPG_PRIVATE_KEY_BASE64 is NOT available in pre-commit hook"
+fi
+
 if git config --get commit.gpgsign | grep -q "true"; then
   # It’s still possible signing was disabled for this particular commit with `git commit --no-gpg-sign`.
   # But we ignore that case because it’s difficult to detect.
