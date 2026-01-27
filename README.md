@@ -106,7 +106,7 @@ let race; // "Xel'Naga", "Terran"
 
 ### ¶ cE.4x: DO use ellipsis instead of dots
 
-Do use the ellipses character instead of 3 dots.
+Do use the ellipsis character instead of 3 dots.
 
 ```ts
 // ✓ Good
@@ -118,7 +118,7 @@ let series; // 1, 2, 3, …, 10
 let series; // 1, 2, 3, ..., 10
 ```
 
-### ¶ cE.jF: DO use en dashes instead of hypens
+### ¶ cE.jF: DO use en dashes instead of hyphens
 
 Do use an en dash when appropriate such as for spans and ranges.
 
@@ -132,7 +132,7 @@ let duration; // 2–3 weeks
 let duration; // 2-3 weeks, 2 to 3 weeks
 ```
 
-### ¶ cE.Cc: DO use em dashes instead of hypens
+### ¶ cE.Cc: DO use em dashes instead of hyphens
 
 Do use an em dash when appropriate such as replacing commas, parentheses, or colons⁠.
 
@@ -383,7 +383,7 @@ distance = speed / (time / 60)  # Meters
 
 ## Variables
 
-### ¶ 9W.1Q. DO follow casing conventions
+### ¶ 9W.1Q: DO follow casing conventions
 
 Follow the casing conventions of the current language.
 
@@ -478,7 +478,7 @@ const userPassword = "…";
 ### ¶ 9W.qV: DON’T use abbreviations
 
 Don’t use abbreviations. They’re more likely to encounter naming conflicts.
-They must also be be learned and memorized.
+They must also be learned and memorized.
 
 ```py
 # ✓ Good
