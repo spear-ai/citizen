@@ -5,24 +5,44 @@
 
 set -euo pipefail
 
-# Debug: Show environment information to diagnose secret injection issues.
-echo "DEBUG: Checking for Cursor Cloud Agent environment..." >&2
-echo "DEBUG: IS_RUNNING_CURSOR_CLOUD_AGENT='${IS_RUNNING_CURSOR_CLOUD_AGENT:-<not set>}'" >&2
-echo "DEBUG: Environment variables contai[ning 'CURSOR': $(env | grep -i CURSO]R | wc -l | xargs) found" >&2
-env | grep -i CURSOR || true >&2
-
 # Ensure we only run in Cursor Cloud Agents.
-# Normalize the value: trim whitespace and convert to lowercase for comparison.
-CLOUD_AGENT_FLAG=$(echo "${IS_RUNNING_CURSOR_CLOUD_AGENT:-}" | tr '[:upper:]' '[:lower:]' | xargs)
-if [[ "${CLOUD_AGENT_FLAG}" != "true" && "${CLOUD_AGENT_FLAG}" != "1" ]]; then
+# Detection: HOSTNAME=cursor is set by Cursor Cloud Agents.
+if [[ "${HOSTNAME:-}" != "cursor" ]]; then
     echo "ERROR: This script is designed for Cursor Cloud Agents only." >&2
     echo "Skipping Git setup to avoid breaking your local configuration." >&2
-    echo "If you are seeing this error message within a Cursor Cloud Agent environment," >&2
-    echo "  set IS_RUNNING_CURSOR_CLOUD_AGENT=true in Cursor Cloud Agents Secrets." >&2
     return 1
 fi
 
 # Cursor Cloud Agents Secrets:
+# NOTE: Secrets are NOT available during the "install" phase.
+# If GPG_PRIVATE_KEY_BASE64 is not set, we defer setup to first terminal use.
+if [[ -z "${GPG_PRIVATE_KEY_BASE64:-}" ]]; then
+    echo "GPG_PRIVATE_KEY_BASE64 not available (secrets not injected during install phase)." >&2
+    echo "GPG signing setup will run automatically when you open a terminal." >&2
+
+    # Create a script that will run on first terminal open.
+    SETUP_ON_TERMINAL="${HOME}/.setup-gpg-on-terminal.sh"
+    CURSOR_DIRECTORY="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+    cat > "${SETUP_ON_TERMINAL}" <<SETUP_SCRIPT
+#!/bin/bash
+# Auto-generated: runs GPG setup once when secrets are available.
+if [[ -n "\${GPG_PRIVATE_KEY_BASE64:-}" ]] && [[ ! -f "\${HOME}/.gpg-setup-complete" ]]; then
+    echo "Running deferred GPG signing setup..."
+    source "${CURSOR_DIRECTORY}/scripts/setup-git.sh" && touch "\${HOME}/.gpg-setup-complete"
+fi
+SETUP_SCRIPT
+    chmod +x "${SETUP_ON_TERMINAL}"
+
+    # Add to .bashrc to run on terminal open.
+    if ! grep -q ".setup-gpg-on-terminal.sh" "${HOME}/.bashrc" 2>/dev/null; then
+        echo "source \"${SETUP_ON_TERMINAL}\"" >> "${HOME}/.bashrc"
+    fi
+
+    return 0
+fi
+
+# If we get here, secrets are available - proceed with GPG setup.
 : "${GPG_PRIVATE_KEY_BASE64:?Error: GPG_PRIVATE_KEY_BASE64 not set in Cursor Cloud Agent Secrets.}"
 GIT_USER_EMAIL="${GIT_USER_EMAIL:-}"
 GIT_USER_NAME="${GIT_USER_NAME:-}"
