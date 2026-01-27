@@ -1,4 +1,3 @@
 {
-  "install": "source .cursor/scripts/install.sh",
-  "start": "cat ~/.bash_profile"
+  "install": "source .cursor/scripts/install.sh"
 }
