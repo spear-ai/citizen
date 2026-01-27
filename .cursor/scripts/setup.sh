@@ -3,15 +3,10 @@
 # This script is designed to be sourced in Cursor Cloud Agents:
 # Usage: `source .cursor/scripts/setup.sh`
 
-echo "0"
-env
-
 set -euo pipefail
 
 # Resolve the `.cursor` directory.
 CURSOR_DIRECTORY="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-echo "1"
-echo "$CURSOR_DIRECTORY"
 
 # shellcheck disable=SC1091
 if ! source "${CURSOR_DIRECTORY}/scripts/setup-git.sh"; then
