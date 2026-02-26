@@ -7,11 +7,14 @@
 
 set -euo pipefail
 
-# Skip if GPG signing is already fully configured.
-if git config --global user.signingkey &>/dev/null \
-   && [[ "$(git config --global --get commit.gpgsign 2>/dev/null)" == "true" ]]; then
-    echo "[GPG] Signing already configured, skipping"
-    exit 0
+# Skip if GPG signing is already fully configured and the key can sign.
+if [[ "$(git config --global --get commit.gpgsign 2>/dev/null)" == "true" ]]; then
+    EXISTING_KEY="$(git config --global --get user.signingkey 2>/dev/null || true)"
+    if [[ -n "${EXISTING_KEY}" ]] \
+       && echo "probe" | gpg --batch --yes --local-user "${EXISTING_KEY}" --clearsign >/dev/null 2>&1; then
+        echo "[GPG] Signing already configured, skipping"
+        exit 0
+    fi
 fi
 
 : "${GPG_PRIVATE_KEY_BASE64:?GPG_PRIVATE_KEY_BASE64 not set in Cursor Secrets}"
