@@ -2380,6 +2380,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@spear-ai/cursor@workspace:packages/cursor":
+  version: 0.0.0-use.local
+  resolution: "@spear-ai/cursor@workspace:packages/cursor"
+  languageName: unknown
+  linkType: soft
+
 "@spear-ai/dev-image@workspace:packages/dev-image":
   version: 0.0.0-use.local
   resolution: "@spear-ai/dev-image@workspace:packages/dev-image"
