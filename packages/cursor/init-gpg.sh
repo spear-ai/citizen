@@ -29,7 +29,7 @@ EOF
 gpgconf --kill gpg-agent 2>/dev/null || true
 gpgconf --launch gpg-agent
 
-echo "$GPG_PRIVATE_KEY_BASE64" | base64 -d | gpg --batch --import 2>/dev/null
+echo "$GPG_PRIVATE_KEY_BASE64" | base64 -d | gpg --batch --import
 
 # Extract identity from secrets or from the key UID.
 KEY_UID=$(gpg --with-colons --list-secret-keys 2>/dev/null | awk -F: '/^uid:/ {print $10; exit}')
@@ -78,9 +78,14 @@ if [[ -n "${GPG_PRIVATE_KEY_PASSPHRASE:-}" ]]; then
     done
 
     if [[ -z "$GPG_PRESET" ]]; then
-        echo "[GPG] gpg-preset-passphrase not found, installing gnupg2..." >&2
-        sudo apt-get update -qq && sudo apt-get install -y -qq gnupg2 >/dev/null
-        GPG_PRESET="/usr/lib/gnupg/gpg-preset-passphrase"
+        if command -v apt-get &>/dev/null; then
+            echo "[GPG] gpg-preset-passphrase not found, installing gnupg2..." >&2
+            sudo apt-get update -qq && sudo apt-get install -y -qq gnupg2 >/dev/null
+            GPG_PRESET="/usr/lib/gnupg/gpg-preset-passphrase"
+        else
+            echo "[GPG] Error: gpg-preset-passphrase not found and apt-get unavailable" >&2
+            exit 1
+        fi
     fi
 
     for KEYGRIP in $KEYGRIPS; do

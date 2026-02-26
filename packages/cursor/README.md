@@ -58,6 +58,14 @@ gpg --armor --export KEY_ID
 
 If you already have `commit.gpgsign = true` in your git config and GPG signing works locally, skip this step.
 
+Install GPG if not already installed:
+
+```bash
+brew install gnupg
+```
+
+Configure git to sign commits:
+
 ```bash
 git config --global commit.gpgsign true
 git config --global user.signingkey YOUR_KEY_ID
