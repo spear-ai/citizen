@@ -6,8 +6,9 @@
 
 set -euo pipefail
 
-# Skip if GPG signing is already configured.
-if git config --global user.signingkey &>/dev/null; then
+# Skip if GPG signing is already fully configured.
+if git config --global user.signingkey &>/dev/null \
+   && [[ "$(git config --global --get commit.gpgsign 2>/dev/null)" == "true" ]]; then
     echo "[GPG] Signing already configured, skipping"
     exit 0
 fi

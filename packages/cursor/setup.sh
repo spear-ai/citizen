@@ -18,7 +18,7 @@ fi
 
 echo "[Setup] Configuring GPG signing..."
 
-if ! curl -fsSL "${CURL_AUTH_ARGS[@]}" "$SCRIPT_DOWNLOAD_ROOT_URL/init-gpg.sh" | bash; then
+if ! curl -fsSL ${CURL_AUTH_ARGS[@]+"${CURL_AUTH_ARGS[@]}"} "$SCRIPT_DOWNLOAD_ROOT_URL/init-gpg.sh" | bash; then
     echo "[Setup] Error: GPG initialization failed" >&2
     return 1
 fi

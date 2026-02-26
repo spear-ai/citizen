@@ -114,7 +114,13 @@ For Linear integration: link your Cursor account in [Linear Settings → Integra
 
 To enable GPG signing in a new project, add a [`.cursor/environment.json`](https://github.com/spear-ai/citizen/blob/main/.cursor/environment.json) file. The `install` command should start with the GPG setup prefix (which downloads and sources `setup.sh`), followed by your project's install commands.
 
-`SCRIPT_DOWNLOAD_ROOT_URL` should already be configured as a team-level Cursor secret. If it is not set, the GPG setup is skipped — local development is unaffected, but cloud agent commits will not be signed. If the scripts are hosted in a private repository, set `GITHUB_SCRIPTS_TOKEN` to a GitHub personal access token with `repo` scope to authenticate downloads.
+`SCRIPT_DOWNLOAD_ROOT_URL` should already be configured as a team-level Cursor secret. If it is not set, the GPG setup is skipped — local development is unaffected, but cloud agent commits will not be signed. If the scripts are hosted in a private repository, set `GITHUB_SCRIPTS_TOKEN` to a [fine-grained GitHub personal access token](https://github.com/settings/personal-access-tokens) with `Contents: Read-only` permission scoped to the scripts repository.
+
+The `environment.json` includes a SHA-256 checksum of `setup.sh` for integrity verification. If `setup.sh` is updated, regenerate the checksum and update each project's `environment.json`:
+
+```bash
+sha256sum packages/cursor/setup.sh
+```
 
 For projects with complex setup or multiple install steps, move the project-specific commands into a separate script (e.g., [`.cursor/scripts/install.sh`](https://github.com/spear-ai/citizen/blob/main/.cursor/scripts/install.sh)) and source it from the `install` hook. This keeps `environment.json` readable and the install logic maintainable.
 
