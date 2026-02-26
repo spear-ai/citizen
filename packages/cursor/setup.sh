@@ -1,47 +1,104 @@
 #!/bin/bash
 
-# Entry point for GPG signing configuration on Cursor Cloud Agents.
-# Downloaded and sourced by each project's .cursor/environment.json install hook.
-# After GPG setup, clears all sensitive environment variables before package installation.
+# Imports a GPG key, presets the passphrase, and configures git commit signing.
+# Downloaded and executed by each project's .cursor/scripts/install-gpg.sh.
+# Supports both passphrase-protected and passwordless keys.
+# Extracts git identity (email and name) from the key UID.
 
 set -euo pipefail
 
-EXPECTED_INIT_GPG_SHA256="e206e99bc02a2c17f9d49a0f5b6fc1d852053b1bccbd059dd06cc2fb142f8af0"
-
-cleanup_sensitive_env() {
-    unset SCRIPT_DOWNLOAD_ROOT_URL GITHUB_SCRIPTS_TOKEN 2>/dev/null || true
-    unset GPG_PRIVATE_KEY_BASE64 GPG_PRIVATE_KEY_PASSPHRASE 2>/dev/null || true
-    unset MY_GIT_EMAIL MY_FULL_NAME 2>/dev/null || true
-}
-
-if [[ -z "${SCRIPT_DOWNLOAD_ROOT_URL:-}" ]]; then
-    echo "[Setup] Error: SCRIPT_DOWNLOAD_ROOT_URL not set" >&2
-    cleanup_sensitive_env
-    return 1
+# Skip if GPG signing is already fully configured.
+if git config --global user.signingkey &>/dev/null \
+   && [[ "$(git config --global --get commit.gpgsign 2>/dev/null)" == "true" ]]; then
+    echo "[GPG] Signing already configured, skipping"
+    exit 0
 fi
 
-CURL_AUTH_ARGS=()
-if [[ -n "${GITHUB_SCRIPTS_TOKEN:-}" ]]; then
-    CURL_AUTH_ARGS=(-H "Authorization: token ${GITHUB_SCRIPTS_TOKEN}")
+: "${GPG_PRIVATE_KEY_BASE64:?GPG_PRIVATE_KEY_BASE64 not set in Cursor Secrets}"
+
+echo "[GPG] Importing GPG key..."
+
+export GNUPGHOME="${GNUPGHOME:-$HOME/.gnupg}"
+mkdir -p "$GNUPGHOME"
+chmod 700 "$GNUPGHOME"
+
+cat > "$GNUPGHOME/gpg-agent.conf" <<EOF
+allow-preset-passphrase
+default-cache-ttl 28800
+max-cache-ttl 86400
+EOF
+
+gpgconf --kill gpg-agent 2>/dev/null || true
+gpgconf --launch gpg-agent
+
+echo "$GPG_PRIVATE_KEY_BASE64" | base64 -d | gpg --batch --import
+
+# Extract identity from the key UID.
+KEY_UID=$(gpg --with-colons --list-secret-keys 2>/dev/null | awk -F: '/^uid:/ {print $10; exit}')
+
+GIT_USER_EMAIL="${KEY_UID##*<}"
+GIT_USER_EMAIL="${GIT_USER_EMAIL%>*}"
+
+GIT_USER_NAME="${KEY_UID%% <*}"
+GIT_USER_NAME="${GIT_USER_NAME%% (*}"
+
+if [[ -z "$GIT_USER_EMAIL" ]] || [[ -z "$GIT_USER_NAME" ]]; then
+    echo "[GPG] Error: Could not determine git identity from key UID" >&2
+    echo "[GPG] Ensure the GPG key has a UID in the format: Name <email@example.com>" >&2
+    exit 1
 fi
 
-echo "[Setup] Configuring GPG signing..."
+FINGERPRINT=$(gpg --with-colons --list-secret-keys "$GIT_USER_EMAIL" 2>/dev/null | awk -F: '/^fpr:/ {print $10; exit}')
 
-_init_gpg_script=$(curl -fsSL ${CURL_AUTH_ARGS[@]+"${CURL_AUTH_ARGS[@]}"} "${SCRIPT_DOWNLOAD_ROOT_URL}/init-gpg.sh")
-_actual_init_sha256=$(printf '%s\n' "$_init_gpg_script" | sha256sum | awk '{print $1}')
-
-if [[ "$_actual_init_sha256" != "$EXPECTED_INIT_GPG_SHA256" ]]; then
-    echo "[Setup] Error: init-gpg.sh checksum mismatch (expected: $EXPECTED_INIT_GPG_SHA256, got: $_actual_init_sha256)" >&2
-    cleanup_sensitive_env
-    return 1
+if [[ -z "$FINGERPRINT" ]]; then
+    echo "[GPG] Error: No key found for $GIT_USER_EMAIL" >&2
+    exit 1
 fi
 
-if ! bash <<< "$_init_gpg_script"; then
-    echo "[Setup] Error: GPG initialization failed" >&2
-    cleanup_sensitive_env
-    return 1
+# Preset passphrase if provided (supports passphrase-protected keys).
+if [[ -n "${GPG_PRIVATE_KEY_PASSPHRASE:-}" ]]; then
+    KEYGRIPS=$(gpg --with-colons --with-keygrip --list-secret-keys "$GIT_USER_EMAIL" 2>/dev/null | awk -F: '/^grp:/ {print $10}')
+
+    GPG_PRESET=""
+    for preset_path in \
+        "/usr/lib/gnupg/gpg-preset-passphrase" \
+        "/usr/lib/gnupg2/gpg-preset-passphrase" \
+        "/usr/libexec/gpg-preset-passphrase" \
+        "$(command -v gpg-preset-passphrase 2>/dev/null || echo '')"; do
+        if [[ -x "$preset_path" ]]; then
+            GPG_PRESET="$preset_path"
+            break
+        fi
+    done
+
+    if [[ -z "$GPG_PRESET" ]]; then
+        if command -v apt-get &>/dev/null; then
+            echo "[GPG] gpg-preset-passphrase not found, installing gnupg2..." >&2
+            sudo apt-get update -qq && sudo apt-get install -y -qq gnupg2 >/dev/null
+            GPG_PRESET="/usr/lib/gnupg/gpg-preset-passphrase"
+        else
+            echo "[GPG] Error: gpg-preset-passphrase not found and apt-get unavailable" >&2
+            exit 1
+        fi
+    fi
+
+    for KEYGRIP in $KEYGRIPS; do
+        printf '%s' "$GPG_PRIVATE_KEY_PASSPHRASE" | "$GPG_PRESET" --preset "$KEYGRIP"
+    done
 fi
 
-cleanup_sensitive_env
+git config --global user.name "$GIT_USER_NAME"
+git config --global user.email "$GIT_USER_EMAIL"
+git config --global user.signingkey "$FINGERPRINT"
+git config --global commit.gpgsign true
+git config --global gpg.program gpg
 
-echo "[Setup] GPG configuration complete"
+if echo "test" | gpg --batch --yes --local-user "$FINGERPRINT" --clearsign >/dev/null 2>&1; then
+    echo "[GPG] Signing configured successfully"
+    echo "[GPG]   Name: $GIT_USER_NAME"
+    echo "[GPG]   Email: $GIT_USER_EMAIL"
+    echo "[GPG]   Key: $FINGERPRINT"
+else
+    echo "[GPG] Error: Signing verification failed" >&2
+    exit 1
+fi
