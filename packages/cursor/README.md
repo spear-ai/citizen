@@ -58,7 +58,7 @@ gpg --armor --export KEY_ID
 
 If you already have `commit.gpgsign = true` in your git config and GPG signing works locally, skip this step.
 
-Install GPG if not already installed:
+Install GPG if not already installed (macOS):
 
 ```bash
 brew install gnupg
@@ -116,11 +116,21 @@ To enable GPG signing in a new project, add a [`.cursor/environment.json`](https
 
 `SCRIPT_DOWNLOAD_ROOT_URL` should already be configured as a team-level Cursor secret. If it is not set, the GPG setup is skipped — local development is unaffected, but cloud agent commits will not be signed. If the scripts are hosted in a private repository, set `GITHUB_SCRIPTS_TOKEN` to a [fine-grained GitHub personal access token](https://github.com/settings/personal-access-tokens) with `Contents: Read-only` permission scoped to the scripts repository.
 
-The `environment.json` includes a SHA-256 checksum of `setup.sh` for integrity verification. If `setup.sh` is updated, regenerate the checksum and update each project's `environment.json`:
+Both scripts are protected by SHA-256 checksums: `environment.json` pins `setup.sh`, and `setup.sh` pins `init-gpg.sh`. If either script is updated, regenerate the checksums:
+
+Linux:
 
 ```bash
-sha256sum packages/cursor/setup.sh
+sha256sum packages/cursor/setup.sh packages/cursor/init-gpg.sh
 ```
+
+macOS:
+
+```bash
+shasum -a 256 packages/cursor/setup.sh packages/cursor/init-gpg.sh
+```
+
+Update the `setup.sh` hash in each project's `environment.json`, and the `init-gpg.sh` hash in `setup.sh`.
 
 For projects with complex setup or multiple install steps, move the project-specific commands into a separate script (e.g., [`.cursor/scripts/install.sh`](https://github.com/spear-ai/citizen/blob/main/.cursor/scripts/install.sh)) and source it from the `install` hook. This keeps `environment.json` readable and the install logic maintainable.
 
