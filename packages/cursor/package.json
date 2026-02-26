@@ -1,0 +1,17 @@
+{
+  "name": "@spear-ai/cursor",
+  "version": "1.0.0",
+  "description": "Cursor Cloud Agent configuration and scripts for Spear AI projects",
+  "author": {
+    "name": "Spear AI",
+    "email": "org@spear.ai",
+    "url": "https://spear.ai"
+  },
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "directory": "packages/cursor",
+    "url": "https://github.com/spear-ai/citizen.git"
+  }
+}
