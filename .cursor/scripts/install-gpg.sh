@@ -14,7 +14,7 @@ fi
 echo "[Setup] Downloading GPG setup from citizen..."
 
 if _setup_script=$(curl -fsSL "${CURSOR_SCRIPTS_URL}/setup.sh"); then
-    if bash <<< "$_setup_script"; then
+    if bash <<< "${_setup_script}"; then
         echo "[Setup] GPG configuration complete"
     else
         echo "[Setup] Warning: GPG setup failed, continuing without commit signing"
