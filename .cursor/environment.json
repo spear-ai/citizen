@@ -1,3 +1,3 @@
 {
-  "install": "source .cursor/scripts/install.sh"
+  "install": "source .cursor/scripts/install-gpg.sh; source .cursor/scripts/install.sh"
 }

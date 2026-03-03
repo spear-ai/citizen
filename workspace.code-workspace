@@ -30,6 +30,10 @@
       "path": "packages/commitlint-config",
     },
     {
+      "name": "spear-ai/cursor",
+      "path": "packages/cursor",
+    },
+    {
       "name": "spear-ai/eslint-config",
       "path": "packages/eslint-config",
     },
