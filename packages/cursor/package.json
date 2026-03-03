@@ -7,11 +7,24 @@
     "email": "org@spear.ai",
     "url": "https://spear.ai"
   },
+  "type": "module",
+  "devDependencies": {
+    "eslint": "8.57.0",
+    "npm-package-json-lint": "7.1.0",
+    "prettier": "3.5.3"
+  },
   "license": "MIT",
   "private": true,
   "repository": {
     "type": "git",
     "directory": "packages/cursor",
     "url": "https://github.com/spear-ai/citizen.git"
+  },
+  "scripts": {
+    "eslint:check": "eslint --max-warnings 0 .",
+    "eslint:fix": "yarn eslint:check --fix",
+    "npmpkgjsonlint:check": "npmPkgJsonLint .",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --write ."
   }
 }
