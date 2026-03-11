@@ -1,6 +1,6 @@
 [project]
 name = "spear-ai-ruff-config"
-version = "6.0.3"
+version = "7.0.0"
 description = "Spear AI’s Ruff config"
 authors = [{ name = "Spear AI", email = "org@spear.ai" }]
 keywords = [
