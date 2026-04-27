@@ -3,7 +3,7 @@ import nextPlugin from "@next/eslint-plugin-next";
 import stylisticPlugin from "@stylistic/eslint-plugin"; // eslint-disable-line import-x/default, import-x/namespace, import-x/no-deprecated, import-x/no-named-as-default, import-x/no-named-as-default-member
 import type { ESLint, Linter } from "eslint";
 import formatJsPlugin from "eslint-plugin-formatjs";
-import importPluginX, { configs as importXConfigs } from "eslint-plugin-import-x";
+import importPluginX, { flatConfigs as importXFlatConfigs } from "eslint-plugin-import-x";
 import jsonSchemaValidatorPlugin from "eslint-plugin-json-schema-validator";
 import jsoncPlugin from "eslint-plugin-jsonc";
 import markdownPlugin from "eslint-plugin-markdown";
@@ -126,6 +126,14 @@ const isObjectRecord = (value: unknown): value is Record<string, unknown> =>
 
 const isRulesRecord = (value: unknown): value is Linter.RulesRecord => isObjectRecord(value);
 const isUnknownArray = (value: unknown): value is unknown[] => Array.isArray(value);
+
+const getSettings = (config: unknown): Record<string, unknown> => {
+  if (!isObjectRecord(config)) {
+    return {};
+  }
+
+  return isObjectRecord(config.settings) ? config.settings : {};
+};
 
 const getRules = (config: unknown): Linter.RulesRecord => {
   if (!isObjectRecord(config)) {
@@ -330,8 +338,8 @@ export const baseEslintConfig: Linter.Config[] = [
       ...typescriptEslintConfigs.eslintRecommended.rules,
       ...getRules(typescriptEslintConfigs.stylisticTypeChecked[2]),
       ...getRules(typescriptEslintConfigs.strictTypeChecked[2]),
-      ...importXConfigs.recommended.rules,
-      ...importXConfigs.typescript.rules,
+      ...getRules(importXFlatConfigs.recommended),
+      ...getRules(importXFlatConfigs.typescript),
       ...(regexpPlugin.configs?.all as ESLint.ConfigData).rules,
       ...(sonarjsPlugin.configs?.recommended as ESLint.ConfigData).rules,
       // ...stylisticPlugin.configs["recommended-flat"].rules,
@@ -541,6 +549,7 @@ export const baseEslintConfig: Linter.Config[] = [
       ],
     },
     settings: {
+      ...getSettings(importXFlatConfigs.typescript),
       "import-x/extensions": [...javascriptFamilyFileExtensionList, ".json"],
       "import-x/external-module-folders": ["node_modules", "node_modules/@types"],
       "import-x/parsers": {
