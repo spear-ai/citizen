@@ -438,14 +438,6 @@ export const baseEslintConfig: Linter.Config[] = [
       "import-x/no-import-module-exports": ["error"],
       "import-x/no-mutable-exports": ["error"],
       "import-x/no-self-import": ["error"],
-      "import-x/no-unused-modules": [
-        "error",
-        {
-          missingExports: true,
-          suppressMissingFileEnumeratorAPIWarning: true,
-          unusedExports: true,
-        },
-      ],
       "import-x/no-useless-path-segments": ["error"],
       "import-x/prefer-default-export": ["off"],
       "max-len": [
