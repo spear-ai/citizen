@@ -3,15 +3,3 @@ declare module "eslint-plugin-markdown" {
   const plugin: Plugin;
   export default plugin;
 }
-
-declare module "eslint-plugin-markdown/lib/processor" {
-  type Processor = import("eslint").Linter.Processor;
-  const processor: Processor;
-  export default processor;
-}
-
-declare module "eslint-plugin-markdown/lib/processor.js" {
-  type Processor = import("eslint").Linter.Processor;
-  const processor: Processor;
-  export default processor;
-}

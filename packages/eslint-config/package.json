@@ -20,7 +20,7 @@
     "eslint-plugin-json-schema-validator": "^5.1.0",
     "eslint-plugin-jsonc": "^3.1.2",
     "eslint-plugin-markdown": "^5.0.0",
-    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-hooks": "^6.1.1",
     "eslint-plugin-react-use-props": "^1.0.0",
     "eslint-plugin-regexp": "^2.6.0",
     "eslint-plugin-simple-import-sort": "^12.1.0",
@@ -36,7 +36,6 @@
     "yaml-eslint-parser": "^1.2.2"
   },
   "devDependencies": {
-    "@types/eslint": "8.56.10",
     "eslint": "10.2.1",
     "graphql": "16.8.1",
     "npm-package-json-lint": "7.1.0",

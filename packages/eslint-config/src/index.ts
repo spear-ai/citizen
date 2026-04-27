@@ -7,7 +7,6 @@ import importPluginX, { configs as importXConfigs } from "eslint-plugin-import-x
 import jsonSchemaValidatorPlugin from "eslint-plugin-json-schema-validator";
 import jsoncPlugin from "eslint-plugin-jsonc";
 import markdownPlugin from "eslint-plugin-markdown";
-import markdownProcessor from "eslint-plugin-markdown/lib/processor.js"; // eslint-disable-line import-x/extensions
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import reactUsePropsPlugin from "eslint-plugin-react-use-props";
 import regexpPlugin from "eslint-plugin-regexp";
@@ -122,11 +121,33 @@ export const jsonFamilyRules: Linter.RulesRecord = {
   "no-trailing-spaces": ["error"],
 };
 
-const getRules = (config: unknown): Linter.RulesRecord =>
-  (config as { rules?: Linter.RulesRecord } | undefined)?.rules ?? {};
+const isObjectRecord = (value: unknown): value is Record<string, unknown> =>
+  typeof value === "object" && value !== null && !Array.isArray(value);
 
-const getFirstOverrideRules = (config: unknown): Linter.RulesRecord =>
-  (config as { overrides?: { rules?: Linter.RulesRecord }[] } | undefined)?.overrides?.[0]?.rules ?? {};
+const isRulesRecord = (value: unknown): value is Linter.RulesRecord => isObjectRecord(value);
+const isUnknownArray = (value: unknown): value is unknown[] => Array.isArray(value);
+
+const getRules = (config: unknown): Linter.RulesRecord => {
+  if (!isObjectRecord(config)) {
+    return {};
+  }
+
+  return isRulesRecord(config.rules) ? config.rules : {};
+};
+
+const getFirstOverrideRules = (config: unknown): Linter.RulesRecord => {
+  if (!isObjectRecord(config) || !isUnknownArray(config.overrides)) {
+    return {};
+  }
+
+  const [firstOverride] = config.overrides;
+
+  if (!isObjectRecord(firstOverride)) {
+    return {};
+  }
+
+  return isRulesRecord(firstOverride.rules) ? firstOverride.rules : {};
+};
 
 const jsoncConfigs = jsoncPlugin.configs; // eslint-disable-line import-x/no-named-as-default-member
 
@@ -271,7 +292,10 @@ export const baseEslintConfig: Linter.Config[] = [
   },
   {
     files: ["**/*.md"],
-    processor: markdownProcessor,
+    plugins: {
+      markdown: markdownPlugin,
+    },
+    processor: "markdown/markdown",
   },
   {
     files: javascriptFamilyFileList,
@@ -306,7 +330,6 @@ export const baseEslintConfig: Linter.Config[] = [
       ...getRules(typescriptEslintConfigs.stylisticTypeChecked[2]),
       ...getRules(typescriptEslintConfigs.strictTypeChecked[2]),
       ...importXConfigs.recommended.rules,
-      ...importXConfigs["stage-0"].rules,
       ...importXConfigs.typescript.rules,
       ...(regexpPlugin.configs?.all as ESLint.ConfigData).rules,
       ...(sonarjsPlugin.configs?.recommended as ESLint.ConfigData).rules,
