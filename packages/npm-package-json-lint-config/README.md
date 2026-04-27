@@ -17,5 +17,5 @@ const npmPackageJsonLintConfig = {
   extends: ["@spear-ai/npm-package-json-lint-config/spear-library"],
 };
 
-module.exports = npmPackageJsonLintConfig; // eslint-disable-line unicorn/prefer-module
+module.exports = npmPackageJsonLintConfig;
 ```

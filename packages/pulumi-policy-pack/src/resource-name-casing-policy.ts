@@ -11,6 +11,7 @@ export const createResourceNameCasingPolicy = (options?: {
     name: "resource-name-casing",
     validateResource({ name, type }, reportViolation) {
       // Avoid validating providers. e.g. “pulumi:providers:aws:*”
+      // eslint-disable-next-line sonarjs/null-dereference
       if (type.startsWith("pulumi:providers:")) {
         return;
       }

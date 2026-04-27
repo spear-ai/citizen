@@ -242,7 +242,8 @@ export const baseEslintConfig: Linter.Config[] = [
       "no-multiple-empty-lines": ["error", { max: 1 }],
       "no-trailing-spaces": ["error"],
       "toml/array-bracket-newline": ["error", "consistent"],
-      "toml/array-bracket-spacing": ["error", "never"],
+      "toml/array-bracket-spacing": ["off"],
+      "toml/inline-table-curly-spacing": ["off"],
     },
   },
   {
@@ -557,11 +558,12 @@ export const baseEslintConfig: Linter.Config[] = [
     files: ["**/*.cjs"],
     ignores: defaultIgnoreFileList,
     rules: {
+      "@typescript-eslint/no-require-imports": ["off"],
       "@typescript-eslint/no-var-requires": ["off"],
     },
   },
   {
-    files: ["**/*.md/**"],
+    files: javascriptFamilyInMarkdownFileList,
     ignores: defaultIgnoreFileList,
     languageOptions: {
       parser: typescriptEslintParser,
@@ -587,6 +589,7 @@ export const baseEslintConfig: Linter.Config[] = [
       "@typescript-eslint/no-misused-spread": ["off"],
       "@typescript-eslint/no-mixed-enums": ["off"],
       "@typescript-eslint/no-redundant-type-constituents": ["off"],
+      "@typescript-eslint/no-require-imports": ["off"],
       "@typescript-eslint/no-throw-literal": ["off"],
       "@typescript-eslint/no-unnecessary-boolean-literal-compare": ["off"],
       "@typescript-eslint/no-unnecessary-condition": ["off"],
