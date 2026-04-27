@@ -9,3 +9,9 @@ declare module "eslint-plugin-markdown/lib/processor" {
   const processor: Processor;
   export default processor;
 }
+
+declare module "eslint-plugin-markdown/lib/processor.js" {
+  type Processor = import("eslint").Linter.Processor;
+  const processor: Processor;
+  export default processor;
+}
