@@ -11,7 +11,7 @@
   "devDependencies": {
     "@commitlint/types": "19.0.3",
     "commitlint": "19.3.0",
-    "eslint": "8.57.0",
+    "eslint": "10.2.1",
     "npm-package-json-lint": "7.1.0",
     "prettier": "3.5.3",
     "tsup": "8.0.2",
@@ -30,7 +30,7 @@
     "url": "https://github.com/spear-ai/citizen.git"
   },
   "scripts": {
-    "build": "tsup src --cjsInterop --clean --dts --format cjs,esm --splitting",
+    "build": "tsup src/index.ts src/rules/ignore-rules.ts --cjsInterop --clean --dts --format cjs,esm --splitting",
     "dev": "yarn build --watch & yarn test:dev",
     "eslint:check": "eslint --max-warnings 0 .",
     "eslint:fix": "yarn eslint:check --fix",

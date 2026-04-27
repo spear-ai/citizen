@@ -8,6 +8,8 @@ An [ESLint](https://eslint.org) config with all batteries included.
 yarn add -D eslint @spear-ai/eslint-config
 ```
 
+This package supports ESLint 8.57, 9, and 10. ESLint 10 requires Node.js 20.19 or newer.
+
 ## Usage
 
 Add the following to your `eslint.config.js` file:
