@@ -1,5 +1,11 @@
 # @spear-ai/npm-package-json-lint-config
 
+## 4.0.0
+
+### Major Changes
+
+- [#663](https://github.com/spear-ai/citizen/pull/663) [`e432232`](https://github.com/spear-ai/citizen/commit/e432232fe6c3ea43bcd28db014d93697a6848ca2) Thanks [@psirenny](https://github.com/psirenny)! - Updated the supported `npm-package-json-lint` version from 7 to 11. The peer dependency range is now `^11.0.0`, so consumers must upgrade `npm-package-json-lint` alongside this release.
+
 ## 3.1.2
 
 ### Patch Changes
