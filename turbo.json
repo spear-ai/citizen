@@ -14,9 +14,6 @@
       "cache": false,
       "dependsOn": ["@spear-ai/eslint-config#build"]
     },
-    "//#root-fix": {
-      "dependsOn": ["//#eslint:fix", "//#oxfmt:fix", "//#oxlint:fix", "//#shellcheck:fix"]
-    },
     "//#npmpkgjsonlint:check": {
       "cache": false,
       "dependsOn": ["@spear-ai/npm-package-json-lint-config#build"]
@@ -44,6 +41,9 @@
         "//#oxlint:check",
         "//#shellcheck:check"
       ]
+    },
+    "//#root-fix": {
+      "dependsOn": ["//#eslint:fix", "//#oxfmt:fix", "//#oxlint:fix", "//#shellcheck:fix"]
     },
     "//#shellcheck:check": {
       "inputs": [".shellcheckrc", "**/*.sh"]

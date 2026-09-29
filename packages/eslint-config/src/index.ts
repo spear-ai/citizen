@@ -625,7 +625,18 @@ export const baseEslintConfig: Linter.Config[] = [
     },
     rules: {
       ...getRules(jsonSchemaValidatorConfigs?.recommended),
-      "json-schema-validator/no-invalid": ["error"],
+      "json-schema-validator/no-invalid": [
+        "error",
+        {
+          schemas: [
+            // The catalog serves this schema from SchemaStore's default branch, whose relative references can precede their publication
+            {
+              fileMatch: ["pyproject.toml"],
+              schema: "https://json.schemastore.org/pyproject.json",
+            },
+          ],
+        },
+      ],
     },
   },
   {
