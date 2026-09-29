@@ -20,7 +20,7 @@
     "commitlint:check": "commitlint --last",
     "eslint:check": "eslint --max-warnings 0 .",
     "eslint:fix": "eslint --fix --max-warnings 0 .",
-    "fix": "turbo run fix --continue=always",
+    "fix": "turbo run root-fix fix --continue=always",
     "github-actions:push": "act push -s GH_PAT=$GH_PAT -s GITHUB_TOKEN=$GH_PAT -s NPM_TOKEN=$NPM_TOKEN",
     "github-actions:push:release-tag": "act push -e .github/test-events/push-release-tag.json -s GH_PAT=$GH_PAT -s GITHUB_TOKEN=$GH_PAT",
     "npmpkgjsonlint:check": "npmPkgJsonLint .",

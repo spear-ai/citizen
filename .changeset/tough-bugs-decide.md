@@ -2,4 +2,4 @@
 "@spear-ai/cursor": patch
 ---
 
-Updated the `generate-key.sh` and `setup.sh` scripts to pass ShellCheck.
+Cleaned up the `generate-key.sh` and `setup.sh` scripts without changing how they generate keys or configure GPG signing.
