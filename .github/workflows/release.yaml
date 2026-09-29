@@ -30,17 +30,19 @@ jobs:
         with:
           version: 0.7.4
           enable-cache: true
+      - name: Setup pnpm
+        uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
       - name: Setup Node.js
         uses: actions/setup-node@v4.0.2
         with:
-          cache: yarn
+          cache: pnpm
           node-version-file: .node-version
       - name: Setup Python
         uses: actions/setup-python@v5.1.0
         with:
           python-version-file: .python-version
       - name: Install Node.js dependencies
-        run: yarn install
+        run: pnpm install --frozen-lockfile
       - name: Import GPG key
         uses: crazy-max/ghaction-import-gpg@v6.1.0
         with:
@@ -52,7 +54,7 @@ jobs:
           git config --global user.email org@spear.ai
           git config --global user.name org-spear-ai
       - name: Build packages
-        run: yarn turbo run build
+        run: pnpm turbo run build
       - name: Authenticate with NPM
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -69,7 +71,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           title: Release 🚀
-          version: yarn run version
+          version: pnpm run version
           commit: Release 🚀
-          publish: yarn run publish-packages
+          publish: pnpm run publish-packages
           setupGitUser: false

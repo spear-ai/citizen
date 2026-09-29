@@ -3,17 +3,11 @@ name = "spear-ai-ruff-config"
 version = "6.0.3"
 description = "Spear AI’s Ruff config"
 authors = [{ name = "Spear AI", email = "org@spear.ai" }]
-keywords = [
-  "config",
-  "Ruff",
-  "Spear AI"
-]
+keywords = ["config", "Ruff", "Spear AI"]
 license = { text = "MIT" }
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
-dependencies = [
-  "ruff~=0.12"
-]
+dependencies = ["ruff~=0.12"]
 
 [project.urls]
 Changelog = "https://github.com/spear-ai/citizen/tree/main/packages/ruff-config/CHANGELOG.md"

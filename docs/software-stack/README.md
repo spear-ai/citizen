@@ -254,7 +254,7 @@ A team communication platform that combines chat rooms, direct messaging, and ap
 
 TODO: Fill me in
 
-## JavaScript package manager: **Yarn**
+## JavaScript package manager: **pnpm**
 
 TODO: Fill me in
 
@@ -303,11 +303,11 @@ Alternatives:
 
 TODO: Fill me in
 
-## JavaScript linting: **ESLint**
+## JavaScript linting: **Oxlint** (ESLint for non-JavaScript files)
 
 TODO: Fill me in
 
-## JavaScript formatting: **Prettier**
+## JavaScript formatting: **Oxfmt**
 
 TODO: Fill me in
 

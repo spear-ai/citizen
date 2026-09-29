@@ -5,7 +5,7 @@ An [ESLint](https://eslint.org) config with all batteries included.
 ## Installation
 
 ```shell
-yarn add -D eslint @spear-ai/eslint-config
+pnpm add -D eslint @spear-ai/eslint-config
 ```
 
 ## Usage

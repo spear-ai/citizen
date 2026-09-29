@@ -2,12 +2,26 @@
   "name": "@spear-ai/eslint-config",
   "version": "21.1.0",
   "description": "Spear AI ESLint config",
+  "license": "MIT",
   "author": {
     "name": "Spear AI",
     "email": "org@spear.ai",
     "url": "https://spear.ai"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spear-ai/citizen.git",
+    "directory": "packages/eslint-config"
+  },
   "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src --clean --dts --format cjs,esm",
+    "dev": "pnpm run build --watch",
+    "npmpkgjsonlint:check": "npmPkgJsonLint ."
+  },
   "dependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "^4.3.0",
     "@graphql-eslint/eslint-plugin": "^3.20.1",
@@ -48,38 +62,20 @@
     "yaml-eslint-parser": "^1.2.2"
   },
   "devDependencies": {
+    "@spear-ai/npm-package-json-lint-config": "workspace:*",
+    "@spear-ai/tsconfig": "workspace:*",
     "@types/eslint": "8.56.10",
-    "eslint": "8.57.0",
+    "eslint": "catalog:shared-dev",
     "graphql": "16.8.1",
-    "npm-package-json-lint": "11.0.0",
-    "prettier": "3.5.3",
+    "npm-package-json-lint": "catalog:shared-dev",
     "react": "18.3.1",
-    "tsup": "8.0.2",
-    "typescript": "5.4.5"
+    "tsup": "catalog:shared-dev",
+    "typescript": "catalog:shared-dev"
   },
-  "license": "MIT",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
   "peerDependencies": {
     "eslint": "^8.57.0",
     "graphql": ">=15.8.0 <17",
     "react": "^18.2.0",
     "typescript": "^5.0.4"
-  },
-  "repository": {
-    "type": "git",
-    "directory": "packages/eslint-config",
-    "url": "https://github.com/spear-ai/citizen.git"
-  },
-  "scripts": {
-    "build": "tsup src --clean --dts --format cjs,esm",
-    "dev": "yarn build --watch",
-    "eslint:check": "eslint --max-warnings 0 .",
-    "eslint:fix": "yarn eslint:check --fix",
-    "npmpkgjsonlint:check": "npmPkgJsonLint .",
-    "prettier:check": "prettier --check .",
-    "prettier:fix": "prettier --write .",
-    "typescript:check": "tsc --noEmit"
-  },
-  "types": "./dist/index.d.ts"
+  }
 }

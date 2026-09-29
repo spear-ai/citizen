@@ -5,7 +5,7 @@ A [Prettier](https://prettier.io) config.
 ## Installation
 
 ```shell
-yarn add -D @spear-ai/prettier-config @types/prettier prettier
+pnpm add -D @spear-ai/prettier-config @types/prettier prettier
 ```
 
 ## Usage

@@ -6,10 +6,10 @@
       "bungcip.better-toml",
       "charliermarsh.ruff",
       "dbaeumer.vscode-eslint",
-      "esbenp.prettier-vscode",
       "exiasr.hadolint",
       "ms-azuretools.vscode-docker",
       "ms-python.python",
+      "oxc.oxc-vscode",
       "sleistner.vscode-fileutils",
       "timonwong.shellcheck",
       "tyriar.sort-lines",
@@ -46,6 +46,10 @@
       "path": "packages/npm-package-json-lint-config",
     },
     {
+      "name": "spear-ai/oxlint-config",
+      "path": "packages/oxlint-config",
+    },
+    {
       "name": "spear-ai/prettier-config",
       "path": "packages/prettier-config",
     },
@@ -68,25 +72,25 @@
   ],
   "settings": {
     "[graphql]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.defaultFormatter": "oxc.oxc-vscode",
     },
     "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.defaultFormatter": "oxc.oxc-vscode",
     },
     "[javascriptreact]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.defaultFormatter": "oxc.oxc-vscode",
     },
     "[json]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.defaultFormatter": "oxc.oxc-vscode",
     },
     "[json5]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.defaultFormatter": "oxc.oxc-vscode",
     },
     "[jsonc]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.defaultFormatter": "oxc.oxc-vscode",
     },
     "[markdown]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.defaultFormatter": "oxc.oxc-vscode",
     },
     "[python]": {
       "editor.codeActionsOnSave": {
@@ -100,13 +104,13 @@
       "editor.tabSize": 2,
     },
     "[typescript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.defaultFormatter": "oxc.oxc-vscode",
     },
     "[typescriptreact]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.defaultFormatter": "oxc.oxc-vscode",
     },
     "[yaml]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.defaultFormatter": "oxc.oxc-vscode",
       "editor.tabSize": 2,
     },
     "editor.autoClosingQuotes": "always",
@@ -117,23 +121,12 @@
     "editor.quickSuggestions": {
       "strings": true,
     },
-    "eslint.experimental.useFlatConfig": true,
-    "eslint.validate": [
-      "graphql",
-      "javascript",
-      "javascriptreact",
-      "json",
-      "json5",
-      "jsonc",
-      "markdown",
-      "toml",
-      "typescript",
-      "typescriptreact",
-      "yaml",
-    ],
+    "eslint.useFlatConfig": true,
+    "eslint.validate": ["json", "json5", "jsonc", "toml", "yaml"],
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
+    "oxc.typeAware": true,
     "python.testing.pytestEnabled": true,
     "scss.validate": false,
     "tailwindCSS.includeLanguages": {

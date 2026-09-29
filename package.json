@@ -1,61 +1,69 @@
 {
   "name": "@spear-ai/citizen",
   "version": "1.0.0",
+  "private": true,
   "description": "Spear AI Code Citizen",
+  "license": "MIT",
   "author": {
     "name": "Spear AI",
     "email": "org@spear.ai",
     "url": "https://spear.ai"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spear-ai/citizen.git"
+  },
   "type": "module",
-  "dependencies": {
+  "scripts": {
+    "build": "turbo run build",
+    "check": "turbo run root-check check build test",
+    "commitlint:check": "commitlint --last",
+    "eslint:check": "eslint --max-warnings 0 .",
+    "eslint:fix": "eslint --fix --max-warnings 0 .",
+    "fix": "turbo run fix --continue=always",
+    "github-actions:push": "act push -s GH_PAT=$GH_PAT -s GITHUB_TOKEN=$GH_PAT -s NPM_TOKEN=$NPM_TOKEN",
+    "github-actions:push:release-tag": "act push -e .github/test-events/push-release-tag.json -s GH_PAT=$GH_PAT -s GITHUB_TOKEN=$GH_PAT",
+    "npmpkgjsonlint:check": "npmPkgJsonLint .",
+    "oxfmt:check": "oxfmt --check .",
+    "oxfmt:fix": "oxfmt --write .",
+    "oxlint:check": "oxlint --type-aware --type-check --deny-warnings",
+    "oxlint:fix": "oxlint --fix --type-aware --type-check --deny-warnings",
+    "prepare": "husky",
+    "publish-packages": "pnpm run publish-packages:custom && pnpm run publish-packages:npm && pnpm run publish-packages:github && pnpm changeset tag",
+    "publish-packages:custom": "tsx scripts/publish-packages.ts",
+    "publish-packages:github": "npm_config_registry=https://npm.pkg.github.com changeset publish --no-git-tag",
+    "publish-packages:npm": "changeset publish --no-git-tag",
+    "shellcheck:check": "shellcheck .cursor/**/*.sh packages/**/*.sh",
+    "shellcheck:fix": "shellcheck --format diff .cursor/**/*.sh packages/**/*.sh | git apply --allow-empty",
+    "update": "pnpm update --interactive --latest --recursive",
+    "version": "changeset version && pnpm --recursive run sync-version"
+  },
+  "devDependencies": {
     "@changesets/changelog-github": "0.5.0",
     "@changesets/cli": "2.27.3",
     "@commitlint/cli": "19.3.0",
     "@commitlint/types": "19.0.3",
     "@manypkg/get-packages": "1.1.3",
-    "@spear-ai/eslint-config": "*",
-    "@spear-ai/npm-package-json-lint-config": "*",
+    "@spear-ai/eslint-config": "workspace:*",
+    "@spear-ai/npm-package-json-lint-config": "workspace:*",
+    "@spear-ai/oxlint-config": "workspace:*",
+    "@spear-ai/tsconfig": "workspace:*",
     "@types/node": "20.12.12",
     "commitlint": "19.3.0",
-    "eslint": "8.57.0",
+    "eslint": "catalog:shared-dev",
     "husky": "9.0.11",
-    "npm-package-json-lint": "11.0.0",
-    "prettier": "3.5.3",
+    "npm-package-json-lint": "catalog:shared-dev",
+    "oxfmt": "catalog:shared-dev",
+    "oxlint": "catalog:shared-dev",
+    "oxlint-tsgolint": "catalog:shared-dev",
     "shellcheck": "4.1.0",
-    "tsx": "4.10.5",
-    "turbo": "1.13.3",
-    "typescript": "5.4.5"
+    "tsx": "catalog:shared-dev",
+    "turbo": "catalog:shared-dev",
+    "typescript": "catalog:shared-dev"
   },
-  "license": "MIT",
-  "packageManager": "yarn@4.2.2",
-  "private": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/spear-ai/citizen.git"
+  "engines": {
+    "node": ">=24",
+    "pnpm": ">=11"
   },
-  "scripts": {
-    "version": "changeset version && yarn workspaces foreach -A run sync-version",
-    "build": "yarn dlx turbo build",
-    "commitlint:check": "commitlint --last",
-    "eslint:check": "eslint --max-warnings 0 .",
-    "eslint:fix": "yarn eslint:check --fix",
-    "github-actions:push": "act push -s GH_PAT=$GH_PAT -s GITHUB_TOKEN=$GH_PAT -s NPM_TOKEN=$NPM_TOKEN",
-    "github-actions:push:release-tag": "act push -e .github/test-events/push-release-tag.json -s GH_PAT=$GH_PAT -s GITHUB_TOKEN=$GH_PAT",
-    "npmpkgjsonlint:check": "npmPkgJsonLint .",
-    "prepare": "husky",
-    "prettier:check": "prettier --check .",
-    "prettier:fix": "prettier --write .",
-    "publish-packages": "yarn run publish-packages:custom && yarn run publish-packages:npm && yarn run publish-packages:github && yarn changeset tag",
-    "publish-packages:custom": "tsx scripts/publish-packages.ts",
-    "publish-packages:github": "npm_config_registry=https://npm.pkg.github.com changeset publish --no-git-tag",
-    "publish-packages:npm": "changeset publish --no-git-tag",
-    "shellcheck:check": "shellcheck .cursor/**/*.sh",
-    "shellcheck:fix": "shellcheck --format diff .cursor/**/*.sh | git apply --allow-empty",
-    "typescript:check": "tsc --noEmit",
-    "update": "yarn upgrade-interactive"
-  },
-  "workspaces": [
-    "packages/*"
-  ]
+  "packageManager": "pnpm@11.1.3"
 }

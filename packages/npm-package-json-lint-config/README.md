@@ -5,7 +5,7 @@ A collection of [npm-package-json-lint](https://npmpackagejsonlint.org) config f
 ## Installation
 
 ```shell
-yarn add -D npm-package-json-lint @spear-ai/npm-package-json-lint-config
+pnpm add -D npm-package-json-lint @spear-ai/npm-package-json-lint-config
 ```
 
 ## Usage

@@ -2,43 +2,38 @@
   "name": "@spear-ai/prettier-config",
   "version": "3.0.0",
   "description": "Spear AI Prettier config",
+  "license": "MIT",
   "author": {
     "name": "Spear AI",
     "email": "org@spear.ai",
     "url": "https://spear.ai"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spear-ai/citizen.git",
+    "directory": "packages/prettier-config"
+  },
   "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src --cjsInterop --clean --dts --format cjs,esm --splitting",
+    "dev": "pnpm run build --watch",
+    "npmpkgjsonlint:check": "npmPkgJsonLint ."
+  },
   "dependencies": {
     "prettier-plugin-tailwindcss": "^0.6"
   },
   "devDependencies": {
-    "@types/prettier": "3.0.0",
-    "eslint": "8.57.0",
-    "npm-package-json-lint": "11.0.0",
+    "@spear-ai/npm-package-json-lint-config": "workspace:*",
+    "@spear-ai/tsconfig": "workspace:*",
+    "npm-package-json-lint": "catalog:shared-dev",
     "prettier": "3.5.3",
-    "tsup": "8.0.2",
-    "typescript": "5.4.5"
+    "tsup": "catalog:shared-dev",
+    "typescript": "catalog:shared-dev"
   },
-  "license": "MIT",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
   "peerDependencies": {
     "prettier": "^3"
-  },
-  "repository": {
-    "type": "git",
-    "directory": "packages/prettier-config",
-    "url": "https://github.com/spear-ai/citizen.git"
-  },
-  "scripts": {
-    "build": "tsup src --cjsInterop --clean --dts --format cjs,esm --splitting",
-    "dev": "yarn build --watch",
-    "eslint:check": "eslint --max-warnings 0 .",
-    "eslint:fix": "yarn eslint:check --fix",
-    "npmpkgjsonlint:check": "npmPkgJsonLint .",
-    "prettier:check": "prettier --check .",
-    "prettier:fix": "prettier --write .",
-    "typescript:check": "tsc --noEmit"
-  },
-  "types": "./dist/index.d.ts"
+  }
 }

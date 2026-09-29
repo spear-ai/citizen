@@ -1,10 +1,7 @@
 *.log
 .DS_Store
 .turbo
-.yarn/*
-node_modules/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+.venv
+__pycache__
+dist
+node_modules

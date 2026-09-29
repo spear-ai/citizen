@@ -1,44 +1,44 @@
 {
   "name": "@spear-ai/dev-image",
   "version": "2.0.0",
+  "private": true,
   "description": "Spear AI Docker dev image",
+  "license": "MIT",
   "author": {
     "name": "Spear AI",
     "email": "org@spear.ai",
     "url": "https://spear.ai"
   },
-  "devDependencies": {
-    "shx": "0.3.4"
-  },
-  "license": "MIT",
-  "private": true,
   "repository": {
     "type": "git",
-    "directory": "packages/dev-image",
-    "url": "https://github.com/spear-ai/citizen.git"
+    "url": "https://github.com/spear-ai/citizen.git",
+    "directory": "packages/dev-image"
   },
   "scripts": {
-    "dev": "yarn run unstable:build && yarn run start",
+    "dev": "pnpm run unstable:build && pnpm run start",
     "start": "docker run spear-ai/dev-image",
-    "test": "yarn run test:direnv && yarn run test:docker && yarn run test:docker-compose && yarn run test:git && yarn run test:fnm && yarn run test:node && yarn run test:ubuntu && yarn run test:yarn && yarn run test:pyenv && yarn run test:python && yarn run test:uv && yarn run test:pulumi && yarn run test:vim",
     "test:direnv": "docker run spear-ai/dev-image direnv --version | grep 2.25.2",
     "test:docker": "docker run spear-ai/dev-image docker --version | grep 20.10.21",
     "test:docker-compose": "docker run spear-ai/dev-image docker-compose --version | grep 2.14.0",
     "test:fnm": "docker run spear-ai/dev-image fnm --version | grep 1.33.1",
     "test:git": "docker run spear-ai/dev-image git --version | grep 2.34.1",
     "test:node": "docker run spear-ai/dev-image fnm list | grep 18.12.1",
-    "test:uv": "docker run spear-ai/dev-image uv --version | grep 0.1.0",
     "test:pulumi": "docker run spear-ai/dev-image pulumi version | grep 3.48.0",
     "test:pyenv": "docker run spear-ai/dev-image pyenv --version | grep 2.3.7",
     "test:python": "docker run spear-ai/dev-image python --version | grep 3.9.10",
     "test:ubuntu": "docker run spear-ai/dev-image lsb_release -a | grep 22.04.1",
+    "test:uv": "docker run spear-ai/dev-image uv --version | grep 0.1.0",
     "test:vim": "docker run spear-ai/dev-image vim --version | grep 8.2.3995",
     "test:yarn": "echo 'TODO: Figure out how to run `fnm` deterministically in order to test Yarn. See: https://github.com/Schniz/fnm/issues/838'",
-    "unstable:build": "yarn run unstable:build:docker:unstable:build && yarn run unstable:build:docker:save",
+    "unstable:build": "pnpm run unstable:build:docker:build && pnpm run unstable:build:docker:save",
+    "unstable:build:docker:build": "docker buildx build --tag spear-ai/dev-image:latest .",
     "unstable:build:docker:save": "shx mkdir -p dist && shx rm -f dist/docker-image.tar.gz && docker save spear-ai/dev-image --output dist/docker-image.tar.gz",
-    "unstable:build:docker:unstable:build": "docker unstable:buildx unstable:build --tag spear-ai/dev-image:latest .",
-    "unstable:check": "yarn run unstable:lint && yarn run test",
-    "unstable:lint": "yarn run unstable:lint:docker",
-    "unstable:lint:docker": "docker run --rm hadounstable:lint/hadounstable:lint < Dockerfile"
+    "unstable:check": "pnpm run unstable:lint && pnpm run unstable:test",
+    "unstable:lint": "pnpm run unstable:lint:docker",
+    "unstable:lint:docker": "docker run --rm -i hadolint/hadolint < Dockerfile",
+    "unstable:test": "pnpm run test:direnv && pnpm run test:docker && pnpm run test:docker-compose && pnpm run test:git && pnpm run test:fnm && pnpm run test:node && pnpm run test:ubuntu && pnpm run test:yarn && pnpm run test:pyenv && pnpm run test:python && pnpm run test:uv && pnpm run test:pulumi && pnpm run test:vim"
+  },
+  "devDependencies": {
+    "shx": "catalog:shared-dev"
   }
 }
