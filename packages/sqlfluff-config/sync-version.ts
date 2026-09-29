@@ -1,4 +1,4 @@
-import replaceInFile from "replace-in-file";
+import { replaceInFile } from "replace-in-file";
 import package_ from "./package.json" with { type: "json" };
 
 await replaceInFile({

@@ -18,7 +18,7 @@
     "./*": "./dist/*.cjs"
   },
   "scripts": {
-    "build": "tsup src --cjsInterop --clean --dts --format cjs,esm --splitting",
+    "build": "tsdown",
     "dev": "pnpm run build --watch",
     "npmpkgjsonlint:check": "npmPkgJsonLint ."
   },
@@ -29,9 +29,9 @@
   "devDependencies": {
     "@spear-ai/npm-package-json-lint-config": "workspace:*",
     "@spear-ai/tsconfig": "workspace:*",
-    "@types/node": "20.12.12",
+    "@types/node": "24.19.0",
     "npm-package-json-lint": "catalog:shared-dev",
-    "tsup": "catalog:shared-dev",
+    "tsdown": "catalog:shared-dev",
     "typescript": "catalog:shared-dev"
   }
 }

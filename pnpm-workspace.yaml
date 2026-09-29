@@ -5,17 +5,17 @@ allowBuilds:
   unrs-resolver: true
 catalogs:
   shared-dev:
-    eslint: 8.57.0
+    eslint: 10.11.0
     npm-package-json-lint: 11.0.0
-    oxfmt: 0.36.0
-    oxlint: 1.58.0
-    oxlint-tsgolint: 0.22.1
-    shx: 0.3.4
-    tsup: 8.0.2
-    tsx: 4.10.5
-    turbo: 2.9.17
-    typescript: 5.4.5
-    vitest: 1.6.0
+    oxfmt: 0.71.0
+    oxlint: 1.86.0
+    oxlint-tsgolint: 7.0.2003
+    shx: 0.4.0
+    tsdown: 0.23.0
+    tsx: 4.23.15
+    turbo: 2.11.5
+    typescript: 6.0.3
+    vitest: 5.0.2
 minimumReleaseAge: 1440
 packages:
   - packages/*

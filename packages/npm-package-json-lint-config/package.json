@@ -18,7 +18,7 @@
     "./*": "./dist/*.cjs"
   },
   "scripts": {
-    "build": "tsup src --cjsInterop --clean --splitting",
+    "build": "tsdown",
     "dev": "pnpm run build --watch",
     "npmpkgjsonlint:check": "npmPkgJsonLint --configFile dist/spear-library.cjs ."
   },
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "npm-package-json-lint": "catalog:shared-dev",
-    "tsup": "catalog:shared-dev",
+    "tsdown": "catalog:shared-dev",
     "typescript": "catalog:shared-dev"
   },
   "peerDependencies": {

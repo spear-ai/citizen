@@ -32,7 +32,7 @@
     "@spear-ai/npm-package-json-lint-config": "workspace:*",
     "@spear-ai/tsconfig": "workspace:*",
     "npm-package-json-lint": "catalog:shared-dev",
-    "replace-in-file": "7.1.0",
+    "replace-in-file": "9.0.0",
     "tsx": "catalog:shared-dev"
   }
 }

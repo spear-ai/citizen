@@ -1,4 +1,7 @@
 {
+  "compilerOptions": {
+    "types": ["node"]
+  },
   "exclude": ["dist", "node_modules", "packages"],
   "extends": "@spear-ai/tsconfig",
   "include": [
