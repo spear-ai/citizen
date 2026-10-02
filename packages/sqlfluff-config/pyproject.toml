@@ -1,6 +1,6 @@
 [project]
 name = "spear-ai-sqlfluff-config"
-version = "2.0.2"
+version = "3.0.0"
 description = "Spear AI’s SQLFluff config"
 authors = [{ name = "Spear AI", email = "org@spear.ai" }]
 keywords = ["SQLFluff", "Spear AI", "config"]

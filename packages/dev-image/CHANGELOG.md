@@ -1,5 +1,15 @@
 # @spear-ai/dev-image
 
+## 3.0.0
+
+### Major Changes
+
+- [#666](https://github.com/spear-ai/citizen/pull/666) [`67f6401`](https://github.com/spear-ai/citizen/commit/67f6401c04369f3e8934c7ee20db04983bc5d420) Thanks [@afrodynamic](https://github.com/afrodynamic)! - Updated the dev image to Ubuntu 24.04, Node.js 24.21.0, Python 3.11.16, Docker 29.8.1, Docker Compose 5.5.1 and Pulumi 3.265.0, replaced Yarn with pnpm 11.1.3, and added uv 0.12.20.
+
+### Patch Changes
+
+- [#665](https://github.com/spear-ai/citizen/pull/665) [`85de3df`](https://github.com/spear-ai/citizen/commit/85de3dfccdc87532cf324f68194b43a0625641ed) Thanks [@afrodynamic](https://github.com/afrodynamic)! - Moved package builds and releases from Yarn to pnpm.
+
 ## 2.0.0
 
 ### Major Changes

@@ -1,6 +1,6 @@
 {
   "name": "@spear-ai/dev-image",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "description": "Spear AI Docker dev image",
   "license": "MIT",
