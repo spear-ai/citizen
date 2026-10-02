@@ -1,4 +1,5 @@
 import { fileURLToPath } from "node:url";
+import { Alphabet } from "eslint-plugin-perfectionist/alphabet";
 import { defineConfig } from "oxlint";
 
 // Oxlint resolves `jsPlugins` from the consuming configuration file, so each plugin is resolved
@@ -7,6 +8,18 @@ const resolvePlugin = (packageName: string) => ({
   name: packageName.replace(/^(?<scope>@[^/]+\/)?eslint-plugin-?/u, "$<scope>").replace(/\/$/u, ""),
   specifier: fileURLToPath(import.meta.resolve(packageName)),
 });
+
+// Sorts type members by character code, so uppercase keys come before lowercase ones. The range
+// stops below the surrogate block because Oxlint passes rule options to plugins as JSON.
+const characterCodeSortOptions = {
+  alphabet: Alphabet.generateFrom(
+    Array.from({ length: 0xd8_00 }, (_, codePoint) => String.fromCodePoint(codePoint)),
+  )
+    .sortByCharCodeAt()
+    .getCharacters(),
+  ignoreCase: false,
+  type: "custom",
+} as const;
 
 // eslint-disable-next-line import/no-default-export
 export default defineConfig({
@@ -948,8 +961,9 @@ export default defineConfig({
         "sonarjs/prefer-object-literal": "error",
         "sonarjs/prefer-single-boolean-return": "error",
         "sonarjs/prefer-while": "error",
-        "typescript-sort-keys/interface": "error",
-        "typescript-sort-keys/string-enum": "error",
+        "perfectionist/sort-enums": ["error", characterCodeSortOptions],
+        "perfectionist/sort-interfaces": ["error", characterCodeSortOptions],
+        "perfectionist/sort-object-types": ["error", characterCodeSortOptions],
         "unicorn/catch-error-name": "error",
         "unicorn/consistent-empty-array-spread": "error",
         "unicorn/consistent-function-scoping": "error",
@@ -1119,7 +1133,7 @@ export default defineConfig({
         resolvePlugin("@eslint-community/eslint-plugin-eslint-comments"),
         resolvePlugin("eslint-plugin-regexp"),
         resolvePlugin("eslint-plugin-sonarjs"),
-        resolvePlugin("eslint-plugin-typescript-sort-keys"),
+        resolvePlugin("eslint-plugin-perfectionist"),
         resolvePlugin("@stylistic/eslint-plugin"),
         resolvePlugin("eslint-plugin-canonical"),
         resolvePlugin("eslint-plugin-formatjs"),

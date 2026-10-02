@@ -18,23 +18,24 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsup src --cjsInterop --clean --dts --format cjs,esm --splitting",
+    "build": "tsdown",
     "dev": "pnpm run build --watch & pnpm run test:dev",
     "npmpkgjsonlint:check": "npmPkgJsonLint .",
     "test": "vitest run",
     "test:dev": "vitest watch"
   },
   "devDependencies": {
-    "@commitlint/types": "19.0.3",
+    "@commitlint/types": "21.2.3",
     "@spear-ai/npm-package-json-lint-config": "workspace:*",
     "@spear-ai/tsconfig": "workspace:*",
-    "commitlint": "19.3.0",
+    "commitlint": "21.2.3",
     "npm-package-json-lint": "catalog:shared-dev",
-    "tsup": "catalog:shared-dev",
+    "tsdown": "catalog:shared-dev",
     "typescript": "catalog:shared-dev",
+    "vite": "8.3.1",
     "vitest": "catalog:shared-dev"
   },
   "peerDependencies": {
-    "commitlint": "^19.3.0"
+    "commitlint": "^19.3.0 || ^20.0.0 || ^21.0.0"
   }
 }

@@ -18,22 +18,22 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsup src --cjsInterop --clean --dts --format cjs,esm --splitting",
+    "build": "tsdown",
     "dev": "pnpm run build --watch",
     "npmpkgjsonlint:check": "npmPkgJsonLint ."
   },
   "dependencies": {
-    "prettier-plugin-tailwindcss": "^0.6"
+    "prettier-plugin-tailwindcss": "^0.8.1"
   },
   "devDependencies": {
     "@spear-ai/npm-package-json-lint-config": "workspace:*",
     "@spear-ai/tsconfig": "workspace:*",
     "npm-package-json-lint": "catalog:shared-dev",
-    "prettier": "3.5.3",
-    "tsup": "catalog:shared-dev",
+    "prettier": "3.9.9",
+    "tsdown": "catalog:shared-dev",
     "typescript": "catalog:shared-dev"
   },
   "peerDependencies": {
-    "prettier": "^3"
+    "prettier": "^3.7.0"
   }
 }

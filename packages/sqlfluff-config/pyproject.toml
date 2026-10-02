@@ -7,7 +7,7 @@ keywords = ["SQLFluff", "Spear AI", "config"]
 license = { text = "MIT" }
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
-dependencies = ["sqlfluff==3.0.6"]
+dependencies = ["sqlfluff==4.3.0"]
 
 [project.urls]
 Changelog = "https://github.com/spear-ai/citizen/tree/main/packages/sqlfluff-config/CHANGELOG.md"
