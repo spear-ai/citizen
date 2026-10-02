@@ -50,7 +50,7 @@
   "devDependencies": {
     "@spear-ai/npm-package-json-lint-config": "workspace:*",
     "@spear-ai/tsconfig": "workspace:*",
-    "@types/node": "24.19.0",
+    "@types/node": "26.6.3",
     "npm-package-json-lint": "catalog:shared-dev",
     "oxlint": "catalog:shared-dev",
     "tsdown": "catalog:shared-dev",
