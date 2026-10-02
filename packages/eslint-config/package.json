@@ -66,7 +66,7 @@
     "@spear-ai/tsconfig": "workspace:*",
     "@types/eslint": "8.56.10",
     "eslint": "catalog:shared-dev",
-    "graphql": "16.8.1",
+    "graphql": "16.14.2",
     "npm-package-json-lint": "catalog:shared-dev",
     "react": "18.3.1",
     "tsup": "catalog:shared-dev",
