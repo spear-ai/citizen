@@ -2,41 +2,33 @@
   "name": "@spear-ai/tsconfig",
   "version": "4.0.1",
   "description": "Spear AI TSConfig",
+  "keywords": [
+    "TSConfig",
+    "TypeScript",
+    "config"
+  ],
+  "license": "MIT",
   "author": {
     "name": "Spear AI",
     "email": "org@spear.ai",
     "url": "https://spear.ai"
   },
-  "type": "module",
-  "devDependencies": {
-    "eslint": "8.57.0",
-    "npm-package-json-lint": "11.0.0",
-    "prettier": "3.5.3",
-    "turbo": "1.13.3",
-    "typescript": "5.4.5"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spear-ai/citizen.git",
+    "directory": "packages/tsconfig"
   },
   "files": [
     "CHANGELOG.md",
     "tsconfig.json"
   ],
-  "keywords": [
-    "TypeScript",
-    "config",
-    "TSConfig"
-  ],
-  "license": "MIT",
+  "type": "module",
   "main": "tsconfig.json",
-  "repository": {
-    "type": "git",
-    "directory": "packages/tsconfig",
-    "url": "https://github.com/spear-ai/citizen.git"
-  },
   "scripts": {
-    "eslint:check": "eslint --max-warnings 0 .",
-    "eslint:fix": "yarn eslint:check --fix",
-    "npmpkgjsonlint:check": "npmPkgJsonLint .",
-    "prettier:check": "prettier --check .",
-    "prettier:fix": "prettier --write .",
-    "typescript:check": "tsc --noEmit"
+    "npmpkgjsonlint:check": "npmPkgJsonLint ."
+  },
+  "devDependencies": {
+    "@spear-ai/npm-package-json-lint-config": "workspace:*",
+    "npm-package-json-lint": "catalog:shared-dev"
   }
 }

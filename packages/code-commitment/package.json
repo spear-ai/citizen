@@ -1,34 +1,25 @@
 {
   "name": "@spear-ai/code-commitment",
   "version": "1.0.0",
+  "private": true,
   "description": "Spear AI Code Commitment",
+  "license": "MIT",
   "author": {
     "name": "Spear AI",
     "email": "org@spear.ai",
     "url": "https://spear.ai"
   },
-  "type": "module",
-  "devDependencies": {
-    "@types/prettier": "3.0.0",
-    "eslint": "8.57.0",
-    "npm-package-json-lint": "11.0.0",
-    "prettier": "3.5.3",
-    "tsup": "8.0.2",
-    "typescript": "5.4.5"
-  },
-  "license": "MIT",
-  "private": true,
   "repository": {
     "type": "git",
-    "directory": "packages/code-commitment",
-    "url": "https://github.com/spear-ai/citizen.git"
+    "url": "https://github.com/spear-ai/citizen.git",
+    "directory": "packages/code-commitment"
   },
+  "type": "module",
   "scripts": {
-    "eslint:check": "eslint --max-warnings 0 .",
-    "eslint:fix": "yarn eslint:check --fix",
-    "npmpkgjsonlint:check": "npmPkgJsonLint .",
-    "prettier:check": "prettier --check .",
-    "prettier:fix": "prettier --write .",
-    "typescript:check": "tsc --noEmit"
+    "npmpkgjsonlint:check": "npmPkgJsonLint ."
+  },
+  "devDependencies": {
+    "@spear-ai/npm-package-json-lint-config": "workspace:*",
+    "npm-package-json-lint": "catalog:shared-dev"
   }
 }

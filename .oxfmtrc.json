@@ -1,0 +1,16 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "ignorePatterns": [
+    ".ruff_cache",
+    ".turbo",
+    ".venv",
+    "CHANGELOG.md",
+    "dist",
+    "node_modules",
+    "pnpm-lock.yaml"
+  ],
+  "printWidth": 109,
+  "sortPackageJson": {
+    "sortScripts": true
+  }
+}

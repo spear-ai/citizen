@@ -5,7 +5,7 @@ A [TSConfig](https://www.typescriptlang.org/tsconfig) file.
 ## Installation
 
 ```shell
-yarn add -DE @spear-ai/tsconfig
+pnpm add -DE @spear-ai/tsconfig
 ```
 
 ## Usage

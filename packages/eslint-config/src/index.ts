@@ -1,5 +1,5 @@
 import eslintCommentsPlugin from "@eslint-community/eslint-plugin-eslint-comments";
-import graphqlEslint from "@graphql-eslint/eslint-plugin";
+import * as graphqlEslint from "@graphql-eslint/eslint-plugin";
 import nextPlugin from "@next/eslint-plugin-next";
 import stylisticPlugin from "@stylistic/eslint-plugin";
 import type { ESLint, Linter } from "eslint";
@@ -184,8 +184,8 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       jsonc: jsoncPlugin as unknown as ESLint.Plugin,
     },
     rules: {
-      ...(jsoncPlugin.configs.base.overrides[0]?.rules as Linter.RulesRecord),
-      ...(jsoncPlugin.configs["recommended-with-json"].rules as Linter.RulesRecord),
+      ...(jsoncPlugin.configs.base as ESLint.ConfigData).overrides?.[0]?.rules,
+      ...(jsoncPlugin.configs["recommended-with-json"] as ESLint.ConfigData).rules,
       ...jsonFamilyRules,
     },
   },
@@ -199,8 +199,8 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       jsonc: jsoncPlugin as unknown as ESLint.Plugin,
     },
     rules: {
-      ...(jsoncPlugin.configs.base.overrides[0]?.rules as Linter.RulesRecord),
-      ...(jsoncPlugin.configs["recommended-with-json5"].rules as Linter.RulesRecord),
+      ...(jsoncPlugin.configs.base as ESLint.ConfigData).overrides?.[0]?.rules,
+      ...(jsoncPlugin.configs["recommended-with-json5"] as ESLint.ConfigData).rules,
       ...jsonFamilyRules,
     },
   },
@@ -214,8 +214,8 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       jsonc: jsoncPlugin as unknown as ESLint.Plugin,
     },
     rules: {
-      ...(jsoncPlugin.configs.base.overrides[0]?.rules as Linter.RulesRecord),
-      ...(jsoncPlugin.configs["recommended-with-jsonc"].rules as Linter.RulesRecord),
+      ...(jsoncPlugin.configs.base as ESLint.ConfigData).overrides?.[0]?.rules,
+      ...(jsoncPlugin.configs["recommended-with-jsonc"] as ESLint.ConfigData).rules,
       ...jsonFamilyRules,
     },
   },
@@ -290,7 +290,6 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     files: javascriptFamilyFileList,
     ignores: defaultIgnoreFileList,
     languageOptions: {
-      // @ts-expect-error The Typescript ESLint parser doesn’t strictly match
       parser: typescriptEslintParser,
       parserOptions: {
         ecmaFeatures: {
@@ -302,9 +301,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     },
     plugins: {
       "@eslint-community/eslint-comments": eslintCommentsPlugin,
-      // @ts-expect-error The Stylistic ESLint plugins don’t strictly match
       "@stylistic": stylisticPlugin,
-      // @ts-expect-error The Typescript ESLint plugins don’t strictly match
       "@typescript-eslint": typescriptEslintPlugin,
       canonical: canonicalPlugin,
       formatjs: formatJsPlugin,
@@ -345,16 +342,16 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       ...typescriptEslintConfigs.eslintRecommended.rules,
       ...typescriptEslintConfigs.stylisticTypeChecked[2]!.rules, // eslint-disable-line @typescript-eslint/no-non-null-assertion
       ...typescriptEslintConfigs.strictTypeChecked[2]!.rules, // eslint-disable-line @typescript-eslint/no-non-null-assertion
-      ...(eslintCommentsPlugin.configs?.recommended as ESLint.ConfigData).rules,
+      ...(eslintCommentsPlugin.configs?.recommended as ESLint.ConfigData | undefined)?.rules,
       ...importPluginX.configs.recommended.rules,
       ...importPluginX.configs["stage-0"].rules,
       ...importPluginX.configs.typescript.rules,
-      ...(regexpPlugin.configs?.all as ESLint.ConfigData).rules,
-      ...(promisePlugin.configs?.recommended as ESLint.ConfigData).rules,
-      ...(sonarjsPlugin.configs?.recommended as ESLint.ConfigData).rules,
+      ...(regexpPlugin.configs?.all as ESLint.ConfigData | undefined)?.rules,
+      ...(promisePlugin.configs?.recommended as ESLint.ConfigData | undefined)?.rules,
+      ...(sonarjsPlugin.configs?.recommended as ESLint.ConfigData | undefined)?.rules,
       // ...stylisticPlugin.configs["recommended-flat"].rules,
-      ...(typescriptSortKeysPlugin.configs?.recommended as ESLint.ConfigData).rules,
-      ...(unicornPlugin.configs?.recommended as ESLint.ConfigData).rules,
+      ...(typescriptSortKeysPlugin.configs?.recommended as ESLint.ConfigData | undefined)?.rules,
+      ...(unicornPlugin.configs?.recommended as ESLint.ConfigData | undefined)?.rules,
       "@eslint-community/eslint-comments/disable-enable-pair": [
         "error",
         {
@@ -637,7 +634,6 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     files: javascriptFamilyInMarkdownFileList,
     ignores: defaultIgnoreFileList,
     languageOptions: {
-      // @ts-expect-error The Typescript ESLint parser doesn’t strictly match
       parser: typescriptEslintParser,
       parserOptions: {
         project: false,
@@ -695,10 +691,10 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
     files: storybookFileList,
     ignores: defaultIgnoreFileList,
     rules: {
-      ...(storybookPlugin.configs?.["addon-interactions"] as ESLint.ConfigData).rules,
-      ...(storybookPlugin.configs?.csf as ESLint.ConfigData).rules,
-      ...(storybookPlugin.configs?.["csf-strict"] as ESLint.ConfigData).rules,
-      ...(storybookPlugin.configs?.recommended as ESLint.ConfigData).rules,
+      ...(storybookPlugin.configs?.["addon-interactions"] as ESLint.ConfigData | undefined)?.rules,
+      ...(storybookPlugin.configs?.csf as ESLint.ConfigData | undefined)?.rules,
+      ...(storybookPlugin.configs?.["csf-strict"] as ESLint.ConfigData | undefined)?.rules,
+      ...(storybookPlugin.configs?.recommended as ESLint.ConfigData | undefined)?.rules,
       ...{}, // eslint-disable-line unicorn/no-useless-spread
     },
   },
@@ -709,8 +705,19 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       "json-schema-validator": jsonSchemaValidatorPlugin,
     },
     rules: {
-      ...(jsonSchemaValidatorPlugin.configs?.recommended as ESLint.ConfigData).rules,
-      "json-schema-validator/no-invalid": ["error"],
+      ...(jsonSchemaValidatorPlugin.configs?.recommended as ESLint.ConfigData | undefined)?.rules,
+      "json-schema-validator/no-invalid": [
+        "error",
+        {
+          schemas: [
+            // The catalog serves this schema from SchemaStore's default branch, whose relative references can precede their publication
+            {
+              fileMatch: ["pyproject.toml"],
+              schema: "https://json.schemastore.org/pyproject.json",
+            },
+          ],
+        },
+      ],
     },
   },
   {
@@ -752,7 +759,7 @@ export const baseEslintConfig: Linter.FlatConfig[] = [
       react: reactPlugin,
     },
     rules: {
-      ...(markdownPlugin.configs?.recommended as ESLint.ConfigData).overrides?.[1]?.rules,
+      ...(markdownPlugin.configs?.recommended as ESLint.ConfigData | undefined)?.overrides?.[1]?.rules,
       "@typescript-eslint/no-unused-vars": ["off"],
       "formatjs/no-literal-string-in-jsx": ["off"],
       "import-x/no-default-export": ["off"],
@@ -783,8 +790,8 @@ export const nextEslintConfig = [
       "@next/next": nextPlugin,
     },
     rules: {
-      ...(nextPlugin.configs?.recommended as ESLint.ConfigData).rules,
-      ...(nextPlugin.configs?.["core-web-vitals"] as ESLint.ConfigData).rules,
+      ...(nextPlugin.configs?.recommended as ESLint.ConfigData | undefined)?.rules,
+      ...(nextPlugin.configs?.["core-web-vitals"] as ESLint.ConfigData | undefined)?.rules,
       "import-x/no-anonymous-default-export": "warn",
       "jsx-a11y/alt-text": [
         "warn",
@@ -834,9 +841,9 @@ export const graphqlEslintConfig = [
       "@graphql-eslint": graphqlEslint,
     },
     rules: {
-      ...graphqlEslint.configs["schema-recommended"].rules, // eslint-disable-line import-x/no-named-as-default-member
-      ...graphqlEslint.configs["schema-all"].rules, // eslint-disable-line import-x/no-named-as-default-member
-      ...graphqlEslint.configs.relay.rules, // eslint-disable-line import-x/no-named-as-default-member
+      ...graphqlEslint.configs["schema-recommended"].rules,
+      ...graphqlEslint.configs["schema-all"].rules,
+      ...graphqlEslint.configs.relay.rules,
       "@graphql-eslint/relay-edge-types": [
         "error",
         {

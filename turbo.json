@@ -1,14 +1,49 @@
 {
-  "$schema": "https://turbo.build/schema.v1.json",
-  "pipeline": {
-    "//#commitlint:check": {},
-    "//#eslint:check": {},
-    "//#eslint:fix": {},
-    "//#npmpkgjsonlint:check": {},
-    "//#prettier:check": {},
-    "//#prettier:fix": {},
-    "//#root:fix": {
-      "dependsOn": ["^build"]
+  "$schema": "https://turborepo.com/schema.json",
+  "globalEnv": ["CI", "NODE_ENV"],
+  "tasks": {
+    "//#commitlint:check": {
+      "cache": false,
+      "dependsOn": ["@spear-ai/commitlint-config#build"]
+    },
+    "//#eslint:check": {
+      "cache": false,
+      "dependsOn": ["@spear-ai/eslint-config#build"]
+    },
+    "//#eslint:fix": {
+      "cache": false,
+      "dependsOn": ["@spear-ai/eslint-config#build"]
+    },
+    "//#npmpkgjsonlint:check": {
+      "cache": false,
+      "dependsOn": ["@spear-ai/npm-package-json-lint-config#build"]
+    },
+    "//#oxfmt:check": {
+      "cache": false
+    },
+    "//#oxfmt:fix": {
+      "cache": false
+    },
+    "//#oxlint:check": {
+      "cache": false,
+      "dependsOn": ["@spear-ai/oxlint-config#build"]
+    },
+    "//#oxlint:fix": {
+      "cache": false,
+      "dependsOn": ["@spear-ai/oxlint-config#build"]
+    },
+    "//#root-check": {
+      "dependsOn": [
+        "//#commitlint:check",
+        "//#eslint:check",
+        "//#npmpkgjsonlint:check",
+        "//#oxfmt:check",
+        "//#oxlint:check",
+        "//#shellcheck:check"
+      ]
+    },
+    "//#root-fix": {
+      "dependsOn": ["//#eslint:fix", "//#oxfmt:fix", "//#oxlint:fix", "//#shellcheck:fix"]
     },
     "//#shellcheck:check": {
       "inputs": [".shellcheckrc", "**/*.sh"]
@@ -16,102 +51,23 @@
     "//#shellcheck:fix": {
       "cache": false
     },
-    "//#typescript:check": {},
     "build": {
       "dependsOn": ["^build"],
-      "dotEnv": [".env", ".env.local", ".env.production", ".env.production.local"],
       "outputs": ["build/**", "dist/**"]
     },
     "check": {
-      "dependsOn": [
-        "//#commitlint:check",
-        "//#eslint:check",
-        "//#npmpkgjsonlint:check",
-        "//#prettier:check",
-        "//#shellcheck:check",
-        "eslint:check",
-        "npmpkgjsonlint:check",
-        "prettier:check",
-        "ruff-format:check",
-        "ruff-lint:check",
-        "typescript:check"
-      ]
-    },
-    "commitlint:check": {
-      "cache": false
+      "dependsOn": ["//#root-check", "npmpkgjsonlint:check", "ruff-format:check", "ruff-lint:check"]
     },
     "dev": {
       "cache": false,
       "persistent": true
     },
-    "eslint:check": {
-      "dependsOn": ["^build"],
-      "inputs": [
-        "**/*.cjs",
-        "**/*.code-workspace",
-        "**/*.graphql",
-        "**/*.js",
-        "**/*.json",
-        "**/*.json5",
-        "**/*.jsonc",
-        "**/*.jsx",
-        "**/*.md",
-        "**/*.mjs",
-        "**/*.toml",
-        "**/*.ts",
-        "**/*.tsx",
-        "**/*.yaml",
-        "**/*.yml",
-        "eslint.config.js",
-        "tsconfig.json"
-      ]
-    },
-    "eslint:fix": {
-      "cache": false,
-      "dependsOn": ["^build"]
-    },
     "fix": {
-      "cache": false,
-      "dependsOn": [
-        "//#eslint:fix",
-        "//#prettier:fix",
-        "//#shellcheck:fix",
-        "eslint:fix",
-        "prettier:fix",
-        "ruff-format:fix",
-        "ruff-lint:fix",
-        "shellcheck:fix"
-      ]
+      "dependsOn": ["//#root-fix", "ruff-format:fix", "ruff-lint:fix"]
     },
     "npmpkgjsonlint:check": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["@spear-ai/npm-package-json-lint-config#build"],
       "inputs": [".npmpackagejsonlintignore", "npmpackagejsonlint.config.cjs", "package.json"]
-    },
-    "prettier:check": {
-      "dependsOn": ["^build"],
-      "inputs": [
-        "**/*.cjs",
-        "**/*.code-workspace",
-        "**/*.graphql",
-        "**/*.js",
-        "**/*.json",
-        "**/*.json5",
-        "**/*.jsonc",
-        "**/*.jsx",
-        "**/*.md",
-        "**/*.mjs",
-        "**/*.toml",
-        "**/*.ts",
-        "**/*.tsx",
-        "**/*.yaml",
-        "**/*.yml",
-        ".prettierignore",
-        "prettier.config.*"
-      ]
-    },
-    "prettier:fix": {
-      "cache": false,
-      "dependsOn": ["^build"]
     },
     "ruff-format:check": {
       "inputs": ["**/*.py", ".gitignore", "pyproject.toml", "ruff.toml", "uv.lock"]
@@ -125,12 +81,8 @@
     "ruff-lint:fix": {
       "cache": false
     },
-    "shellcheck:fix": {
-      "cache": false
-    },
-    "typescript:check": {
-      "dependsOn": ["^build"],
-      "inputs": ["**/*.cjs", "**/*.js", "**/*.json", "**/*.mjs", "**/*.ts", "**/*.tsx", "tsconfig.json"]
+    "test": {
+      "dependsOn": ["^build"]
     }
   }
 }

@@ -40,6 +40,12 @@ updates:
     package-ecosystem: npm
     schedule:
       interval: monthly
+  - directory: /packages/oxlint-config
+    labels:
+      - Maintenance
+    package-ecosystem: npm
+    schedule:
+      interval: monthly
   - directory: /packages/prettier-config
     labels:
       - Maintenance

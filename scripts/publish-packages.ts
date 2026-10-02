@@ -31,7 +31,7 @@ for (const { dir: directory, packageJson } of publishablePackageList) {
 
   console.log(`Publishing ${name}@${version}…`);
 
-  const { status } = spawnSync("yarn", ["run", "publish-package"], {
+  const { status } = spawnSync("pnpm", ["run", "publish-package"], {
     cwd: directory,
     stdio: "inherit",
   });

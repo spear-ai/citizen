@@ -22,10 +22,10 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-: "${GIT_USER_EMAIL:=$(git config --global user.email 2>/dev/null || echo "")}"
-: "${GIT_USER_NAME:=$(git config --global user.name 2>/dev/null || echo "")}"
+: "${GIT_USER_EMAIL:=$(git config --global user.email 2>/dev/null || true)}"
+: "${GIT_USER_NAME:=$(git config --global user.name 2>/dev/null || true)}"
 
-if [[ -z "$GIT_USER_EMAIL" ]] || [[ -z "$GIT_USER_NAME" ]]; then
+if [[ -z "${GIT_USER_EMAIL}" ]] || [[ -z "${GIT_USER_NAME}" ]]; then
     echo "Error: --email and --name are required (or set git config --global user.email/name)" >&2
     exit 1
 fi
@@ -41,23 +41,23 @@ Key-Usage: sign
 Subkey-Type: ecdh
 Subkey-Curve: cv25519
 Subkey-Usage: encrypt
-Name-Real: $(printf '%s' "$GIT_USER_NAME" | sed 's/%/%%/g')
-Name-Email: $(printf '%s' "$GIT_USER_EMAIL" | sed 's/%/%%/g')
+Name-Real: ${GIT_USER_NAME//%/%%}
+Name-Email: ${GIT_USER_EMAIL//%/%%}
 Name-Comment: Cursor Cloud Agent
 Expire-Date: 0
 %no-protection
 %commit
 EOF
 
-GPG_PUBLIC_KEY=$(gpg --armor --export "$GIT_USER_EMAIL")
-GPG_PRIVATE_KEY_BASE64=$(gpg --armor --export-secret-keys "$GIT_USER_EMAIL" | base64 | tr -d '\n')
+GPG_PUBLIC_KEY=$(gpg --armor --export "${GIT_USER_EMAIL}")
+GPG_PRIVATE_KEY_BASE64=$(gpg --armor --export-secret-keys "${GIT_USER_EMAIL}" | base64 | tr -d '\n')
 
 echo "=== Add this public key to GitHub ==="
 echo "https://github.com/settings/keys"
 echo ""
-echo "$GPG_PUBLIC_KEY"
+echo "${GPG_PUBLIC_KEY}"
 echo ""
 echo "=== Add these to Cursor Cloud Agent Secrets ==="
 echo "https://cursor.com/dashboard?tab=cloud-agents"
 echo ""
-echo "GPG_PRIVATE_KEY_BASE64=$GPG_PRIVATE_KEY_BASE64"
+echo "GPG_PRIVATE_KEY_BASE64=${GPG_PRIVATE_KEY_BASE64}"

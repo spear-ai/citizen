@@ -1,17 +1,8 @@
 line-length = 120
 
 [lint]
-allowed-confusables = [
-  "–",
-  "‘",
-  "’"
-]
-ignore = [
-  "COM812",
-  "ISC001",
-  "S101",
-  "PLR0913"
-]
+allowed-confusables = ["–", "‘", "’"]
+ignore = ["COM812", "ISC001", "S101", "PLR0913"]
 select = [
   "A",
   "AIR",
