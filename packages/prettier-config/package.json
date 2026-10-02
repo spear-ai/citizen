@@ -29,7 +29,7 @@
     "@spear-ai/npm-package-json-lint-config": "workspace:*",
     "@spear-ai/tsconfig": "workspace:*",
     "npm-package-json-lint": "catalog:shared-dev",
-    "prettier": "3.5.3",
+    "prettier": "3.9.9",
     "tsup": "catalog:shared-dev",
     "typescript": "catalog:shared-dev"
   },
