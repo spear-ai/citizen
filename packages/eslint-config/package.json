@@ -48,7 +48,7 @@
     "eslint-plugin-react-use-props": "^1.0.0",
     "eslint-plugin-regexp": "^2.6.0",
     "eslint-plugin-simple-import-sort": "^12.1.0",
-    "eslint-plugin-sonarjs": "^1.0.3",
+    "eslint-plugin-sonarjs": "^4.2.2",
     "eslint-plugin-sort-destructure-keys": "^2.0.0",
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-toml": "^0.11.0",
