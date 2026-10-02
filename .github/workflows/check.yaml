@@ -37,7 +37,7 @@ jobs:
           cache: pnpm
           node-version-file: .node-version
       - name: Setup Python
-        uses: actions/setup-python@v5.1.0
+        uses: actions/setup-python@v7.0.0
         with:
           python-version-file: .python-version
       - name: Install Node.js dependencies
