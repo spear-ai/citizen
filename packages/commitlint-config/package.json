@@ -32,7 +32,7 @@
     "npm-package-json-lint": "catalog:shared-dev",
     "tsdown": "catalog:shared-dev",
     "typescript": "catalog:shared-dev",
-    "vite": "8.3.1",
+    "vite": "8.3.3",
     "vitest": "catalog:shared-dev"
   },
   "peerDependencies": {
