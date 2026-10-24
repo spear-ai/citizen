@@ -1,25 +1,14 @@
-<div align="center">
-  <img alt="Logo" src="citizen-logo.png" width="384">
-  <p>
-    <b>Citizen</b>
-  </p>
-  <quote>
-    <p>
-      “This code is what it is because of its citizens” — Plato
-    </p>
-  </quote>
-  <div align="center">
-    <a href="https://github.com/spear-ai/citizen/tree/main/packages/code-commitment">
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://github.com/spear-ai/citizen/raw/main/packages/code-commitment/gold-badge-dark.png">
-        <img alt="Code Commitment — Gold" src="https://github.com/spear-ai/citizen/raw/main/packages/code-commitment/gold-badge-light.png" height="20" />
-      </picture>
-    </a>
-    <a href="https://github.com/spear-ai/citizen/actions/workflows/check.yaml">
-      <img alt="Checks" src="https://github.com/spear-ai/citizen/actions/workflows/check.yaml/badge.svg">
-    </a>
-  </div>
-</div>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="citizen-logo-dark.svg">
+    <img src="citizen-logo-light.svg" alt="Spear AI logo spinning in 3D ASCII art" width="384">
+  </picture>
+</p>
+<h4 align="center">Spear Citizen</h4>
+<p align="center"><i>“This code is what it is because of its citizens” — Plato</i></p>
+<p align="center">
+  <a href="https://github.com/spear-ai/citizen/actions/workflows/check.yaml"><img src="https://github.com/spear-ai/citizen/actions/workflows/check.yaml/badge.svg" alt="Checks"></a>
+</p>
 
 # Goal
 
