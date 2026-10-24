@@ -1,5 +1,17 @@
 # @spear-ai/sqlfluff-config
 
+## 3.0.0
+
+### Major Changes
+
+- [#666](https://github.com/spear-ai/citizen/pull/666) [`67f6401`](https://github.com/spear-ai/citizen/commit/67f6401c04369f3e8934c7ee20db04983bc5d420) Thanks [@afrodynamic](https://github.com/afrodynamic)! - Updated `sqlfluff` to 4.3.0.
+
+### Patch Changes
+
+- [#665](https://github.com/spear-ai/citizen/pull/665) [`85de3df`](https://github.com/spear-ai/citizen/commit/85de3dfccdc87532cf324f68194b43a0625641ed) Thanks [@afrodynamic](https://github.com/afrodynamic)! - Moved package builds and releases from Yarn to pnpm.
+
+- [#666](https://github.com/spear-ai/citizen/pull/666) [`67f6401`](https://github.com/spear-ai/citizen/commit/67f6401c04369f3e8934c7ee20db04983bc5d420) Thanks [@afrodynamic](https://github.com/afrodynamic)! - Updated the version sync script to `replace-in-file` 9.
+
 ## 2.0.2
 
 ### Patch Changes
