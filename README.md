@@ -4,11 +4,8 @@
     <img src="citizen-logo-light.svg" alt="Spear AI logo spinning in 3D ASCII art" width="384">
   </picture>
 </p>
-
 <h4 align="center">Spear Citizen</h4>
-
 <p align="center"><i>“This code is what it is because of its citizens” — Plato</i></p>
-
 <p align="center">
   <a href="https://github.com/spear-ai/citizen/actions/workflows/check.yaml"><img src="https://github.com/spear-ai/citizen/actions/workflows/check.yaml/badge.svg" alt="Checks"></a>
 </p>
