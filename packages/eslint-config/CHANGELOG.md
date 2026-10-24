@@ -1,5 +1,17 @@
 # @spear-ai/eslint-config
 
+## 22.0.0
+
+### Major Changes
+
+- [#666](https://github.com/spear-ai/citizen/pull/666) [`67f6401`](https://github.com/spear-ai/citizen/commit/67f6401c04369f3e8934c7ee20db04983bc5d420) Thanks [@afrodynamic](https://github.com/afrodynamic)! - Required ESLint 10.4 or later and Node.js 22.13 or later, published `@spear-ai/eslint-config` as an ES module only, and updated its bundled plugins to their current major versions.
+
+### Patch Changes
+
+- [#665](https://github.com/spear-ai/citizen/pull/665) [`85de3df`](https://github.com/spear-ai/citizen/commit/85de3dfccdc87532cf324f68194b43a0625641ed) Thanks [@afrodynamic](https://github.com/afrodynamic)! - Updated `@spear-ai/eslint-config` to build against current plugin type definitions.
+
+- [#665](https://github.com/spear-ai/citizen/pull/665) [`85de3df`](https://github.com/spear-ai/citizen/commit/85de3dfccdc87532cf324f68194b43a0625641ed) Thanks [@afrodynamic](https://github.com/afrodynamic)! - Validated `pyproject.toml` files against SchemaStore's published `pyproject.json` schema, so a reference SchemaStore has not yet published no longer crashes linting.
+
 ## 21.1.0
 
 ### Minor Changes
