@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/base:3.0.8-noble
+FROM mcr.microsoft.com/devcontainers/base:3.0.12-noble
 
 # Ensure an exit code is returned when part of a piped command fails
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
