@@ -39,7 +39,7 @@
     "eslint-plugin-sonarjs": "^4.2.2",
     "eslint-plugin-sort-destructure-keys": "^3.0.0",
     "eslint-plugin-toml": "^1.5.0",
-    "eslint-plugin-unicorn": "^76.0.0",
+    "eslint-plugin-unicorn": "^79.0.0",
     "eslint-plugin-yml": "^3.8.1",
     "globals": "^17.12.0",
     "jsonc-eslint-parser": "^3.3.0",
